@@ -453,7 +453,7 @@ function showLock(onOk) {
 
 /* ===== Şifreli senkronizasyon (Supabase) ===== */
 // Supabase projesi oluşturulunca buraya yazılır; boşsa Ayarlar'dan girilebilir.
-const APP_CONFIG = { supabaseUrl: '', supabaseKey: '' };
+const APP_CONFIG = { supabaseUrl: 'https://omieemczsuqstuehcrtu.supabase.co', supabaseKey: 'sb_publishable_C8y1wMv8qvFrXAhGX4F8Ew_uTFhzpB9' };
 
 const b64 = u8 => { let s = ''; for (let i = 0; i < u8.length; i += 0x8000) s += String.fromCharCode.apply(null, u8.subarray(i, i + 0x8000)); return btoa(s); };
 const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
@@ -576,14 +576,15 @@ function hasLocalData() {
 }
 
 /* Kurulum ekranları */
-function syncSetup() {
+function syncSetup(welcome = false) {
   const s = openSheet({
-    title: 'Senkronizasyon', left: 'Vazgeç',
-    body: `<p class="small muted" style="margin-top:0">Telefon, tablet ve bilgisayarında aynı hesapla giriş yap. Verilerin cihazından çıkmadan önce şifrelenir; sunucu dahil kimse okuyamaz.</p>
+    title: welcome ? 'Hoş geldin 👋' : 'Hesabına giriş yap', left: welcome ? 'Sonra' : 'Vazgeç', full: welcome,
+    onClose: welcome ? () => { if (!Sync.on()) { S.settings.skipLogin = true; save(); } } : null,
+    body: `${welcome ? '<div style="text-align:center;font-size:54px;margin:10px 0">🔐</div>' : ''}<p class="small muted" style="margin-top:0">Telefon, tablet ve bilgisayarında aynı hesapla giriş yap; verilerin hepsinde aynı olsun. Veriler cihazından çıkmadan önce şifrelenir — sunucu dahil kimse okuyamaz.</p>
     ${APP_CONFIG.supabaseUrl ? '' : `<div class="field"><label>Supabase proje adresi (URL)</label><input id="su" placeholder="https://xxxx.supabase.co" value="${esc(Sync.cfg?.url || '')}" autocapitalize="off"></div><div class="field"><label>Supabase anon (public) key</label><input id="sk" value="${esc(Sync.cfg?.key || '')}" autocapitalize="off"></div>`}
     <div class="field"><label>E-posta</label><input id="se" type="email" autocomplete="username" value="${esc(Sync.cfg?.email || '')}" autocapitalize="off"></div>
     <div class="field"><label>Hesap şifresi</label><input id="sp" type="password" autocomplete="current-password"></div>
-    <button class="btn full" id="sin" style="margin-bottom:8px">Giriş yap</button><button class="btn plain full" id="sup">Yeni hesap oluştur</button><div class="small" id="smsg" style="margin-top:12px;text-align:center"></div>`
+    <button class="btn full" id="sin" style="margin-bottom:8px">Giriş yap</button><button class="btn plain full" id="sup">Yeni hesap oluştur</button><div class="small" id="smsg" style="margin-top:12px;text-align:center"></div>${welcome ? '<p class="tiny muted" style="text-align:center;margin-top:18px">"Sonra" dersen uygulamayı sadece bu cihazda kullanırsın; istediğin zaman Ayarlar → Senkronizasyon\'dan giriş yapabilirsin.</p>' : ''}`
   });
   const msg = (t, bad) => { const m = s.sh.querySelector('#smsg'); m.textContent = t; m.style.color = bad ? 'var(--bad)' : 'var(--muted)'; };
   const go2 = async kind => {
@@ -595,11 +596,11 @@ function syncSetup() {
     msg('Bekle…');
     try {
       if (kind === 'up') {
-        const j = await Sync.auth('signup', { email, password });
-        if (!j.access_token) { Sync.cfg.email = email; await Sync.saveCfg(); return msg('Hesap oluşturuldu! E-postana gelen onay bağlantısına tıkla, sonra "Giriş yap".'); }
+        const j = await Sync.auth('signup?redirect_to=' + encodeURIComponent(location.origin + location.pathname), { email, password });
+        if (!j.access_token) { Sync.cfg.email = email; await Sync.saveCfg(); return msg('Hesap oluşturuldu! ✉️ E-postana gelen onay bağlantısına bas — uygulama açılıp kaldığın yerden devam eder. (Gelmezse spam klasörüne bak.)'); }
         await Sync.setSession(j);
       } else await Sync.setSession(await Sync.auth('token?grant_type=password', { email, password }));
-      closeSheet(s); passSetup();
+      S.settings.skipLogin = false; s.onClose = null; closeSheet(s); passSetup();
     } catch (e) { msg(e.message, true); }
   };
   s.sh.querySelector('#sin').onclick = () => go2('in');
@@ -655,6 +656,20 @@ function syncCard() {
   ${Sync.on() ? `<div class="small muted" style="margin-bottom:10px">${esc(Sync.cfg.email || '')} · uçtan uca şifreli 🔒</div><div class="row"><button class="btn plain sm grow" onclick="Sync.run()">Şimdi eşitle</button><button class="btn plain sm grow" onclick="confirmSheet('Bu cihazda oturum kapanacak; veriler bu cihazda kalır ama artık eşitlenmez.',async()=>{await Sync.signOut();render()},'Çıkış yap')">Çıkış yap</button></div>
   <button class="btn plain sm full" style="margin-top:8px" onclick="restoreConflict()">Eski sürümü geri yükle</button>`
   : `<button class="btn full" onclick="${Sync.cfg?.refresh ? 'passSetup()' : 'syncSetup()'}">Senkronizasyonu aç</button>`}</div>`;
+}
+
+/* E-posta onay bağlantısından dönüş: #access_token=...&refresh_token=... */
+async function handleAuthRedirect() {
+  const h = location.hash; if (!h.includes('access_token=')) return false;
+  const p = new URLSearchParams(h.slice(1)); history.replaceState(null, '', location.pathname);
+  if (p.get('error_description')) { toast(p.get('error_description')); return false; }
+  try {
+    Sync.cfg = { ...(Sync.cfg || {}) };
+    await Sync.setSession({ access_token: p.get('access_token'), refresh_token: p.get('refresh_token'), expires_in: +p.get('expires_in') || 3600 });
+    const u = await fetch(Sync.url() + '/auth/v1/user', { headers: { apikey: Sync.apikey(), Authorization: 'Bearer ' + Sync.cfg.access } }).then(r => r.json());
+    Sync.cfg.uid = u.id; Sync.cfg.email = u.email; await Sync.saveCfg();
+    toast('✓ E-posta onaylandı'); passSetup(); return true;
+  } catch (e) { toast('Giriş tamamlanamadı: ' + e.message); return false; }
 }
 
 /* ===== Anatomik vücut haritası ===== */
@@ -2227,6 +2242,8 @@ Pages.settings = () => {
   if (S.workout.active) route = { tab: 'sport', page: 'session', arg: null }, navStack = [{ tab: 'sport', page: 'sport' }];
   render();
   if (hasLock()) showLock();
+  const fromMail = await handleAuthRedirect();
+  if (!fromMail && !Sync.on() && APP_CONFIG.supabaseUrl) { if (Sync.cfg?.refresh && !Sync.key) passSetup(); else if (!S.settings.skipLogin) syncSetup(true); }
   Sync.run();
   setInterval(() => { if (!document.hidden) Sync.run(); }, 60000);
   addEventListener('online', () => Sync.run());

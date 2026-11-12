@@ -9,6 +9,8 @@
   if (S.workout.active) route = { tab: 'sport', page: 'session', arg: null }, navStack = [{ tab: 'sport', page: 'sport' }];
   render();
   if (hasLock()) showLock();
+  const fromMail = await handleAuthRedirect();
+  if (!fromMail && !Sync.on() && APP_CONFIG.supabaseUrl) { if (Sync.cfg?.refresh && !Sync.key) passSetup(); else if (!S.settings.skipLogin) syncSetup(true); }
   Sync.run();
   setInterval(() => { if (!document.hidden) Sync.run(); }, 60000);
   addEventListener('online', () => Sync.run());
