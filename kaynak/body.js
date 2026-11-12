@@ -82,7 +82,7 @@ const FIBERS = [
 
 function heat(v) { const h = 140 - 140 * Math.min(1, v); return `hsl(${h},78%,${52 + (1 - v) * 4}%)`; }
 /* vals: {kas: 0..1}; mode: heat | hi; vb: özel görünüm alanı */
-function bodySVG(vals = {}, { mode = 'heat', labels = true, vb = null } = {}) {
+function bodySVG(vals = {}, { mode = 'heat', labels = true, vb = null, click = false } = {}) {
   const fill = v => {
     if (!v || v < 0.01) return 'var(--muscle-off)';
     if (mode === 'hi') return v >= 1 ? 'var(--accent)' : 'var(--accent-2)';
@@ -91,7 +91,7 @@ function bodySVG(vals = {}, { mode = 'heat', labels = true, vb = null } = {}) {
   const fig = (view, ox) => {
     const mir = `translate(${ox + 200},0) scale(-1,1)`;
     let m = '';
-    for (const [k, v, d] of MPATHS) if (v === view) { const c = fill(vals[k]); m += `<path d="${d}" fill="${c}"/>`; }
+    for (const [k, v, d] of MPATHS) if (v === view) { const c = fill(vals[k]); m += `<path d="${d}" fill="${c}"${click ? ` data-m="${k}" style="cursor:pointer"` : ''}/>`; }
     const fib = FIBERS.filter(f => f[0] === view).map(f => `<path d="${f[1]}"/>`).join('');
     const half = `<g class="mus" stroke="var(--body-line)" stroke-width="1.3" stroke-linejoin="round">${m}</g><g fill="none" stroke="rgba(0,0,0,.13)" stroke-width=".7">${fib}</g>`;
     return `<g><path d="${SIL_D}" transform="translate(${ox},0)" fill="var(--body)"/><path d="${HEAD_D}" transform="translate(${ox},0)" fill="var(--body)"/>
@@ -99,7 +99,22 @@ function bodySVG(vals = {}, { mode = 'heat', labels = true, vb = null } = {}) {
   };
   const H = labels ? 520 : 500;
   const lab = labels ? `<text x="100" y="516" text-anchor="middle" font-size="15" fill="var(--muted)" font-weight="700">ÖN</text><text x="320" y="516" text-anchor="middle" font-size="15" fill="var(--muted)" font-weight="700">ARKA</text>` : '';
-  return `<svg viewBox="${vb || `0 0 420 ${H}`}" xmlns="http://www.w3.org/2000/svg">${fig('f', 0)}${fig('b', 220)}${lab}</svg>`;
+  return `<svg ${click ? 'class="clickmap" ' : ''}viewBox="${vb || `0 0 420 ${H}`}" xmlns="http://www.w3.org/2000/svg">${fig('f', 0)}${fig('b', 220)}${lab}</svg>`;
 }
 /* Küçük resimler için kırpma alanları */
 const VB = { upperF: '20 55 160 205', upperB: '240 55 160 205', lowerF: '45 235 110 265', lowerB: '265 235 110 265', fullF: '15 0 170 500', bothNoLabel: '0 0 420 500' };
+
+/* Dokunulabilir harita: data-m taşıyan kasa tıklanınca cb(kas) */
+function wireBodyClicks(root, cb) {
+  root.querySelectorAll('svg.clickmap').forEach(svg => svg.addEventListener('click', e => { const m = e.target.closest('[data-m]'); if (m) cb(m.dataset.m); }));
+}
+function muscleFilterHTML(sel) {
+  const v = sel ? { [sel]: 1 } : {};
+  return `<div class="body-map" style="max-width:270px;margin:0 auto">${bodySVG(v, { mode: 'hi', click: true })}</div>
+  <div class="chips" style="margin:10px 0 0">${Object.entries(MUSCLES).map(([k, n]) => `<button class="chip ${sel === k ? 'on' : ''}" data-mc="${k}">${n}</button>`).join('')}</div>`;
+}
+function wireMuscleFilter(root, cb) {
+  wireBodyClicks(root, cb);
+  root.querySelectorAll('[data-mc]').forEach(b => b.onclick = () => cb(b.dataset.mc));
+  const on = root.querySelector('[data-mc].on'); if (on) on.scrollIntoView({ block: 'nearest', inline: 'center' });
+}

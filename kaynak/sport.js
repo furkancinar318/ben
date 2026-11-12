@@ -166,13 +166,18 @@ function editItem(dayId, i) {
 
 /* Hareket seçici */
 function pickExercise(onPick) {
-  let q = '', cat = '';
-  const s = openSheet({ title: 'Hareket seç', body: `<input id="pq" placeholder="Ara… (ör. squat, curl)" style="margin-bottom:10px"><div class="chips" id="pc"></div><div class="card tight" id="pl"></div><button class="btn ghost full" id="pn">+ Yeni hareket oluştur</button>`, left: 'Bitti' });
+  let q = '', cat = '', mus = '', showMap = false;
+  const s = openSheet({ title: 'Hareket seç', body: `<input id="pq" placeholder="Ara… (ör. squat, curl)" style="margin-bottom:10px"><div class="chips" id="pc"></div><div id="pm"></div><div class="card tight" id="pl"></div><button class="btn ghost full" id="pn">+ Yeni hareket oluştur</button>`, left: 'Bitti' });
   const draw = () => {
-    s.sh.querySelector('#pc').innerHTML = ['', ...EX_CATS].map(c => `<button class="chip ${c === cat ? 'on' : ''}" data-c="${c}">${c || 'Tümü'}</button>`).join('');
-    s.sh.querySelectorAll('#pc button').forEach(b => b.onclick = () => { cat = b.dataset.c; draw(); });
+    s.sh.querySelector('#pc').innerHTML = `<button class="chip ${showMap || mus ? 'on' : ''}" data-map="1">🧍 ${mus ? MUSCLES[mus] + ' ✕' : 'Kasa göre'}</button>` + ['', ...EX_CATS].map(c => `<button class="chip ${c === cat ? 'on' : ''}" data-c="${c}">${c || 'Tümü'}</button>`).join('');
+    s.sh.querySelectorAll('#pc [data-c]').forEach(b => b.onclick = () => { cat = b.dataset.c; draw(); });
+    s.sh.querySelector('#pc [data-map]').onclick = () => { if (mus) { mus = ''; showMap = false; } else showMap = !showMap; draw(); };
+    const pm = s.sh.querySelector('#pm');
+    pm.innerHTML = showMap ? `<div class="card">${muscleFilterHTML(mus)}</div>` : '';
+    if (showMap) wireMuscleFilter(pm, m => { mus = mus === m ? '' : m; showMap = false; draw(); });
     const ql = q.toLocaleLowerCase('tr');
-    const list = allEx().filter(e => (!cat || (cat === 'Kendi' ? !e.builtin : e.cat === cat)) && (!ql || e.name.toLocaleLowerCase('tr').includes(ql) || e.p.some(k => MUSCLES[k].toLocaleLowerCase('tr').includes(ql))));
+    let list = allEx().filter(e => (!cat || (cat === 'Kendi' ? !e.builtin : e.cat === cat)) && (!ql || e.name.toLocaleLowerCase('tr').includes(ql) || e.p.some(k => MUSCLES[k].toLocaleLowerCase('tr').includes(ql))));
+    if (mus) { const r = exByMuscle(mus, list); list = [...r.p, ...r.s]; }
     s.sh.querySelector('#pl').innerHTML = list.length ? list.map(e => `<div class="ex-item" data-id="${e.id}" style="cursor:pointer">${exThumb(e)}<div class="grow"><div class="b">${esc(e.name)}</div><div class="tiny muted">${e.p.map(k => MUSCLES[k]).join(', ')}${e.s.length ? ' · ' + e.s.map(k => MUSCLES[k]).join(', ') : ''}</div></div><span style="color:var(--accent);font-size:22px">＋</span></div>`).join('') : '<div class="empty">Bulunamadı</div>';
     s.sh.querySelectorAll('#pl [data-id]').forEach(el => el.onclick = () => { onPick(exById(el.dataset.id)); el.style.background = 'var(--accent-soft)'; });
   };
@@ -212,13 +217,31 @@ function editExercise(id, cb) {
   draw();
 }
 
+let exMuscle = '', exQ = '';
+const exRow = e => `<div class="ex-item" onclick="go('ex','${e.id}')" style="cursor:pointer">${exThumb(e)}<div class="grow"><div class="b">${esc(e.name)}</div><div class="tiny muted">${e.p.map(k => MUSCLES[k]).join(', ')}${e.s.length ? ' · ' + e.s.map(k => MUSCLES[k]).join(', ') : ''}</div></div><span class="muted">›</span></div>`;
+function exByMuscle(m, list = allEx()) {
+  return { p: list.filter(e => e.p.includes(m)), s: list.filter(e => !e.p.includes(m) && e.s.includes(m)) };
+}
 Pages.exlib = () => {
-  const groups = EX_CATS.map(c => {
-    const l = allEx().filter(e => c === 'Kendi' ? !e.builtin : e.cat === c); if (!l.length) return '';
-    return `<div class="card tight"><h3 style="padding:12px 16px 0">${c}</h3>${l.map(e => `<div class="ex-item" onclick="go('ex','${e.id}')" style="cursor:pointer">${exThumb(e)}<div class="grow"><div class="b">${esc(e.name)}</div><div class="tiny muted">${e.p.map(k => MUSCLES[k]).join(', ')}</div></div><span class="muted">›</span></div>`).join('')}</div>`;
-  }).join('');
-  return header('Hareketler', allEx().length + ' hareket', `<button class="icon-btn" onclick="editExercise(null)">＋</button>`) + groups;
+  const ql = exQ.toLocaleLowerCase('tr');
+  const base = allEx().filter(e => !ql || e.name.toLocaleLowerCase('tr').includes(ql));
+  let body;
+  if (exMuscle) {
+    const r = exByMuscle(exMuscle, base);
+    body = `<div class="card tight"><h3 style="padding:12px 16px 0">${MUSCLES[exMuscle]} · ana kas olarak (${r.p.length})</h3>${r.p.map(exRow).join('') || '<div class="empty">Yok</div>'}</div>
+    ${r.s.length ? `<div class="card tight"><h3 style="padding:12px 16px 0">Yardımcı kas olarak (${r.s.length})</h3>${r.s.map(exRow).join('')}</div>` : ''}`;
+  } else {
+    body = EX_CATS.map(c => {
+      const l = base.filter(e => c === 'Kendi' ? !e.builtin : e.cat === c); if (!l.length) return '';
+      return `<div class="card tight"><h3 style="padding:12px 16px 0">${c} (${l.length})</h3>${l.map(exRow).join('')}</div>`;
+    }).join('') || '<div class="card empty">Bulunamadı</div>';
+  }
+  return header('Hareketler', allEx().length + ' hareket', `<button class="icon-btn" onclick="editExercise(null)">＋</button>`) + `
+  <input id="exq" placeholder="Hareket ara…" value="${esc(exQ)}" style="margin-bottom:12px" oninput="exQ=this.value;clearTimeout(window._exq);window._exq=setTimeout(()=>{render();const i=document.querySelector('#exq');i.focus();i.setSelectionRange(99,99)},300)">
+  <div class="card"><div class="row between" style="margin-bottom:6px"><h3 style="margin:0">Kasa dokun</h3>${exMuscle ? `<button class="btn ghost sm" onclick="exMuscle='';render()">✕ Temizle</button>` : ''}</div>${muscleFilterHTML(exMuscle)}</div>
+  ${body}`;
 };
+Pages.exlib.after = () => wireMuscleFilter($('#app'), m => { exMuscle = exMuscle === m ? '' : m; render(); });
 
 Pages.ex = id => {
   const ex = exById(id); if (!ex) return Pages.exlib();

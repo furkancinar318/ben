@@ -172,3 +172,5 @@ ol.steps li,ol.ticks li,ol.warns li{margin:6px 0;padding-left:2px}
 ol.ticks{list-style:none;padding-left:0} ol.ticks li:before{content:"✓ ";color:var(--ok);font-weight:800}
 ol.warns{list-style:none;padding-left:0} ol.warns li:before{content:"• ";color:var(--bad);font-weight:800}
 .warnc{background:rgba(255,77,94,.07);border:1px solid rgba(255,77,94,.18)}
+
+.clickmap [data-m]:active{opacity:.6}
