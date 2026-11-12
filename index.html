@@ -2239,7 +2239,8 @@ Pages.settings = () => {
   });
   try {
     const inFrame = window.self !== window.top;
-    if ('serviceWorker' in navigator && !inFrame && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(() => {});
+    if ('serviceWorker' in navigator && !inFrame && location.protocol === 'https:') navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then(r => { r.update(); document.addEventListener('visibilitychange', () => { if (!document.hidden) r.update(); }); }).catch(() => {});
+      let reloaded = false; navigator.serviceWorker.addEventListener('controllerchange', () => { if (reloaded || document.querySelector('.sheet.show') || S.workout.active) return; reloaded = true; location.reload(); });
   } catch (e) {}
 })();
 </script>
