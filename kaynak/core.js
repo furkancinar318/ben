@@ -19,7 +19,7 @@ const stars = n => { n = Math.round(n || 0); let s = ''; for (let i = 1; i <= 5;
 /* ===== Veri ===== */
 const DEFAULT_STATE = () => ({
   v: 1,
-  settings: { name: '', theme: 'auto', accent: '#6C63FF', pin: '', rest: 90, bookGoal: 12 },
+  settings: { name: '', theme: 'auto', accent: '#6C63FF', pin: '', lock: null, rest: 90, bookGoal: 12 },
   moods: {}, journal: [], habits: [], todos: [], notes: [], courses: [], goals: [], dates: [],
   outfits: { items: [], combos: [] }, shopping: [], books: [], movies: [],
   workout: { exercises: [], days: [], logs: [], active: null, exPhotos: {} },
@@ -214,22 +214,44 @@ function hexA(h, a) { const n = parseInt(h.slice(1), 16); return `rgba(${n >> 16
 function shade(h, p) { const n = parseInt(h.slice(1), 16); const f = c => Math.min(255, Math.round(c + (255 - c) * p / 100)); return '#' + [n >> 16, (n >> 8) & 255, n & 255].map(f).map(x => pad(x.toString(16))).join(''); }
 matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', () => render());
 
-/* ===== Kilit ===== */
+/* ===== Kilit (4–20 karakter, harf + rakam) ===== */
+const hasLock = () => !!(S.settings.lock?.hash || S.settings.pin);
+async function hashPass(p, saltB64) {
+  const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(p), 'PBKDF2', false, ['deriveBits']);
+  const bits = await crypto.subtle.deriveBits({ name: 'PBKDF2', salt: unb64(saltB64), iterations: 150000, hash: 'SHA-256' }, base, 256);
+  return b64(new Uint8Array(bits));
+}
+async function setLockPass(p) {
+  if (!p) { S.settings.lock = null; S.settings.pin = ''; save(); return; }
+  const salt = b64(crypto.getRandomValues(new Uint8Array(16)));
+  S.settings.lock = { salt, hash: await hashPass(p, salt) }; S.settings.pin = ''; save();
+}
+async function checkLockPass(p) {
+  if (S.settings.lock?.hash) return (await hashPass(p, S.settings.lock.salt)) === S.settings.lock.hash;
+  if (S.settings.pin && p === S.settings.pin) { await setLockPass(p); return true; } // eski PIN'i taşı
+  return false;
+}
 function showLock(onOk) {
-  let entered = '';
+  if (document.querySelector('.lock')) return;
   const el = document.createElement('div'); el.className = 'lock';
-  const draw = () => {
-    el.innerHTML = `<div style="font-size:44px">🔒</div><div class="b">Şifreni gir</div><div class="pin-dots">${[0, 1, 2, 3].map(i => `<i class="${i < entered.length ? 'on' : ''}"></i>`).join('')}</div>
-    <div class="keypad">${[1, 2, 3, 4, 5, 6, 7, 8, 9, '', 0, '⌫'].map(k => k === '' ? '<span></span>' : `<button data-k="${k}">${k}</button>`).join('')}</div>`;
-    el.querySelectorAll('button').forEach(b => b.onclick = () => {
-      const k = b.dataset.k;
-      if (k === '⌫') entered = entered.slice(0, -1); else if (entered.length < 4) entered += k;
-      if (entered.length === 4) {
-        if (entered === S.settings.pin) { el.remove(); onOk && onOk(); return; }
-        entered = ''; draw(); el.querySelector('.pin-dots').classList.add('shake'); return;
-      }
-      draw();
-    });
+  el.innerHTML = `<div style="font-size:46px">🔒</div><div class="b" style="font-size:20px">${S.settings.name ? 'Merhaba ' + esc(S.settings.name) : 'Kilitli'}</div>
+  <form id="lf" style="width:min(320px,86vw)"><div style="position:relative"><input id="lp" type="password" maxlength="20" autocomplete="current-password" placeholder="Şifren" style="text-align:center;font-size:18px;padding:14px 44px"><button type="button" id="leye" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:20px">👁</button></div>
+  <button class="btn full" style="margin-top:12px">Kilidi aç</button><div id="lerr" class="small" style="color:var(--bad);text-align:center;margin-top:10px;min-height:18px"></div></form>
+  <button class="small muted" id="lforgot">Şifremi unuttum</button>`;
+  document.body.append(el);
+  const inp = el.querySelector('#lp'); setTimeout(() => inp.focus(), 100);
+  el.querySelector('#leye').onclick = () => { inp.type = inp.type === 'password' ? 'text' : 'password'; };
+  el.querySelector('#lf').onsubmit = async e => {
+    e.preventDefault(); const v = inp.value; if (!v) return;
+    if (await checkLockPass(v)) { el.remove(); onOk && onOk(); }
+    else { inp.value = ''; el.querySelector('#lerr').textContent = 'Şifre yanlış'; el.querySelector('form').classList.add('shake'); setTimeout(() => el.querySelector('form')?.classList.remove('shake'), 400); }
   };
-  draw(); document.body.append(el);
+  el.querySelector('#lforgot').onclick = () => {
+    el.querySelector('#lerr').innerHTML = `<span class="muted">Kilit şifresi sadece bu cihazda. Unuttuysan bu cihazdaki verileri silip ${Sync.on() ? 'buluttan geri yükleyebilirsin (şifreleme şifren gerekir)' : 'baştan başlayabilirsin — yedeğin varsa geri yükleyebilirsin'}.</span><br><button type="button" class="btn danger sm" id="lreset" style="margin-top:10px">Bu cihazı sıfırla</button>`;
+    el.querySelector('#lreset').onclick = async () => {
+      if (!confirmReset) { confirmReset = true; el.querySelector('#lreset').textContent = 'Emin misin? Tekrar bas'; return; }
+      await Store.set('state', null); await Store.set('meta', null); await Sync.signOut(); location.reload();
+    };
+  };
+  let confirmReset = false;
 }

@@ -323,9 +323,24 @@ function importData() {
   s.sh.querySelector('#ig').onclick = () => apply(s.sh.querySelector('#it').value);
 }
 function setPin() {
-  let a = ''; const s = openSheet({ title: S.settings.pin ? 'Şifreyi değiştir' : 'Şifre koy', left: 'Vazgeç', right: 'Kaydet', body: `<div class="field"><label>4 haneli şifre</label><input id="p1" inputmode="numeric" maxlength="4" type="password"></div><div class="field"><label>Tekrar</label><input id="p2" inputmode="numeric" maxlength="4" type="password"></div>${S.settings.pin ? '<button class="btn danger full" id="p0">Şifreyi kaldır</button>' : ''}`,
-    onRight: sh => { const p1 = sh.querySelector('#p1').value, p2 = sh.querySelector('#p2').value; if (!/^\d{4}$/.test(p1)) { toast('4 rakam gir'); return false; } if (p1 !== p2) { toast('Şifreler aynı değil'); return false; } S.settings.pin = p1; save(); render(); toast('Şifre kondu'); } });
-  const z = s.sh.querySelector('#p0'); if (z) z.onclick = () => { S.settings.pin = ''; save(); closeSheet(s); render(); toast('Şifre kaldırıldı'); };
+  const s = openSheet({ title: hasLock() ? 'Şifreyi değiştir' : 'Şifre koy', left: 'Vazgeç', right: 'Kaydet',
+    body: `<p class="small muted" style="margin-top:0">4–20 karakter; harf, rakam ve işaret kullanabilirsin. Büyük-küçük harf fark eder.</p>
+    <div class="field"><label>Yeni şifre</label><input id="p1" type="password" maxlength="20" autocomplete="new-password"></div>
+    <div class="field"><label>Tekrar</label><input id="p2" type="password" maxlength="20" autocomplete="new-password"></div>
+    <div class="small" id="pstr" style="margin:-4px 0 12px"></div>
+    ${hasLock() ? '<button class="btn danger full" id="p0">Şifreyi kaldır</button>' : ''}`,
+    onRight: sh => {
+      const p1 = sh.querySelector('#p1').value, p2 = sh.querySelector('#p2').value;
+      if (p1.length < 4 || p1.length > 20) { toast('Şifre 4–20 karakter olmalı'); return false; }
+      if (p1 !== p2) { toast('Şifreler aynı değil'); return false; }
+      setLockPass(p1).then(() => { render(); toast('🔒 Şifre kondu'); });
+    } });
+  const str = s.sh.querySelector('#pstr');
+  s.sh.querySelector('#p1').oninput = e => {
+    const v = e.target.value; let sc = 0; if (v.length >= 8) sc++; if (/[a-zçğıöşü]/.test(v) && /[A-ZÇĞİÖŞÜ]/.test(v)) sc++; if (/\d/.test(v)) sc++; if (/[^A-Za-z0-9çğıöşüÇĞİÖŞÜ]/.test(v)) sc++;
+    str.innerHTML = v ? `Güç: <b style="color:${['var(--bad)', 'var(--bad)', 'var(--warn)', 'var(--ok)', 'var(--ok)'][sc]}">${['Çok zayıf', 'Zayıf', 'Orta', 'İyi', 'Güçlü'][sc]}</b> · ${v.length}/20` : '';
+  };
+  const z = s.sh.querySelector('#p0'); if (z) z.onclick = () => { setLockPass(''); closeSheet(s); render(); toast('Şifre kaldırıldı'); };
 }
 Pages.settings = () => {
   const st = S.settings; const lb = st.lastBackup ? daysBetween(st.lastBackup, today()) : null;
@@ -334,7 +349,7 @@ Pages.settings = () => {
   <div class="card"><h3>Profil</h3><div class="field"><label>Adın</label><input value="${esc(st.name)}" onchange="S.settings.name=this.value.trim();save()" placeholder="Sana nasıl hitap edeyim?"></div></div>
   <div class="card"><h3>Görünüm</h3><div class="seg">${[['auto', 'Otomatik'], ['light', 'Açık'], ['dark', 'Koyu']].map(([k, l]) => `<button class="${st.theme === k ? 'on' : ''}" onclick="S.settings.theme='${k}';save();render()">${l}</button>`).join('')}</div>
     <div class="small muted" style="margin-bottom:8px">Renk</div><div class="swatches">${ACCENTS.map(c => `<button style="background:${c}" class="${st.accent === c ? 'on' : ''}" onclick="S.settings.accent='${c}';save();render()"></button>`).join('')}</div></div>
-  <div class="card"><h3>Gizlilik</h3><div class="row between"><div><div class="b">Uygulama şifresi</div><div class="small muted">${st.pin ? 'Açık — her açılışta sorulur' : 'Kapalı'}</div></div><button class="btn plain sm" onclick="setPin()">${st.pin ? 'Değiştir' : 'Şifre koy'}</button></div></div>
+  <div class="card"><h3>Gizlilik</h3><div class="row between"><div><div class="b">Uygulama şifresi</div><div class="small muted">${hasLock() ? 'Açık — her açılışta ve 1 dk sonra sorulur' : 'Kapalı'}</div></div><button class="btn plain sm" onclick="setPin()">${hasLock() ? 'Değiştir' : 'Şifre koy'}</button></div></div>
   <div class="card"><h3>Spor</h3><div class="row between"><div class="b">Setler arası dinlenme</div><select style="width:auto" onchange="S.settings.rest=+this.value;save()">${[45, 60, 90, 120, 150, 180, 240].map(v => `<option value="${v}" ${st.rest === v ? 'selected' : ''}>${v < 60 ? v + ' sn' : (v / 60).toLocaleString('tr-TR') + ' dk'}</option>`).join('')}</select></div></div>
   ${syncCard()}
   <div class="card"><h3>Yedekleme</h3><div class="small muted" style="margin-bottom:10px">${Sync.on() ? `Verilerin şifreli olarak bulutta da duruyor (${used} MB). Yine de ara sıra ek yedek alıp iCloud Drive'a kaydetmek iyi olur.` : `Tüm verilerin sadece bu cihazda duruyor (${used} MB). Kaybolmasın diye ara sıra yedek al ve iCloud Drive'a kaydet — ya da senkronizasyonu aç.`}<br><b style="color:${lb === null || lb > 7 ? 'var(--warn)' : 'var(--ok)'}">${lb === null ? 'Henüz hiç yedek alınmadı' : lb === 0 ? 'Son yedek: bugün' : 'Son yedek: ' + lb + ' gün önce'}</b></div>
