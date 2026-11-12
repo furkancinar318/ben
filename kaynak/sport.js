@@ -4,7 +4,7 @@ const FULL_SETS = 8; // bir kas için ~8 efektif set = tam yorgunluk
 function exThumb(ex) {
   if (!ex) return '<div class="ex-thumb"></div>';
   const ph = exPhoto(ex);
-  if (ph) return `<div class="ex-thumb"><img src="${ph}" alt=""></div>`;
+  if (ph) return `<div class="ex-thumb"><img src="${ph}" alt="" loading="lazy" onerror="this.remove()"></div>`;
   const v = {}; ex.s.forEach(k => v[k] = .5); ex.p.forEach(k => v[k] = 1);
   const BACK = ['lats', 'triceps', 'lowback', 'glutes', 'hams', 'rdelt', 'traps_up', 'traps_mid'], LOW = ['quads', 'hams', 'glutes', 'calves', 'adductors'];
   const back = ex.p.filter(k => BACK.includes(k)).length > ex.p.filter(k => !BACK.includes(k) && !['calves', 'sdelt', 'forearm'].includes(k)).length;
@@ -21,77 +21,11 @@ function muscleBars(vals, unit = '') {
 const LEGEND = `<div class="legend"><span><i style="background:${heat(.15)}"></i>Hafif</span><span><i style="background:${heat(.5)}"></i>Orta</span><span><i style="background:${heat(.75)}"></i>Yüksek</span><span><i style="background:${heat(1)}"></i>Çok yüksek</span></div>`;
 
 /* ===== Hareket kütüphanesi ===== */
-const E = (id, name, p, s = [], cat = '') => ({ id: 'b_' + id, name, p, s, cat, builtin: true });
-const BUILTIN_EX = [
-  E('bench', 'Bench Press', ['chest_mid'], ['chest_up', 'chest_low', 'fdelt', 'triceps'], 'Göğüs'),
-  E('dbpress', 'Dumbbell Bench Press', ['chest_mid'], ['chest_up', 'chest_low', 'fdelt', 'triceps'], 'Göğüs'),
-  E('incbb', 'Incline Bench Press', ['chest_up'], ['fdelt', 'triceps', 'chest_mid'], 'Göğüs'),
-  E('incdb', 'Incline Dumbbell Press', ['chest_up'], ['fdelt', 'triceps', 'chest_mid'], 'Göğüs'),
-  E('incfly', 'Incline Dumbbell Fly', ['chest_up'], ['fdelt'], 'Göğüs'),
-  E('lowhigh', 'Low-to-High Cable Fly', ['chest_up'], ['fdelt', 'chest_mid'], 'Göğüs'),
-  E('decline', 'Decline Bench Press', ['chest_low'], ['chest_mid', 'triceps'], 'Göğüs'),
-  E('fly', 'Dumbbell Fly', ['chest_mid'], ['chest_up', 'chest_low', 'fdelt'], 'Göğüs'),
-  E('pecdeck', 'Pec Deck (Makine Fly)', ['chest_mid'], ['fdelt'], 'Göğüs'),
-  E('cross', 'Cable Crossover (yukarıdan aşağı)', ['chest_low'], ['chest_mid'], 'Göğüs'),
-  E('chpress', 'Chest Press Makine', ['chest_mid'], ['chest_low', 'fdelt', 'triceps'], 'Göğüs'),
-  E('pushup', 'Şınav', ['chest_mid'], ['chest_low', 'triceps', 'fdelt', 'abs_up'], 'Göğüs'),
-  E('dips', 'Dips', ['chest_low', 'triceps'], ['fdelt', 'chest_mid'], 'Göğüs'),
-  E('pullup', 'Barfiks', ['lats'], ['biceps', 'rdelt', 'forearm', 'traps_mid'], 'Sırt'),
-  E('latpd', 'Lat Pulldown', ['lats'], ['biceps', 'rdelt', 'traps_mid'], 'Sırt'),
-  E('bbrow', 'Barbell Row', ['lats', 'traps_mid'], ['rdelt', 'biceps', 'lowback'], 'Sırt'),
-  E('cabrow', 'Seated Cable Row', ['traps_mid', 'lats'], ['biceps', 'rdelt'], 'Sırt'),
-  E('dbrow', 'Tek Kol Dumbbell Row', ['lats'], ['traps_mid', 'rdelt', 'biceps'], 'Sırt'),
-  E('tbar', 'T-Bar Row', ['traps_mid', 'lats'], ['rdelt', 'biceps', 'lowback'], 'Sırt'),
-  E('pullover', 'Straight-Arm Pulldown', ['lats'], ['triceps', 'serratus'], 'Sırt'),
-  E('dead', 'Deadlift', ['lowback', 'glutes', 'hams'], ['traps_up', 'forearm', 'quads', 'lats'], 'Sırt'),
-  E('hyper', 'Hyperextension', ['lowback'], ['glutes', 'hams'], 'Sırt'),
-  E('shrug', 'Shrug', ['traps_up'], ['forearm'], 'Sırt'),
-  E('facepull', 'Face Pull', ['rdelt'], ['traps_mid', 'sdelt'], 'Omuz'),
-  E('ohp', 'Overhead Press', ['fdelt'], ['sdelt', 'triceps', 'traps_up', 'chest_up'], 'Omuz'),
-  E('dbsp', 'Dumbbell Shoulder Press', ['fdelt'], ['sdelt', 'triceps'], 'Omuz'),
-  E('arnold', 'Arnold Press', ['fdelt', 'sdelt'], ['triceps'], 'Omuz'),
-  E('lat', 'Lateral Raise', ['sdelt'], ['traps_up'], 'Omuz'),
-  E('cablelat', 'Cable Lateral Raise', ['sdelt'], [], 'Omuz'),
-  E('front', 'Front Raise', ['fdelt'], ['sdelt', 'chest_up'], 'Omuz'),
-  E('revfly', 'Reverse Fly', ['rdelt'], ['traps_mid'], 'Omuz'),
-  E('uprow', 'Upright Row', ['sdelt', 'traps_up'], ['biceps'], 'Omuz'),
-  E('bbcurl', 'Barbell Curl', ['biceps'], ['forearm'], 'Kol'),
-  E('dbcurl', 'Dumbbell Curl', ['biceps'], ['forearm'], 'Kol'),
-  E('hammer', 'Hammer Curl', ['biceps', 'forearm'], [], 'Kol'),
-  E('preacher', 'Preacher Curl', ['biceps'], [], 'Kol'),
-  E('cabcurl', 'Cable Curl', ['biceps'], ['forearm'], 'Kol'),
-  E('pushdown', 'Triceps Pushdown', ['triceps'], [], 'Kol'),
-  E('skull', 'Skull Crusher', ['triceps'], [], 'Kol'),
-  E('ohext', 'Overhead Triceps Extension', ['triceps'], [], 'Kol'),
-  E('cgbench', 'Close-Grip Bench Press', ['triceps'], ['chest_mid', 'fdelt'], 'Kol'),
-  E('wrist', 'Wrist Curl', ['forearm'], [], 'Kol'),
-  E('squat', 'Squat', ['quads', 'glutes'], ['hams', 'lowback', 'adductors'], 'Bacak'),
-  E('front_sq', 'Front Squat', ['quads'], ['glutes', 'abs_up'], 'Bacak'),
-  E('hack', 'Hack Squat', ['quads'], ['glutes'], 'Bacak'),
-  E('legpress', 'Leg Press', ['quads', 'glutes'], ['hams', 'adductors'], 'Bacak'),
-  E('legext', 'Leg Extension', ['quads'], [], 'Bacak'),
-  E('legcurl', 'Leg Curl', ['hams'], ['calves'], 'Bacak'),
-  E('rdl', 'Romanian Deadlift', ['hams', 'glutes'], ['lowback', 'forearm'], 'Bacak'),
-  E('lunge', 'Lunge', ['quads', 'glutes'], ['hams', 'adductors'], 'Bacak'),
-  E('bulgar', 'Bulgarian Split Squat', ['quads', 'glutes'], ['hams', 'adductors'], 'Bacak'),
-  E('hipthrust', 'Hip Thrust', ['glutes'], ['hams'], 'Bacak'),
-  E('adduct', 'Adductor Makine', ['adductors'], [], 'Bacak'),
-  E('abduct', 'Abductor Makine', ['glutes'], [], 'Bacak'),
-  E('calf', 'Calf Raise (Ayakta)', ['calves'], [], 'Bacak'),
-  E('seatcalf', 'Calf Raise (Oturarak)', ['calves'], [], 'Bacak'),
-  E('crunch', 'Crunch', ['abs_up'], [], 'Karın'),
-  E('cabcrunch', 'Cable Crunch', ['abs_up'], ['abs_low', 'obliques'], 'Karın'),
-  E('plank', 'Plank', ['abs_up', 'abs_low'], ['obliques', 'lowback'], 'Karın'),
-  E('legraise', 'Leg Raise', ['abs_low'], ['abs_up', 'obliques'], 'Karın'),
-  E('revcrunch', 'Reverse Crunch', ['abs_low'], ['abs_up'], 'Karın'),
-  E('twist', 'Russian Twist', ['obliques'], ['abs_up'], 'Karın'),
-  E('woodchop', 'Cable Woodchop', ['obliques'], ['abs_up', 'serratus'], 'Karın'),
-  E('abwheel', 'Ab Wheel', ['abs_up', 'abs_low'], ['lats', 'obliques', 'serratus'], 'Karın'),
-];
 const EX_CATS = ['Göğüs', 'Sırt', 'Omuz', 'Kol', 'Bacak', 'Karın', 'Kendi'];
 const allEx = () => [...BUILTIN_EX, ...S.workout.exercises];
 const exById = id => BUILTIN_EX.find(e => e.id === id) || S.workout.exercises.find(e => e.id === id);
-const exPhoto = ex => ex.builtin ? (S.workout.exPhotos || {})[ex.id] : ex.img;
+const exPhoto = ex => ex.builtin ? (S.workout.exPhotos || {})[ex.id] || (ex.img ? `img/${ex.id.slice(2)}_0.jpg` : '') : ex.img;
+const exUserPhoto = ex => ex.builtin ? (S.workout.exPhotos || {})[ex.id] : ex.img;
 
 /* ===== Yük ve toparlanma hesapları ===== */
 function dayLoad(items) {
@@ -289,17 +223,25 @@ Pages.exlib = () => {
 Pages.ex = id => {
   const ex = exById(id); if (!ex) return Pages.exlib();
   const v = {}; ex.s.forEach(k => v[k] = .5); ex.p.forEach(k => v[k] = 1);
-  const h = exHistory(id); const ph = exPhoto(ex);
+  const h = exHistory(id); const up = exUserPhoto(ex);
   const pr = h.length ? Math.max(...h.map(p => p.best)) : 0;
   const e1 = h.length ? Math.max(...h.map(p => p.e1rm)) : 0;
+  const base = ex.builtin && ex.img ? `img/${ex.id.slice(2)}_` : '';
+  const photos = base ? `<div class="exanim"><img src="${base}0.jpg" alt=""><img src="${base}1.jpg" alt="" class="b"></div><div class="tiny muted" style="text-align:center;margin-top:6px">Başlangıç ⇄ bitiş pozisyonu</div>` : '';
+  const list = (arr, cls) => arr && arr.length && arr[0] ? `<ol class="${cls}">${arr.map(x => `<li>${esc(x)}</li>`).join('')}</ol>` : '';
   return header(esc(ex.name), ex.builtin ? ex.cat : 'Kendi hareketin', !ex.builtin ? `<button class="icon-btn" onclick="editExercise('${ex.id}')">✎</button>` : '') + `
-  <div class="card"><div class="row" style="align-items:flex-start"><div class="body-map grow">${bodySVG(v, { mode: 'hi' })}</div>${ph ? `<img src="${ph}" style="width:42%;border-radius:14px;object-fit:cover;aspect-ratio:3/4">` : ''}</div>
-    <div style="margin-top:10px">${ex.p.map(k => `<span class="chip p" style="display:inline-block;margin:0 6px 6px 0">${MUSCLES[k]}</span>`).join('')}${ex.s.map(k => `<span class="chip s" style="display:inline-block;margin:0 6px 6px 0">${MUSCLES[k]}</span>`).join('')}</div>
-    <div class="tiny muted">Koyu: ana kas · Açık: yardımcı kas</div>
-    <button class="btn plain sm" style="margin-top:10px" onclick="setExPhoto('${ex.id}')">📷 ${ph ? 'Fotoğrafı değiştir' : 'Kendi fotoğrafını / formunu ekle'}</button></div>
+  ${photos ? `<div class="card" style="padding:10px">${photos}</div>` : ''}
+  ${up ? `<div class="card" style="padding:10px"><img src="${up}" style="width:100%;border-radius:14px;display:block"><div class="tiny muted" style="text-align:center;margin-top:6px">Senin fotoğrafın</div></div>` : ''}
+  <div class="card"><h3>Çalışan kaslar</h3><div class="row" style="align-items:center"><div class="body-map" style="width:52%">${bodySVG(v, { mode: 'hi', labels: false, vb: VB.bothNoLabel })}</div>
+    <div class="grow">${ex.p.map(k => `<div class="chip p" style="display:inline-block;margin:0 6px 6px 0">${MUSCLES[k]}</div>`).join('')}${ex.s.map(k => `<div class="chip s" style="display:inline-block;margin:0 6px 6px 0">${MUSCLES[k]}</div>`).join('')}<div class="tiny muted">Koyu: ana kas<br>Açık: yardımcı kas</div></div></div></div>
+  ${ex.how ? `<div class="card"><h3>📋 Nasıl yapılır</h3>${list(ex.how, 'steps')}</div>` : ''}
+  ${ex.tips ? `<div class="card"><h3>💡 Püf noktaları</h3>${list(ex.tips, 'ticks')}</div>` : ''}
+  ${ex.warn ? `<div class="card warnc"><h3>⚠️ Dikkat</h3>${list(ex.warn, 'warns')}</div>` : ''}
+  <button class="btn plain sm full" style="margin-bottom:12px" onclick="setExPhoto('${ex.id}')">📷 ${up ? 'Kendi fotoğrafını değiştir' : 'Kendi fotoğrafını / formunu ekle'}</button>
   <div class="grid2"><div class="card"><div class="small muted">En iyi ağırlık</div><div class="kpi">${pr ? r1(pr) + ' kg' : '—'}</div></div><div class="card"><div class="small muted">Tahmini 1 tekrar max</div><div class="kpi">${e1 ? r1(e1) + ' kg' : '—'}</div></div></div>
   <div class="card"><h3>Ağırlık gelişimi</h3>${lineChart(h.map(p => ({ x: fmtDate(p.date, { day: 'numeric', month: 'short' }), y: p.best })), { unit: 'kg' })}</div>
-  <div class="card tight"><h3 style="padding:12px 16px 0">Son seanslar</h3>${h.length ? h.slice(-8).reverse().map(p => `<div class="list-item"><div class="grow"><div class="b small">${fmtDate(p.date, { day: 'numeric', month: 'long', weekday: 'short' })}</div><div class="small muted">${p.sets.map(s => `${s.w || 0} kg × ${s.r || 0}`).join(' · ')}</div></div><div class="small b">${Math.round(p.vol)} kg</div></div>`).join('') : '<div class="empty">Henüz kayıt yok</div>'}</div>`;
+  <div class="card tight"><h3 style="padding:12px 16px 0">Son seanslar</h3>${h.length ? h.slice(-8).reverse().map(p => `<div class="list-item"><div class="grow"><div class="b small">${fmtDate(p.date, { day: 'numeric', month: 'long', weekday: 'short' })}</div><div class="small muted">${p.sets.map(s => `${s.w || 0} kg × ${s.r || 0}`).join(' · ')}</div></div><div class="small b">${Math.round(p.vol)} kg</div></div>`).join('') : '<div class="empty">Henüz kayıt yok</div>'}</div>
+  ${base ? '<div class="tiny muted" style="text-align:center">Fotoğraflar: free-exercise-db (kamu malı)</div>' : ''}`;
 };
 function setExPhoto(id) {
   const ex = exById(id);

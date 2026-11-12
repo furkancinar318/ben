@@ -162,3 +162,13 @@ input[type=checkbox]{width:auto}
 .chart svg{width:100%;height:auto;display:block}
 .hr{height:1px;background:var(--line);margin:12px 0}
 a{color:var(--accent)}
+
+.exanim{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:3/2;background:var(--card-2)}
+.exanim img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.exanim img.b{animation:exfade 2.4s infinite}
+@keyframes exfade{0%,40%{opacity:0}50%,90%{opacity:1}100%{opacity:0}}
+ol.steps,ol.ticks,ol.warns{margin:0;padding-left:22px;line-height:1.5;font-size:15px}
+ol.steps li,ol.ticks li,ol.warns li{margin:6px 0;padding-left:2px}
+ol.ticks{list-style:none;padding-left:0} ol.ticks li:before{content:"✓ ";color:var(--ok);font-weight:800}
+ol.warns{list-style:none;padding-left:0} ol.warns li:before{content:"• ";color:var(--bad);font-weight:800}
+.warnc{background:rgba(255,77,94,.07);border:1px solid rgba(255,77,94,.18)}
