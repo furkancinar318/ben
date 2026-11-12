@@ -13,7 +13,7 @@ Pages.today = () => {
   let sport;
   if (W.active) sport = `<div class="row"><div class="grow"><div class="b">${esc(W.active.name)}</div><div class="small muted">Devam eden antrenman</div></div><button class="btn sm" onclick="setTab('sport');go('session')">Devam et</button></div>`;
   else if (doneToday) sport = `<div class="row"><span style="font-size:28px">✅</span><div class="grow"><div class="b">${esc(doneToday.name)} tamamlandı</div><div class="small muted">${doneToday.entries.reduce((a, e) => a + e.sets.length, 0)} set · ${doneToday.min || 0} dk</div></div></div>`;
-  else if (tDay) sport = `<div class="row"><div class="ex-thumb mini">${bodySVG(dayLoad(tDay.items), { labels: false })}</div><div class="grow"><div class="b">${esc(tDay.name)}</div><div class="small muted">${tDay.items.length} hareket</div></div><button class="btn sm" onclick="startSession('${tDay.id}')">Başla</button></div>`;
+  else if (tDay) sport = `<div class="row"><div class="ex-thumb mini">${bodySVG(dayLoad(tDay.items), { labels: false, vb: VB.bothNoLabel })}</div><div class="grow"><div class="b">${esc(tDay.name)}</div><div class="small muted">${tDay.items.length} hareket</div></div><button class="btn sm" onclick="startSession('${tDay.id}')">Başla</button></div>`;
   else sport = `<div class="row"><span style="font-size:26px">😌</span><div class="grow"><div class="b">Bugün dinlenme günü</div><div class="small muted">${W.days.length ? 'Programında bugüne gün atanmamış' : 'Spor programını ekleyince burada görünür'}</div></div></div>`;
   // diyet
   const T = S.diet.targets, t = dayTotals(k), water = S.diet.water[k] || 0;

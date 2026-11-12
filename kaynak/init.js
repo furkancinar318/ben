@@ -4,6 +4,7 @@
   await Sync.load();
   const saved = await Store.get('state');
   if (saved) S = merge(DEFAULT_STATE(), saved);
+  S.workout.exercises.forEach(e => { e.p = normMuscles(e.p); e.s = normMuscles(e.s).filter(k => !e.p.includes(k)); });
   try { navigator.storage && navigator.storage.persist && navigator.storage.persist(); } catch (e) {}
   if (S.workout.active) route = { tab: 'sport', page: 'session', arg: null }, navStack = [{ tab: 'sport', page: 'sport' }];
   render();

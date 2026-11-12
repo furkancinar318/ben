@@ -2,12 +2,12 @@
   --accent:#6C63FF; --accent-2:#8B85FF; --accent-soft:rgba(108,99,255,.14);
   --bg:#F2F2F7; --card:#FFFFFF; --card-2:#F7F7FA; --text:#111114; --muted:#8A8A93; --line:rgba(0,0,0,.08);
   --ok:#30C26B; --warn:#FFB020; --bad:#FF4D5E; --tab:rgba(255,255,255,.82);
-  --muscle-off:#E3E3EA; --body:#EDEDF2; --shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.05);
+  --muscle-off:#C4C4D0; --body:#DEDEE6; --body-line:#FFFFFF; --shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.05);
   --r:18px; --safe-t:env(safe-area-inset-top,0px); --safe-b:env(safe-area-inset-bottom,0px);
 }
 html[data-theme=dark]{
   --bg:#0B0B0F; --card:#17171D; --card-2:#202028; --text:#F4F4F7; --muted:#8C8C98; --line:rgba(255,255,255,.08);
-  --tab:rgba(20,20,26,.82); --muscle-off:#2A2A33; --body:#22222A; --shadow:none;
+  --tab:rgba(20,20,26,.82); --muscle-off:#474754; --body:#2B2B35; --body-line:#17171D; --shadow:none;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",system-ui,sans-serif;font-size:16px;-webkit-font-smoothing:antialiased}

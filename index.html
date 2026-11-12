@@ -15,12 +15,12 @@
   --accent:#6C63FF; --accent-2:#8B85FF; --accent-soft:rgba(108,99,255,.14);
   --bg:#F2F2F7; --card:#FFFFFF; --card-2:#F7F7FA; --text:#111114; --muted:#8A8A93; --line:rgba(0,0,0,.08);
   --ok:#30C26B; --warn:#FFB020; --bad:#FF4D5E; --tab:rgba(255,255,255,.82);
-  --muscle-off:#E3E3EA; --body:#EDEDF2; --shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.05);
+  --muscle-off:#C4C4D0; --body:#DEDEE6; --body-line:#FFFFFF; --shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.05);
   --r:18px; --safe-t:env(safe-area-inset-top,0px); --safe-b:env(safe-area-inset-bottom,0px);
 }
 html[data-theme=dark]{
   --bg:#0B0B0F; --card:#17171D; --card-2:#202028; --text:#F4F4F7; --muted:#8C8C98; --line:rgba(255,255,255,.08);
-  --tab:rgba(20,20,26,.82); --muscle-off:#2A2A33; --body:#22222A; --shadow:none;
+  --tab:rgba(20,20,26,.82); --muscle-off:#474754; --body:#2B2B35; --body-line:#17171D; --shadow:none;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",system-ui,sans-serif;font-size:16px;-webkit-font-smoothing:antialiased}
@@ -623,73 +623,124 @@ function syncCard() {
   : `<button class="btn full" onclick="${Sync.cfg?.refresh ? 'passSetup()' : 'syncSetup()'}">Senkronizasyonu aç</button>`}</div>`;
 }
 
-/* ===== Kaslar ve vücut haritası ===== */
+/* ===== Anatomik vücut haritası ===== */
 const MUSCLES = {
-  chest: 'Göğüs', fdelt: 'Ön omuz', sdelt: 'Yan omuz', rdelt: 'Arka omuz', biceps: 'Biceps', triceps: 'Triceps',
-  forearm: 'Ön kol', abs: 'Karın', obliques: 'Yan karın', traps: 'Trapez', lats: 'Kanat (lat)', lowback: 'Bel',
+  chest_up: 'Üst göğüs', chest_mid: 'Orta göğüs', chest_low: 'Alt göğüs',
+  fdelt: 'Ön omuz', sdelt: 'Yan omuz', rdelt: 'Arka omuz',
+  biceps: 'Biceps', triceps: 'Triceps', forearm: 'Ön kol',
+  abs_up: 'Üst karın', abs_low: 'Alt karın', obliques: 'Yan karın', serratus: 'Serratus',
+  traps_up: 'Üst trapez', traps_mid: 'Orta sırt', lats: 'Kanat (lat)', lowback: 'Bel',
   glutes: 'Kalça', quads: 'Ön bacak', hams: 'Arka bacak', adductors: 'İç bacak', calves: 'Baldır'
 };
-const REC_H = { chest: 72, lats: 72, quads: 72, hams: 72, glutes: 72, lowback: 72, traps: 60 }; // diğerleri 48 saat
-const FULL_SETS = 8; // bir kas için ~8 efektif set = tam yorgunluk
-const SHAPES = {
-  chest: [['e', 40, 45, 10, 8], ['e', 60, 45, 10, 8]],
-  fdelt: [['e', 27, 38, 6.5, 6.5], ['e', 73, 38, 6.5, 6.5]],
-  sdelt: [['e', 20.5, 41, 3.5, 6], ['e', 79.5, 41, 3.5, 6], ['e', 120.5, 41, 3.5, 6], ['e', 179.5, 41, 3.5, 6]],
-  biceps: [['e', 23, 56, 4.8, 11], ['e', 77, 56, 4.8, 11]],
-  forearm: [['e', 19.5, 85, 4.6, 13], ['e', 80.5, 85, 4.6, 13], ['e', 119.5, 85, 4.6, 13], ['e', 180.5, 85, 4.6, 13]],
-  abs: [['r', 43, 56, 14, 32, 4]],
-  obliques: [['e', 34.5, 70, 4, 12], ['e', 65.5, 70, 4, 12]],
-  quads: [['e', 40, 123, 7.5, 22], ['e', 60, 123, 7.5, 22]],
-  adductors: [['e', 47.2, 108, 2.6, 9], ['e', 52.8, 108, 2.6, 9]],
-  calves: [['e', 40, 176, 4.6, 14], ['e', 60, 176, 4.6, 14], ['e', 140, 174, 6, 15], ['e', 160, 174, 6, 15]],
-  traps: [['e', 42, 31, 5, 2.6], ['e', 58, 31, 5, 2.6], ['p', '150,26 163,35 150,60 137,35']],
-  rdelt: [['e', 127, 38, 6.5, 6.5], ['e', 173, 38, 6.5, 6.5]],
-  lats: [['e', 139, 58, 7.5, 15], ['e', 161, 58, 7.5, 15]],
-  triceps: [['e', 123, 56, 4.8, 11], ['e', 177, 56, 4.8, 11]],
-  lowback: [['r', 144, 68, 12, 20, 4]],
-  glutes: [['e', 140.5, 100, 9.5, 9], ['e', 159.5, 100, 9.5, 9]],
-  hams: [['e', 140, 131, 7.5, 21], ['e', 160, 131, 7.5, 21]],
-};
-function baseBody(ox) {
-  const R = (x, y, w, h, rx) => `<rect x="${x + ox}" y="${y}" width="${w}" height="${h}" rx="${rx}"/>`;
-  return `<g fill="var(--body)">
-  <circle cx="${50 + ox}" cy="14" r="10"/>${R(45, 22, 10, 9, 3)}${R(29, 31, 42, 64, 12)}
-  ${R(17, 34, 12, 37, 6)}${R(71, 34, 12, 37, 6)}${R(14, 69, 11, 37, 5)}${R(75, 69, 11, 37, 5)}
-  <circle cx="${19.5 + ox}" cy="109" r="4.5"/><circle cx="${80.5 + ox}" cy="109" r="4.5"/>
-  ${R(31, 86, 38, 20, 8)}${R(31, 96, 18, 62, 8)}${R(51, 96, 18, 62, 8)}${R(33, 156, 14, 50, 6)}${R(53, 156, 14, 50, 6)}
-  <ellipse cx="${40 + ox}" cy="207" rx="7" ry="3.5"/><ellipse cx="${60 + ox}" cy="207" rx="7" ry="3.5"/></g>`;
+const OLD_MUSCLE = { chest: 'chest_mid', traps: 'traps_up', abs: 'abs_up' };
+const normMuscles = arr => [...new Set((arr || []).map(k => OLD_MUSCLE[k] || k).filter(k => MUSCLES[k]))];
+
+/* Noktalardan yumuşak kapalı eğri (Catmull-Rom → Bezier) */
+function smoothPath(pts, t = 1) {
+  const n = pts.length; const f = v => v.toFixed(1);
+  let d = `M${f(pts[0][0])},${f(pts[0][1])}`;
+  for (let i = 0; i < n; i++) {
+    const p0 = pts[(i - 1 + n) % n], p1 = pts[i], p2 = pts[(i + 1) % n], p3 = pts[(i + 2) % n];
+    const c1 = [p1[0] + (p2[0] - p0[0]) / 6 * t, p1[1] + (p2[1] - p0[1]) / 6 * t];
+    const c2 = [p2[0] - (p3[0] - p1[0]) / 6 * t, p2[1] - (p3[1] - p1[1]) / 6 * t];
+    d += `C${f(c1[0])},${f(c1[1])} ${f(c2[0])},${f(c2[1])} ${f(p2[0])},${f(p2[1])}`;
+  }
+  return d + 'Z';
 }
+/* Gövdenin sol yarısı (x ≤ 100); sağ yarı aynalanır */
+const SIL = [[100, 12], [88, 16], [81, 34], [83, 52], [89, 62], [89, 76], [76, 84], [60, 88], [47, 95], [39, 110], [36, 130], [34, 155], [32, 178],
+  [28, 196], [25, 220], [26, 245], [28, 258], [24, 272], [27, 290], [34, 296], [40, 288], [42, 270], [44, 256], [50, 232], [54, 205], [56, 186],
+  [58, 160], [61, 138], [63, 150], [64, 180], [67, 212], [66, 232], [62, 252], [60, 280], [61, 320], [64, 355], [66, 378], [63, 400],
+  [64, 430], [68, 458], [70, 474], [62, 486], [66, 494], [88, 494], [92, 484], [89, 470], [92, 440], [95, 405], [94, 380], [96, 350], [99, 300], [100, 276]];
+const SIL_D = (() => { const L = SIL, R = [...SIL].reverse().map(([x, y]) => [200 - x, y]); return smoothPath([...L, ...R.slice(1, -1)], .9); })();
+const HEAD_D = smoothPath([[100, 8], [86, 13], [80, 30], [82, 50], [90, 62], [100, 66], [110, 62], [118, 50], [120, 30], [114, 13]]);
+
+/* Kas şekilleri: [kas, görünüm(f/b), noktalar] — sol yarı */
+const MSHAPES = [
+  // ÖN
+  ['traps_up', 'f', [[90, 70], [76, 84], [86, 87], [93, 82]]],
+  ['chest_up', 'f', [[99.5, 92], [86, 89], [72, 91], [62, 98], [60, 108], [80, 110], [99.5, 111]]],
+  ['chest_mid', 'f', [[99.5, 113], [80, 112], [59, 110], [57, 122], [62, 131], [82, 132], [99.5, 130]]],
+  ['chest_low', 'f', [[99.5, 132], [82, 134], [63, 133], [67, 143], [79, 151], [93, 153], [99.5, 149]]],
+  ['fdelt', 'f', [[70, 92], [60, 89], [50, 96], [47, 110], [50, 124], [57, 122], [64, 108], [66, 99]]],
+  ['sdelt', 'f', [[56, 89], [46, 95], [40, 109], [40, 124], [46, 126], [48, 110], [52, 97]]],
+  ['biceps', 'f', [[50, 128], [57, 128], [59, 145], [57, 166], [52, 180], [45, 178], [42, 158], [44, 138]]],
+  ['forearm', 'f', [[45, 184], [54, 190], [52, 212], [46, 238], [39, 252], [31, 250], [29, 228], [33, 202], [38, 188]]],
+  ['serratus', 'f', [[62, 134], [68, 140], [71, 152], [69, 163], [65, 160], [63, 146]]],
+  ['obliques', 'f', [[73, 154], [84, 157], [85, 180], [84, 208], [78, 228], [69, 231], [67, 208], [67, 180], [70, 164]]],
+  ['abs_up', 'f', [[87, 156], [98.5, 156], [98.5, 171], [87, 172]]],
+  ['abs_up', 'f', [[87, 174], [98.5, 173], [98.5, 188], [87, 189]]],
+  ['abs_low', 'f', [[87, 191], [98.5, 190], [98.5, 205], [87, 206]]],
+  ['abs_low', 'f', [[87, 208], [98.5, 207], [98.5, 242], [94, 238], [88, 226]]],
+  ['quads', 'f', [[63, 258], [76, 266], [79, 300], [78, 340], [73, 368], [65, 362], [61, 330], [60, 290]]],
+  ['quads', 'f', [[79, 262], [93, 266], [94, 300], [91, 336], [85, 360], [80, 350], [79, 310], [77, 280]]],
+  ['quads', 'f', [[90, 334], [95, 344], [95, 366], [89, 374], [83, 366], [86, 350]]],
+  ['adductors', 'f', [[93, 268], [99, 276], [98.5, 300], [95, 324], [91, 312], [92, 290]]],
+  ['calves', 'f', [[66, 392], [71, 388], [74, 410], [73, 440], [68, 448], [65, 425]]],
+  ['calves', 'f', [[91, 392], [95, 398], [94, 425], [90, 446], [87, 430], [88, 410]]],
+  // ARKA
+  ['traps_up', 'b', [[99.5, 62], [92, 66], [88, 78], [76, 85], [64, 90], [80, 94], [99.5, 96]]],
+  ['traps_mid', 'b', [[99.5, 98], [82, 96], [68, 98], [72, 108], [84, 122], [94, 140], [99.5, 160]]],
+  ['rdelt', 'b', [[66, 92], [55, 92], [47, 100], [45, 114], [52, 120], [62, 114], [68, 102]]],
+  ['sdelt', 'b', [[56, 89], [46, 95], [40, 109], [40, 124], [45, 120], [48, 104]]],
+  ['triceps', 'b', [[46, 124], [56, 122], [59, 140], [58, 162], [54, 180], [46, 180], [41, 160], [42, 138]]],
+  ['forearm', 'b', [[45, 184], [54, 190], [52, 212], [46, 238], [39, 252], [31, 250], [29, 228], [33, 202], [38, 188]]],
+  ['lats', 'b', [[66, 112], [76, 116], [86, 128], [94, 150], [96, 178], [90, 196], [80, 204], [71, 190], [66, 160], [63, 132]]],
+  ['lowback', 'b', [[91, 166], [99, 172], [99, 236], [92, 238], [87, 222], [88, 196]]],
+  ['obliques', 'b', [[68, 194], [79, 208], [84, 226], [70, 232], [66, 214]]],
+  ['glutes', 'b', [[99.5, 242], [86, 238], [72, 242], [64, 256], [64, 276], [72, 290], [86, 294], [99.5, 290]]],
+  ['hams', 'b', [[62, 292], [80, 296], [81, 330], [78, 370], [70, 368], [63, 340], [61, 312]]],
+  ['hams', 'b', [[82, 296], [98, 294], [98, 320], [95, 352], [88, 374], [81, 368], [81, 330]]],
+  ['adductors', 'b', [[96, 296], [99.5, 298], [99.5, 318], [96, 330]]],
+  ['calves', 'b', [[65, 388], [79, 384], [82, 410], [80, 438], [72, 448], [64, 425]]],
+  ['calves', 'b', [[82, 384], [95, 388], [96, 420], [91, 446], [83, 438], [81, 410]]],
+];
+const MPATHS = MSHAPES.map(([k, v, p]) => [k, v, smoothPath(p)]);
+/* Kas lifi çizgileri (görünüş için) */
+const FIBERS = [
+  ['f', 'M99,101 Q84,99 66,101'], ['f', 'M99,121 Q82,120 61,121'], ['f', 'M99,141 Q86,142 70,139'],
+  ['f', 'M56,100 Q52,112 52,122'], ['f', 'M51,140 Q51,158 49,174'], ['f', 'M40,200 Q36,222 34,244'],
+  ['f', 'M70,280 Q70,320 69,355'], ['f', 'M86,280 Q86,315 84,345'],
+  ['b', 'M99,110 Q86,112 76,104'], ['b', 'M74,140 Q80,165 86,192'], ['b', 'M50,140 Q50,158 49,174'],
+  ['b', 'M80,250 Q76,270 80,288'], ['b', 'M71,310 Q72,340 72,360'], ['b', 'M89,310 Q89,340 88,362'], ['b', 'M74,400 Q75,420 74,436'], ['b', 'M88,400 Q88,420 87,436']
+];
+
 function heat(v) { const h = 140 - 140 * Math.min(1, v); return `hsl(${h},78%,${52 + (1 - v) * 4}%)`; }
-/* vals: {kas: 0..1}; mode: heat | hi */
-function bodySVG(vals = {}, { mode = 'heat', labels = true, only = null, vb: vbx = null } = {}) {
+/* vals: {kas: 0..1}; mode: heat | hi; vb: özel görünüm alanı */
+function bodySVG(vals = {}, { mode = 'heat', labels = true, vb = null } = {}) {
   const fill = v => {
     if (!v || v < 0.01) return 'var(--muscle-off)';
     if (mode === 'hi') return v >= 1 ? 'var(--accent)' : 'var(--accent-2)';
     return heat(v);
   };
-  let sh = '';
-  for (const k in SHAPES) {
-    const c = fill(vals[k]);
-    for (const s of SHAPES[k]) {
-      if (s[0] === 'e') sh += `<ellipse cx="${s[1]}" cy="${s[2]}" rx="${s[3]}" ry="${s[4]}" fill="${c}"/>`;
-      else if (s[0] === 'r') sh += `<rect x="${s[1]}" y="${s[2]}" width="${s[3]}" height="${s[4]}" rx="${s[5]}" fill="${c}"/>`;
-      else sh += `<polygon points="${s[1]}" fill="${c}"/>`;
-    }
-  }
-  const vb = vbx ? vbx : only === 'f' ? '6 0 88 214' : only === 'b' ? '106 0 88 214' : `0 0 200 ${labels ? 226 : 214}`;
-  const lab = labels && !only ? `<text x="50" y="224" text-anchor="middle" font-size="10" fill="var(--muted)" font-weight="600">ÖN</text><text x="150" y="224" text-anchor="middle" font-size="10" fill="var(--muted)" font-weight="600">ARKA</text>` : '';
-  return `<svg viewBox="${vb}" xmlns="http://www.w3.org/2000/svg">${baseBody(0)}${baseBody(100)}${sh}${lab}</svg>`;
+  const fig = (view, ox) => {
+    const mir = `translate(${ox + 200},0) scale(-1,1)`;
+    let m = '';
+    for (const [k, v, d] of MPATHS) if (v === view) { const c = fill(vals[k]); m += `<path d="${d}" fill="${c}"/>`; }
+    const fib = FIBERS.filter(f => f[0] === view).map(f => `<path d="${f[1]}"/>`).join('');
+    const half = `<g class="mus" stroke="var(--body-line)" stroke-width="1.3" stroke-linejoin="round">${m}</g><g fill="none" stroke="rgba(0,0,0,.13)" stroke-width=".7">${fib}</g>`;
+    return `<g><path d="${SIL_D}" transform="translate(${ox},0)" fill="var(--body)"/><path d="${HEAD_D}" transform="translate(${ox},0)" fill="var(--body)"/>
+      <g transform="translate(${ox},0)">${half}</g><g transform="${mir}">${half}</g></g>`;
+  };
+  const H = labels ? 520 : 500;
+  const lab = labels ? `<text x="100" y="516" text-anchor="middle" font-size="15" fill="var(--muted)" font-weight="700">ÖN</text><text x="320" y="516" text-anchor="middle" font-size="15" fill="var(--muted)" font-weight="700">ARKA</text>` : '';
+  return `<svg viewBox="${vb || `0 0 420 ${H}`}" xmlns="http://www.w3.org/2000/svg">${fig('f', 0)}${fig('b', 220)}${lab}</svg>`;
 }
+/* Küçük resimler için kırpma alanları */
+const VB = { upperF: '20 55 160 205', upperB: '240 55 160 205', lowerF: '45 235 110 265', lowerB: '265 235 110 265', fullF: '15 0 170 500', bothNoLabel: '0 0 420 500' };
+
+/* ===== Kas yükü sabitleri ===== */
+const REC_H = { chest_up: 72, chest_mid: 72, chest_low: 72, lats: 72, quads: 72, hams: 72, glutes: 72, lowback: 72, traps_mid: 60 }; // diğerleri 48 saat
+const FULL_SETS = 8; // bir kas için ~8 efektif set = tam yorgunluk
 function exThumb(ex) {
   if (!ex) return '<div class="ex-thumb"></div>';
   const ph = exPhoto(ex);
   if (ph) return `<div class="ex-thumb"><img src="${ph}" alt=""></div>`;
   const v = {}; ex.s.forEach(k => v[k] = .5); ex.p.forEach(k => v[k] = 1);
-  const BACK = ['lats', 'triceps', 'lowback', 'glutes', 'hams', 'rdelt', 'traps'], LOW = ['quads', 'hams', 'glutes', 'calves', 'adductors'];
+  const BACK = ['lats', 'triceps', 'lowback', 'glutes', 'hams', 'rdelt', 'traps_up', 'traps_mid'], LOW = ['quads', 'hams', 'glutes', 'calves', 'adductors'];
   const back = ex.p.filter(k => BACK.includes(k)).length > ex.p.filter(k => !BACK.includes(k) && !['calves', 'sdelt', 'forearm'].includes(k)).length;
   const low = ex.p.every(k => LOW.includes(k));
-  const ox = back ? 100 : 0;
-  const vb = low ? `${20 + ox} 88 60 124` : `${10 + ox} 2 80 106`;
+  const vb = low ? (back ? VB.lowerB : VB.lowerF) : (back ? VB.upperB : VB.upperF);
   return `<div class="ex-thumb">${bodySVG(v, { mode: 'hi', labels: false, vb })}</div>`;
 }
 function levelLabel(v) { if (v < .01) return '—'; if (v < .3) return 'Hafif'; if (v < .6) return 'Orta'; if (v < .85) return 'Yüksek'; return 'Çok yüksek'; }
@@ -703,35 +754,38 @@ const LEGEND = `<div class="legend"><span><i style="background:${heat(.15)}"></i
 /* ===== Hareket kütüphanesi ===== */
 const E = (id, name, p, s = [], cat = '') => ({ id: 'b_' + id, name, p, s, cat, builtin: true });
 const BUILTIN_EX = [
-  E('bench', 'Bench Press', ['chest'], ['fdelt', 'triceps'], 'Göğüs'),
-  E('incdb', 'Incline Dumbbell Press', ['chest', 'fdelt'], ['triceps'], 'Göğüs'),
-  E('incbb', 'Incline Bench Press', ['chest', 'fdelt'], ['triceps'], 'Göğüs'),
-  E('dbpress', 'Dumbbell Bench Press', ['chest'], ['fdelt', 'triceps'], 'Göğüs'),
-  E('fly', 'Dumbbell Fly', ['chest'], ['fdelt'], 'Göğüs'),
-  E('cross', 'Cable Crossover', ['chest'], ['fdelt'], 'Göğüs'),
-  E('pecdeck', 'Pec Deck (Makine Fly)', ['chest'], ['fdelt'], 'Göğüs'),
-  E('chpress', 'Chest Press Makine', ['chest'], ['fdelt', 'triceps'], 'Göğüs'),
-  E('pushup', 'Şınav', ['chest'], ['triceps', 'fdelt', 'abs'], 'Göğüs'),
-  E('dips', 'Dips', ['chest', 'triceps'], ['fdelt'], 'Göğüs'),
-  E('pullup', 'Barfiks', ['lats'], ['biceps', 'rdelt', 'forearm', 'traps'], 'Sırt'),
-  E('latpd', 'Lat Pulldown', ['lats'], ['biceps', 'rdelt'], 'Sırt'),
-  E('bbrow', 'Barbell Row', ['lats', 'traps'], ['rdelt', 'biceps', 'lowback'], 'Sırt'),
-  E('cabrow', 'Seated Cable Row', ['lats', 'traps'], ['biceps', 'rdelt'], 'Sırt'),
-  E('dbrow', 'Tek Kol Dumbbell Row', ['lats'], ['rdelt', 'biceps', 'traps'], 'Sırt'),
-  E('tbar', 'T-Bar Row', ['lats', 'traps'], ['rdelt', 'biceps', 'lowback'], 'Sırt'),
-  E('pullover', 'Straight-Arm Pulldown', ['lats'], ['triceps'], 'Sırt'),
-  E('dead', 'Deadlift', ['lowback', 'glutes', 'hams'], ['traps', 'forearm', 'quads', 'lats'], 'Sırt'),
+  E('bench', 'Bench Press', ['chest_mid'], ['chest_up', 'chest_low', 'fdelt', 'triceps'], 'Göğüs'),
+  E('dbpress', 'Dumbbell Bench Press', ['chest_mid'], ['chest_up', 'chest_low', 'fdelt', 'triceps'], 'Göğüs'),
+  E('incbb', 'Incline Bench Press', ['chest_up'], ['fdelt', 'triceps', 'chest_mid'], 'Göğüs'),
+  E('incdb', 'Incline Dumbbell Press', ['chest_up'], ['fdelt', 'triceps', 'chest_mid'], 'Göğüs'),
+  E('incfly', 'Incline Dumbbell Fly', ['chest_up'], ['fdelt'], 'Göğüs'),
+  E('lowhigh', 'Low-to-High Cable Fly', ['chest_up'], ['fdelt', 'chest_mid'], 'Göğüs'),
+  E('decline', 'Decline Bench Press', ['chest_low'], ['chest_mid', 'triceps'], 'Göğüs'),
+  E('fly', 'Dumbbell Fly', ['chest_mid'], ['chest_up', 'chest_low', 'fdelt'], 'Göğüs'),
+  E('pecdeck', 'Pec Deck (Makine Fly)', ['chest_mid'], ['fdelt'], 'Göğüs'),
+  E('cross', 'Cable Crossover (yukarıdan aşağı)', ['chest_low'], ['chest_mid'], 'Göğüs'),
+  E('chpress', 'Chest Press Makine', ['chest_mid'], ['chest_low', 'fdelt', 'triceps'], 'Göğüs'),
+  E('pushup', 'Şınav', ['chest_mid'], ['chest_low', 'triceps', 'fdelt', 'abs_up'], 'Göğüs'),
+  E('dips', 'Dips', ['chest_low', 'triceps'], ['fdelt', 'chest_mid'], 'Göğüs'),
+  E('pullup', 'Barfiks', ['lats'], ['biceps', 'rdelt', 'forearm', 'traps_mid'], 'Sırt'),
+  E('latpd', 'Lat Pulldown', ['lats'], ['biceps', 'rdelt', 'traps_mid'], 'Sırt'),
+  E('bbrow', 'Barbell Row', ['lats', 'traps_mid'], ['rdelt', 'biceps', 'lowback'], 'Sırt'),
+  E('cabrow', 'Seated Cable Row', ['traps_mid', 'lats'], ['biceps', 'rdelt'], 'Sırt'),
+  E('dbrow', 'Tek Kol Dumbbell Row', ['lats'], ['traps_mid', 'rdelt', 'biceps'], 'Sırt'),
+  E('tbar', 'T-Bar Row', ['traps_mid', 'lats'], ['rdelt', 'biceps', 'lowback'], 'Sırt'),
+  E('pullover', 'Straight-Arm Pulldown', ['lats'], ['triceps', 'serratus'], 'Sırt'),
+  E('dead', 'Deadlift', ['lowback', 'glutes', 'hams'], ['traps_up', 'forearm', 'quads', 'lats'], 'Sırt'),
   E('hyper', 'Hyperextension', ['lowback'], ['glutes', 'hams'], 'Sırt'),
-  E('shrug', 'Shrug', ['traps'], ['forearm'], 'Sırt'),
-  E('facepull', 'Face Pull', ['rdelt'], ['traps', 'sdelt'], 'Omuz'),
-  E('ohp', 'Overhead Press', ['fdelt'], ['sdelt', 'triceps', 'traps'], 'Omuz'),
+  E('shrug', 'Shrug', ['traps_up'], ['forearm'], 'Sırt'),
+  E('facepull', 'Face Pull', ['rdelt'], ['traps_mid', 'sdelt'], 'Omuz'),
+  E('ohp', 'Overhead Press', ['fdelt'], ['sdelt', 'triceps', 'traps_up', 'chest_up'], 'Omuz'),
   E('dbsp', 'Dumbbell Shoulder Press', ['fdelt'], ['sdelt', 'triceps'], 'Omuz'),
   E('arnold', 'Arnold Press', ['fdelt', 'sdelt'], ['triceps'], 'Omuz'),
-  E('lat', 'Lateral Raise', ['sdelt'], ['traps'], 'Omuz'),
+  E('lat', 'Lateral Raise', ['sdelt'], ['traps_up'], 'Omuz'),
   E('cablelat', 'Cable Lateral Raise', ['sdelt'], [], 'Omuz'),
-  E('front', 'Front Raise', ['fdelt'], ['sdelt'], 'Omuz'),
-  E('revfly', 'Reverse Fly', ['rdelt'], ['traps'], 'Omuz'),
-  E('uprow', 'Upright Row', ['sdelt', 'traps'], ['biceps'], 'Omuz'),
+  E('front', 'Front Raise', ['fdelt'], ['sdelt', 'chest_up'], 'Omuz'),
+  E('revfly', 'Reverse Fly', ['rdelt'], ['traps_mid'], 'Omuz'),
+  E('uprow', 'Upright Row', ['sdelt', 'traps_up'], ['biceps'], 'Omuz'),
   E('bbcurl', 'Barbell Curl', ['biceps'], ['forearm'], 'Kol'),
   E('dbcurl', 'Dumbbell Curl', ['biceps'], ['forearm'], 'Kol'),
   E('hammer', 'Hammer Curl', ['biceps', 'forearm'], [], 'Kol'),
@@ -740,10 +794,10 @@ const BUILTIN_EX = [
   E('pushdown', 'Triceps Pushdown', ['triceps'], [], 'Kol'),
   E('skull', 'Skull Crusher', ['triceps'], [], 'Kol'),
   E('ohext', 'Overhead Triceps Extension', ['triceps'], [], 'Kol'),
-  E('cgbench', 'Close-Grip Bench Press', ['triceps'], ['chest', 'fdelt'], 'Kol'),
+  E('cgbench', 'Close-Grip Bench Press', ['triceps'], ['chest_mid', 'fdelt'], 'Kol'),
   E('wrist', 'Wrist Curl', ['forearm'], [], 'Kol'),
   E('squat', 'Squat', ['quads', 'glutes'], ['hams', 'lowback', 'adductors'], 'Bacak'),
-  E('front_sq', 'Front Squat', ['quads'], ['glutes', 'abs'], 'Bacak'),
+  E('front_sq', 'Front Squat', ['quads'], ['glutes', 'abs_up'], 'Bacak'),
   E('hack', 'Hack Squat', ['quads'], ['glutes'], 'Bacak'),
   E('legpress', 'Leg Press', ['quads', 'glutes'], ['hams', 'adductors'], 'Bacak'),
   E('legext', 'Leg Extension', ['quads'], [], 'Bacak'),
@@ -756,12 +810,14 @@ const BUILTIN_EX = [
   E('abduct', 'Abductor Makine', ['glutes'], [], 'Bacak'),
   E('calf', 'Calf Raise (Ayakta)', ['calves'], [], 'Bacak'),
   E('seatcalf', 'Calf Raise (Oturarak)', ['calves'], [], 'Bacak'),
-  E('crunch', 'Crunch', ['abs'], [], 'Karın'),
-  E('cabcrunch', 'Cable Crunch', ['abs'], ['obliques'], 'Karın'),
-  E('plank', 'Plank', ['abs'], ['obliques', 'lowback'], 'Karın'),
-  E('legraise', 'Leg Raise', ['abs'], ['obliques'], 'Karın'),
-  E('twist', 'Russian Twist', ['obliques'], ['abs'], 'Karın'),
-  E('abwheel', 'Ab Wheel', ['abs'], ['lats', 'obliques'], 'Karın'),
+  E('crunch', 'Crunch', ['abs_up'], [], 'Karın'),
+  E('cabcrunch', 'Cable Crunch', ['abs_up'], ['abs_low', 'obliques'], 'Karın'),
+  E('plank', 'Plank', ['abs_up', 'abs_low'], ['obliques', 'lowback'], 'Karın'),
+  E('legraise', 'Leg Raise', ['abs_low'], ['abs_up', 'obliques'], 'Karın'),
+  E('revcrunch', 'Reverse Crunch', ['abs_low'], ['abs_up'], 'Karın'),
+  E('twist', 'Russian Twist', ['obliques'], ['abs_up'], 'Karın'),
+  E('woodchop', 'Cable Woodchop', ['obliques'], ['abs_up', 'serratus'], 'Karın'),
+  E('abwheel', 'Ab Wheel', ['abs_up', 'abs_low'], ['lats', 'obliques', 'serratus'], 'Karın'),
 ];
 const EX_CATS = ['Göğüs', 'Sırt', 'Omuz', 'Kol', 'Bacak', 'Karın', 'Kendi'];
 const allEx = () => [...BUILTIN_EX, ...S.workout.exercises];
@@ -838,11 +894,11 @@ Pages.sport = () => {
     const load = dayLoad(d.items);
     const top = Object.entries(load).sort((a, b) => b[1] - a[1]).slice(0, 4).map(([k]) => `<span class="tag">${MUSCLES[k]}</span>`).join('');
     const isToday = (d.wd || []).includes(todayWd);
-    return `<div class="list-item" onclick="go('day','${d.id}')" style="cursor:pointer"><div class="ex-thumb mini">${bodySVG(load, { labels: false })}</div><div class="grow"><div class="t">${esc(d.name)} ${isToday ? '<span class="tag" style="background:var(--ok);color:#fff">Bugün</span>' : ''}</div><div class="small muted">${(d.wd || []).map(x => WD[x]).join(', ') || 'Gün seçilmedi'} · ${d.items.length} hareket</div><div style="margin-top:5px">${top}</div></div><span class="muted">›</span></div>`;
+    return `<div class="list-item" onclick="go('day','${d.id}')" style="cursor:pointer"><div class="ex-thumb mini">${bodySVG(load, { labels: false, vb: VB.bothNoLabel })}</div><div class="grow"><div class="t">${esc(d.name)} ${isToday ? '<span class="tag" style="background:var(--ok);color:#fff">Bugün</span>' : ''}</div><div class="small muted">${(d.wd || []).map(x => WD[x]).join(', ') || 'Gün seçilmedi'} · ${d.items.length} hareket</div><div style="margin-top:5px">${top}</div></div><span class="muted">›</span></div>`;
   }).join('') : `<div class="empty"><div class="e">📋</div>Henüz program yok.<br>Hazır programını gün gün ekleyebilirsin.</div>`;
   const weekLogs = W.logs.filter(l => daysBetween(l.date, today()) < 7).length;
   return header('Spor', 'Bu hafta ' + weekLogs + ' antrenman') + active + `
-  <div class="card"><h3>Şu anki kas yorgunluğu</h3><div class="body-map" style="max-width:340px;margin:0 auto">${bodySVG(rec)}</div>${LEGEND}
+  <div class="card"><h3>Şu anki kas yorgunluğu</h3><div class="body-map" style="max-width:380px;margin:0 auto">${bodySVG(rec)}</div>${LEGEND}
     <div class="small muted" style="text-align:center;margin-top:8px">Son antrenmanlarına göre hesaplanır; kaslar 2–3 günde toparlanır.</div></div>
   <div class="card tight"><div class="row between" style="padding:12px 16px 4px"><h3 style="margin:0">Programım</h3><button class="btn ghost sm" onclick="editDay()">+ Gün ekle</button></div>${days}</div>
   <div class="grid2">
@@ -877,7 +933,7 @@ Pages.day = id => {
   <button class="btn full" onclick="startSession('${d.id}')" style="margin-bottom:12px">▶ Antrenmana başla</button>
   <div class="card tight">${items}<div style="padding:10px 14px"><button class="btn ghost full" onclick="pickExercise(ex=>addToDay('${d.id}',ex))">+ Hareket ekle</button></div></div>
   <div class="card"><h3>Çalışan kaslar · olası yorgunluk</h3>
-    <div class="body-map" style="max-width:320px;margin:0 auto">${bodySVG(load)}</div>${LEGEND}
+    <div class="body-map" style="max-width:380px;margin:0 auto">${bodySVG(load)}</div>${LEGEND}
     <div class="hr"></div>${muscleBars(load)}
     <div class="tiny muted" style="margin-top:8px">Toplam ${totalSets} set. Hesap: ana kas 1 set, yardımcı kas yarım set sayılır; ~${FULL_SETS} set tam yorgunluk kabul edilir. Hareket ekleyip çıkardıkça güncellenir.</div></div>
   ${d.note ? `<div class="card"><h3>Not</h3>${esc(d.note)}</div>` : ''}`;
@@ -991,7 +1047,7 @@ Pages.whist = () => {
   return header('Geçmiş', S.workout.logs.length + ' antrenman') + `<div class="card tight">${L.length ? L.map(l => {
     const sets = l.entries.reduce((a, e) => a + e.sets.length, 0);
     const vol = l.entries.reduce((a, e) => a + e.sets.reduce((b, s) => b + num(s.w) * num(s.r), 0), 0);
-    return `<div class="list-item" onclick="showLog('${l.id}')" style="cursor:pointer"><div class="ex-thumb mini">${bodySVG(dayLoad(l.entries.map(e => ({ exId: e.exId, sets: e.sets.length }))), { labels: false })}</div><div class="grow"><div class="t">${esc(l.name)}</div><div class="small muted">${fmtDate(l.date, { weekday: 'long', day: 'numeric', month: 'long' })}</div><div class="tiny muted">${l.entries.length} hareket · ${sets} set · ${Math.round(vol).toLocaleString('tr-TR')} kg hacim${l.min ? ' · ' + l.min + ' dk' : ''}</div></div><span class="muted">›</span></div>`;
+    return `<div class="list-item" onclick="showLog('${l.id}')" style="cursor:pointer"><div class="ex-thumb mini">${bodySVG(dayLoad(l.entries.map(e => ({ exId: e.exId, sets: e.sets.length }))), { labels: false, vb: VB.bothNoLabel })}</div><div class="grow"><div class="t">${esc(l.name)}</div><div class="small muted">${fmtDate(l.date, { weekday: 'long', day: 'numeric', month: 'long' })}</div><div class="tiny muted">${l.entries.length} hareket · ${sets} set · ${Math.round(vol).toLocaleString('tr-TR')} kg hacim${l.min ? ' · ' + l.min + ' dk' : ''}</div></div><span class="muted">›</span></div>`;
   }).join('') : '<div class="empty"><div class="e">📈</div>Henüz antrenman kaydı yok</div>'}</div>`;
 };
 function showLog(id) {
@@ -1347,7 +1403,7 @@ Pages.today = () => {
   let sport;
   if (W.active) sport = `<div class="row"><div class="grow"><div class="b">${esc(W.active.name)}</div><div class="small muted">Devam eden antrenman</div></div><button class="btn sm" onclick="setTab('sport');go('session')">Devam et</button></div>`;
   else if (doneToday) sport = `<div class="row"><span style="font-size:28px">✅</span><div class="grow"><div class="b">${esc(doneToday.name)} tamamlandı</div><div class="small muted">${doneToday.entries.reduce((a, e) => a + e.sets.length, 0)} set · ${doneToday.min || 0} dk</div></div></div>`;
-  else if (tDay) sport = `<div class="row"><div class="ex-thumb mini">${bodySVG(dayLoad(tDay.items), { labels: false })}</div><div class="grow"><div class="b">${esc(tDay.name)}</div><div class="small muted">${tDay.items.length} hareket</div></div><button class="btn sm" onclick="startSession('${tDay.id}')">Başla</button></div>`;
+  else if (tDay) sport = `<div class="row"><div class="ex-thumb mini">${bodySVG(dayLoad(tDay.items), { labels: false, vb: VB.bothNoLabel })}</div><div class="grow"><div class="b">${esc(tDay.name)}</div><div class="small muted">${tDay.items.length} hareket</div></div><button class="btn sm" onclick="startSession('${tDay.id}')">Başla</button></div>`;
   else sport = `<div class="row"><span style="font-size:26px">😌</span><div class="grow"><div class="b">Bugün dinlenme günü</div><div class="small muted">${W.days.length ? 'Programında bugüne gün atanmamış' : 'Spor programını ekleyince burada görünür'}</div></div></div>`;
   // diyet
   const T = S.diet.targets, t = dayTotals(k), water = S.diet.water[k] || 0;
@@ -1684,6 +1740,7 @@ Pages.settings = () => {
   await Sync.load();
   const saved = await Store.get('state');
   if (saved) S = merge(DEFAULT_STATE(), saved);
+  S.workout.exercises.forEach(e => { e.p = normMuscles(e.p); e.s = normMuscles(e.s).filter(k => !e.p.includes(k)); });
   try { navigator.storage && navigator.storage.persist && navigator.storage.persist(); } catch (e) {}
   if (S.workout.active) route = { tab: 'sport', page: 'session', arg: null }, navStack = [{ tab: 'sport', page: 'sport' }];
   render();
