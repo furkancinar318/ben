@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Ben">
+<meta name="theme-color" content="#F2F2F7">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<title>Ben</title>
+<style>:root{
+  --accent:#6C63FF; --accent-2:#8B85FF; --accent-soft:rgba(108,99,255,.14);
+  --bg:#F2F2F7; --card:#FFFFFF; --card-2:#F7F7FA; --text:#111114; --muted:#8A8A93; --line:rgba(0,0,0,.08);
+  --ok:#30C26B; --warn:#FFB020; --bad:#FF4D5E; --tab:rgba(255,255,255,.82);
+  --muscle-off:#E3E3EA; --body:#EDEDF2; --shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.05);
+  --r:18px; --safe-t:env(safe-area-inset-top,0px); --safe-b:env(safe-area-inset-bottom,0px);
+}
+html[data-theme=dark]{
+  --bg:#0B0B0F; --card:#17171D; --card-2:#202028; --text:#F4F4F7; --muted:#8C8C98; --line:rgba(255,255,255,.08);
+  --tab:rgba(20,20,26,.82); --muscle-off:#2A2A33; --body:#22222A; --shadow:none;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",system-ui,sans-serif;font-size:16px;-webkit-font-smoothing:antialiased}
+body{overscroll-behavior-y:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none;padding:0}
+input,select,textarea{background:var(--card-2);border:1px solid var(--line);border-radius:12px;padding:11px 12px;width:100%;outline:none;font-size:16px}
+input:focus,select:focus,textarea:focus{border-color:var(--accent)}
+textarea{resize:vertical;min-height:90px;line-height:1.45}
+input[type=checkbox]{width:auto}
+#app{max-width:640px;margin:0 auto;min-height:100vh;padding:calc(var(--safe-t) + 8px) 16px calc(var(--safe-b) + 96px)}
+.top{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:14px 2px 16px}
+.top h1{font-size:32px;line-height:1.05;margin:0;font-weight:800;letter-spacing:-.6px}
+.top .sub{color:var(--muted);font-size:14px;margin-bottom:4px;font-weight:500}
+.back{display:inline-flex;align-items:center;gap:4px;color:var(--accent);font-weight:600;font-size:16px;margin:6px 0 -6px}
+.card{background:var(--card);border-radius:var(--r);padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.card.tight{padding:4px 0}
+.card h3{margin:0 0 10px;font-size:13px;letter-spacing:.4px;text-transform:uppercase;color:var(--muted);font-weight:700}
+.row{display:flex;align-items:center;gap:12px}
+.row.between{justify-content:space-between}
+.grow{flex:1;min-width:0}
+.muted{color:var(--muted)} .small{font-size:13px} .tiny{font-size:11px}
+.b{font-weight:700}
+.list-item{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.list-item:last-child{border-bottom:0}
+.list-item .t{font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.ellip{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--accent);color:#fff;font-weight:700;border-radius:14px;padding:12px 16px;font-size:15px}
+.btn.full{width:100%}
+.btn.ghost{background:var(--accent-soft);color:var(--accent)}
+.btn.plain{background:var(--card-2);color:var(--text)}
+.btn.danger{background:rgba(255,77,94,.12);color:var(--bad)}
+.btn.sm{padding:8px 12px;font-size:14px;border-radius:11px}
+.icon-btn{width:38px;height:38px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;background:var(--card);box-shadow:var(--shadow);font-size:20px;color:var(--accent);font-weight:700}
+.fab{position:fixed;right:max(18px,calc(50% - 302px));bottom:calc(var(--safe-b) + 84px);width:56px;height:56px;border-radius:18px;background:var(--accent);color:#fff;font-size:30px;font-weight:400;box-shadow:0 8px 24px rgba(108,99,255,.4);z-index:20;display:flex;align-items:center;justify-content:center}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;margin-bottom:12px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:7px 13px;border-radius:999px;background:var(--card);font-size:14px;font-weight:600;color:var(--muted);box-shadow:var(--shadow);white-space:nowrap}
+.chip.on{background:var(--accent);color:#fff}
+.chip.p{background:var(--accent);color:#fff}
+.chip.s{background:var(--accent-soft);color:var(--accent)}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:600;margin-right:4px}
+.check{width:26px;height:26px;border-radius:50%;border:2px solid var(--muted);flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;transition:.15s}
+.check.on{background:var(--ok);border-color:var(--ok)}
+.done .t{text-decoration:line-through;color:var(--muted)}
+.empty{text-align:center;color:var(--muted);padding:28px 16px;font-size:15px}
+.empty .e{font-size:38px;margin-bottom:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tile{background:var(--card);border-radius:var(--r);padding:16px 14px;box-shadow:var(--shadow);text-align:left;display:flex;flex-direction:column;gap:8px;min-height:96px}
+.tile .ic{font-size:26px}
+.tile .nm{font-weight:700;font-size:15px}
+.tile .ds{color:var(--muted);font-size:12px}
+.bar{height:8px;border-radius:99px;background:var(--card-2);overflow:hidden}
+.bar>i{display:block;height:100%;border-radius:99px;background:var(--accent);transition:width .3s}
+.stars{color:#FFB020;letter-spacing:1px;font-size:15px}
+.stars .off{color:var(--muscle-off)}
+.star-pick{display:flex;gap:6px;font-size:32px}
+.star-pick button{color:var(--muscle-off)} .star-pick button.on{color:#FFB020}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:13px;color:var(--muted);font-weight:600;margin:0 0 6px 2px}
+.seg{display:flex;background:var(--card-2);border-radius:12px;padding:3px;margin-bottom:14px}
+.seg button{flex:1;padding:8px 6px;border-radius:10px;font-weight:600;font-size:14px;color:var(--muted)}
+.seg button.on{background:var(--card);color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,.12)}
+/* tab bar */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--tab);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-top:1px solid var(--line);padding:6px 6px calc(var(--safe-b) + 6px)}
+.tabbar .in{max-width:640px;margin:0 auto;display:flex}
+.tabbar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px 0;color:var(--muted);font-size:10.5px;font-weight:600}
+.tabbar button .i{font-size:22px;filter:grayscale(1);opacity:.7}
+.tabbar button.on{color:var(--accent)} .tabbar button.on .i{filter:none;opacity:1}
+/* sheet */
+.sheet-bg{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:50;opacity:0;transition:opacity .2s}
+.sheet-bg.show{opacity:1}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:51;max-width:640px;margin:0 auto;background:var(--bg);border-radius:22px 22px 0 0;max-height:92vh;display:flex;flex-direction:column;transform:translateY(100%);transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+.sheet.show{transform:none}
+.sheet.full{height:100vh;max-height:100vh;border-radius:0;padding-top:var(--safe-t)}
+.sheet-h{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 10px;gap:10px}
+.sheet-h .ttl{font-weight:800;font-size:18px;text-align:center;flex:1}
+.sheet-h button{color:var(--accent);font-weight:600;min-width:60px;text-align:left}
+.sheet-h button:last-child{text-align:right}
+.sheet-b{overflow-y:auto;padding:4px 16px calc(var(--safe-b) + 24px);-webkit-overflow-scrolling:touch}
+.toast{position:fixed;left:50%;top:calc(var(--safe-t) + 14px);transform:translateX(-50%) translateY(-120%);background:var(--text);color:var(--bg);padding:10px 16px;border-radius:14px;font-weight:600;font-size:14px;z-index:90;transition:transform .25s;max-width:90vw}
+.toast.show{transform:translateX(-50%) translateY(0)}
+/* mood */
+.moods{display:flex;justify-content:space-between;gap:6px}
+.moods button{flex:1;font-size:30px;padding:8px 0;border-radius:14px;background:var(--card-2);filter:grayscale(.9);opacity:.6;transition:.15s}
+.moods button.on{filter:none;opacity:1;background:var(--accent-soft);transform:scale(1.05)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.cal div{aspect-ratio:1;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;background:var(--card-2);color:var(--muted)}
+.cal .h{background:none;font-size:11px}
+.dots{display:flex;gap:4px}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--muscle-off)}
+.dots i.on{background:var(--ok)}
+/* sport */
+.body-map svg{width:100%;height:auto;display:block}
+.mrow{display:flex;align-items:center;gap:10px;font-size:14px;margin:6px 0}
+.mrow .n{width:88px;flex:none;font-weight:600}
+.mrow .bar{flex:1}
+.mrow .v{width:108px;text-align:right;color:var(--muted);font-size:11.5px;flex:none;white-space:nowrap}
+.ex-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.ex-item:last-child{border-bottom:0}
+.ex-thumb{width:46px;height:52px;flex:none;border-radius:10px;background:var(--card-2);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.ex-thumb img{width:100%;height:100%;object-fit:cover}
+.ex-thumb svg{height:100%;width:auto;max-width:100%;padding:3px 0}
+.ex-thumb.mini{width:62px;height:60px}
+.set-row{display:grid;grid-template-columns:34px 1fr 1fr 44px;gap:8px;align-items:center;margin:6px 0}
+.set-row input{padding:9px 8px;text-align:center}
+.set-row .no{font-weight:700;color:var(--muted);text-align:center}
+.set-row.ok input{background:rgba(48,194,107,.12);border-color:rgba(48,194,107,.3)}
+.set-row .chk{width:40px;height:40px;border-radius:12px;background:var(--card-2);font-size:18px;color:var(--muted)}
+.set-row.ok .chk{background:var(--ok);color:#fff}
+.timer{position:fixed;left:16px;right:16px;bottom:calc(var(--safe-b) + 76px);max-width:608px;margin:0 auto;background:var(--text);color:var(--bg);border-radius:18px;padding:12px 16px;display:flex;align-items:center;gap:12px;z-index:60;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.timer .tm{font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}
+.timer button{color:var(--bg);background:rgba(127,127,127,.25);padding:6px 10px;border-radius:10px;font-weight:700;font-size:14px}
+.legend{display:flex;gap:10px;justify-content:center;font-size:11px;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+/* diet */
+.ring-wrap{display:flex;align-items:center;gap:18px}
+.ring{position:relative;width:118px;height:118px;flex:none}
+.ring svg{transform:rotate(-90deg)}
+.ring .c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring .c b{font-size:24px;letter-spacing:-.5px}
+.macro{margin:7px 0}
+.macro .row{font-size:13px;margin-bottom:4px}
+.water{display:flex;gap:5px;flex-wrap:wrap}
+.water i{width:22px;height:30px;border-radius:5px 5px 8px 8px;background:var(--card-2);border:1.5px solid var(--line)}
+.water i.on{background:#4DA3FF;border-color:#4DA3FF}
+/* outfits */
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ph{aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--card);position:relative;box-shadow:var(--shadow)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph .lb{position:absolute;left:6px;bottom:6px;right:6px;font-size:11px;font-weight:700;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.ph.sel{outline:3px solid var(--accent);outline-offset:-3px}
+.ph.sel:after{content:"✓";position:absolute;top:6px;right:6px;width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:800}
+.collage{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;border-radius:12px;overflow:hidden;margin-bottom:8px}
+.collage img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+/* lock */
+.lock{position:fixed;inset:0;background:var(--bg);z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px}
+.pin-dots{display:flex;gap:14px}
+.pin-dots i{width:14px;height:14px;border-radius:50%;border:2px solid var(--accent)}
+.pin-dots i.on{background:var(--accent)}
+.keypad{display:grid;grid-template-columns:repeat(3,76px);gap:14px}
+.keypad button{height:76px;border-radius:50%;background:var(--card);font-size:28px;font-weight:500;box-shadow:var(--shadow)}
+.shake{animation:sh .35s}
+@keyframes sh{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.hero{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border-radius:22px;padding:18px;margin-bottom:12px}
+.hero .muted{color:rgba(255,255,255,.8)}
+.kpi{font-size:26px;font-weight:800;letter-spacing:-.5px}
+.swatches{display:flex;gap:10px;flex-wrap:wrap}
+.swatches button{width:36px;height:36px;border-radius:50%;border:3px solid transparent}
+.swatches button.on{border-color:var(--text)}
+.chart svg{width:100%;height:auto;display:block}
+.hr{height:1px;background:var(--line);margin:12px 0}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<nav class="tabbar" id="tabs"></nav>
+<div class="toast" id="toast"></div>
+<script>/* ===== Yardımcılar ===== */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+const pad = n => String(n).padStart(2, '0');
+const dkey = (d = new Date()) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const parseD = k => { const [y, m, d] = k.split('-').map(Number); return new Date(y, m - 1, d); };
+const addDays = (k, n) => { const d = parseD(k); d.setDate(d.getDate() + n); return dkey(d); };
+const today = () => dkey();
+const fmtDate = (k, o = { day: 'numeric', month: 'long' }) => k ? parseD(k).toLocaleDateString('tr-TR', o) : '';
+const fmtMoney = n => (Number(n) || 0).toLocaleString('tr-TR', { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + ' ₺';
+const num = v => { const n = parseFloat(String(v).replace(',', '.')); return isNaN(n) ? 0 : n; };
+const r1 = n => Math.round(n * 10) / 10;
+const daysBetween = (a, b) => Math.round((parseD(b) - parseD(a)) / 864e5);
+const WD = ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt'];
+const WD_LONG = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
+const stars = n => { n = Math.round(n || 0); let s = ''; for (let i = 1; i <= 5; i++) s += i <= n ? '★' : '<span class="off">★</span>'; return `<span class="stars">${s}</span>`; };
+
+/* ===== Veri ===== */
+const DEFAULT_STATE = () => ({
+  v: 1,
+  settings: { name: '', theme: 'auto', accent: '#6C63FF', pin: '', rest: 90, bookGoal: 12 },
+  moods: {}, journal: [], habits: [], todos: [], notes: [], courses: [], goals: [], dates: [],
+  outfits: { items: [], combos: [] }, shopping: [], books: [], movies: [],
+  workout: { exercises: [], days: [], logs: [], active: null, exPhotos: {} },
+  diet: { targets: { kcal: 2200, p: 140, c: 240, f: 70, water: 2500 }, foods: [], log: {}, water: {}, weight: [], plan: [] }
+});
+let S = DEFAULT_STATE();
+
+const Store = {
+  db: null,
+  open() {
+    return new Promise(res => {
+      try {
+        const r = indexedDB.open('ben-app', 1);
+        r.onupgradeneeded = () => r.result.createObjectStore('kv');
+        r.onsuccess = () => { this.db = r.result; res(true); };
+        r.onerror = () => res(false);
+      } catch (e) { res(false); }
+    });
+  },
+  get(k) {
+    return new Promise(res => {
+      if (!this.db) { try { res(JSON.parse(localStorage.getItem(k))); } catch (e) { res(null); } return; }
+      try { const q = this.db.transaction('kv').objectStore('kv').get(k); q.onsuccess = () => res(q.result); q.onerror = () => res(null); } catch (e) { res(null); }
+    });
+  },
+  set(k, v) {
+    return new Promise(res => {
+      if (!this.db) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} res(); return; }
+      try { const tx = this.db.transaction('kv', 'readwrite'); tx.objectStore('kv').put(v, k); tx.oncomplete = () => res(); tx.onerror = () => res(); } catch (e) { res(); }
+    });
+  }
+};
+let saveT;
+function save() {
+  Meta.dirty = true; Meta.updatedAt = Date.now();
+  clearTimeout(saveT); saveT = setTimeout(() => { Store.set('state', S); Store.set('meta', Meta); }, 250);
+  Sync.schedule();
+}
+function merge(def, val) {
+  if (Array.isArray(def)) return Array.isArray(val) ? val : def;
+  if (def && typeof def === 'object') {
+    const o = { ...def };
+    if (val && typeof val === 'object') for (const k in val) o[k] = k in def ? merge(def[k], val[k]) : val[k];
+    return o;
+  }
+  return val === undefined ? def : val;
+}
+
+/* ===== Arayüz parçaları ===== */
+function toast(msg) {
+  let t = $('#toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 1800);
+}
+let sheetStack = [];
+function openSheet({ title = '', body = '', left = 'Kapat', right = '', onRight = null, full = false, onClose = null }) {
+  const bg = document.createElement('div'); bg.className = 'sheet-bg';
+  const sh = document.createElement('div'); sh.className = 'sheet' + (full ? ' full' : '');
+  sh.innerHTML = `<div class="sheet-h"><button data-l>${esc(left)}</button><div class="ttl">${esc(title)}</div><button data-r class="b">${esc(right)}</button></div><div class="sheet-b">${body}</div>`;
+  document.body.append(bg, sh);
+  requestAnimationFrame(() => { bg.classList.add('show'); sh.classList.add('show'); });
+  const obj = { bg, sh, onClose, close: () => closeSheet(obj) };
+  sh.querySelector('[data-l]').onclick = () => closeSheet(obj);
+  sh.querySelector('[data-r]').onclick = () => { if (onRight) { if (onRight(sh) !== false) closeSheet(obj); } };
+  bg.onclick = () => closeSheet(obj);
+  sheetStack.push(obj);
+  return obj;
+}
+function closeSheet(obj) {
+  obj = obj || sheetStack[sheetStack.length - 1]; if (!obj) return;
+  sheetStack = sheetStack.filter(x => x !== obj);
+  obj.bg.classList.remove('show'); obj.sh.classList.remove('show');
+  setTimeout(() => { obj.bg.remove(); obj.sh.remove(); }, 260);
+  if (obj.onClose) obj.onClose();
+  if (!sheetStack.length && Sync.pendingRender) { Sync.pendingRender = false; setTimeout(render, 280); }
+}
+function confirmSheet(msg, yes, label = 'Sil') {
+  const s = openSheet({ title: 'Emin misin?', body: `<p style="text-align:center;margin:8px 0 18px">${esc(msg)}</p><button class="btn danger full" id="cy">${esc(label)}</button>` });
+  s.sh.querySelector('#cy').onclick = () => { closeSheet(s); yes(); };
+}
+
+/* Fotoğraf küçültme */
+function pickImage(cb, max = 700) {
+  const inp = document.createElement('input'); inp.type = 'file'; inp.accept = 'image/*';
+  inp.onchange = () => {
+    const f = inp.files[0]; if (!f) return;
+    const rd = new FileReader();
+    rd.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        const k = Math.min(1, max / Math.max(img.width, img.height));
+        const c = document.createElement('canvas'); c.width = Math.round(img.width * k); c.height = Math.round(img.height * k);
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        cb(c.toDataURL('image/jpeg', .78));
+      };
+      img.src = rd.result;
+    };
+    rd.readAsDataURL(f);
+  };
+  inp.click();
+}
+
+/* ===== Genel kayıt düzenleyici (şemaya göre form) ===== */
+function fieldHTML(f, v) {
+  const id = 'f_' + f.k;
+  let inp;
+  switch (f.type) {
+    case 'textarea': inp = `<textarea id="${id}" placeholder="${esc(f.ph || '')}" rows="${f.rows || 4}">${esc(v ?? '')}</textarea>`; break;
+    case 'select': inp = `<select id="${id}">${f.options.map(o => { const [val, lab] = Array.isArray(o) ? o : [o, o]; return `<option value="${esc(val)}" ${String(v ?? f.def ?? '') === String(val) ? 'selected' : ''}>${esc(lab)}</option>`; }).join('')}</select>`; break;
+    case 'stars': inp = `<div class="star-pick" id="${id}" data-v="${v || 0}">${[1, 2, 3, 4, 5].map(i => `<button type="button" data-s="${i}" class="${i <= (v || 0) ? 'on' : ''}">★</button>`).join('')}</div>`; break;
+    case 'toggle': inp = `<div class="seg" id="${id}" data-v="${v ? 1 : 0}"><button type="button" data-t="0" class="${!v ? 'on' : ''}">${esc(f.off || 'Hayır')}</button><button type="button" data-t="1" class="${v ? 'on' : ''}">${esc(f.on || 'Evet')}</button></div>`; break;
+    case 'days': inp = `<div class="chips" id="${id}" style="flex-wrap:wrap">${[1, 2, 3, 4, 5, 6, 0].map(d => `<button type="button" class="chip ${(v || []).includes(d) ? 'on' : ''}" data-d="${d}">${WD[d]}</button>`).join('')}</div>`; break;
+    default: inp = `<input id="${id}" type="${f.type || 'text'}" ${f.type === 'number' ? 'inputmode="decimal" step="any"' : ''} placeholder="${esc(f.ph || '')}" value="${esc(v ?? (f.def ?? ''))}">`;
+  }
+  return `<div class="field"><label>${esc(f.label)}</label>${inp}</div>`;
+}
+function wireFields(root) {
+  root.querySelectorAll('.star-pick').forEach(el => el.querySelectorAll('button').forEach(b => b.onclick = () => {
+    const s = +b.dataset.s; const cur = +el.dataset.v; const nv = cur === s ? 0 : s; el.dataset.v = nv;
+    el.querySelectorAll('button').forEach(x => x.classList.toggle('on', +x.dataset.s <= nv));
+  }));
+  root.querySelectorAll('.seg[data-v]').forEach(el => el.querySelectorAll('button').forEach(b => b.onclick = () => {
+    el.dataset.v = b.dataset.t; el.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+  }));
+  root.querySelectorAll('.chips[id^=f_]').forEach(el => el.querySelectorAll('button').forEach(b => b.onclick = () => b.classList.toggle('on')));
+}
+function readFields(root, fields) {
+  const o = {};
+  for (const f of fields) {
+    const el = root.querySelector('#f_' + f.k); if (!el) continue;
+    if (f.type === 'stars') o[f.k] = +el.dataset.v;
+    else if (f.type === 'toggle') o[f.k] = el.dataset.v === '1';
+    else if (f.type === 'days') o[f.k] = [...el.querySelectorAll('.on')].map(b => +b.dataset.d);
+    else if (f.type === 'number') o[f.k] = el.value === '' ? '' : num(el.value);
+    else o[f.k] = el.value.trim();
+  }
+  return o;
+}
+/* list: dizi, item: mevcut kayıt veya null */
+function editRecord({ title, list, item, fields, required, defaults = {}, after }) {
+  const isNew = !item; const cur = item || { ...defaults };
+  const body = fields.map(f => fieldHTML(f, cur[f.k])).join('') + (isNew ? '' : `<button class="btn danger full" id="del" style="margin-top:8px">Sil</button>`);
+  const s = openSheet({
+    title: (isNew ? 'Yeni ' : '') + title, body, left: 'Vazgeç', right: 'Kaydet',
+    onRight: sh => {
+      const v = readFields(sh, fields);
+      if (required && !v[required]) { toast('Lütfen ' + fields.find(f => f.k === required).label.toLowerCase() + ' gir'); return false; }
+      if (isNew) list.unshift({ id: uid(), created: Date.now(), ...defaults, ...v }); else Object.assign(item, v, { updated: Date.now() });
+      save(); after ? after() : render();
+    }
+  });
+  wireFields(s.sh);
+  const d = s.sh.querySelector('#del');
+  if (d) d.onclick = () => confirmSheet('Bu kayıt silinecek.', () => { const i = list.indexOf(item); if (i > -1) list.splice(i, 1); closeSheet(s); save(); after ? after() : render(); });
+  setTimeout(() => { const first = s.sh.querySelector('input,textarea'); if (first && isNew && window.innerWidth > 700) first.focus(); }, 300);
+}
+
+/* ===== Yönlendirme ===== */
+const Pages = {};
+let route = { tab: 'today', page: 'today', arg: null };
+let navStack = [];
+function go(page, arg = null, push = true) {
+  if (push) navStack.push({ ...route });
+  route = { ...route, page, arg };
+  render(); window.scrollTo(0, 0);
+}
+function goBack() { route = navStack.pop() || { tab: route.tab, page: route.tab, arg: null }; render(); }
+function setTab(t) { navStack = []; route = { tab: t, page: t, arg: null }; render(); window.scrollTo(0, 0); }
+const TABS = [['today', '🏠', 'Bugün'], ['sport', '🏋️', 'Spor'], ['diet', '🥗', 'Diyet'], ['todos', '✅', 'Yapılacak'], ['more', '✨', 'Daha fazla']];
+function header(title, sub = '', right = '') {
+  const back = navStack.length ? `<button class="back" onclick="goBack()">‹ Geri</button>` : '';
+  return `${back}<div class="top"><div class="grow"><div class="sub">${sub}</div><h1>${title}</h1></div>${right}</div>`;
+}
+function render() {
+  applyTheme();
+  const p = Pages[route.page] || Pages.today;
+  $('#app').innerHTML = p(route.arg);
+  $('#tabs').innerHTML = `<div class="in">${TABS.map(([k, i, l]) => `<button class="${route.tab === k ? 'on' : ''}" onclick="setTab('${k}')"><span class="i">${i}</span>${l}</button>`).join('')}</div>`;
+  wireFields($('#app'));
+  if (p.after) p.after(route.arg);
+}
+
+/* ===== Tema ===== */
+function applyTheme() {
+  const t = S.settings.theme; const dark = t === 'dark' || (t === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches);
+  document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  const a = S.settings.accent || '#6C63FF';
+  const r = document.documentElement.style;
+  r.setProperty('--accent', a); r.setProperty('--accent-2', shade(a, 30)); r.setProperty('--accent-soft', hexA(a, .14));
+  const m = document.querySelector('meta[name=theme-color]'); if (m) m.content = dark ? '#0B0B0F' : '#F2F2F7';
+}
+function hexA(h, a) { const n = parseInt(h.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; }
+function shade(h, p) { const n = parseInt(h.slice(1), 16); const f = c => Math.min(255, Math.round(c + (255 - c) * p / 100)); return '#' + [n >> 16, (n >> 8) & 255, n & 255].map(f).map(x => pad(x.toString(16))).join(''); }
+matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', () => render());
+
+/* ===== Kilit ===== */
+function showLock(onOk) {
+  let entered = '';
+  const el = document.createElement('div'); el.className = 'lock';
+  const draw = () => {
+    el.innerHTML = `<div style="font-size:44px">🔒</div><div class="b">Şifreni gir</div><div class="pin-dots">${[0, 1, 2, 3].map(i => `<i class="${i < entered.length ? 'on' : ''}"></i>`).join('')}</div>
+    <div class="keypad">${[1, 2, 3, 4, 5, 6, 7, 8, 9, '', 0, '⌫'].map(k => k === '' ? '<span></span>' : `<button data-k="${k}">${k}</button>`).join('')}</div>`;
+    el.querySelectorAll('button').forEach(b => b.onclick = () => {
+      const k = b.dataset.k;
+      if (k === '⌫') entered = entered.slice(0, -1); else if (entered.length < 4) entered += k;
+      if (entered.length === 4) {
+        if (entered === S.settings.pin) { el.remove(); onOk && onOk(); return; }
+        entered = ''; draw(); el.querySelector('.pin-dots').classList.add('shake'); return;
+      }
+      draw();
+    });
+  };
+  draw(); document.body.append(el);
+}
+
+/* ===== Şifreli senkronizasyon (Supabase) ===== */
+// Supabase projesi oluşturulunca buraya yazılır; boşsa Ayarlar'dan girilebilir.
+const APP_CONFIG = { supabaseUrl: '', supabaseKey: '' };
+
+const b64 = u8 => { let s = ''; for (let i = 0; i < u8.length; i += 0x8000) s += String.fromCharCode.apply(null, u8.subarray(i, i + 0x8000)); return btoa(s); };
+const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+async function zip(u8, dir) {
+  const st = new Blob([u8]).stream().pipeThrough(dir ? new CompressionStream('gzip') : new DecompressionStream('gzip'));
+  return new Uint8Array(await new Response(st).arrayBuffer());
+}
+async function deriveKey(pass, saltB64) {
+  const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pass), 'PBKDF2', false, ['deriveKey']);
+  return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: unb64(saltB64), iterations: 310000, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+}
+async function encryptState(obj, key) {
+  let bytes = new TextEncoder().encode(JSON.stringify(obj)); let z = false;
+  if (window.CompressionStream) { bytes = await zip(bytes, true); z = true; }
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, bytes));
+  return { data: (z ? 'z:' : 'r:') + b64(ct), iv: b64(iv) };
+}
+async function decryptState(row, key) {
+  let pt = new Uint8Array(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64(row.iv) }, key, unb64(row.data.slice(2))));
+  if (row.data.startsWith('z:')) pt = await zip(pt, false);
+  return JSON.parse(new TextDecoder().decode(pt));
+}
+
+let Meta = { baseRev: 0, dirty: false, updatedAt: 0 };
+const Sync = {
+  cfg: null, key: null, busy: false, again: false, err: '', last: 0, timer: null,
+  async load() {
+    this.cfg = await Store.get('sync');
+    try { this.key = await Store.get('synckey'); if (this.key && !(this.key instanceof CryptoKey)) this.key = null; } catch (e) { this.key = null; }
+    Meta = { ...Meta, ...(await Store.get('meta') || {}) };
+  },
+  url() { return (this.cfg?.url || APP_CONFIG.supabaseUrl || '').replace(/\/+$/, ''); },
+  apikey() { return this.cfg?.key || APP_CONFIG.supabaseKey; },
+  on() { return !!(this.cfg && this.cfg.refresh && this.key); },
+  saveCfg() { return Store.set('sync', this.cfg); },
+  async auth(path, body) {
+    const r = await fetch(this.url() + '/auth/v1/' + path, { method: 'POST', headers: { apikey: this.apikey(), 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(trErr(j.error_description || j.msg || j.message || j.error || ('Hata ' + r.status)));
+    return j;
+  },
+  async setSession(j) {
+    this.cfg = { ...(this.cfg || {}), access: j.access_token, refresh: j.refresh_token, exp: Date.now() + (j.expires_in || 3600) * 1000, uid: j.user?.id || this.cfg?.uid, email: j.user?.email || this.cfg?.email };
+    await this.saveCfg();
+  },
+  async token() {
+    if (this.cfg.exp - Date.now() > 60000) return;
+    await this.setSession(await this.auth('token?grant_type=refresh_token', { refresh_token: this.cfg.refresh }));
+  },
+  async api(path, opts = {}) {
+    await this.token();
+    const r = await fetch(this.url() + '/rest/v1/' + path, { ...opts, headers: { apikey: this.apikey(), Authorization: 'Bearer ' + this.cfg.access, 'Content-Type': 'application/json', ...(opts.headers || {}) } });
+    const t = await r.text();
+    if (!r.ok) { let m = t; try { m = JSON.parse(t).message || t; } catch (e) {} throw new Error(trErr(m.slice(0, 160) || 'Hata ' + r.status)); }
+    return t ? JSON.parse(t) : null;
+  },
+  remote(cols = 'rev,updated_at,salt') { return this.api(`vault?select=${cols}&user_id=eq.${this.cfg.uid}`).then(r => r[0] || null); },
+  async push(expectRev) {
+    const enc = await encryptState(S, this.key);
+    const now = new Date().toISOString();
+    let rows;
+    if (expectRev == null) rows = await this.api('vault', { method: 'POST', headers: { Prefer: 'return=representation' }, body: JSON.stringify({ user_id: this.cfg.uid, ...enc, salt: this.cfg.salt, rev: 1, updated_at: now }) });
+    else rows = await this.api(`vault?user_id=eq.${this.cfg.uid}&rev=eq.${expectRev}`, { method: 'PATCH', headers: { Prefer: 'return=representation' }, body: JSON.stringify({ ...enc, rev: expectRev + 1, updated_at: now }) });
+    if (!rows || !rows.length) return false; // başka cihaz araya girdi
+    Meta.baseRev = rows[0].rev; Meta.dirty = false; await Store.set('meta', Meta); return true;
+  },
+  async applyRemote(row) {
+    const data = await decryptState(row, this.key);
+    S = merge(DEFAULT_STATE(), data); await Store.set('state', S);
+    Meta.baseRev = row.rev; Meta.dirty = false; Meta.updatedAt = Date.parse(row.updated_at); await Store.set('meta', Meta);
+    const typing = document.activeElement && /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName);
+    if (!sheetStack.length && !typing) render(); else this.pendingRender = true;
+  },
+  async run() {
+    if (!this.on() || !navigator.onLine) return;
+    if (this.busy) { this.again = true; return; }
+    this.busy = true; this.err = '';
+    try {
+      for (let tries = 0; tries < 3; tries++) {
+        const r = await this.remote();
+        if (!r) { if (await this.push(null)) break; continue; }
+        if (r.rev === Meta.baseRev) { if (!Meta.dirty || await this.push(r.rev)) break; continue; }
+        // Bulutta daha yeni sürüm var
+        const full = await this.remote('*');
+        if (Meta.dirty) {
+          const remoteT = Date.parse(full.updated_at);
+          if (Meta.updatedAt > remoteT) { // bu cihaz daha yeni: buluttakini yedekle, bizimkini yükle
+            try { await Store.set('conflict', { at: Date.now(), from: 'bulut', state: await decryptState(full, this.key) }); } catch (e) {}
+            if (await this.push(full.rev)) break; continue;
+          }
+          await Store.set('conflict', { at: Date.now(), from: 'bu cihaz', state: JSON.parse(JSON.stringify(S)) });
+          toast('Başka cihazdaki daha yeni değişiklikler alındı');
+        }
+        await this.applyRemote(full); break;
+      }
+      this.last = Date.now();
+    } catch (e) { this.err = e.message || String(e); }
+    this.busy = false; this.paint();
+    if (this.again) { this.again = false; this.run(); }
+  },
+  schedule(ms = 2500) { if (!this.on()) return; clearTimeout(this.timer); this.timer = setTimeout(() => this.run(), ms); },
+  paint() { const el = $('#syncstat'); if (el) el.innerHTML = syncStatusHTML(); if (this.pendingRender && !sheetStack.length) { this.pendingRender = false; } },
+  async signOut() { this.cfg = { url: this.cfg?.url, key: this.cfg?.key }; this.key = null; await this.saveCfg(); await Store.set('synckey', null); Meta.baseRev = 0; await Store.set('meta', Meta); }
+};
+function trErr(m) {
+  const map = [[/Invalid login credentials/i, 'E-posta veya şifre hatalı'], [/Email not confirmed/i, 'E-posta adresin henüz onaylanmadı — gelen kutundaki bağlantıya tıkla'], [/User already registered/i, 'Bu e-posta ile zaten hesap var, giriş yap'], [/Password should be at least/i, 'Şifre en az 6 karakter olmalı'], [/Failed to fetch|NetworkError|Load failed/i, 'Sunucuya ulaşılamadı (internet veya adres hatalı)'], [/relation .*vault.* does not exist|Could not find the table/i, 'Supabase\'de "vault" tablosu yok — kurulum SQL\'ini çalıştır'], [/rate limit/i, 'Çok fazla deneme, biraz bekle']];
+  for (const [r, t] of map) if (r.test(m)) return t; return m;
+}
+function syncStatusHTML() {
+  if (!Sync.on()) return '<span class="muted">Kapalı — veriler sadece bu cihazda</span>';
+  if (Sync.busy) return '<span style="color:var(--accent)">⟳ Eşitleniyor…</span>';
+  if (Sync.err) return `<span style="color:var(--bad)">⚠︎ ${esc(Sync.err)}</span>`;
+  if (!navigator.onLine) return '<span class="muted">İnternet yok — bağlanınca eşitlenecek</span>';
+  if (Meta.dirty) return '<span class="muted">Değişiklikler gönderilecek…</span>';
+  return `<span style="color:var(--ok)">✓ Eşitlendi${Sync.last ? ' · ' + new Date(Sync.last).toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' }) : ''}</span>`;
+}
+function hasLocalData() {
+  return S.journal.length + S.todos.length + S.notes.length + S.workout.days.length + S.workout.logs.length + S.books.length + S.movies.length + S.shopping.length + S.habits.length + Object.keys(S.diet.log).length > 0;
+}
+
+/* Kurulum ekranları */
+function syncSetup() {
+  const s = openSheet({
+    title: 'Senkronizasyon', left: 'Vazgeç',
+    body: `<p class="small muted" style="margin-top:0">Telefon, tablet ve bilgisayarında aynı hesapla giriş yap. Verilerin cihazından çıkmadan önce şifrelenir; sunucu dahil kimse okuyamaz.</p>
+    ${APP_CONFIG.supabaseUrl ? '' : `<div class="field"><label>Supabase proje adresi (URL)</label><input id="su" placeholder="https://xxxx.supabase.co" value="${esc(Sync.cfg?.url || '')}" autocapitalize="off"></div><div class="field"><label>Supabase anon (public) key</label><input id="sk" value="${esc(Sync.cfg?.key || '')}" autocapitalize="off"></div>`}
+    <div class="field"><label>E-posta</label><input id="se" type="email" autocomplete="username" value="${esc(Sync.cfg?.email || '')}" autocapitalize="off"></div>
+    <div class="field"><label>Hesap şifresi</label><input id="sp" type="password" autocomplete="current-password"></div>
+    <button class="btn full" id="sin" style="margin-bottom:8px">Giriş yap</button><button class="btn plain full" id="sup">Yeni hesap oluştur</button><div class="small" id="smsg" style="margin-top:12px;text-align:center"></div>`
+  });
+  const msg = (t, bad) => { const m = s.sh.querySelector('#smsg'); m.textContent = t; m.style.color = bad ? 'var(--bad)' : 'var(--muted)'; };
+  const go2 = async kind => {
+    const u = s.sh.querySelector('#su'), k = s.sh.querySelector('#sk');
+    Sync.cfg = { ...(Sync.cfg || {}), url: u ? u.value.trim() : Sync.cfg?.url, key: k ? k.value.trim() : Sync.cfg?.key };
+    const email = s.sh.querySelector('#se').value.trim(), password = s.sh.querySelector('#sp').value;
+    if (!Sync.url() || !Sync.apikey()) return msg('Supabase adresi ve anahtarı gerekli', true);
+    if (!email || !password) return msg('E-posta ve şifre gir', true);
+    msg('Bekle…');
+    try {
+      if (kind === 'up') {
+        const j = await Sync.auth('signup', { email, password });
+        if (!j.access_token) { Sync.cfg.email = email; await Sync.saveCfg(); return msg('Hesap oluşturuldu! E-postana gelen onay bağlantısına tıkla, sonra "Giriş yap".'); }
+        await Sync.setSession(j);
+      } else await Sync.setSession(await Sync.auth('token?grant_type=password', { email, password }));
+      closeSheet(s); passSetup();
+    } catch (e) { msg(e.message, true); }
+  };
+  s.sh.querySelector('#sin').onclick = () => go2('in');
+  s.sh.querySelector('#sup').onclick = () => go2('up');
+}
+async function passSetup() {
+  let row = null;
+  try { row = await Sync.remote('*'); } catch (e) { toast(e.message); return; }
+  const isNew = !row;
+  const s = openSheet({
+    title: isNew ? 'Şifreleme şifresi belirle' : 'Şifreleme şifren', left: 'Vazgeç',
+    body: isNew ? `<p class="small">Bu şifre verilerini kilitler. Hesap şifrenden <b>farklı</b> olsun, en az 8 karakter.</p>
+      <div class="card" style="background:rgba(255,176,32,.12)"><b>⚠︎ Önemli:</b> <span class="small">Bu şifreyi unutursan verilerin <b>hiçbir şekilde kurtarılamaz</b> — biz de, Supabase de açamaz. Bir yere not et.</span></div>
+      <div class="field"><label>Şifreleme şifresi</label><input id="k1" type="password" autocomplete="new-password"></div><div class="field"><label>Tekrar</label><input id="k2" type="password" autocomplete="new-password"></div><button class="btn full" id="kgo">Şifrele ve yükle</button><div class="small" id="kmsg" style="margin-top:10px;text-align:center"></div>`
+      : `<p class="small">Bu hesapta şifrelenmiş veriler var. Açmak için diğer cihazda belirlediğin <b>şifreleme şifresini</b> gir.</p><div class="field"><label>Şifreleme şifresi</label><input id="k1" type="password"></div><button class="btn full" id="kgo">Kilidi aç</button><div class="small" id="kmsg" style="margin-top:10px;text-align:center"></div>`
+  });
+  const msg = (t, bad) => { const m = s.sh.querySelector('#kmsg'); m.textContent = t; m.style.color = bad ? 'var(--bad)' : 'var(--muted)'; };
+  s.sh.querySelector('#kgo').onclick = async () => {
+    const p1 = s.sh.querySelector('#k1').value;
+    if (isNew) {
+      if (p1.length < 8) return msg('En az 8 karakter olmalı', true);
+      if (p1 !== s.sh.querySelector('#k2').value) return msg('Şifreler aynı değil', true);
+      msg('Şifreleniyor…');
+      Sync.cfg.salt = b64(crypto.getRandomValues(new Uint8Array(16))); await Sync.saveCfg();
+      Sync.key = await deriveKey(p1, Sync.cfg.salt);
+      try { await Store.set('synckey', Sync.key); } catch (e) {}
+      Meta.baseRev = 0; Meta.dirty = true;
+      try { await Sync.push(null); } catch (e) { return msg(e.message, true); }
+      closeSheet(s); render(); toast('☁︎ Senkronizasyon açıldı');
+    } else {
+      msg('Kontrol ediliyor…');
+      const key = await deriveKey(p1, row.salt);
+      let data; try { data = await decryptState(row, key); } catch (e) { return msg('Şifre yanlış', true); }
+      Sync.key = key; Sync.cfg.salt = row.salt; await Sync.saveCfg();
+      try { await Store.set('synckey', key); } catch (e) {}
+      closeSheet(s);
+      const useCloud = async () => { await Store.set('conflict', { at: Date.now(), from: 'bu cihaz', state: JSON.parse(JSON.stringify(S)) }); await Sync.applyRemote(row); render(); toast('☁︎ Veriler buluttan alındı'); };
+      if (!hasLocalData()) return useCloud();
+      const c = openSheet({ title: 'Hangi veriler kalsın?', body: `<p class="small">Bu cihazda da veri var. Hangisini kullanalım? (Diğeri Ayarlar'da "Eski sürümü geri yükle" ile geri alınabilir.)</p><button class="btn full" id="c1" style="margin-bottom:8px">☁︎ Buluttakini kullan (önerilen)</button><button class="btn plain full" id="c2">📱 Bu cihazdakini buluta yükle</button>` });
+      c.sh.querySelector('#c1').onclick = () => { closeSheet(c); useCloud(); };
+      c.sh.querySelector('#c2').onclick = async () => { closeSheet(c); await Store.set('conflict', { at: Date.now(), from: 'bulut', state: data }); try { await Sync.push(row.rev); render(); toast('☁︎ Bu cihazdaki veriler yüklendi'); } catch (e) { toast(e.message); } };
+    }
+  };
+}
+async function restoreConflict() {
+  const c = await Store.get('conflict'); if (!c) { toast('Eski sürüm yok'); return; }
+  confirmSheet(`${new Date(c.at).toLocaleString('tr-TR')} tarihinde ayrılan "${c.from}" sürümü geri yüklensin mi? Şu anki veriler onunla değişir.`, async () => {
+    const cur = JSON.parse(JSON.stringify(S)); S = merge(DEFAULT_STATE(), c.state); await Store.set('conflict', { at: Date.now(), from: 'geri yüklemeden önceki', state: cur }); save(); render(); toast('Geri yüklendi');
+  }, 'Geri yükle');
+}
+function syncCard() {
+  return `<div class="card"><h3>☁︎ Cihazlar arası senkronizasyon</h3><div class="small" id="syncstat" style="margin-bottom:10px">${syncStatusHTML()}</div>
+  ${Sync.on() ? `<div class="small muted" style="margin-bottom:10px">${esc(Sync.cfg.email || '')} · uçtan uca şifreli 🔒</div><div class="row"><button class="btn plain sm grow" onclick="Sync.run()">Şimdi eşitle</button><button class="btn plain sm grow" onclick="confirmSheet('Bu cihazda oturum kapanacak; veriler bu cihazda kalır ama artık eşitlenmez.',async()=>{await Sync.signOut();render()},'Çıkış yap')">Çıkış yap</button></div>
+  <button class="btn plain sm full" style="margin-top:8px" onclick="restoreConflict()">Eski sürümü geri yükle</button>`
+  : `<button class="btn full" onclick="${Sync.cfg?.refresh ? 'passSetup()' : 'syncSetup()'}">Senkronizasyonu aç</button>`}</div>`;
+}
+
+/* ===== Kaslar ve vücut haritası ===== */
+const MUSCLES = {
+  chest: 'Göğüs', fdelt: 'Ön omuz', sdelt: 'Yan omuz', rdelt: 'Arka omuz', biceps: 'Biceps', triceps: 'Triceps',
+  forearm: 'Ön kol', abs: 'Karın', obliques: 'Yan karın', traps: 'Trapez', lats: 'Kanat (lat)', lowback: 'Bel',
+  glutes: 'Kalça', quads: 'Ön bacak', hams: 'Arka bacak', adductors: 'İç bacak', calves: 'Baldır'
+};
+const REC_H = { chest: 72, lats: 72, quads: 72, hams: 72, glutes: 72, lowback: 72, traps: 60 }; // diğerleri 48 saat
+const FULL_SETS = 8; // bir kas için ~8 efektif set = tam yorgunluk
+const SHAPES = {
+  chest: [['e', 40, 45, 10, 8], ['e', 60, 45, 10, 8]],
+  fdelt: [['e', 27, 38, 6.5, 6.5], ['e', 73, 38, 6.5, 6.5]],
+  sdelt: [['e', 20.5, 41, 3.5, 6], ['e', 79.5, 41, 3.5, 6], ['e', 120.5, 41, 3.5, 6], ['e', 179.5, 41, 3.5, 6]],
+  biceps: [['e', 23, 56, 4.8, 11], ['e', 77, 56, 4.8, 11]],
+  forearm: [['e', 19.5, 85, 4.6, 13], ['e', 80.5, 85, 4.6, 13], ['e', 119.5, 85, 4.6, 13], ['e', 180.5, 85, 4.6, 13]],
+  abs: [['r', 43, 56, 14, 32, 4]],
+  obliques: [['e', 34.5, 70, 4, 12], ['e', 65.5, 70, 4, 12]],
+  quads: [['e', 40, 123, 7.5, 22], ['e', 60, 123, 7.5, 22]],
+  adductors: [['e', 47.2, 108, 2.6, 9], ['e', 52.8, 108, 2.6, 9]],
+  calves: [['e', 40, 176, 4.6, 14], ['e', 60, 176, 4.6, 14], ['e', 140, 174, 6, 15], ['e', 160, 174, 6, 15]],
+  traps: [['e', 42, 31, 5, 2.6], ['e', 58, 31, 5, 2.6], ['p', '150,26 163,35 150,60 137,35']],
+  rdelt: [['e', 127, 38, 6.5, 6.5], ['e', 173, 38, 6.5, 6.5]],
+  lats: [['e', 139, 58, 7.5, 15], ['e', 161, 58, 7.5, 15]],
+  triceps: [['e', 123, 56, 4.8, 11], ['e', 177, 56, 4.8, 11]],
+  lowback: [['r', 144, 68, 12, 20, 4]],
+  glutes: [['e', 140.5, 100, 9.5, 9], ['e', 159.5, 100, 9.5, 9]],
+  hams: [['e', 140, 131, 7.5, 21], ['e', 160, 131, 7.5, 21]],
+};
+function baseBody(ox) {
+  const R = (x, y, w, h, rx) => `<rect x="${x + ox}" y="${y}" width="${w}" height="${h}" rx="${rx}"/>`;
+  return `<g fill="var(--body)">
+  <circle cx="${50 + ox}" cy="14" r="10"/>${R(45, 22, 10, 9, 3)}${R(29, 31, 42, 64, 12)}
+  ${R(17, 34, 12, 37, 6)}${R(71, 34, 12, 37, 6)}${R(14, 69, 11, 37, 5)}${R(75, 69, 11, 37, 5)}
+  <circle cx="${19.5 + ox}" cy="109" r="4.5"/><circle cx="${80.5 + ox}" cy="109" r="4.5"/>
+  ${R(31, 86, 38, 20, 8)}${R(31, 96, 18, 62, 8)}${R(51, 96, 18, 62, 8)}${R(33, 156, 14, 50, 6)}${R(53, 156, 14, 50, 6)}
+  <ellipse cx="${40 + ox}" cy="207" rx="7" ry="3.5"/><ellipse cx="${60 + ox}" cy="207" rx="7" ry="3.5"/></g>`;
+}
+function heat(v) { const h = 140 - 140 * Math.min(1, v); return `hsl(${h},78%,${52 + (1 - v) * 4}%)`; }
+/* vals: {kas: 0..1}; mode: heat | hi */
+function bodySVG(vals = {}, { mode = 'heat', labels = true, only = null, vb: vbx = null } = {}) {
+  const fill = v => {
+    if (!v || v < 0.01) return 'var(--muscle-off)';
+    if (mode === 'hi') return v >= 1 ? 'var(--accent)' : 'var(--accent-2)';
+    return heat(v);
+  };
+  let sh = '';
+  for (const k in SHAPES) {
+    const c = fill(vals[k]);
+    for (const s of SHAPES[k]) {
+      if (s[0] === 'e') sh += `<ellipse cx="${s[1]}" cy="${s[2]}" rx="${s[3]}" ry="${s[4]}" fill="${c}"/>`;
+      else if (s[0] === 'r') sh += `<rect x="${s[1]}" y="${s[2]}" width="${s[3]}" height="${s[4]}" rx="${s[5]}" fill="${c}"/>`;
+      else sh += `<polygon points="${s[1]}" fill="${c}"/>`;
+    }
+  }
+  const vb = vbx ? vbx : only === 'f' ? '6 0 88 214' : only === 'b' ? '106 0 88 214' : `0 0 200 ${labels ? 226 : 214}`;
+  const lab = labels && !only ? `<text x="50" y="224" text-anchor="middle" font-size="10" fill="var(--muted)" font-weight="600">ÖN</text><text x="150" y="224" text-anchor="middle" font-size="10" fill="var(--muted)" font-weight="600">ARKA</text>` : '';
+  return `<svg viewBox="${vb}" xmlns="http://www.w3.org/2000/svg">${baseBody(0)}${baseBody(100)}${sh}${lab}</svg>`;
+}
+function exThumb(ex) {
+  if (!ex) return '<div class="ex-thumb"></div>';
+  const ph = exPhoto(ex);
+  if (ph) return `<div class="ex-thumb"><img src="${ph}" alt=""></div>`;
+  const v = {}; ex.s.forEach(k => v[k] = .5); ex.p.forEach(k => v[k] = 1);
+  const BACK = ['lats', 'triceps', 'lowback', 'glutes', 'hams', 'rdelt', 'traps'], LOW = ['quads', 'hams', 'glutes', 'calves', 'adductors'];
+  const back = ex.p.filter(k => BACK.includes(k)).length > ex.p.filter(k => !BACK.includes(k) && !['calves', 'sdelt', 'forearm'].includes(k)).length;
+  const low = ex.p.every(k => LOW.includes(k));
+  const ox = back ? 100 : 0;
+  const vb = low ? `${20 + ox} 88 60 124` : `${10 + ox} 2 80 106`;
+  return `<div class="ex-thumb">${bodySVG(v, { mode: 'hi', labels: false, vb })}</div>`;
+}
+function levelLabel(v) { if (v < .01) return '—'; if (v < .3) return 'Hafif'; if (v < .6) return 'Orta'; if (v < .85) return 'Yüksek'; return 'Çok yüksek'; }
+function muscleBars(vals, unit = '') {
+  const arr = Object.entries(vals).filter(([, v]) => v > .005).sort((a, b) => b[1] - a[1]);
+  if (!arr.length) return '<div class="muted small" style="text-align:center;padding:6px">Henüz kas yükü yok</div>';
+  return arr.map(([k, v]) => `<div class="mrow"><span class="n">${MUSCLES[k]}</span><div class="bar"><i style="width:${Math.round(Math.min(1, v) * 100)}%;background:${heat(v)}"></i></div><span class="v">${levelLabel(v)} · %${Math.round(Math.min(1, v) * 100)}</span></div>`).join('');
+}
+const LEGEND = `<div class="legend"><span><i style="background:${heat(.15)}"></i>Hafif</span><span><i style="background:${heat(.5)}"></i>Orta</span><span><i style="background:${heat(.75)}"></i>Yüksek</span><span><i style="background:${heat(1)}"></i>Çok yüksek</span></div>`;
+
+/* ===== Hareket kütüphanesi ===== */
+const E = (id, name, p, s = [], cat = '') => ({ id: 'b_' + id, name, p, s, cat, builtin: true });
+const BUILTIN_EX = [
+  E('bench', 'Bench Press', ['chest'], ['fdelt', 'triceps'], 'Göğüs'),
+  E('incdb', 'Incline Dumbbell Press', ['chest', 'fdelt'], ['triceps'], 'Göğüs'),
+  E('incbb', 'Incline Bench Press', ['chest', 'fdelt'], ['triceps'], 'Göğüs'),
+  E('dbpress', 'Dumbbell Bench Press', ['chest'], ['fdelt', 'triceps'], 'Göğüs'),
+  E('fly', 'Dumbbell Fly', ['chest'], ['fdelt'], 'Göğüs'),
+  E('cross', 'Cable Crossover', ['chest'], ['fdelt'], 'Göğüs'),
+  E('pecdeck', 'Pec Deck (Makine Fly)', ['chest'], ['fdelt'], 'Göğüs'),
+  E('chpress', 'Chest Press Makine', ['chest'], ['fdelt', 'triceps'], 'Göğüs'),
+  E('pushup', 'Şınav', ['chest'], ['triceps', 'fdelt', 'abs'], 'Göğüs'),
+  E('dips', 'Dips', ['chest', 'triceps'], ['fdelt'], 'Göğüs'),
+  E('pullup', 'Barfiks', ['lats'], ['biceps', 'rdelt', 'forearm', 'traps'], 'Sırt'),
+  E('latpd', 'Lat Pulldown', ['lats'], ['biceps', 'rdelt'], 'Sırt'),
+  E('bbrow', 'Barbell Row', ['lats', 'traps'], ['rdelt', 'biceps', 'lowback'], 'Sırt'),
+  E('cabrow', 'Seated Cable Row', ['lats', 'traps'], ['biceps', 'rdelt'], 'Sırt'),
+  E('dbrow', 'Tek Kol Dumbbell Row', ['lats'], ['rdelt', 'biceps', 'traps'], 'Sırt'),
+  E('tbar', 'T-Bar Row', ['lats', 'traps'], ['rdelt', 'biceps', 'lowback'], 'Sırt'),
+  E('pullover', 'Straight-Arm Pulldown', ['lats'], ['triceps'], 'Sırt'),
+  E('dead', 'Deadlift', ['lowback', 'glutes', 'hams'], ['traps', 'forearm', 'quads', 'lats'], 'Sırt'),
+  E('hyper', 'Hyperextension', ['lowback'], ['glutes', 'hams'], 'Sırt'),
+  E('shrug', 'Shrug', ['traps'], ['forearm'], 'Sırt'),
+  E('facepull', 'Face Pull', ['rdelt'], ['traps', 'sdelt'], 'Omuz'),
+  E('ohp', 'Overhead Press', ['fdelt'], ['sdelt', 'triceps', 'traps'], 'Omuz'),
+  E('dbsp', 'Dumbbell Shoulder Press', ['fdelt'], ['sdelt', 'triceps'], 'Omuz'),
+  E('arnold', 'Arnold Press', ['fdelt', 'sdelt'], ['triceps'], 'Omuz'),
+  E('lat', 'Lateral Raise', ['sdelt'], ['traps'], 'Omuz'),
+  E('cablelat', 'Cable Lateral Raise', ['sdelt'], [], 'Omuz'),
+  E('front', 'Front Raise', ['fdelt'], ['sdelt'], 'Omuz'),
+  E('revfly', 'Reverse Fly', ['rdelt'], ['traps'], 'Omuz'),
+  E('uprow', 'Upright Row', ['sdelt', 'traps'], ['biceps'], 'Omuz'),
+  E('bbcurl', 'Barbell Curl', ['biceps'], ['forearm'], 'Kol'),
+  E('dbcurl', 'Dumbbell Curl', ['biceps'], ['forearm'], 'Kol'),
+  E('hammer', 'Hammer Curl', ['biceps', 'forearm'], [], 'Kol'),
+  E('preacher', 'Preacher Curl', ['biceps'], [], 'Kol'),
+  E('cabcurl', 'Cable Curl', ['biceps'], ['forearm'], 'Kol'),
+  E('pushdown', 'Triceps Pushdown', ['triceps'], [], 'Kol'),
+  E('skull', 'Skull Crusher', ['triceps'], [], 'Kol'),
+  E('ohext', 'Overhead Triceps Extension', ['triceps'], [], 'Kol'),
+  E('cgbench', 'Close-Grip Bench Press', ['triceps'], ['chest', 'fdelt'], 'Kol'),
+  E('wrist', 'Wrist Curl', ['forearm'], [], 'Kol'),
+  E('squat', 'Squat', ['quads', 'glutes'], ['hams', 'lowback', 'adductors'], 'Bacak'),
+  E('front_sq', 'Front Squat', ['quads'], ['glutes', 'abs'], 'Bacak'),
+  E('hack', 'Hack Squat', ['quads'], ['glutes'], 'Bacak'),
+  E('legpress', 'Leg Press', ['quads', 'glutes'], ['hams', 'adductors'], 'Bacak'),
+  E('legext', 'Leg Extension', ['quads'], [], 'Bacak'),
+  E('legcurl', 'Leg Curl', ['hams'], ['calves'], 'Bacak'),
+  E('rdl', 'Romanian Deadlift', ['hams', 'glutes'], ['lowback', 'forearm'], 'Bacak'),
+  E('lunge', 'Lunge', ['quads', 'glutes'], ['hams', 'adductors'], 'Bacak'),
+  E('bulgar', 'Bulgarian Split Squat', ['quads', 'glutes'], ['hams', 'adductors'], 'Bacak'),
+  E('hipthrust', 'Hip Thrust', ['glutes'], ['hams'], 'Bacak'),
+  E('adduct', 'Adductor Makine', ['adductors'], [], 'Bacak'),
+  E('abduct', 'Abductor Makine', ['glutes'], [], 'Bacak'),
+  E('calf', 'Calf Raise (Ayakta)', ['calves'], [], 'Bacak'),
+  E('seatcalf', 'Calf Raise (Oturarak)', ['calves'], [], 'Bacak'),
+  E('crunch', 'Crunch', ['abs'], [], 'Karın'),
+  E('cabcrunch', 'Cable Crunch', ['abs'], ['obliques'], 'Karın'),
+  E('plank', 'Plank', ['abs'], ['obliques', 'lowback'], 'Karın'),
+  E('legraise', 'Leg Raise', ['abs'], ['obliques'], 'Karın'),
+  E('twist', 'Russian Twist', ['obliques'], ['abs'], 'Karın'),
+  E('abwheel', 'Ab Wheel', ['abs'], ['lats', 'obliques'], 'Karın'),
+];
+const EX_CATS = ['Göğüs', 'Sırt', 'Omuz', 'Kol', 'Bacak', 'Karın', 'Kendi'];
+const allEx = () => [...BUILTIN_EX, ...S.workout.exercises];
+const exById = id => BUILTIN_EX.find(e => e.id === id) || S.workout.exercises.find(e => e.id === id);
+const exPhoto = ex => ex.builtin ? (S.workout.exPhotos || {})[ex.id] : ex.img;
+
+/* ===== Yük ve toparlanma hesapları ===== */
+function dayLoad(items) {
+  const m = {};
+  for (const it of items) {
+    const ex = exById(it.exId); if (!ex) continue;
+    const n = it.sets !== undefined ? (+it.sets || 0) : (it.sets_arr || []).length;
+    ex.p.forEach(k => m[k] = (m[k] || 0) + n);
+    ex.s.forEach(k => m[k] = (m[k] || 0) + n * .5);
+  }
+  const out = {}; for (const k in m) out[k] = m[k] / FULL_SETS; return out;
+}
+function recovery() {
+  const now = Date.now(); const m = {};
+  for (const lg of S.workout.logs) {
+    const h = (now - lg.ts) / 36e5; if (h > 80 || h < 0) continue;
+    for (const en of lg.entries) {
+      const ex = exById(en.exId); if (!ex) continue;
+      const n = en.sets.length;
+      const add = (k, w) => { const dec = Math.max(0, 1 - h / (REC_H[k] || 48)); m[k] = (m[k] || 0) + n * w * dec / FULL_SETS; };
+      ex.p.forEach(k => add(k, 1)); ex.s.forEach(k => add(k, .5));
+    }
+  }
+  return m;
+}
+function lastPerf(exId) {
+  for (let i = S.workout.logs.length - 1; i >= 0; i--) {
+    const en = S.workout.logs[i].entries.find(e => e.exId === exId);
+    if (en) return { log: S.workout.logs[i], sets: en.sets };
+  }
+  return null;
+}
+function exHistory(exId) {
+  const pts = [];
+  for (const lg of S.workout.logs) {
+    const en = lg.entries.find(e => e.exId === exId); if (!en || !en.sets.length) continue;
+    const best = Math.max(...en.sets.map(s => num(s.w)));
+    const e1rm = Math.max(...en.sets.map(s => num(s.w) * (1 + num(s.r) / 30)));
+    const vol = en.sets.reduce((a, s) => a + num(s.w) * num(s.r), 0);
+    pts.push({ date: lg.date, best, e1rm, vol, sets: en.sets });
+  }
+  return pts;
+}
+
+/* ===== Basit çizgi grafik ===== */
+function lineChart(pts, { unit = '', color = 'var(--accent)', h = 150 } = {}) {
+  if (pts.length < 1) return '<div class="muted small" style="text-align:center;padding:18px">Grafik için veri yok</div>';
+  const W = 320, H = h, P = 26;
+  const ys = pts.map(p => p.y); let mn = Math.min(...ys), mx = Math.max(...ys);
+  if (mn === mx) { mn -= 1; mx += 1; }
+  const pad = (mx - mn) * .15; mn -= pad; mx += pad;
+  const X = i => pts.length === 1 ? W / 2 : P + i * (W - P - 10) / (pts.length - 1);
+  const Y = v => 10 + (H - 34) * (1 - (v - mn) / (mx - mn));
+  const d = pts.map((p, i) => `${i ? 'L' : 'M'}${X(i).toFixed(1)},${Y(p.y).toFixed(1)}`).join('');
+  const area = `${d}L${X(pts.length - 1).toFixed(1)},${H - 24}L${X(0).toFixed(1)},${H - 24}Z`;
+  const step = Math.ceil(pts.length / 5);
+  const lbl = pts.map((p, i) => (i % step === 0 || i === pts.length - 1) ? `<text x="${X(i)}" y="${H - 8}" font-size="9.5" text-anchor="middle" fill="var(--muted)">${esc(p.x)}</text>` : '').join('');
+  const dots = pts.map((p, i) => `<circle cx="${X(i)}" cy="${Y(p.y)}" r="3" fill="${color}"/>`).join('');
+  const grid = [mn + pad, (mn + mx) / 2, mx - pad].map(v => `<line x1="${P}" x2="${W}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)"/><text x="${P - 4}" y="${Y(v) + 3}" font-size="9" text-anchor="end" fill="var(--muted)">${r1(v)}</text>`).join('');
+  return `<div class="chart"><svg viewBox="0 0 ${W} ${H}">${grid}<path d="${area}" fill="${color}" opacity=".12"/><path d="${d}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>${dots}${lbl}</svg></div>`;
+}
+
+/* ===== Sayfalar: Spor ===== */
+Pages.sport = () => {
+  const W = S.workout; const rec = recovery();
+  const todayWd = new Date().getDay();
+  const active = W.active ? `<div class="hero" onclick="go('session')" style="cursor:pointer"><div class="muted small b">DEVAM EDEN ANTRENMAN</div><div class="row between"><div class="kpi">${esc(W.active.name)}</div><span style="font-size:26px">›</span></div><div class="small muted">${W.active.entries.reduce((a, e) => a + e.sets.filter(s => s.done).length, 0)} set tamamlandı</div></div>` : '';
+  const days = W.days.length ? W.days.map(d => {
+    const load = dayLoad(d.items);
+    const top = Object.entries(load).sort((a, b) => b[1] - a[1]).slice(0, 4).map(([k]) => `<span class="tag">${MUSCLES[k]}</span>`).join('');
+    const isToday = (d.wd || []).includes(todayWd);
+    return `<div class="list-item" onclick="go('day','${d.id}')" style="cursor:pointer"><div class="ex-thumb mini">${bodySVG(load, { labels: false })}</div><div class="grow"><div class="t">${esc(d.name)} ${isToday ? '<span class="tag" style="background:var(--ok);color:#fff">Bugün</span>' : ''}</div><div class="small muted">${(d.wd || []).map(x => WD[x]).join(', ') || 'Gün seçilmedi'} · ${d.items.length} hareket</div><div style="margin-top:5px">${top}</div></div><span class="muted">›</span></div>`;
+  }).join('') : `<div class="empty"><div class="e">📋</div>Henüz program yok.<br>Hazır programını gün gün ekleyebilirsin.</div>`;
+  const weekLogs = W.logs.filter(l => daysBetween(l.date, today()) < 7).length;
+  return header('Spor', 'Bu hafta ' + weekLogs + ' antrenman') + active + `
+  <div class="card"><h3>Şu anki kas yorgunluğu</h3><div class="body-map" style="max-width:340px;margin:0 auto">${bodySVG(rec)}</div>${LEGEND}
+    <div class="small muted" style="text-align:center;margin-top:8px">Son antrenmanlarına göre hesaplanır; kaslar 2–3 günde toparlanır.</div></div>
+  <div class="card tight"><div class="row between" style="padding:12px 16px 4px"><h3 style="margin:0">Programım</h3><button class="btn ghost sm" onclick="editDay()">+ Gün ekle</button></div>${days}</div>
+  <div class="grid2">
+    <button class="tile" onclick="startSession(null)"><span class="ic">⚡</span><span class="nm">Serbest antrenman</span><span class="ds">Programsız başla</span></button>
+    <button class="tile" onclick="go('whist')"><span class="ic">📈</span><span class="nm">Geçmiş</span><span class="ds">${W.logs.length} antrenman</span></button>
+    <button class="tile" onclick="go('exlib')"><span class="ic">📚</span><span class="nm">Hareketler</span><span class="ds">${allEx().length} hareket · rekorlar</span></button>
+    <button class="tile" onclick="go('records')"><span class="ic">🏆</span><span class="nm">Rekorlarım</span><span class="ds">En iyi ağırlıklar</span></button>
+  </div>`;
+};
+
+function editDay(id) {
+  const d = id ? S.workout.days.find(x => x.id === id) : null;
+  editRecord({
+    title: 'Antrenman günü', list: S.workout.days, item: d, required: 'name', defaults: { items: [] },
+    fields: [{ k: 'name', label: 'Gün adı', ph: 'ör. Göğüs + Arka kol' }, { k: 'wd', label: 'Hangi günler?', type: 'days' }, { k: 'note', label: 'Not', type: 'textarea', rows: 2 }],
+    after: () => { if (d && !S.workout.days.includes(d)) { navStack = []; route = { tab: 'sport', page: 'sport' }; } render(); }
+  });
+}
+
+Pages.day = id => {
+  const d = S.workout.days.find(x => x.id === id); if (!d) return Pages.sport();
+  const load = dayLoad(d.items);
+  const totalSets = d.items.reduce((a, i) => a + (+i.sets || 0), 0);
+  const items = d.items.length ? d.items.map((it, i) => {
+    const ex = exById(it.exId); if (!ex) return '';
+    const lp = lastPerf(ex.id);
+    const last = lp ? `Son: ${lp.sets.map(s => `${s.w || 0}×${s.r || 0}`).slice(0, 4).join(', ')}` : 'Henüz yapılmadı';
+    return `<div class="ex-item"><div onclick="go('ex','${ex.id}')" style="cursor:pointer">${exThumb(ex)}</div><div class="grow" onclick="editItem('${d.id}',${i})" style="cursor:pointer"><div class="b ellip">${esc(ex.name)}</div><div class="small"><b style="color:var(--accent)">${it.sets} set × ${esc(it.reps)}</b>${it.note ? ' · ' + esc(it.note) : ''}</div><div class="tiny muted ellip">${last}</div></div>
+    <div style="display:flex;flex-direction:column;gap:4px"><button class="muted" onclick="moveItem('${d.id}',${i},-1)" ${i === 0 ? 'style="opacity:.25"' : ''}>▲</button><button class="muted" onclick="moveItem('${d.id}',${i},1)" ${i === d.items.length - 1 ? 'style="opacity:.25"' : ''}>▼</button></div></div>`;
+  }).join('') : '<div class="empty"><div class="e">➕</div>Bu güne hareket ekle</div>';
+  return header(esc(d.name), (d.wd || []).map(x => WD_LONG[x]).join(', ') || 'Antrenman günü', `<button class="icon-btn" onclick="editDay('${d.id}')">✎</button>`) + `
+  <button class="btn full" onclick="startSession('${d.id}')" style="margin-bottom:12px">▶ Antrenmana başla</button>
+  <div class="card tight">${items}<div style="padding:10px 14px"><button class="btn ghost full" onclick="pickExercise(ex=>addToDay('${d.id}',ex))">+ Hareket ekle</button></div></div>
+  <div class="card"><h3>Çalışan kaslar · olası yorgunluk</h3>
+    <div class="body-map" style="max-width:320px;margin:0 auto">${bodySVG(load)}</div>${LEGEND}
+    <div class="hr"></div>${muscleBars(load)}
+    <div class="tiny muted" style="margin-top:8px">Toplam ${totalSets} set. Hesap: ana kas 1 set, yardımcı kas yarım set sayılır; ~${FULL_SETS} set tam yorgunluk kabul edilir. Hareket ekleyip çıkardıkça güncellenir.</div></div>
+  ${d.note ? `<div class="card"><h3>Not</h3>${esc(d.note)}</div>` : ''}`;
+};
+function addToDay(dayId, ex) {
+  const d = S.workout.days.find(x => x.id === dayId);
+  d.items.push({ exId: ex.id, sets: 3, reps: '10' }); save(); render(); toast(ex.name + ' eklendi');
+}
+function moveItem(dayId, i, dir) {
+  const d = S.workout.days.find(x => x.id === dayId); const j = i + dir;
+  if (j < 0 || j >= d.items.length) return;
+  [d.items[i], d.items[j]] = [d.items[j], d.items[i]]; save(); render();
+}
+function editItem(dayId, i) {
+  const d = S.workout.days.find(x => x.id === dayId); const it = d.items[i]; const ex = exById(it.exId);
+  const s = openSheet({
+    title: ex.name, left: 'Vazgeç', right: 'Kaydet',
+    body: `<div class="grid2"><div class="field"><label>Set sayısı</label><input id="es" type="number" inputmode="numeric" value="${it.sets}"></div><div class="field"><label>Tekrar</label><input id="er" value="${esc(it.reps)}" placeholder="ör. 8-12"></div></div>
+      <div class="field"><label>Not</label><input id="en" value="${esc(it.note || '')}" placeholder="ör. son set drop set"></div>
+      <button class="btn plain full" id="eex" style="margin-bottom:8px">Hareket detayları ve geçmişi</button>
+      <button class="btn danger full" id="edel">Programdan çıkar</button>`,
+    onRight: sh => { it.sets = Math.max(1, Math.round(num(sh.querySelector('#es').value)) || 1); it.reps = sh.querySelector('#er').value.trim() || '10'; it.note = sh.querySelector('#en').value.trim(); save(); render(); }
+  });
+  s.sh.querySelector('#edel').onclick = () => { d.items.splice(i, 1); save(); closeSheet(s); render(); };
+  s.sh.querySelector('#eex').onclick = () => { closeSheet(s); go('ex', ex.id); };
+}
+
+/* Hareket seçici */
+function pickExercise(onPick) {
+  let q = '', cat = '';
+  const s = openSheet({ title: 'Hareket seç', body: `<input id="pq" placeholder="Ara… (ör. squat, curl)" style="margin-bottom:10px"><div class="chips" id="pc"></div><div class="card tight" id="pl"></div><button class="btn ghost full" id="pn">+ Yeni hareket oluştur</button>`, left: 'Bitti' });
+  const draw = () => {
+    s.sh.querySelector('#pc').innerHTML = ['', ...EX_CATS].map(c => `<button class="chip ${c === cat ? 'on' : ''}" data-c="${c}">${c || 'Tümü'}</button>`).join('');
+    s.sh.querySelectorAll('#pc button').forEach(b => b.onclick = () => { cat = b.dataset.c; draw(); });
+    const ql = q.toLocaleLowerCase('tr');
+    const list = allEx().filter(e => (!cat || (cat === 'Kendi' ? !e.builtin : e.cat === cat)) && (!ql || e.name.toLocaleLowerCase('tr').includes(ql) || e.p.some(k => MUSCLES[k].toLocaleLowerCase('tr').includes(ql))));
+    s.sh.querySelector('#pl').innerHTML = list.length ? list.map(e => `<div class="ex-item" data-id="${e.id}" style="cursor:pointer">${exThumb(e)}<div class="grow"><div class="b">${esc(e.name)}</div><div class="tiny muted">${e.p.map(k => MUSCLES[k]).join(', ')}${e.s.length ? ' · ' + e.s.map(k => MUSCLES[k]).join(', ') : ''}</div></div><span style="color:var(--accent);font-size:22px">＋</span></div>`).join('') : '<div class="empty">Bulunamadı</div>';
+    s.sh.querySelectorAll('#pl [data-id]').forEach(el => el.onclick = () => { onPick(exById(el.dataset.id)); el.style.background = 'var(--accent-soft)'; });
+  };
+  s.sh.querySelector('#pq').oninput = e => { q = e.target.value; draw(); };
+  s.sh.querySelector('#pn').onclick = () => editExercise(null, ex => { onPick(ex); draw(); });
+  draw();
+}
+function editExercise(id, cb) {
+  const ex = id ? S.workout.exercises.find(e => e.id === id) : null;
+  const st = {}; if (ex) { ex.p.forEach(k => st[k] = 'p'); ex.s.forEach(k => st[k] = 's'); }
+  let img = ex?.img || '';
+  const s = openSheet({
+    title: ex ? 'Hareketi düzenle' : 'Yeni hareket', left: 'Vazgeç', right: 'Kaydet',
+    body: `<div class="field"><label>Hareket adı</label><input id="xn" value="${esc(ex?.name || '')}" placeholder="ör. Smith Machine Squat"></div>
+    <div class="field"><label>Çalışan kaslar — 1 dokunuş: ana kas, 2: yardımcı kas</label><div class="chips" id="xm" style="flex-wrap:wrap"></div></div>
+    <div class="body-map" id="xb" style="max-width:260px;margin:0 auto 12px"></div>
+    <div class="field"><label>Fotoğraf (isteğe bağlı)</label><div class="row"><div id="xi"></div><button class="btn plain sm" id="xp">Fotoğraf seç</button></div></div>
+    ${ex ? '<button class="btn danger full" id="xd">Hareketi sil</button>' : ''}`,
+    onRight: sh => {
+      const name = sh.querySelector('#xn').value.trim(); if (!name) { toast('Hareket adı gir'); return false; }
+      const p = Object.keys(st).filter(k => st[k] === 'p'), s2 = Object.keys(st).filter(k => st[k] === 's');
+      if (!p.length) { toast('En az bir ana kas seç'); return false; }
+      let o = ex; if (!o) { o = { id: uid(), cat: 'Kendi' }; S.workout.exercises.push(o); }
+      Object.assign(o, { name, p, s: s2, img }); save(); render(); cb && cb(o);
+    }
+  });
+  const draw = () => {
+    s.sh.querySelector('#xm').innerHTML = Object.keys(MUSCLES).map(k => `<button class="chip ${st[k] || ''}" data-k="${k}">${st[k] === 'p' ? '● ' : st[k] === 's' ? '○ ' : ''}${MUSCLES[k]}</button>`).join('');
+    s.sh.querySelectorAll('#xm button').forEach(b => b.onclick = () => { const k = b.dataset.k; st[k] = !st[k] ? 'p' : st[k] === 'p' ? 's' : undefined; if (!st[k]) delete st[k]; draw(); });
+    const v = {}; for (const k in st) v[k] = st[k] === 'p' ? 1 : .5;
+    s.sh.querySelector('#xb').innerHTML = bodySVG(v, { mode: 'hi' });
+    s.sh.querySelector('#xi').innerHTML = img ? `<img src="${img}" style="width:54px;height:66px;object-fit:cover;border-radius:10px">` : '';
+  };
+  s.sh.querySelector('#xp').onclick = () => pickImage(d => { img = d; draw(); });
+  const del = s.sh.querySelector('#xd');
+  if (del) del.onclick = () => confirmSheet('Hareket silinecek (geçmiş kayıtların kalır).', () => { S.workout.exercises.splice(S.workout.exercises.indexOf(ex), 1); S.workout.days.forEach(d => d.items = d.items.filter(i => i.exId !== ex.id)); closeSheet(s); save(); goBack(); });
+  draw();
+}
+
+Pages.exlib = () => {
+  const groups = EX_CATS.map(c => {
+    const l = allEx().filter(e => c === 'Kendi' ? !e.builtin : e.cat === c); if (!l.length) return '';
+    return `<div class="card tight"><h3 style="padding:12px 16px 0">${c}</h3>${l.map(e => `<div class="ex-item" onclick="go('ex','${e.id}')" style="cursor:pointer">${exThumb(e)}<div class="grow"><div class="b">${esc(e.name)}</div><div class="tiny muted">${e.p.map(k => MUSCLES[k]).join(', ')}</div></div><span class="muted">›</span></div>`).join('')}</div>`;
+  }).join('');
+  return header('Hareketler', allEx().length + ' hareket', `<button class="icon-btn" onclick="editExercise(null)">＋</button>`) + groups;
+};
+
+Pages.ex = id => {
+  const ex = exById(id); if (!ex) return Pages.exlib();
+  const v = {}; ex.s.forEach(k => v[k] = .5); ex.p.forEach(k => v[k] = 1);
+  const h = exHistory(id); const ph = exPhoto(ex);
+  const pr = h.length ? Math.max(...h.map(p => p.best)) : 0;
+  const e1 = h.length ? Math.max(...h.map(p => p.e1rm)) : 0;
+  return header(esc(ex.name), ex.builtin ? ex.cat : 'Kendi hareketin', !ex.builtin ? `<button class="icon-btn" onclick="editExercise('${ex.id}')">✎</button>` : '') + `
+  <div class="card"><div class="row" style="align-items:flex-start"><div class="body-map grow">${bodySVG(v, { mode: 'hi' })}</div>${ph ? `<img src="${ph}" style="width:42%;border-radius:14px;object-fit:cover;aspect-ratio:3/4">` : ''}</div>
+    <div style="margin-top:10px">${ex.p.map(k => `<span class="chip p" style="display:inline-block;margin:0 6px 6px 0">${MUSCLES[k]}</span>`).join('')}${ex.s.map(k => `<span class="chip s" style="display:inline-block;margin:0 6px 6px 0">${MUSCLES[k]}</span>`).join('')}</div>
+    <div class="tiny muted">Koyu: ana kas · Açık: yardımcı kas</div>
+    <button class="btn plain sm" style="margin-top:10px" onclick="setExPhoto('${ex.id}')">📷 ${ph ? 'Fotoğrafı değiştir' : 'Kendi fotoğrafını / formunu ekle'}</button></div>
+  <div class="grid2"><div class="card"><div class="small muted">En iyi ağırlık</div><div class="kpi">${pr ? r1(pr) + ' kg' : '—'}</div></div><div class="card"><div class="small muted">Tahmini 1 tekrar max</div><div class="kpi">${e1 ? r1(e1) + ' kg' : '—'}</div></div></div>
+  <div class="card"><h3>Ağırlık gelişimi</h3>${lineChart(h.map(p => ({ x: fmtDate(p.date, { day: 'numeric', month: 'short' }), y: p.best })), { unit: 'kg' })}</div>
+  <div class="card tight"><h3 style="padding:12px 16px 0">Son seanslar</h3>${h.length ? h.slice(-8).reverse().map(p => `<div class="list-item"><div class="grow"><div class="b small">${fmtDate(p.date, { day: 'numeric', month: 'long', weekday: 'short' })}</div><div class="small muted">${p.sets.map(s => `${s.w || 0} kg × ${s.r || 0}`).join(' · ')}</div></div><div class="small b">${Math.round(p.vol)} kg</div></div>`).join('') : '<div class="empty">Henüz kayıt yok</div>'}</div>`;
+};
+function setExPhoto(id) {
+  const ex = exById(id);
+  pickImage(d => { if (ex.builtin) { S.workout.exPhotos = S.workout.exPhotos || {}; S.workout.exPhotos[id] = d; } else ex.img = d; save(); render(); });
+}
+
+Pages.records = () => {
+  const rows = allEx().map(e => { const h = exHistory(e.id); if (!h.length) return null; const best = h.reduce((a, p) => p.best > a.best ? p : a, h[0]); return { e, best }; }).filter(Boolean).sort((a, b) => b.best.best - a.best.best);
+  return header('Rekorlarım', 'Her hareketteki en iyi ağırlık') + `<div class="card tight">${rows.length ? rows.map(({ e, best }) => `<div class="ex-item" onclick="go('ex','${e.id}')" style="cursor:pointer">${exThumb(e)}<div class="grow"><div class="b">${esc(e.name)}</div><div class="tiny muted">${fmtDate(best.date)}</div></div><div class="kpi" style="font-size:20px">${r1(best.best)} <span class="small muted">kg</span></div></div>`).join('') : '<div class="empty"><div class="e">🏆</div>Antrenman kaydettikçe rekorların burada görünür</div>'}</div>`;
+};
+
+Pages.whist = () => {
+  const L = [...S.workout.logs].reverse();
+  return header('Geçmiş', S.workout.logs.length + ' antrenman') + `<div class="card tight">${L.length ? L.map(l => {
+    const sets = l.entries.reduce((a, e) => a + e.sets.length, 0);
+    const vol = l.entries.reduce((a, e) => a + e.sets.reduce((b, s) => b + num(s.w) * num(s.r), 0), 0);
+    return `<div class="list-item" onclick="showLog('${l.id}')" style="cursor:pointer"><div class="ex-thumb mini">${bodySVG(dayLoad(l.entries.map(e => ({ exId: e.exId, sets: e.sets.length }))), { labels: false })}</div><div class="grow"><div class="t">${esc(l.name)}</div><div class="small muted">${fmtDate(l.date, { weekday: 'long', day: 'numeric', month: 'long' })}</div><div class="tiny muted">${l.entries.length} hareket · ${sets} set · ${Math.round(vol).toLocaleString('tr-TR')} kg hacim${l.min ? ' · ' + l.min + ' dk' : ''}</div></div><span class="muted">›</span></div>`;
+  }).join('') : '<div class="empty"><div class="e">📈</div>Henüz antrenman kaydı yok</div>'}</div>`;
+};
+function showLog(id) {
+  const l = S.workout.logs.find(x => x.id === id);
+  const load = dayLoad(l.entries.map(e => ({ exId: e.exId, sets: e.sets.length })));
+  const s = openSheet({
+    title: l.name, body: `<div class="muted small" style="text-align:center;margin-bottom:10px">${fmtDate(l.date, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}</div>
+    <div class="card"><div class="body-map" style="max-width:280px;margin:0 auto">${bodySVG(load)}</div></div>
+    <div class="card tight">${l.entries.map(e => { const ex = exById(e.exId); return `<div class="list-item"><div class="grow"><div class="b">${esc(ex?.name || 'Silinmiş hareket')}</div><div class="small muted">${e.sets.map(s => `${s.w || 0} kg × ${s.r || 0}`).join(' · ')}</div></div></div>`; }).join('')}</div>
+    ${l.note ? `<div class="card">${esc(l.note)}</div>` : ''}
+    <button class="btn danger full" id="ld">Kaydı sil</button>`
+  });
+  s.sh.querySelector('#ld').onclick = () => confirmSheet('Antrenman kaydı silinecek.', () => { S.workout.logs.splice(S.workout.logs.indexOf(l), 1); save(); closeSheet(s); render(); });
+}
+
+/* ===== Antrenman oturumu ===== */
+function startSession(dayId) {
+  const W = S.workout;
+  const begin = () => {
+    const d = dayId ? W.days.find(x => x.id === dayId) : null;
+    W.active = {
+      dayId, name: d ? d.name : 'Serbest antrenman', start: Date.now(),
+      entries: d ? d.items.map(it => newEntry(it.exId, +it.sets || 3, it.reps)) : []
+    };
+    save(); navStack = [{ tab: 'sport', page: 'sport' }]; route = { tab: 'sport', page: 'session' }; render(); window.scrollTo(0, 0);
+  };
+  if (W.active) confirmSheet('Devam eden bir antrenman var. Onu silip yenisine başlansın mı?', begin, 'Yeniden başla'); else begin();
+}
+function newEntry(exId, n = 3, reps = '10') {
+  const lp = lastPerf(exId); const rr = String(reps).match(/\d+/g); const target = rr ? rr[rr.length - 1] : '';
+  const sets = []; for (let i = 0; i < n; i++) { const prev = lp?.sets[i] || lp?.sets[lp.sets.length - 1]; sets.push({ w: prev ? prev.w : '', r: prev ? prev.r : target, done: false }); }
+  return { exId, reps, sets };
+}
+Pages.session = () => {
+  const A = S.workout.active; if (!A) { route.page = 'sport'; return Pages.sport(); }
+  const doneSets = A.entries.reduce((a, e) => a + e.sets.filter(s => s.done).length, 0);
+  const totalSets = A.entries.reduce((a, e) => a + e.sets.length, 0);
+  const ents = A.entries.map((e, ei) => {
+    const ex = exById(e.exId); const lp = lastPerf(e.exId);
+    return `<div class="card"><div class="row" style="margin-bottom:6px"><div onclick="go('ex','${e.exId}')" style="cursor:pointer">${exThumb(ex)}</div><div class="grow"><div class="b">${esc(ex?.name || '?')}</div><div class="tiny muted">Hedef: ${esc(e.reps || '-')} tekrar${lp ? ` · Son (${fmtDate(lp.log.date, { day: 'numeric', month: 'short' })}): ${lp.sets.map(s => `${s.w || 0}×${s.r || 0}`).join(', ')}` : ''}</div></div><button class="muted" style="font-size:20px;padding:4px" onclick="entryMenu(${ei})">⋯</button></div>
+      <div class="set-row tiny muted b"><span class="no">SET</span><span style="text-align:center">KG</span><span style="text-align:center">TEKRAR</span><span></span></div>
+      ${e.sets.map((s, si) => `<div class="set-row ${s.done ? 'ok' : ''}" id="sr_${ei}_${si}"><span class="no">${si + 1}</span><input inputmode="decimal" value="${esc(s.w)}" placeholder="0" oninput="setVal(${ei},${si},'w',this.value)"><input inputmode="numeric" value="${esc(s.r)}" placeholder="0" oninput="setVal(${ei},${si},'r',this.value)"><button class="chk" onclick="toggleSet(${ei},${si})">✓</button></div>`).join('')}
+      <div class="row" style="margin-top:8px"><button class="btn plain sm grow" onclick="addSet(${ei})">+ Set ekle</button>${e.sets.length > 1 ? `<button class="btn plain sm" onclick="delSet(${ei})">− Set</button>` : ''}</div></div>`;
+  }).join('');
+  const live = dayLoad(A.entries.map(e => ({ exId: e.exId, sets: e.sets.filter(s => s.done).length })));
+  return header(esc(A.name), `<span id="elapsed">${elapsed(A.start)}</span> · ${doneSets}/${totalSets} set`) + `
+  <div class="bar" style="margin:-6px 0 14px"><i style="width:${totalSets ? doneSets / totalSets * 100 : 0}%;background:var(--ok)"></i></div>
+  ${ents || '<div class="empty"><div class="e">🏋️</div>Hareket ekleyerek başla</div>'}
+  <button class="btn ghost full" style="margin-bottom:12px" onclick="pickExercise(ex=>{S.workout.active.entries.push(newEntry(ex.id));save();render();})">+ Hareket ekle</button>
+  <div class="card"><h3>Bu antrenmanda çalışan kaslar</h3><div class="body-map" style="max-width:280px;margin:0 auto">${bodySVG(live)}</div>${muscleBars(live)}</div>
+  <div class="field"><label>Antrenman notu</label><textarea rows="2" oninput="S.workout.active.note=this.value;save()" placeholder="Nasıl hissettin?">${esc(A.note || '')}</textarea></div>
+  <button class="btn full" style="background:var(--ok);margin-bottom:10px" onclick="finishSession()">✓ Antrenmanı bitir</button>
+  <button class="btn danger full" onclick="confirmSheet('Bu antrenman kaydedilmeden silinecek.',()=>{S.workout.active=null;save();setTab('sport')},'İptal et')">Antrenmanı iptal et</button>`;
+};
+Pages.session.after = () => { clearInterval(window._el); window._el = setInterval(() => { const e = $('#elapsed'); if (e && S.workout.active) e.textContent = elapsed(S.workout.active.start); else clearInterval(window._el); }, 1000); };
+function elapsed(t) { const s = Math.floor((Date.now() - t) / 1000); const h = Math.floor(s / 3600); return (h ? h + ':' : '') + pad(Math.floor(s / 60) % 60) + ':' + pad(s % 60); }
+function setVal(ei, si, k, v) { S.workout.active.entries[ei].sets[si][k] = v.replace(',', '.'); save(); }
+function toggleSet(ei, si) {
+  const s = S.workout.active.entries[ei].sets[si]; s.done = !s.done; save();
+  if (s.done) { const nxt = S.workout.active.entries[ei].sets[si + 1]; if (nxt && nxt.w === '' && s.w !== '') nxt.w = s.w; startRest(); }
+  render();
+}
+function addSet(ei) { const e = S.workout.active.entries[ei]; const l = e.sets[e.sets.length - 1]; e.sets.push({ w: l ? l.w : '', r: l ? l.r : '', done: false }); save(); render(); }
+function delSet(ei) { S.workout.active.entries[ei].sets.pop(); save(); render(); }
+function entryMenu(ei) {
+  const A = S.workout.active; const ex = exById(A.entries[ei].exId);
+  const s = openSheet({ title: ex?.name || '', body: `<button class="btn plain full" id="m1" style="margin-bottom:8px">▲ Yukarı taşı</button><button class="btn plain full" id="m2" style="margin-bottom:8px">▼ Aşağı taşı</button><button class="btn danger full" id="m3">Bu antrenmandan çıkar</button>` });
+  const mv = d => { const j = ei + d; if (j < 0 || j >= A.entries.length) return; [A.entries[ei], A.entries[j]] = [A.entries[j], A.entries[ei]]; save(); closeSheet(s); render(); };
+  s.sh.querySelector('#m1').onclick = () => mv(-1); s.sh.querySelector('#m2').onclick = () => mv(1);
+  s.sh.querySelector('#m3').onclick = () => { A.entries.splice(ei, 1); save(); closeSheet(s); render(); };
+}
+function finishSession() {
+  const A = S.workout.active;
+  const entries = A.entries.map(e => ({ exId: e.exId, sets: e.sets.filter(s => s.done).map(s => ({ w: num(s.w), r: num(s.r) })) })).filter(e => e.sets.length);
+  if (!entries.length) { toast('Önce en az bir seti ✓ ile işaretle'); return; }
+  const prs = [];
+  entries.forEach(e => { const h = exHistory(e.exId); const prev = h.length ? Math.max(...h.map(p => p.best)) : 0; const best = Math.max(...e.sets.map(s => s.w)); if (h.length && best > prev) prs.push(exById(e.exId)?.name); });
+  S.workout.logs.push({ id: uid(), ts: Date.now(), date: today(), dayId: A.dayId, name: A.name, entries, note: A.note || '', min: Math.round((Date.now() - A.start) / 60000) });
+  S.workout.active = null; stopRest(); save(); setTab('sport');
+  toast(prs.length ? '🏆 Yeni rekor: ' + prs.join(', ') : '💪 Antrenman kaydedildi');
+}
+
+/* Dinlenme sayacı */
+let restEnd = 0, restInt;
+function startRest(sec) {
+  sec = sec || S.settings.rest || 90; restEnd = Date.now() + sec * 1000;
+  let el = $('#timer'); if (!el) { el = document.createElement('div'); el.id = 'timer'; el.className = 'timer'; document.body.append(el); }
+  const draw = () => {
+    const left = Math.max(0, Math.round((restEnd - Date.now()) / 1000));
+    el.innerHTML = `<span>⏱</span><div class="grow"><div class="tiny" style="opacity:.7">Dinlenme</div><div class="tm">${Math.floor(left / 60)}:${pad(left % 60)}</div></div><button onclick="restEnd-=15000">−15</button><button onclick="restEnd+=15000">+15</button><button onclick="stopRest()">✕</button>`;
+    if (left <= 0) { beep(); stopRest(); toast('⏰ Dinlenme bitti, sıradaki set!'); }
+  };
+  clearInterval(restInt); draw(); restInt = setInterval(draw, 500);
+}
+function stopRest() { clearInterval(restInt); const el = $('#timer'); if (el) el.remove(); }
+function beep() {
+  try { const c = new (window.AudioContext || window.webkitAudioContext)(); [0, .25, .5].forEach(t => { const o = c.createOscillator(), g = c.createGain(); o.frequency.value = 880; g.gain.value = .15; o.connect(g); g.connect(c.destination); o.start(c.currentTime + t); o.stop(c.currentTime + t + .15); }); } catch (e) {}
+  try { navigator.vibrate && navigator.vibrate([200, 100, 200]); } catch (e) {}
+}
+
+/* ===== Besinler (100 g için yaklaşık değerler) ===== */
+const F = (id, name, kcal, p, c, f, unit = null) => ({ id: 'f_' + id, name, kcal, p, c, f, unit, builtin: true });
+const BUILTIN_FOODS = [
+  F('egg', 'Yumurta', 143, 12.6, 0.7, 9.5, { n: 'adet', g: 55 }),
+  F('eggw', 'Yumurta beyazı', 52, 10.9, 0.7, 0.2, { n: 'adet', g: 33 }),
+  F('chick', 'Tavuk göğsü (pişmiş)', 165, 31, 0, 3.6),
+  F('chthigh', 'Tavuk but (pişmiş, derisiz)', 209, 26, 0, 10.9),
+  F('turkey', 'Hindi füme', 104, 17, 4, 2, { n: 'dilim', g: 15 }),
+  F('mince', 'Dana kıyma (pişmiş, %15 yağ)', 250, 26, 0, 15),
+  F('steak', 'Dana biftek (pişmiş)', 250, 26, 0, 15),
+  F('kofte', 'Köfte (ızgara)', 240, 18, 6, 16, { n: 'adet', g: 30 }),
+  F('tuna', 'Ton balığı (suda)', 116, 26, 0, 0.8, { n: 'kutu', g: 120 }),
+  F('salmon', 'Somon (pişmiş)', 206, 22, 0, 12),
+  F('rice', 'Pirinç pilavı', 150, 2.8, 30, 2.5, { n: 'porsiyon', g: 150 }),
+  F('ricep', 'Pirinç (haşlanmış, sade)', 130, 2.7, 28, 0.3),
+  F('bulgur', 'Bulgur pilavı', 110, 3.2, 21, 1.8, { n: 'porsiyon', g: 150 }),
+  F('pasta', 'Makarna (haşlanmış)', 158, 5.8, 31, 0.9, { n: 'porsiyon', g: 180 }),
+  F('oats', 'Yulaf ezmesi', 379, 13, 68, 6.5, { n: 'yemek kaşığı', g: 10 }),
+  F('wbread', 'Tam buğday ekmeği', 247, 13, 41, 3.4, { n: 'dilim', g: 30 }),
+  F('bread', 'Beyaz ekmek', 265, 9, 49, 3.2, { n: 'dilim', g: 30 }),
+  F('lavas', 'Lavaş', 275, 9, 55, 1.5, { n: 'adet', g: 70 }),
+  F('potato', 'Patates (haşlanmış)', 87, 1.9, 20, 0.1),
+  F('sweetp', 'Tatlı patates (fırın)', 90, 2, 21, 0.2),
+  F('lentil', 'Mercimek çorbası', 60, 3.5, 9, 1.2, { n: 'kase', g: 250 }),
+  F('chickpea', 'Nohut (haşlanmış)', 164, 8.9, 27, 2.6),
+  F('beans', 'Kuru fasulye yemeği', 120, 7, 17, 3, { n: 'porsiyon', g: 200 }),
+  F('milk', 'Süt (tam yağlı)', 61, 3.2, 4.8, 3.3, { n: 'bardak', g: 200 }),
+  F('milkl', 'Süt (yarım yağlı)', 46, 3.3, 4.8, 1.5, { n: 'bardak', g: 200 }),
+  F('yog', 'Yoğurt (tam yağlı)', 61, 3.5, 4.7, 3.3, { n: 'kase', g: 150 }),
+  F('skyr', 'Süzme yoğurt', 97, 9, 3.6, 5, { n: 'kase', g: 150 }),
+  F('ayran', 'Ayran', 36, 1.7, 2.6, 1.9, { n: 'bardak', g: 200 }),
+  F('feta', 'Beyaz peynir', 264, 14, 4, 21, { n: 'dilim', g: 30 }),
+  F('kasar', 'Kaşar peyniri', 350, 25, 1.5, 27, { n: 'dilim', g: 20 }),
+  F('lor', 'Lor peyniri', 98, 11, 3.4, 4.3),
+  F('olive', 'Zeytin (siyah)', 115, 0.8, 6, 10.7, { n: 'adet', g: 4 }),
+  F('oil', 'Zeytinyağı', 884, 0, 0, 100, { n: 'yemek kaşığı', g: 13 }),
+  F('butter', 'Tereyağı', 717, 0.9, 0.1, 81, { n: 'tatlı kaşığı', g: 5 }),
+  F('pb', 'Fıstık ezmesi', 588, 25, 20, 50, { n: 'yemek kaşığı', g: 16 }),
+  F('almond', 'Badem', 579, 21, 22, 50, { n: 'avuç', g: 25 }),
+  F('walnut', 'Ceviz', 654, 15, 14, 65, { n: 'adet', g: 5 }),
+  F('honey', 'Bal', 304, 0.3, 82, 0, { n: 'tatlı kaşığı', g: 7 }),
+  F('banana', 'Muz', 89, 1.1, 23, 0.3, { n: 'adet', g: 120 }),
+  F('apple', 'Elma', 52, 0.3, 14, 0.2, { n: 'adet', g: 180 }),
+  F('orange', 'Portakal', 47, 0.9, 12, 0.1, { n: 'adet', g: 150 }),
+  F('dates', 'Hurma', 282, 2.5, 75, 0.4, { n: 'adet', g: 8 }),
+  F('tomato', 'Domates', 18, 0.9, 3.9, 0.2, { n: 'adet', g: 120 }),
+  F('cucum', 'Salatalık', 15, 0.7, 3.6, 0.1, { n: 'adet', g: 150 }),
+  F('salad', 'Yeşil salata (soslu)', 70, 1.5, 5, 5, { n: 'kase', g: 150 }),
+  F('broc', 'Brokoli', 34, 2.8, 7, 0.4),
+  F('avo', 'Avokado', 160, 2, 8.5, 14.7, { n: 'adet', g: 150 }),
+  F('whey', 'Whey protein tozu', 390, 78, 8, 6, { n: 'ölçek', g: 30 }),
+  F('ricecake', 'Pirinç patlağı', 387, 8, 81, 3, { n: 'adet', g: 9 }),
+  F('dchoc', 'Bitter çikolata (%70)', 598, 7.8, 46, 43, { n: 'kare', g: 10 }),
+  F('cola', 'Kola', 42, 0, 10.6, 0, { n: 'kutu', g: 330 }),
+  F('tea', 'Çay (şekersiz)', 1, 0, 0.2, 0, { n: 'bardak', g: 100 }),
+  F('sugar', 'Şeker', 387, 0, 100, 0, { n: 'küp', g: 3 }),
+];
+const MEALS = [['b', 'Kahvaltı', '🌅'], ['l', 'Öğle', '☀️'], ['d', 'Akşam', '🌙'], ['s', 'Ara öğün', '🍎']];
+const allFoods = () => [...S.diet.foods, ...BUILTIN_FOODS];
+const foodById = id => allFoods().find(f => f.id === id);
+const macrosOf = e => { const k = e.g / 100; return { kcal: e.per.kcal * k, p: e.per.p * k, c: e.per.c * k, f: e.per.f * k }; };
+function dayTotals(k) {
+  const t = { kcal: 0, p: 0, c: 0, f: 0 };
+  (S.diet.log[k] || []).forEach(e => { const m = macrosOf(e); for (const x in t) t[x] += m[x]; });
+  return t;
+}
+let dietDay = null;
+
+function ring(val, max, color, size = 118, sw = 12) {
+  const r = (size - sw) / 2, C = 2 * Math.PI * r, p = Math.min(1, max ? val / max : 0);
+  return `<svg width="${size}" height="${size}"><circle cx="${size / 2}" cy="${size / 2}" r="${r}" stroke="var(--card-2)" stroke-width="${sw}" fill="none"/><circle cx="${size / 2}" cy="${size / 2}" r="${r}" stroke="${color}" stroke-width="${sw}" fill="none" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - p)}"/></svg>`;
+}
+function macroBar(lbl, v, t, col) {
+  return `<div class="macro"><div class="row between"><span class="b">${lbl}</span><span class="muted">${Math.round(v)} / ${t} g</span></div><div class="bar"><i style="width:${Math.min(100, t ? v / t * 100 : 0)}%;background:${col}"></i></div></div>`;
+}
+const MC = { p: '#FF6B8A', c: '#FFB020', f: '#4DA3FF' };
+
+Pages.diet = () => {
+  const k = dietDay || today(); const T = S.diet.targets; const t = dayTotals(k);
+  const left = T.kcal - t.kcal;
+  const water = S.diet.water[k] || 0; const glasses = Math.max(8, Math.ceil(T.water / 250));
+  const log = S.diet.log[k] || [];
+  const meals = MEALS.map(([m, name, ic]) => {
+    const es = log.filter(e => e.meal === m); const kc = es.reduce((a, e) => a + macrosOf(e).kcal, 0);
+    return `<div class="card tight"><div class="row between" style="padding:12px 16px 6px"><div class="b">${ic} ${name}</div><div class="row"><span class="small muted">${Math.round(kc)} kcal</span><button class="btn ghost sm" onclick="addFood('${k}','${m}')">+ Ekle</button></div></div>
+      ${es.map(e => { const mm = macrosOf(e); return `<div class="list-item" onclick="editLogEntry('${k}','${e.id}')" style="cursor:pointer;padding:9px 16px"><div class="grow"><div class="small b ellip">${esc(e.name)}</div><div class="tiny muted">${e.qty ? `${r1(e.qty)} ${esc(e.unitName)} · ` : ''}${Math.round(e.g)} g · P ${r1(mm.p)} · K ${r1(mm.c)} · Y ${r1(mm.f)}</div></div><span class="small b">${Math.round(mm.kcal)}</span></div>`; }).join('')}</div>`;
+  }).join('');
+  const w = S.diet.weight; const lastW = w.length ? w[w.length - 1] : null;
+  const isToday = k === today();
+  return header('Diyet', `<button onclick="dietDay=addDays('${k}',-1);render()" style="color:var(--accent);font-weight:700">‹</button> ${isToday ? 'Bugün' : fmtDate(k, { weekday: 'long', day: 'numeric', month: 'long' })} <button onclick="dietDay=addDays('${k}',1);render()" style="color:var(--accent);font-weight:700">›</button>`, `<button class="icon-btn" onclick="editTargets()">⚙︎</button>`) + `
+  <div class="card"><div class="ring-wrap"><div class="ring">${ring(t.kcal, T.kcal, left < 0 ? 'var(--bad)' : 'var(--accent)')}<div class="c"><b>${Math.round(Math.abs(left))}</b><span class="tiny muted">${left < 0 ? 'kcal fazla' : 'kcal kaldı'}</span></div></div>
+    <div class="grow"><div class="small muted" style="margin-bottom:4px">${Math.round(t.kcal)} / ${T.kcal} kcal</div>${macroBar('Protein', t.p, T.p, MC.p)}${macroBar('Karbonhidrat', t.c, T.c, MC.c)}${macroBar('Yağ', t.f, T.f, MC.f)}</div></div></div>
+  <div class="row" style="margin-bottom:12px"><button class="btn ghost grow sm" onclick="applyPlan('${k}')">📋 Diyet planını bu güne ekle</button><button class="btn plain sm" onclick="go('dietplan')">Planı düzenle</button></div>
+  ${meals}
+  <div class="card"><div class="row between"><h3 style="margin:0">💧 Su</h3><span class="small b">${(water / 1000).toLocaleString('tr-TR')} / ${(T.water / 1000).toLocaleString('tr-TR')} L</span></div>
+    <div class="water" style="margin-top:10px">${Array.from({ length: glasses }, (_, i) => `<i class="${i < water / 250 ? 'on' : ''}" onclick="setWater('${k}',${i})"></i>`).join('')}</div><div class="tiny muted" style="margin-top:6px">Her bardak 250 ml — dokunarak işaretle</div></div>
+  <div class="card"><div class="row between"><h3 style="margin:0">⚖️ Kilo</h3><button class="btn ghost sm" onclick="addWeight()">+ Tartıl</button></div>
+    ${lastW ? `<div class="kpi" style="margin:8px 0 4px">${lastW.kg} kg <span class="small muted">${fmtDate(lastW.date)}</span>${w.length > 1 ? ` <span class="small" style="color:${lastW.kg - w[0].kg <= 0 ? 'var(--ok)' : 'var(--warn)'}">${lastW.kg - w[0].kg > 0 ? '+' : ''}${r1(lastW.kg - w[0].kg)} kg</span>` : ''}</div>` : ''}
+    ${lineChart(w.slice(-20).map(x => ({ x: fmtDate(x.date, { day: 'numeric', month: 'short' }), y: x.kg })), { color: '#30C26B' })}</div>
+  <div class="card"><h3>Son 7 gün (kcal)</h3>${weekBars()}</div>`;
+};
+function weekBars() {
+  const T = S.diet.targets.kcal; const ds = Array.from({ length: 7 }, (_, i) => addDays(today(), i - 6));
+  const vals = ds.map(d => dayTotals(d).kcal); const mx = Math.max(T * 1.2, ...vals);
+  return `<div style="display:flex;align-items:flex-end;gap:8px;height:120px;position:relative">
+    <div style="position:absolute;left:0;right:0;bottom:${T / mx * 96 + 22}px;border-top:1.5px dashed var(--muted);opacity:.5"></div>
+    ${ds.map((d, i) => `<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;justify-content:flex-end;height:100%"><div style="width:100%;max-width:30px;border-radius:7px;background:${vals[i] > T ? 'var(--warn)' : 'var(--accent)'};height:${Math.max(3, vals[i] / mx * 96)}px;opacity:${vals[i] ? 1 : .2}"></div><span class="tiny muted">${WD[parseD(d).getDay()]}</span></div>`).join('')}</div>`;
+}
+function setWater(k, i) { const cur = S.diet.water[k] || 0; const nv = (i + 1) * 250; S.diet.water[k] = cur === nv ? i * 250 : nv; save(); render(); }
+function addWeight() {
+  const last = S.diet.weight[S.diet.weight.length - 1];
+  const s = openSheet({
+    title: 'Kilo gir', left: 'Vazgeç', right: 'Kaydet',
+    body: `<div class="field"><label>Kilo (kg)</label><input id="wk" inputmode="decimal" value="${last ? last.kg : ''}"></div><div class="field"><label>Tarih</label><input id="wd" type="date" value="${today()}"></div>
+    ${S.diet.weight.length ? `<div class="card tight">${[...S.diet.weight].reverse().slice(0, 10).map(w => `<div class="list-item"><div class="grow">${fmtDate(w.date, { day: 'numeric', month: 'long', year: 'numeric' })}</div><b>${w.kg} kg</b><button class="muted" data-del="${w.date}">✕</button></div>`).join('')}</div>` : ''}`,
+    onRight: sh => {
+      const kg = num(sh.querySelector('#wk').value); const date = sh.querySelector('#wd').value || today(); if (!kg) { toast('Kilo gir'); return false; }
+      S.diet.weight = S.diet.weight.filter(w => w.date !== date); S.diet.weight.push({ date, kg }); S.diet.weight.sort((a, b) => a.date < b.date ? -1 : 1); save(); render();
+    }
+  });
+  s.sh.querySelectorAll('[data-del]').forEach(b => b.onclick = () => { S.diet.weight = S.diet.weight.filter(w => w.date !== b.dataset.del); save(); b.closest('.list-item').remove(); render(); });
+}
+function editTargets() {
+  const T = S.diet.targets; const lastW = S.diet.weight.length ? S.diet.weight[S.diet.weight.length - 1].kg : '';
+  const s = openSheet({
+    title: 'Günlük hedefler', left: 'Vazgeç', right: 'Kaydet',
+    body: `<div class="field"><label>Kalori (kcal)</label><input id="tk" inputmode="numeric" value="${T.kcal}"></div>
+    <div class="grid3"><div class="field"><label>Protein (g)</label><input id="tp" inputmode="numeric" value="${T.p}"></div><div class="field"><label>Karb. (g)</label><input id="tc" inputmode="numeric" value="${T.c}"></div><div class="field"><label>Yağ (g)</label><input id="tf" inputmode="numeric" value="${T.f}"></div></div>
+    <div class="small muted" id="tsum" style="margin:-4px 0 12px"></div>
+    <div class="field"><label>Su (ml)</label><input id="tw" inputmode="numeric" value="${T.water}"></div>
+    <div class="card"><h3>Makroları kaloriye göre dağıt</h3><div class="small muted" style="margin-bottom:8px">Protein kilona göre (g/kg), yağ kalorinin %25'i, kalanı karbonhidrat.</div>
+      <div class="grid2"><div class="field"><label>Kilon (kg)</label><input id="ck" inputmode="decimal" value="${lastW}"></div><div class="field"><label>Protein g/kg</label><input id="cp" inputmode="decimal" value="2"></div></div>
+      <button class="btn plain full sm" id="calc">Hesapla</button></div>
+    <div class="tiny muted">Hedefleri bir diyetisyen veya antrenörle belirlemen en doğrusu; buradaki hesap sadece kolaylık için.</div>`,
+    onRight: sh => { Object.assign(T, { kcal: num(sh.querySelector('#tk').value) || 2000, p: num(sh.querySelector('#tp').value), c: num(sh.querySelector('#tc').value), f: num(sh.querySelector('#tf').value), water: num(sh.querySelector('#tw').value) || 2500 }); save(); render(); }
+  });
+  const sum = () => { const p = num(s.sh.querySelector('#tp').value), c = num(s.sh.querySelector('#tc').value), f = num(s.sh.querySelector('#tf').value); s.sh.querySelector('#tsum').textContent = `Makroların toplamı: ${Math.round(p * 4 + c * 4 + f * 9)} kcal`; };
+  s.sh.querySelectorAll('#tp,#tc,#tf').forEach(i => i.oninput = sum); sum();
+  s.sh.querySelector('#calc').onclick = () => {
+    const kc = num(s.sh.querySelector('#tk').value), kg = num(s.sh.querySelector('#ck').value), gk = num(s.sh.querySelector('#cp').value);
+    if (!kc || !kg) { toast('Kalori ve kilo gir'); return; }
+    const p = Math.round(kg * gk), f = Math.round(kc * .25 / 9), c = Math.max(0, Math.round((kc - p * 4 - f * 9) / 4));
+    s.sh.querySelector('#tp').value = p; s.sh.querySelector('#tf').value = f; s.sh.querySelector('#tc').value = c; sum();
+  };
+}
+
+/* Besin ekleme */
+function addFood(k, meal, target = null) {
+  // target: plan dizisi; null ise günlük kayıt
+  let q = '';
+  const s = openSheet({ title: 'Besin ekle · ' + MEALS.find(m => m[0] === meal)[1], left: 'Bitti', body: `<input id="fq" placeholder="Besin ara…" style="margin-bottom:10px"><div class="row" style="margin-bottom:10px"><button class="btn ghost sm grow" id="fnew">+ Yeni besin</button><button class="btn plain sm grow" id="fquick">⚡ Hızlı kalori ekle</button></div><div class="card tight" id="fl"></div>` });
+  const draw = () => {
+    const ql = q.toLocaleLowerCase('tr');
+    const recentIds = [...new Set(Object.values(S.diet.log).flat().slice(-60).reverse().map(e => e.foodId).filter(Boolean))];
+    let list = allFoods().filter(f => !ql || f.name.toLocaleLowerCase('tr').includes(ql));
+    if (!ql) list.sort((a, b) => { const ia = recentIds.indexOf(a.id), ib = recentIds.indexOf(b.id); return (ia < 0 ? 999 : ia) - (ib < 0 ? 999 : ib); });
+    s.sh.querySelector('#fl').innerHTML = list.map(f => `<div class="list-item" data-id="${f.id}" style="cursor:pointer;padding:10px 16px"><div class="grow"><div class="small b">${esc(f.name)}${recentIds.includes(f.id) && !ql ? ' <span class="tag">son</span>' : ''}</div><div class="tiny muted">100 g: ${f.kcal} kcal · P ${f.p} · K ${f.c} · Y ${f.f}${f.unit ? ` · 1 ${f.unit.n} ≈ ${f.unit.g} g` : ''}</div></div><span style="color:var(--accent);font-size:22px">＋</span></div>`).join('') || '<div class="empty">Bulunamadı — "Yeni besin" ile ekle</div>';
+    s.sh.querySelectorAll('#fl [data-id]').forEach(el => el.onclick = () => amountSheet(foodById(el.dataset.id), k, meal, target));
+  };
+  s.sh.querySelector('#fq').oninput = e => { q = e.target.value; draw(); };
+  s.sh.querySelector('#fnew').onclick = () => editFood(null, f => amountSheet(f, k, meal, target));
+  s.sh.querySelector('#fquick').onclick = () => quickAdd(k, meal, target);
+  draw();
+}
+function pushEntry(k, e, target) { if (target) target.push(e); else (S.diet.log[k] = S.diet.log[k] || []).push(e); save(); render(); }
+function amountSheet(f, k, meal, target, entry = null) {
+  const hasU = !!f.unit; let mode = entry ? (entry.qty ? 'u' : 'g') : (hasU ? 'u' : 'g');
+  const s = openSheet({
+    title: f.name, left: 'Vazgeç', right: entry ? 'Kaydet' : 'Ekle',
+    body: `${hasU ? `<div class="seg" id="am"><button data-m="u" class="${mode === 'u' ? 'on' : ''}">${esc(f.unit.n)}</button><button data-m="g" class="${mode === 'g' ? 'on' : ''}">gram</button></div>` : ''}
+    <div class="field"><label id="al">Miktar</label><input id="aq" inputmode="decimal" value="${entry ? (entry.qty || entry.g) : (hasU ? 1 : 100)}"></div>
+    <div class="card" id="ap"></div>`,
+    onRight: sh => {
+      const v = num(sh.querySelector('#aq').value); if (!v) { toast('Miktar gir'); return false; }
+      const g = mode === 'u' ? v * f.unit.g : v;
+      const e = { id: entry?.id || uid(), meal, foodId: f.id, name: f.name, g, per: { kcal: f.kcal, p: f.p, c: f.c, f: f.f }, qty: mode === 'u' ? v : 0, unitName: mode === 'u' ? f.unit.n : '' };
+      if (entry) { Object.assign(entry, e); save(); render(); } else { pushEntry(k, e, target); toast(f.name + ' eklendi'); }
+    }
+  });
+  const upd = () => {
+    const v = num(s.sh.querySelector('#aq').value); const g = mode === 'u' ? v * f.unit.g : v; const x = g / 100;
+    s.sh.querySelector('#al').textContent = mode === 'u' ? `Kaç ${f.unit.n}? (1 ${f.unit.n} ≈ ${f.unit.g} g)` : 'Gram';
+    s.sh.querySelector('#ap').innerHTML = `<div class="row between"><div><div class="kpi">${Math.round(f.kcal * x)}</div><div class="tiny muted">kcal · ${Math.round(g)} g</div></div><div class="small" style="text-align:right"><div><b style="color:${MC.p}">P</b> ${r1(f.p * x)} g</div><div><b style="color:${MC.c}">K</b> ${r1(f.c * x)} g</div><div><b style="color:${MC.f}">Y</b> ${r1(f.f * x)} g</div></div></div>`;
+  };
+  s.sh.querySelector('#aq').oninput = upd;
+  s.sh.querySelectorAll('#am button').forEach(b => b.onclick = () => {
+    const v = num(s.sh.querySelector('#aq').value); const nm = b.dataset.m; if (nm === mode) return;
+    s.sh.querySelector('#aq').value = nm === 'g' ? Math.round(v * f.unit.g) : r1(v / f.unit.g); mode = nm;
+    s.sh.querySelectorAll('#am button').forEach(x => x.classList.toggle('on', x === b)); upd();
+  });
+  upd();
+}
+function quickAdd(k, meal, target) {
+  const s = openSheet({
+    title: 'Hızlı ekle', left: 'Vazgeç', right: 'Ekle',
+    body: `<div class="field"><label>Ne yedin?</label><input id="qn" placeholder="ör. Dışarıda lahmacun"></div><div class="grid2"><div class="field"><label>Kalori</label><input id="qk" inputmode="numeric"></div><div class="field"><label>Protein (g)</label><input id="qp" inputmode="decimal"></div><div class="field"><label>Karb. (g)</label><input id="qc" inputmode="decimal"></div><div class="field"><label>Yağ (g)</label><input id="qf" inputmode="decimal"></div></div>`,
+    onRight: sh => { const g = id => num(sh.querySelector(id).value); if (!g('#qk')) { toast('Kalori gir'); return false; } pushEntry(k, { id: uid(), meal, name: sh.querySelector('#qn').value.trim() || 'Hızlı ekleme', g: 100, per: { kcal: g('#qk'), p: g('#qp'), c: g('#qc'), f: g('#qf') }, qty: 0, unitName: '' }, target); }
+  });
+}
+function editFood(id, cb) {
+  const f = id ? S.diet.foods.find(x => x.id === id) : null;
+  const s = openSheet({
+    title: f ? 'Besini düzenle' : 'Yeni besin', left: 'Vazgeç', right: 'Kaydet',
+    body: `<div class="field"><label>Besin adı</label><input id="nn" value="${esc(f?.name || '')}"></div><div class="small muted" style="margin:-4px 0 10px">Değerler 100 gram içindir (paket üstündeki tablodan bakabilirsin).</div>
+    <div class="grid2"><div class="field"><label>Kalori</label><input id="nk" inputmode="decimal" value="${f?.kcal ?? ''}"></div><div class="field"><label>Protein (g)</label><input id="np" inputmode="decimal" value="${f?.p ?? ''}"></div><div class="field"><label>Karb. (g)</label><input id="nc" inputmode="decimal" value="${f?.c ?? ''}"></div><div class="field"><label>Yağ (g)</label><input id="nf" inputmode="decimal" value="${f?.f ?? ''}"></div></div>
+    <div class="grid2"><div class="field"><label>Porsiyon adı (isteğe bağlı)</label><input id="nu" placeholder="ör. adet, kase" value="${esc(f?.unit?.n || '')}"></div><div class="field"><label>1 porsiyon kaç gram?</label><input id="ng" inputmode="decimal" value="${f?.unit?.g || ''}"></div></div>
+    ${f ? '<button class="btn danger full" id="nd">Besini sil</button>' : ''}`,
+    onRight: sh => {
+      const g = id => num(sh.querySelector(id).value); const name = sh.querySelector('#nn').value.trim(); if (!name) { toast('Besin adı gir'); return false; }
+      const un = sh.querySelector('#nu').value.trim(), ug = g('#ng');
+      let o = f; if (!o) { o = { id: uid() }; S.diet.foods.unshift(o); }
+      Object.assign(o, { name, kcal: g('#nk'), p: g('#np'), c: g('#nc'), f: g('#nf'), unit: un && ug ? { n: un, g: ug } : null }); save(); render(); cb && cb(o);
+    }
+  });
+  const d = s.sh.querySelector('#nd'); if (d) d.onclick = () => { S.diet.foods.splice(S.diet.foods.indexOf(f), 1); save(); closeSheet(s); render(); };
+}
+function editLogEntry(k, id, target = null) {
+  const list = target || S.diet.log[k]; const e = list.find(x => x.id === id);
+  const f = (e.foodId && foodById(e.foodId)) || null;
+  if (f) {
+    amountSheet(f, k, e.meal, target, e);
+    const s = sheetStack[sheetStack.length - 1];
+    const b = document.createElement('button'); b.className = 'btn danger full'; b.textContent = 'Sil';
+    b.onclick = () => { list.splice(list.indexOf(e), 1); save(); closeSheet(s); render(); }; s.sh.querySelector('.sheet-b').append(b);
+  } else confirmSheet(`"${e.name}" silinsin mi?`, () => { list.splice(list.indexOf(e), 1); save(); render(); });
+}
+function applyPlan(k) {
+  if (!S.diet.plan.length) { toast('Önce diyet planını oluştur'); go('dietplan'); return; }
+  (S.diet.log[k] = S.diet.log[k] || []).push(...S.diet.plan.map(e => ({ ...e, id: uid() }))); save(); render(); toast('Plan eklendi — yemediklerini silebilirsin');
+}
+
+Pages.dietplan = () => {
+  const P = S.diet.plan; const t = { kcal: 0, p: 0, c: 0, f: 0 }; P.forEach(e => { const m = macrosOf(e); for (const x in t) t[x] += m[x]; });
+  const T = S.diet.targets;
+  return header('Diyet planım', 'Her gün uyguladığın öğün planı') + `
+  <div class="card"><div class="row between"><div><div class="kpi">${Math.round(t.kcal)}</div><div class="tiny muted">kcal / hedef ${T.kcal}</div></div><div class="small" style="text-align:right"><div><b style="color:${MC.p}">P</b> ${Math.round(t.p)} / ${T.p} g</div><div><b style="color:${MC.c}">K</b> ${Math.round(t.c)} / ${T.c} g</div><div><b style="color:${MC.f}">Y</b> ${Math.round(t.f)} / ${T.f} g</div></div></div></div>
+  ${MEALS.map(([m, name, ic]) => { const es = P.filter(e => e.meal === m); return `<div class="card tight"><div class="row between" style="padding:12px 16px 6px"><div class="b">${ic} ${name}</div><button class="btn ghost sm" onclick="addFood(null,'${m}',S.diet.plan)">+ Ekle</button></div>${es.map(e => { const mm = macrosOf(e); return `<div class="list-item" style="padding:9px 16px;cursor:pointer" onclick="editLogEntry(null,'${e.id}',S.diet.plan)"><div class="grow"><div class="small b">${esc(e.name)}</div><div class="tiny muted">${e.qty ? r1(e.qty) + ' ' + esc(e.unitName) + ' · ' : ''}${Math.round(e.g)} g · P ${r1(mm.p)} · K ${r1(mm.c)} · Y ${r1(mm.f)}</div></div><span class="small b">${Math.round(mm.kcal)}</span></div>`; }).join('')}</div>`; }).join('')}
+  <div class="small muted" style="text-align:center">Diyet sayfasındaki "Diyet planını bu güne ekle" ile tek dokunuşta güne aktarılır.</div>`;
+};
+
+/* ===== Ruh hali ===== */
+const MOODS = [[1, '😣', 'Kötü', '#FF4D5E'], [2, '😕', 'Pek iyi değil', '#FF9F43'], [3, '😐', 'İdare eder', '#FFC93C'], [4, '🙂', 'İyi', '#7BD389'], [5, '😄', 'Harika', '#30C26B']];
+function setMood(k, v) { if (S.moods[k] === v) delete S.moods[k]; else S.moods[k] = v; save(); render(); }
+function moodPicker(k) { return `<div class="moods">${MOODS.map(([v, e]) => `<button class="${S.moods[k] === v ? 'on' : ''}" onclick="setMood('${k}',${v})">${e}</button>`).join('')}</div>`; }
+
+/* ===== Bugün ===== */
+Pages.today = () => {
+  const k = today(); const h = new Date().getHours(); const wd = new Date().getDay();
+  const greet = h < 5 ? 'İyi geceler' : h < 12 ? 'Günaydın' : h < 18 ? 'İyi günler' : h < 22 ? 'İyi akşamlar' : 'İyi geceler';
+  const nm = S.settings.name;
+  // spor
+  const W = S.workout; const tDay = W.days.find(d => (d.wd || []).includes(wd)); const doneToday = W.logs.find(l => l.date === k);
+  let sport;
+  if (W.active) sport = `<div class="row"><div class="grow"><div class="b">${esc(W.active.name)}</div><div class="small muted">Devam eden antrenman</div></div><button class="btn sm" onclick="setTab('sport');go('session')">Devam et</button></div>`;
+  else if (doneToday) sport = `<div class="row"><span style="font-size:28px">✅</span><div class="grow"><div class="b">${esc(doneToday.name)} tamamlandı</div><div class="small muted">${doneToday.entries.reduce((a, e) => a + e.sets.length, 0)} set · ${doneToday.min || 0} dk</div></div></div>`;
+  else if (tDay) sport = `<div class="row"><div class="ex-thumb mini">${bodySVG(dayLoad(tDay.items), { labels: false })}</div><div class="grow"><div class="b">${esc(tDay.name)}</div><div class="small muted">${tDay.items.length} hareket</div></div><button class="btn sm" onclick="startSession('${tDay.id}')">Başla</button></div>`;
+  else sport = `<div class="row"><span style="font-size:26px">😌</span><div class="grow"><div class="b">Bugün dinlenme günü</div><div class="small muted">${W.days.length ? 'Programında bugüne gün atanmamış' : 'Spor programını ekleyince burada görünür'}</div></div></div>`;
+  // diyet
+  const T = S.diet.targets, t = dayTotals(k), water = S.diet.water[k] || 0;
+  // alışkanlık
+  const habits = S.habits.map(hb => `<button class="row" style="width:100%;padding:7px 0;text-align:left" onclick="toggleHabit('${hb.id}','${k}')"><span class="check ${hb.log?.[k] ? 'on' : ''}">${hb.log?.[k] ? '✓' : ''}</span><span class="grow b">${esc(hb.icon || '')} ${esc(hb.name)}</span><span class="small muted">🔥 ${streak(hb)}</span></button>`).join('');
+  // görevler
+  const tds = S.todos.filter(x => !x.done && x.due && x.due <= k).slice(0, 6);
+  const todos = tds.map(x => todoRow(x)).join('');
+  // kurs
+  const crs = S.courses.filter(c => (c.days || []).includes(wd) && (!c.end || c.end >= k) && (!c.start || c.start <= k));
+  // önemli tarihler
+  const up = S.dates.map(d => ({ d, n: nextOcc(d) })).filter(x => x.n && x.n.left >= 0 && x.n.left <= 30).sort((a, b) => a.n.left - b.n.left).slice(0, 3);
+  // geçen yıl bugün
+  const ago = S.journal.find(j => j.date === addDays(k, -365) || (j.date && j.date.slice(5) === k.slice(5) && j.date < k));
+  const shopLeft = S.shopping.filter(x => !x.bought);
+  return `<div class="top"><div class="grow"><div class="sub">${fmtDate(k, { weekday: 'long', day: 'numeric', month: 'long' })}</div><h1>${greet}${nm ? ',<br>' + esc(nm) : ''} 👋</h1></div><button class="icon-btn" onclick="go('settings')">⚙︎</button></div>
+  ${!nm ? `<div class="card" onclick="go('settings')" style="cursor:pointer"><div class="row"><span style="font-size:26px">👤</span><div class="grow"><div class="b">Seni tanıyalım</div><div class="small muted">Ayarlardan adını ve uygulama rengini seç</div></div><span class="muted">›</span></div></div>` : ''}
+  <div class="card"><h3>Bugün nasıl hissediyorsun?</h3>${moodPicker(k)}</div>
+  <div class="card"><h3>🏋️ Spor</h3>${sport}</div>
+  <div class="card" onclick="setTab('diet')" style="cursor:pointer"><h3>🥗 Beslenme</h3><div class="row"><div class="ring" style="width:64px;height:64px">${ring(t.kcal, T.kcal, 'var(--accent)', 64, 8)}<div class="c"><b style="font-size:13px">%${Math.round(T.kcal ? t.kcal / T.kcal * 100 : 0)}</b></div></div>
+    <div class="grow small"><div class="b">${Math.round(t.kcal)} / ${T.kcal} kcal</div><div class="muted">Protein ${Math.round(t.p)}/${T.p} g · Su ${(water / 1000).toLocaleString('tr-TR')} L</div></div><span class="muted">›</span></div></div>
+  ${S.habits.length ? `<div class="card"><h3>Alışkanlıklar</h3>${habits}</div>` : ''}
+  <div class="card ${tds.length ? 'tight' : ''}">${tds.length ? `<h3 style="padding:12px 16px 0">✅ Bugünün işleri</h3>${todos}` : `<div class="row" onclick="setTab('todos')" style="cursor:pointer"><span style="font-size:24px">✅</span><div class="grow"><div class="b">Bugün için iş yok</div><div class="small muted">Yapılacaklara ekle</div></div><span class="muted">›</span></div>`}</div>
+  ${crs.length ? `<div class="card"><h3>🎓 Bugünkü dersler</h3>${crs.map(c => `<div class="row" style="padding:4px 0"><div class="grow b">${esc(c.name)}</div><span class="b" style="color:var(--accent)">${esc(c.time || '')}</span></div>`).join('')}</div>` : ''}
+  ${up.length ? `<div class="card"><h3>📅 Yaklaşan tarihler</h3>${up.map(({ d, n }) => `<div class="row" style="padding:4px 0"><span style="font-size:20px">${esc(d.emoji || '🎉')}</span><div class="grow b">${esc(d.title)}</div><span class="small ${n.left <= 3 ? 'b' : 'muted'}" style="${n.left <= 3 ? 'color:var(--accent)' : ''}">${n.left === 0 ? 'Bugün!' : n.left + ' gün'}</span></div>`).join('')}</div>` : ''}
+  ${shopLeft.length ? `<div class="card" onclick="go('shopping')" style="cursor:pointer"><div class="row"><span style="font-size:24px">🛒</span><div class="grow"><div class="b">${shopLeft.length} ürün alınacak</div><div class="small muted">Toplam ${fmtMoney(shopLeft.reduce((a, x) => a + num(x.price) * (num(x.qty) || 1), 0))}</div></div><span class="muted">›</span></div></div>` : ''}
+  ${ago ? `<div class="card" onclick="go('journal')" style="cursor:pointer"><h3>💭 Geçmişte bugün · ${fmtDate(ago.date, { year: 'numeric', month: 'long', day: 'numeric' })}</h3><div class="small" style="display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">${esc(ago.text)}</div></div>` : ''}
+  <button class="btn ghost full" onclick="editJournal(null)">✍️ Bugünü günlüğe yaz</button>`;
+};
+
+/* ===== Alışkanlıklar ===== */
+function toggleHabit(id, k) { const h = S.habits.find(x => x.id === id); h.log = h.log || {}; if (h.log[k]) delete h.log[k]; else h.log[k] = true; save(); render(); }
+function streak(h) { let k = today(), n = 0; if (!h.log?.[k]) k = addDays(k, -1); while (h.log?.[k]) { n++; k = addDays(k, -1); } return n; }
+const HABIT_F = [{ k: 'icon', label: 'Simge (emoji)', ph: '💧' }, { k: 'name', label: 'Alışkanlık', ph: 'ör. 10 sayfa kitap oku' }];
+Pages.habits = () => header('Alışkanlıklar', 'Her gün küçük adımlar', `<button class="icon-btn" onclick="editRecord({title:'alışkanlık',list:S.habits,item:null,fields:HABIT_F,required:'name',defaults:{log:{}}})">＋</button>`) +
+  (S.habits.length ? S.habits.map(h => {
+    const days = Array.from({ length: 14 }, (_, i) => addDays(today(), i - 13));
+    const month = Object.keys(h.log || {}).filter(d => d.slice(0, 7) === today().slice(0, 7)).length;
+    return `<div class="card"><div class="row"><button class="check ${h.log?.[today()] ? 'on' : ''}" onclick="toggleHabit('${h.id}','${today()}')">${h.log?.[today()] ? '✓' : ''}</button><div class="grow" onclick="editRecord({title:'alışkanlık',list:S.habits,item:S.habits.find(x=>x.id==='${h.id}'),fields:HABIT_F,required:'name'})" style="cursor:pointer"><div class="b">${esc(h.icon || '')} ${esc(h.name)}</div><div class="small muted">🔥 ${streak(h)} gün seri · bu ay ${month} gün</div></div></div>
+    <div class="dots" style="margin-top:10px;justify-content:space-between">${days.map(d => `<i class="${h.log?.[d] ? 'on' : ''}" onclick="toggleHabit('${h.id}','${d}')" title="${d}" style="width:16px;height:16px;cursor:pointer"></i>`).join('')}</div><div class="tiny muted" style="margin-top:4px">Son 14 gün — geçmiş günleri de işaretleyebilirsin</div></div>`;
+  }).join('') : `<div class="card empty"><div class="e">🔥</div>Su içmek, kitap okumak, erken kalkmak…<br>Takip etmek istediğin ilk alışkanlığı ekle.</div>`);
+
+/* ===== Yapılacaklar ===== */
+const TODO_F = [{ k: 'text', label: 'Görev', ph: 'Ne yapılacak?' }, { k: 'due', label: 'Tarih', type: 'date' }, { k: 'prio', label: 'Öncelik', type: 'select', options: [['0', 'Normal'], ['1', 'Önemli'], ['2', 'Acil']] }, { k: 'note', label: 'Not', type: 'textarea', rows: 3 }];
+function todoRow(x) {
+  const k = today(); const late = x.due && x.due < k && !x.done;
+  const pr = x.prio === '2' ? '<span class="tag" style="background:rgba(255,77,94,.15);color:var(--bad)">Acil</span>' : x.prio === '1' ? '<span class="tag" style="background:rgba(255,176,32,.15);color:#D98E00">Önemli</span>' : '';
+  return `<div class="list-item ${x.done ? 'done' : ''}"><button class="check ${x.done ? 'on' : ''}" onclick="toggleTodo('${x.id}')">${x.done ? '✓' : ''}</button><div class="grow" onclick="editRecord({title:'görev',list:S.todos,item:S.todos.find(t=>t.id==='${x.id}'),fields:TODO_F,required:'text'})" style="cursor:pointer"><div class="t">${esc(x.text)}</div><div class="tiny ${late ? '' : 'muted'}" style="${late ? 'color:var(--bad)' : ''}">${pr}${x.due ? (x.due === k ? 'Bugün' : x.due === addDays(k, 1) ? 'Yarın' : fmtDate(x.due, { day: 'numeric', month: 'short', weekday: 'short' })) : ''}${x.note ? ' · 📝' : ''}</div></div></div>`;
+}
+function toggleTodo(id) { const t = S.todos.find(x => x.id === id); t.done = !t.done; t.doneAt = t.done ? Date.now() : null; save(); render(); }
+function quickTodo(inp) {
+  const v = inp.value.trim(); if (!v) return;
+  S.todos.unshift({ id: uid(), text: v, due: S._todoDue || '', prio: '0', created: Date.now() }); inp.value = ''; save(); render();
+  setTimeout(() => { const i = $('#qt'); i && i.focus(); }, 30);
+}
+let showDone = false;
+Pages.todos = () => {
+  const k = today(); const open = S.todos.filter(x => !x.done);
+  const sortF = (a, b) => (b.prio || 0) - (a.prio || 0) || (a.due || 'z').localeCompare(b.due || 'z');
+  const groups = [
+    ['⚠️ Gecikmiş', open.filter(x => x.due && x.due < k)],
+    ['📌 Bugün', open.filter(x => x.due === k)],
+    ['🗓 Yakında', open.filter(x => x.due && x.due > k)],
+    ['📥 Tarihsiz', open.filter(x => !x.due)]
+  ].filter(g => g[1].length);
+  const done = S.todos.filter(x => x.done).sort((a, b) => (b.doneAt || 0) - (a.doneAt || 0));
+  return header('Yapılacaklar', open.length + ' açık görev') + `
+  <div class="card" style="padding:10px"><form onsubmit="event.preventDefault();quickTodo(this.q)" class="row"><input id="qt" name="q" placeholder="Yeni görev ekle…" autocomplete="off"><button class="btn sm" type="submit">Ekle</button></form>
+    <div class="chips" style="margin:10px 0 0">${[['', 'Tarihsiz'], [k, 'Bugün'], [addDays(k, 1), 'Yarın']].map(([v, l]) => `<button class="chip ${(S._todoDue || '') === v ? 'on' : ''}" onclick="S._todoDue='${v}';render()">${l}</button>`).join('')}<button class="chip" onclick="editRecord({title:'görev',list:S.todos,item:null,fields:TODO_F,required:'text',defaults:{prio:'0'}})">Ayrıntılı…</button></div></div>
+  ${groups.length ? groups.map(([t, l]) => `<div class="card tight"><h3 style="padding:12px 16px 0">${t}</h3>${l.sort(sortF).map(todoRow).join('')}</div>`).join('') : '<div class="card empty"><div class="e">🎉</div>Hiç açık görevin yok</div>'}
+  ${done.length ? `<button class="btn plain full" onclick="showDone=!showDone;render()" style="margin-bottom:12px">${showDone ? 'Tamamlananları gizle' : `Tamamlananlar (${done.length})`}</button>${showDone ? `<div class="card tight">${done.slice(0, 50).map(todoRow).join('')}</div><button class="btn danger full sm" onclick="confirmSheet('Tamamlanan tüm görevler silinecek.',()=>{S.todos=S.todos.filter(x=>!x.done);save();render()})">Tamamlananları temizle</button>` : ''}` : ''}`;
+};
+
+/* ===== Daha fazla ===== */
+const MORE = [
+  ['journal', '📔', 'Günlük', () => S.journal.length + ' yazı'], ['notes', '📝', 'Notlar', () => S.notes.length + ' not'],
+  ['habits', '🔥', 'Alışkanlıklar', () => S.habits.length + ' alışkanlık'], ['goals', '🎯', 'Hedefler', () => S.goals.length + ' hedef'],
+  ['courses', '🎓', 'Kurslar', () => S.courses.length + ' kurs'], ['outfits', '👕', 'Kombinler', () => S.outfits.combos.length + ' kombin · ' + S.outfits.items.length + ' parça'],
+  ['shopping', '🛒', 'Alınacaklar', () => S.shopping.filter(x => !x.bought).length + ' ürün'], ['books', '📚', 'Kitaplar', () => S.books.filter(b => b.status === 'done').length + ' okundu'],
+  ['movies', '🎬', 'Film & Dizi', () => S.movies.filter(b => b.status === 'done').length + ' izlendi'], ['dates', '📅', 'Önemli tarihler', () => S.dates.length + ' tarih'],
+  ['dietplan', '📋', 'Diyet planı', () => S.diet.plan.length + ' besin'], ['settings', '⚙️', 'Ayarlar', () => 'Tema, şifre, yedek'],
+];
+Pages.more = () => header('Daha fazla', 'Hayatının geri kalanı') + `<div class="grid2">${MORE.map(([p, i, n, d]) => `<button class="tile" onclick="go('${p}')"><span class="ic">${i}</span><span class="nm">${n}</span><span class="ds">${d()}</span></button>`).join('')}</div>`;
+
+/* ===== Günlük ===== */
+let calMonth = null;
+function editJournal(id) {
+  const j = id ? S.journal.find(x => x.id === id) : null;
+  const k = j?.date || today(); const existing = !j && S.journal.find(x => x.date === k);
+  if (existing) return editJournal(existing.id);
+  const s = openSheet({
+    title: j ? fmtDate(k, { day: 'numeric', month: 'long' }) : 'Bugün', left: 'Vazgeç', right: 'Kaydet',
+    body: `<div class="field"><label>Tarih</label><input type="date" id="jd" value="${k}"></div>
+    <div class="field"><label>Ruh halin</label><div class="moods" id="jm">${MOODS.map(([v, e]) => `<button type="button" data-v="${v}" class="${S.moods[k] === v ? 'on' : ''}">${e}</button>`).join('')}</div></div>
+    <div class="field"><label>Neler oldu?</label><textarea id="jt" rows="9" placeholder="Bugün neler yaşadın, ne hissettin, neye minnettarsın?">${esc(j?.text || '')}</textarea></div>
+    <div class="field"><label>Etiketler (virgülle)</label><input id="jg" value="${esc((j?.tags || []).join(', '))}" placeholder="iş, aile, spor"></div>
+    ${j ? '<button class="btn danger full" id="jdel">Sil</button>' : ''}`,
+    onRight: sh => {
+      const text = sh.querySelector('#jt').value.trim(); const date = sh.querySelector('#jd').value || today();
+      const mood = +(sh.querySelector('#jm .on')?.dataset.v || 0);
+      if (mood) S.moods[date] = mood;
+      if (!text) { if (!mood) { toast('Bir şeyler yaz'); return false; } save(); render(); return; }
+      const tags = sh.querySelector('#jg').value.split(',').map(x => x.trim().replace(/^#/, '')).filter(Boolean);
+      if (j) Object.assign(j, { text, date, tags }); else S.journal.push({ id: uid(), date, text, tags, created: Date.now() });
+      S.journal.sort((a, b) => a.date < b.date ? 1 : -1); save(); render();
+    }
+  });
+  s.sh.querySelectorAll('#jm button').forEach(b => b.onclick = () => s.sh.querySelectorAll('#jm button').forEach(x => x.classList.toggle('on', x === b && !x.classList.contains('on'))));
+  const d = s.sh.querySelector('#jdel'); if (d) d.onclick = () => confirmSheet('Günlük yazısı silinecek.', () => { S.journal.splice(S.journal.indexOf(j), 1); closeSheet(s); save(); render(); });
+}
+let jq = '';
+Pages.journal = () => {
+  const m = calMonth || today().slice(0, 7); const [y, mo] = m.split('-').map(Number);
+  const first = new Date(y, mo - 1, 1); const nd = new Date(y, mo, 0).getDate(); const off = (first.getDay() + 6) % 7;
+  const cells = ['Pt', 'Sa', 'Ça', 'Pe', 'Cu', 'Ct', 'Pz'].map(d => `<div class="h">${d}</div>`).join('') + '<div style="background:none"></div>'.repeat(off) +
+    Array.from({ length: nd }, (_, i) => { const k = `${m}-${pad(i + 1)}`; const md = MOODS.find(x => x[0] === S.moods[k]); const has = S.journal.some(j => j.date === k); return `<div style="${md ? `background:${md[3]};color:#fff` : ''};${k === today() ? 'outline:2px solid var(--accent)' : ''};cursor:pointer" onclick="openDay('${k}')">${has ? '•' : ''}${i + 1}</div>`; }).join('');
+  const mvals = Object.entries(S.moods).filter(([k]) => k.startsWith(m)).map(([, v]) => v);
+  const avg = mvals.length ? mvals.reduce((a, b) => a + b, 0) / mvals.length : 0;
+  const prev = `${mo === 1 ? y - 1 : y}-${pad(mo === 1 ? 12 : mo - 1)}`, next = `${mo === 12 ? y + 1 : y}-${pad(mo === 12 ? 1 : mo + 1)}`;
+  const ql = jq.toLocaleLowerCase('tr');
+  const list = S.journal.filter(j => !ql || j.text.toLocaleLowerCase('tr').includes(ql) || (j.tags || []).some(t => t.toLocaleLowerCase('tr').includes(ql)));
+  return header('Günlük', S.journal.length + ' yazı', `<button class="icon-btn" onclick="editJournal(null)">✎</button>`) + `
+  <div class="card"><div class="row between" style="margin-bottom:10px"><button onclick="calMonth='${prev}';render()" class="b" style="color:var(--accent);font-size:20px">‹</button><div class="b">${first.toLocaleDateString('tr-TR', { month: 'long', year: 'numeric' })}</div><button onclick="calMonth='${next}';render()" class="b" style="color:var(--accent);font-size:20px">›</button></div>
+    <div class="cal">${cells}</div>
+    <div class="row between small" style="margin-top:10px"><span class="muted">Ay ortalaması</span><b>${avg ? MOODS[Math.round(avg) - 1][1] + ' ' + MOODS[Math.round(avg) - 1][2] : '—'}</b></div>
+    <div class="legend">${MOODS.map(([, e, , c]) => `<span><i style="background:${c}"></i>${e}</span>`).join('')}</div></div>
+  <input placeholder="Günlükte ara…" value="${esc(jq)}" oninput="jq=this.value;clearTimeout(window._jq);window._jq=setTimeout(()=>{render();const i=document.querySelector('#jqi');if(i){i.focus();i.setSelectionRange(99,99)}},350)" id="jqi" style="margin-bottom:12px">
+  ${list.length ? list.map(j => { const md = MOODS.find(x => x[0] === S.moods[j.date]); return `<div class="card" onclick="editJournal('${j.id}')" style="cursor:pointer"><div class="row between" style="margin-bottom:6px"><div class="b">${fmtDate(j.date, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}</div><span style="font-size:22px">${md ? md[1] : ''}</span></div><div class="small" style="display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-wrap">${esc(j.text)}</div>${(j.tags || []).length ? `<div style="margin-top:8px">${j.tags.map(t => `<span class="tag">#${esc(t)}</span>`).join('')}</div>` : ''}</div>`; }).join('') : `<div class="card empty"><div class="e">📔</div>${jq ? 'Sonuç yok' : 'İlk günlük yazını yaz'}</div>`}`;
+};
+function openDay(k) { const j = S.journal.find(x => x.date === k); if (j) editJournal(j.id); else { const tmp = { id: uid(), date: k, text: '', tags: [] }; S.journal.push(tmp); editJournal(tmp.id); S.journal.splice(S.journal.indexOf(tmp), 1); } }
+
+/* ===== Notlar ===== */
+const NOTE_F = [{ k: 'title', label: 'Başlık' }, { k: 'body', label: 'Not', type: 'textarea', rows: 12 }, { k: 'folder', label: 'Klasör', ph: 'ör. Fikirler' }, { k: 'pinned', label: 'Sabitle', type: 'toggle' }];
+let nq = '', nf = '';
+Pages.notes = () => {
+  const folders = [...new Set(S.notes.map(n => n.folder).filter(Boolean))];
+  const ql = nq.toLocaleLowerCase('tr');
+  const list = S.notes.filter(n => (!nf || n.folder === nf) && (!ql || (n.title + ' ' + n.body).toLocaleLowerCase('tr').includes(ql))).sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0) || (b.updated || b.created) - (a.updated || a.created));
+  return header('Notlar', S.notes.length + ' not') + `
+  <input id="nqi" placeholder="Notlarda ara…" value="${esc(nq)}" oninput="nq=this.value;clearTimeout(window._nq);window._nq=setTimeout(()=>{render();const i=document.querySelector('#nqi');i.focus();i.setSelectionRange(99,99)},350)" style="margin-bottom:10px">
+  ${folders.length ? `<div class="chips">${['', ...folders].map(f => `<button class="chip ${nf === f ? 'on' : ''}" onclick="nf='${esc(f)}';render()">${f ? '📁 ' + esc(f) : 'Tümü'}</button>`).join('')}</div>` : ''}
+  ${list.length ? `<div class="grid2">${list.map(n => `<div class="card" style="margin:0;cursor:pointer;min-height:110px" onclick="editRecord({title:'not',list:S.notes,item:S.notes.find(x=>x.id==='${n.id}'),fields:NOTE_F})"><div class="b small" style="margin-bottom:4px">${n.pinned ? '📌 ' : ''}${esc(n.title || 'Başlıksız')}</div><div class="tiny muted" style="display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-wrap">${esc(n.body)}</div>${n.folder ? `<div class="tiny" style="margin-top:6px;color:var(--accent)">📁 ${esc(n.folder)}</div>` : ''}</div>`).join('')}</div>` : '<div class="card empty"><div class="e">📝</div>Not yok</div>'}
+  <button class="fab" onclick="editRecord({title:'not',list:S.notes,item:null,fields:NOTE_F,defaults:{folder:nf}})">+</button>`;
+};
+
+/* ===== Hedefler ===== */
+const GOAL_F = [{ k: 'title', label: 'Hedef', ph: 'ör. 1000 km koş' }, { k: 'target', label: 'Hedef değer', type: 'number' }, { k: 'cur', label: 'Şu anki', type: 'number', def: 0 }, { k: 'unit', label: 'Birim', ph: 'km, kitap, ₺…' }, { k: 'step', label: 'Her dokunuşta artış', type: 'number', def: 1 }, { k: 'deadline', label: 'Son tarih', type: 'date' }];
+function goalStep(id, d) { const g = S.goals.find(x => x.id === id); g.cur = Math.max(0, r1(num(g.cur) + d * (num(g.step) || 1))); save(); render(); if (num(g.cur) >= num(g.target) && d > 0) toast('🎉 Hedefe ulaştın!'); }
+Pages.goals = () => header('Hedefler', '', `<button class="icon-btn" onclick="editRecord({title:'hedef',list:S.goals,item:null,fields:GOAL_F,required:'title',defaults:{cur:0,step:1}})">＋</button>`) +
+  (S.goals.length ? S.goals.map(g => { const p = num(g.target) ? Math.min(1, num(g.cur) / num(g.target)) : 0; const left = g.deadline ? daysBetween(today(), g.deadline) : null; return `<div class="card"><div class="row between"><div class="grow" style="cursor:pointer" onclick="editRecord({title:'hedef',list:S.goals,item:S.goals.find(x=>x.id==='${g.id}'),fields:GOAL_F,required:'title'})"><div class="b">${p >= 1 ? '🏆 ' : ''}${esc(g.title)}</div><div class="small muted">${r1(num(g.cur))} / ${r1(num(g.target))} ${esc(g.unit || '')}${left !== null ? ` · ${left >= 0 ? left + ' gün kaldı' : 'süre doldu'}` : ''}</div></div><button class="icon-btn" onclick="goalStep('${g.id}',-1)">−</button><button class="icon-btn" onclick="goalStep('${g.id}',1)">+</button></div><div class="bar" style="margin-top:10px"><i style="width:${p * 100}%;${p >= 1 ? 'background:var(--ok)' : ''}"></i></div><div class="tiny muted" style="margin-top:4px">%${Math.round(p * 100)}</div></div>`; }).join('') : '<div class="card empty"><div class="e">🎯</div>Büyük hedeflerini ekle, ilerledikçe işaretle</div>');
+
+/* ===== Kurslar ===== */
+const COURSE_F = [{ k: 'name', label: 'Kurs adı', ph: 'ör. İngilizce B2' }, { k: 'place', label: 'Kurum / eğitmen' }, { k: 'days', label: 'Ders günleri', type: 'days' }, { k: 'time', label: 'Saat', type: 'time' }, { k: 'start', label: 'Başlangıç', type: 'date' }, { k: 'end', label: 'Bitiş', type: 'date' }, { k: 'fee', label: 'Ücret (₺)', type: 'number' }, { k: 'paid', label: 'Ödeme durumu', type: 'toggle', off: 'Ödenmedi', on: 'Ödendi' }, { k: 'contact', label: 'İletişim / adres / link' }, { k: 'notes', label: 'Notlar (ödevler, konular…)', type: 'textarea', rows: 5 }];
+Pages.courses = () => {
+  const k = today();
+  return header('Kurslar', '', `<button class="icon-btn" onclick="editRecord({title:'kurs',list:S.courses,item:null,fields:COURSE_F,required:'name'})">＋</button>`) +
+    (S.courses.length ? S.courses.map(c => {
+      const active = (!c.end || c.end >= k); const prog = c.start && c.end ? Math.min(1, Math.max(0, daysBetween(c.start, k) / Math.max(1, daysBetween(c.start, c.end)))) : null;
+      let nextL = ''; if (active && (c.days || []).length) { for (let i = 0; i < 8; i++) { const d = addDays(k, i); if (c.days.includes(parseD(d).getDay()) && (!c.start || d >= c.start)) { nextL = i === 0 ? 'Bugün' : i === 1 ? 'Yarın' : WD_LONG[parseD(d).getDay()]; break; } } }
+      return `<div class="card" style="cursor:pointer;${active ? '' : 'opacity:.6'}" onclick="editRecord({title:'kurs',list:S.courses,item:S.courses.find(x=>x.id==='${c.id}'),fields:COURSE_F,required:'name'})">
+      <div class="row between"><div class="b" style="font-size:17px">${esc(c.name)}</div>${c.fee ? `<span class="tag" style="${c.paid ? 'background:rgba(48,194,107,.15);color:var(--ok)' : 'background:rgba(255,77,94,.12);color:var(--bad)'}">${fmtMoney(c.fee)} · ${c.paid ? 'Ödendi' : 'Ödenmedi'}</span>` : ''}</div>
+      ${c.place ? `<div class="small muted">${esc(c.place)}</div>` : ''}
+      <div class="small" style="margin-top:6px">🗓 ${(c.days || []).map(d => WD[d]).join(', ') || '—'} ${c.time ? '· ⏰ ' + esc(c.time) : ''}${nextL ? ` · <b style="color:var(--accent)">Sıradaki: ${nextL}</b>` : ''}</div>
+      ${c.start || c.end ? `<div class="tiny muted" style="margin-top:4px">${fmtDate(c.start)} → ${fmtDate(c.end) || '…'}${active ? '' : ' · Bitti'}</div>` : ''}
+      ${prog !== null ? `<div class="bar" style="margin-top:6px;height:5px"><i style="width:${prog * 100}%"></i></div>` : ''}
+      ${c.notes ? `<div class="small" style="margin-top:8px;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">${esc(c.notes)}</div>` : ''}
+      ${c.contact ? `<div class="tiny muted" style="margin-top:6px">📍 ${esc(c.contact)}</div>` : ''}</div>`;
+    }).join('') : '<div class="card empty"><div class="e">🎓</div>Gittiğin kursları, ders saatlerini ve ödemeleri burada tut</div>');
+};
+
+/* ===== Kombinler ===== */
+const OUT_CATS = ['Üst', 'Alt', 'Elbise', 'Dış giyim', 'Ayakkabı', 'Aksesuar'];
+let outTab = 'combos', outCat = '';
+function addClothing() {
+  pickImage(img => {
+    const s = openSheet({
+      title: 'Yeni parça', left: 'Vazgeç', right: 'Kaydet',
+      body: `<img src="${img}" style="width:50%;display:block;margin:0 auto 12px;border-radius:14px">${fieldHTML({ k: 'name', label: 'Adı', ph: 'ör. Lacivert gömlek' })}${fieldHTML({ k: 'cat', label: 'Kategori', type: 'select', options: OUT_CATS }, outCat || 'Üst')}${fieldHTML({ k: 'color', label: 'Renk' })}`,
+      onRight: sh => { const v = readFields(sh, [{ k: 'name' }, { k: 'cat' }, { k: 'color' }]); S.outfits.items.unshift({ id: uid(), img, ...v }); save(); render(); }
+    });
+  }, 600);
+}
+function editClothing(id) {
+  const it = S.outfits.items.find(x => x.id === id);
+  const s = openSheet({
+    title: it.name || 'Parça', left: 'Vazgeç', right: 'Kaydet',
+    body: `<img src="${it.img}" style="width:60%;display:block;margin:0 auto 12px;border-radius:14px">${fieldHTML({ k: 'name', label: 'Adı' }, it.name)}${fieldHTML({ k: 'cat', label: 'Kategori', type: 'select', options: OUT_CATS }, it.cat)}${fieldHTML({ k: 'color', label: 'Renk' }, it.color)}<button class="btn danger full" id="cd">Sil</button>`,
+    onRight: sh => { Object.assign(it, readFields(sh, [{ k: 'name' }, { k: 'cat' }, { k: 'color' }])); save(); render(); }
+  });
+  s.sh.querySelector('#cd').onclick = () => confirmSheet('Parça silinecek (kombinlerden de çıkar).', () => { S.outfits.items.splice(S.outfits.items.indexOf(it), 1); S.outfits.combos.forEach(c => c.items = c.items.filter(i => i !== id)); closeSheet(s); save(); render(); });
+}
+function editCombo(id) {
+  const c = id ? S.outfits.combos.find(x => x.id === id) : null; const sel = new Set(c?.items || []);
+  if (!S.outfits.items.length) { toast('Önce kıyafet fotoğrafı ekle'); outTab = 'items'; render(); return; }
+  const s = openSheet({
+    title: c ? 'Kombini düzenle' : 'Yeni kombin', left: 'Vazgeç', right: 'Kaydet', full: true,
+    body: `${fieldHTML({ k: 'name', label: 'Kombin adı', ph: 'ör. Ofis — Pazartesi' }, c?.name)}${fieldHTML({ k: 'season', label: 'Mevsim', type: 'select', options: ['Her mevsim', 'İlkbahar', 'Yaz', 'Sonbahar', 'Kış'] }, c?.season)}${fieldHTML({ k: 'occasion', label: 'Nerede giyilir?', ph: 'iş, düğün, günlük…' }, c?.occasion)}
+    <div class="field"><label>Parçaları seç</label></div>${OUT_CATS.map(cat => { const l = S.outfits.items.filter(i => i.cat === cat); return l.length ? `<div class="small b muted" style="margin:6px 2px">${cat}</div><div class="photo-grid" style="margin-bottom:10px">${l.map(i => `<div class="ph ${sel.has(i.id) ? 'sel' : ''}" data-id="${i.id}"><img src="${i.img}"><div class="lb">${esc(i.name || '')}</div></div>`).join('')}</div>` : ''; }).join('')}
+    ${c ? '<button class="btn danger full" id="kd">Kombini sil</button>' : ''}`,
+    onRight: sh => {
+      const v = readFields(sh, [{ k: 'name' }, { k: 'season' }, { k: 'occasion' }]); if (!sel.size) { toast('En az bir parça seç'); return false; }
+      if (c) Object.assign(c, v, { items: [...sel] }); else S.outfits.combos.unshift({ id: uid(), ...v, items: [...sel], created: Date.now() }); save(); render();
+    }
+  });
+  s.sh.querySelectorAll('.ph[data-id]').forEach(el => el.onclick = () => { const i = el.dataset.id; sel.has(i) ? sel.delete(i) : sel.add(i); el.classList.toggle('sel'); });
+  const d = s.sh.querySelector('#kd'); if (d) d.onclick = () => confirmSheet('Kombin silinecek.', () => { S.outfits.combos.splice(S.outfits.combos.indexOf(c), 1); closeSheet(s); save(); render(); });
+}
+function wearCombo(id) { const c = S.outfits.combos.find(x => x.id === id); c.worn = c.worn || []; c.worn.push(today()); save(); render(); toast('Bugün giyildi olarak işaretlendi'); }
+Pages.outfits = () => {
+  const O = S.outfits; const byId = id => O.items.find(i => i.id === id);
+  const combos = O.combos.length ? O.combos.map(c => { const its = c.items.map(byId).filter(Boolean); return `<div class="card"><div class="collage" onclick="editCombo('${c.id}')" style="cursor:pointer;grid-template-columns:repeat(${Math.min(4, Math.max(2, its.length))},1fr)">${its.slice(0, 4).map(i => `<img src="${i.img}">`).join('')}</div><div class="row between"><div class="grow"><div class="b">${esc(c.name || 'Kombin')}</div><div class="tiny muted">${esc(c.season || '')}${c.occasion ? ' · ' + esc(c.occasion) : ''}${c.worn?.length ? ` · son giyilme ${fmtDate(c.worn[c.worn.length - 1], { day: 'numeric', month: 'short' })} (${c.worn.length}×)` : ''}</div></div><button class="btn ghost sm" onclick="wearCombo('${c.id}')">Bugün giydim</button></div></div>`; }).join('') : '<div class="card empty"><div class="e">👔</div>Kıyafetlerinin fotoğrafını ekle, sonra kombin oluştur</div>';
+  const items = O.items.filter(i => !outCat || i.cat === outCat);
+  return header('Kombinler', O.items.length + ' parça · ' + O.combos.length + ' kombin') + `
+  <div class="seg"><button class="${outTab === 'combos' ? 'on' : ''}" onclick="outTab='combos';render()">Kombinler</button><button class="${outTab === 'items' ? 'on' : ''}" onclick="outTab='items';render()">Gardırop</button></div>
+  ${outTab === 'combos' ? combos + `<button class="fab" onclick="editCombo()">+</button>` : `<div class="chips">${['', ...OUT_CATS].map(c => `<button class="chip ${outCat === c ? 'on' : ''}" onclick="outCat='${c}';render()">${c || 'Tümü'}</button>`).join('')}</div>
+  ${items.length ? `<div class="photo-grid">${items.map(i => `<div class="ph" onclick="editClothing('${i.id}')" style="cursor:pointer"><img src="${i.img}"><div class="lb">${esc(i.name || i.cat)}</div></div>`).join('')}</div>` : '<div class="card empty"><div class="e">📸</div>Kıyafet fotoğrafı ekle</div>'}
+  <button class="fab" onclick="addClothing()">+</button>`}`;
+};
+
+/* ===== Alınacaklar ===== */
+const SHOP_CATS = ['Market', 'Giyim', 'Elektronik', 'Ev', 'Kişisel bakım', 'Spor', 'Hediye', 'Diğer'];
+const SHOP_F = [{ k: 'name', label: 'Ürün' }, { k: 'price', label: 'Fiyat (₺)', type: 'number' }, { k: 'qty', label: 'Adet', type: 'number', def: 1 }, { k: 'cat', label: 'Kategori', type: 'select', options: SHOP_CATS }, { k: 'where', label: 'Nereden / link' }, { k: 'note', label: 'Not', type: 'textarea', rows: 2 }];
+let shopCat = '';
+function toggleBuy(id) { const x = S.shopping.find(s => s.id === id); x.bought = !x.bought; x.boughtAt = x.bought ? today() : null; save(); render(); }
+function quickShop(f) {
+  const n = f.n.value.trim(); if (!n) return;
+  S.shopping.unshift({ id: uid(), name: n, price: num(f.p.value) || '', qty: 1, cat: shopCat || 'Market', created: Date.now() }); save(); render();
+  setTimeout(() => $('#sn')?.focus(), 30);
+}
+Pages.shopping = () => {
+  const L = S.shopping.filter(x => !shopCat || x.cat === shopCat);
+  const tot = x => num(x.price) * (num(x.qty) || 1);
+  const open = L.filter(x => !x.bought), got = L.filter(x => x.bought);
+  const sumO = open.reduce((a, x) => a + tot(x), 0), sumG = got.reduce((a, x) => a + tot(x), 0);
+  const row = x => `<div class="list-item ${x.bought ? 'done' : ''}"><button class="check ${x.bought ? 'on' : ''}" onclick="toggleBuy('${x.id}')">${x.bought ? '✓' : ''}</button><div class="grow" style="cursor:pointer" onclick="editRecord({title:'ürün',list:S.shopping,item:S.shopping.find(s=>s.id==='${x.id}'),fields:SHOP_F,required:'name'})"><div class="t">${esc(x.name)}</div><div class="tiny muted">${esc(x.cat || '')}${num(x.qty) > 1 ? ' · ' + x.qty + ' adet × ' + fmtMoney(x.price) : ''}${x.where ? ' · ' + esc(x.where) : ''}</div></div><div class="b small">${x.price !== '' && x.price !== undefined ? fmtMoney(tot(x)) : '—'}</div></div>`;
+  return header('Alınacaklar', '') + `
+  <div class="hero"><div class="row between"><div><div class="small muted">Alınacak toplam</div><div class="kpi">${fmtMoney(sumO)}</div></div><div style="text-align:right"><div class="small muted">Harcanan</div><div class="b">${fmtMoney(sumG)}</div></div></div><div class="small muted" style="margin-top:4px">${open.length} ürün kaldı · ${got.length} alındı</div></div>
+  <div class="card" style="padding:10px"><form class="row" onsubmit="event.preventDefault();quickShop(this)"><input id="sn" name="n" placeholder="Ürün adı" autocomplete="off"><input name="p" inputmode="decimal" placeholder="₺" style="width:90px;flex:none"><button class="btn sm">Ekle</button></form></div>
+  <div class="chips">${['', ...SHOP_CATS].map(c => `<button class="chip ${shopCat === c ? 'on' : ''}" onclick="shopCat='${c}';render()">${c || 'Tümü'}</button>`).join('')}</div>
+  ${open.length ? `<div class="card tight">${open.map(row).join('')}</div>` : '<div class="card empty"><div class="e">🛍</div>Listede ürün yok</div>'}
+  ${got.length ? `<div class="card tight"><div class="row between" style="padding:12px 16px 0"><h3 style="margin:0">Alındı</h3><button class="small" style="color:var(--bad)" onclick="confirmSheet('Alınanlar listeden silinecek.',()=>{S.shopping=S.shopping.filter(x=>!x.bought||(shopCat&&x.cat!==shopCat));save();render()},'Temizle')">Temizle</button></div>${got.map(row).join('')}</div>` : ''}`;
+};
+
+/* ===== Kitaplar ===== */
+const BOOK_F = [{ k: 'title', label: 'Kitap adı' }, { k: 'author', label: 'Yazar' }, { k: 'status', label: 'Durum', type: 'select', options: [['todo', 'Okunacak'], ['reading', 'Okunuyor'], ['done', 'Okundu']] }, { k: 'rating', label: 'Puanın', type: 'stars' }, { k: 'pages', label: 'Sayfa sayısı', type: 'number' }, { k: 'finished', label: 'Bitirme tarihi', type: 'date' }, { k: 'note', label: 'Yorum / alıntılar', type: 'textarea', rows: 5 }];
+let bookTab = 'reading';
+function bookSave(list) { list.forEach(b => { if (b.status === 'done' && !b.finished) b.finished = today(); }); save(); render(); }
+Pages.books = () => {
+  const yr = String(new Date().getFullYear()); const doneY = S.books.filter(b => b.status === 'done' && (b.finished || '').startsWith(yr)).length; const goal = S.settings.bookGoal || 12;
+  const L = S.books.filter(b => b.status === bookTab).sort((a, b) => bookTab === 'done' ? (b.finished || '').localeCompare(a.finished || '') : 0);
+  const cnt = s => S.books.filter(b => b.status === s).length;
+  return header('Kitaplar', '') + `
+  <div class="card"><div class="row between"><div><div class="small muted">${yr} okuma hedefi</div><div class="kpi">${doneY} / ${goal}</div></div><button class="btn plain sm" onclick="setBookGoal()">Hedefi değiştir</button></div><div class="bar" style="margin-top:10px"><i style="width:${Math.min(100, doneY / goal * 100)}%"></i></div></div>
+  <div class="seg">${[['reading', 'Okunuyor'], ['todo', 'Okunacak'], ['done', 'Okundu']].map(([k, l]) => `<button class="${bookTab === k ? 'on' : ''}" onclick="bookTab='${k}';render()">${l} (${cnt(k)})</button>`).join('')}</div>
+  ${L.length ? `<div class="card tight">${L.map(b => `<div class="list-item" style="cursor:pointer" onclick="editRecord({title:'kitap',list:S.books,item:S.books.find(x=>x.id==='${b.id}'),fields:BOOK_F,required:'title',after:()=>bookSave(S.books)})"><div style="width:40px;height:56px;border-radius:6px;background:linear-gradient(135deg,${hexA(S.settings.accent, .9)},${hexA(S.settings.accent, .5)});display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;flex:none">${esc((b.title || '?')[0].toUpperCase())}</div><div class="grow"><div class="t">${esc(b.title)}</div><div class="small muted">${esc(b.author || '')}</div>${b.status === 'done' ? `<div>${stars(b.rating)} <span class="tiny muted">${fmtDate(b.finished, { month: 'short', year: 'numeric' })}</span></div>` : b.pages ? `<div class="tiny muted">${b.pages} sayfa</div>` : ''}</div></div>`).join('')}</div>` : `<div class="card empty"><div class="e">📚</div>Bu listede kitap yok</div>`}
+  <button class="fab" onclick="editRecord({title:'kitap',list:S.books,item:null,fields:BOOK_F,required:'title',defaults:{status:bookTab},after:()=>bookSave(S.books)})">+</button>`;
+};
+function setBookGoal() { const s = openSheet({ title: 'Yıllık hedef', left: 'Vazgeç', right: 'Kaydet', body: `<div class="field"><label>Bu yıl kaç kitap?</label><input id="bg" inputmode="numeric" value="${S.settings.bookGoal || 12}"></div>`, onRight: sh => { S.settings.bookGoal = Math.max(1, num(sh.querySelector('#bg').value)); save(); render(); } }); }
+
+/* ===== Filmler ===== */
+const MOVIE_F = [{ k: 'title', label: 'Adı' }, { k: 'type', label: 'Tür', type: 'select', options: ['Film', 'Dizi', 'Belgesel', 'Anime'] }, { k: 'status', label: 'Durum', type: 'select', options: [['todo', 'İzlenecek'], ['watching', 'İzleniyor'], ['done', 'İzlendi']] }, { k: 'rating', label: 'Puanın', type: 'stars' }, { k: 'genre', label: 'Kategori', ph: 'dram, bilim kurgu…' }, { k: 'year', label: 'Yıl', type: 'number' }, { k: 'platform', label: 'Nerede?', ph: 'Netflix, sinema…' }, { k: 'watched', label: 'İzleme tarihi', type: 'date' }, { k: 'note', label: 'Yorum', type: 'textarea', rows: 4 }];
+let movieTab = 'todo', movieType = '';
+function movieSave() { S.movies.forEach(m => { if (m.status === 'done' && !m.watched) m.watched = today(); }); save(); render(); }
+Pages.movies = () => {
+  const cnt = s => S.movies.filter(b => b.status === s && (!movieType || b.type === movieType)).length;
+  const L = S.movies.filter(m => m.status === movieTab && (!movieType || m.type === movieType)).sort((a, b) => movieTab === 'done' ? (b.watched || '').localeCompare(a.watched || '') : 0);
+  const ic = { Film: '🎬', Dizi: '📺', Belgesel: '🌍', Anime: '🌸' };
+  const avg = (() => { const r = S.movies.filter(m => m.rating); return r.length ? r1(r.reduce((a, m) => a + m.rating, 0) / r.length) : 0; })();
+  return header('Film & Dizi', `${S.movies.filter(m => m.status === 'done').length} izlendi${avg ? ' · ortalama puanın ' + avg + '★' : ''}`) + `
+  <div class="seg">${[['todo', 'İzlenecek'], ['watching', 'İzleniyor'], ['done', 'İzlendi']].map(([k, l]) => `<button class="${movieTab === k ? 'on' : ''}" onclick="movieTab='${k}';render()">${l} (${cnt(k)})</button>`).join('')}</div>
+  <div class="chips">${['', 'Film', 'Dizi', 'Belgesel', 'Anime'].map(t => `<button class="chip ${movieType === t ? 'on' : ''}" onclick="movieType='${t}';render()">${t ? ic[t] + ' ' + t : 'Hepsi'}</button>`).join('')}</div>
+  ${L.length ? `<div class="card tight">${L.map(m => `<div class="list-item" style="cursor:pointer" onclick="editRecord({title:'kayıt',list:S.movies,item:S.movies.find(x=>x.id==='${m.id}'),fields:MOVIE_F,required:'title',after:movieSave})"><span style="font-size:26px">${ic[m.type] || '🎬'}</span><div class="grow"><div class="t">${esc(m.title)} ${m.year ? `<span class="muted small">(${m.year})</span>` : ''}</div><div class="tiny muted">${[m.genre, m.platform].filter(Boolean).map(esc).join(' · ')}</div>${m.status === 'done' ? `<div>${stars(m.rating)}</div>` : ''}</div></div>`).join('')}</div>` : '<div class="card empty"><div class="e">🍿</div>Bu listede bir şey yok</div>'}
+  <button class="fab" onclick="editRecord({title:'film / dizi',list:S.movies,item:null,fields:MOVIE_F,required:'title',defaults:{status:movieTab,type:movieType||'Film'},after:movieSave})">+</button>`;
+};
+
+/* ===== Önemli tarihler ===== */
+const DATE_F = [{ k: 'emoji', label: 'Simge', ph: '🎂' }, { k: 'title', label: 'Ne?', ph: 'ör. Annemin doğum günü' }, { k: 'date', label: 'Tarih', type: 'date' }, { k: 'yearly', label: 'Her yıl tekrarlar mı?', type: 'toggle', on: 'Her yıl', off: 'Tek sefer' }, { k: 'note', label: 'Not (hediye fikri vs.)', type: 'textarea', rows: 3 }];
+function nextOcc(d) {
+  if (!d.date) return null; const k = today();
+  if (!d.yearly) return { date: d.date, left: daysBetween(k, d.date), years: 0 };
+  const [y, m, dd] = d.date.split('-'); let ny = +k.slice(0, 4); let nk = `${ny}-${m}-${dd}`; if (nk < k) { ny++; nk = `${ny}-${m}-${dd}`; }
+  return { date: nk, left: daysBetween(k, nk), years: ny - +y };
+}
+Pages.dates = () => {
+  const L = S.dates.map(d => ({ d, n: nextOcc(d) })).sort((a, b) => (a.n?.left ?? 9e9) < 0 ? 1 : (b.n?.left ?? 9e9) < 0 ? -1 : (a.n?.left ?? 9e9) - (b.n?.left ?? 9e9));
+  return header('Önemli tarihler', '', `<button class="icon-btn" onclick="editRecord({title:'tarih',list:S.dates,item:null,fields:DATE_F,required:'title',defaults:{yearly:true}})">＋</button>`) +
+    (L.length ? `<div class="card tight">${L.map(({ d, n }) => `<div class="list-item" style="cursor:pointer" onclick="editRecord({title:'tarih',list:S.dates,item:S.dates.find(x=>x.id==='${d.id}'),fields:DATE_F,required:'title'})"><span style="font-size:28px">${esc(d.emoji || '📅')}</span><div class="grow"><div class="t">${esc(d.title)}</div><div class="tiny muted">${n ? fmtDate(n.date, { day: 'numeric', month: 'long', weekday: 'long' }) : 'Tarih yok'}${n?.years > 0 ? ` · ${n.years}. yıl` : ''}</div></div>${n ? `<div style="text-align:right"><div class="b" style="${n.left <= 7 && n.left >= 0 ? 'color:var(--accent)' : ''}">${n.left === 0 ? 'Bugün 🎉' : n.left < 0 ? 'Geçti' : n.left}</div>${n.left > 0 ? '<div class="tiny muted">gün</div>' : ''}</div>` : ''}</div>`).join('')}</div>` : '<div class="card empty"><div class="e">🎂</div>Doğum günleri, yıldönümleri, önemli günler…</div>');
+};
+
+/* ===== Ayarlar ===== */
+const ACCENTS = ['#6C63FF', '#FF5C8A', '#FF8A3D', '#16B78A', '#2E8BFF', '#111114', '#A855F7', '#E11D48'];
+function exportData() {
+  const data = JSON.stringify(S); const name = `ben-yedek-${today()}.json`;
+  try {
+    const blob = new Blob([data], { type: 'application/json' });
+    const file = new File([blob], name, { type: 'application/json' });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) { navigator.share({ files: [file], title: 'Yedek' }).catch(() => {}); S.settings.lastBackup = today(); save(); return; }
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.append(a); a.click(); a.remove();
+    S.settings.lastBackup = today(); save(); toast('Yedek indirildi'); render();
+  } catch (e) { toast('İndirilemedi — kopyalamayı dene'); }
+}
+function copyData() { navigator.clipboard.writeText(JSON.stringify(S)).then(() => { S.settings.lastBackup = today(); save(); toast('Yedek panoya kopyalandı'); render(); }, () => toast('Kopyalanamadı')); }
+function importData() {
+  const s = openSheet({ title: 'Yedekten geri yükle', body: `<p class="small muted">Yedek dosyasını seç ya da kopyaladığın yedek metnini yapıştır. <b>Mevcut verilerin yerine geçer.</b></p><button class="btn plain full" id="if" style="margin-bottom:10px">📁 Dosya seç</button><textarea id="it" rows="6" placeholder="Yedek metnini buraya yapıştır…"></textarea><button class="btn full" id="ig" style="margin-top:10px">Geri yükle</button>` });
+  const apply = txt => { try { const o = JSON.parse(txt); if (!o || !o.settings) throw 0; S = merge(DEFAULT_STATE(), o); save(); closeSheet(s); render(); toast('Veriler geri yüklendi'); } catch (e) { toast('Geçersiz yedek'); } };
+  s.sh.querySelector('#if').onclick = () => { const i = document.createElement('input'); i.type = 'file'; i.accept = '.json,application/json'; i.onchange = () => { const r = new FileReader(); r.onload = () => apply(r.result); r.readAsText(i.files[0]); }; i.click(); };
+  s.sh.querySelector('#ig').onclick = () => apply(s.sh.querySelector('#it').value);
+}
+function setPin() {
+  let a = ''; const s = openSheet({ title: S.settings.pin ? 'Şifreyi değiştir' : 'Şifre koy', left: 'Vazgeç', right: 'Kaydet', body: `<div class="field"><label>4 haneli şifre</label><input id="p1" inputmode="numeric" maxlength="4" type="password"></div><div class="field"><label>Tekrar</label><input id="p2" inputmode="numeric" maxlength="4" type="password"></div>${S.settings.pin ? '<button class="btn danger full" id="p0">Şifreyi kaldır</button>' : ''}`,
+    onRight: sh => { const p1 = sh.querySelector('#p1').value, p2 = sh.querySelector('#p2').value; if (!/^\d{4}$/.test(p1)) { toast('4 rakam gir'); return false; } if (p1 !== p2) { toast('Şifreler aynı değil'); return false; } S.settings.pin = p1; save(); render(); toast('Şifre kondu'); } });
+  const z = s.sh.querySelector('#p0'); if (z) z.onclick = () => { S.settings.pin = ''; save(); closeSheet(s); render(); toast('Şifre kaldırıldı'); };
+}
+Pages.settings = () => {
+  const st = S.settings; const lb = st.lastBackup ? daysBetween(st.lastBackup, today()) : null;
+  const used = (() => { try { return (JSON.stringify(S).length / 1048576).toFixed(1); } catch (e) { return '?'; } })();
+  return header('Ayarlar', '') + `
+  <div class="card"><h3>Profil</h3><div class="field"><label>Adın</label><input value="${esc(st.name)}" onchange="S.settings.name=this.value.trim();save()" placeholder="Sana nasıl hitap edeyim?"></div></div>
+  <div class="card"><h3>Görünüm</h3><div class="seg">${[['auto', 'Otomatik'], ['light', 'Açık'], ['dark', 'Koyu']].map(([k, l]) => `<button class="${st.theme === k ? 'on' : ''}" onclick="S.settings.theme='${k}';save();render()">${l}</button>`).join('')}</div>
+    <div class="small muted" style="margin-bottom:8px">Renk</div><div class="swatches">${ACCENTS.map(c => `<button style="background:${c}" class="${st.accent === c ? 'on' : ''}" onclick="S.settings.accent='${c}';save();render()"></button>`).join('')}</div></div>
+  <div class="card"><h3>Gizlilik</h3><div class="row between"><div><div class="b">Uygulama şifresi</div><div class="small muted">${st.pin ? 'Açık — her açılışta sorulur' : 'Kapalı'}</div></div><button class="btn plain sm" onclick="setPin()">${st.pin ? 'Değiştir' : 'Şifre koy'}</button></div></div>
+  <div class="card"><h3>Spor</h3><div class="row between"><div class="b">Setler arası dinlenme</div><select style="width:auto" onchange="S.settings.rest=+this.value;save()">${[45, 60, 90, 120, 150, 180, 240].map(v => `<option value="${v}" ${st.rest === v ? 'selected' : ''}>${v < 60 ? v + ' sn' : (v / 60).toLocaleString('tr-TR') + ' dk'}</option>`).join('')}</select></div></div>
+  ${syncCard()}
+  <div class="card"><h3>Yedekleme</h3><div class="small muted" style="margin-bottom:10px">${Sync.on() ? `Verilerin şifreli olarak bulutta da duruyor (${used} MB). Yine de ara sıra ek yedek alıp iCloud Drive'a kaydetmek iyi olur.` : `Tüm verilerin sadece bu cihazda duruyor (${used} MB). Kaybolmasın diye ara sıra yedek al ve iCloud Drive'a kaydet — ya da senkronizasyonu aç.`}<br><b style="color:${lb === null || lb > 7 ? 'var(--warn)' : 'var(--ok)'}">${lb === null ? 'Henüz hiç yedek alınmadı' : lb === 0 ? 'Son yedek: bugün' : 'Son yedek: ' + lb + ' gün önce'}</b></div>
+    <button class="btn full" onclick="exportData()" style="margin-bottom:8px">⬇︎ Yedeği kaydet</button><div class="row"><button class="btn plain sm grow" onclick="copyData()">Kopyala</button><button class="btn plain sm grow" onclick="importData()">Geri yükle</button></div></div>
+  <div class="card"><h3>Ana ekrana ekleme</h3><div class="small">Safari'de bu sayfayı aç → alttaki <b>Paylaş</b> (□↑) → <b>Ana Ekrana Ekle</b>. Böylece uygulama gibi tam ekran açılır ve internetsiz çalışır.</div></div>
+  <button class="btn danger full" onclick="confirmSheet('TÜM verilerin kalıcı olarak silinecek (senkronizasyon açıksa diğer cihazlarından da). Önce yedek almanı öneririm.',()=>{S=DEFAULT_STATE();save();setTab('today')},'Hepsini sil')">Tüm verileri sil</button>
+  <div class="tiny muted" style="text-align:center;margin-top:14px">Sürüm 1.0 · Kişisel uygulaman</div>`;
+};
+
+/* ===== Başlangıç ===== */
+(async function init() {
+  await Store.open();
+  await Sync.load();
+  const saved = await Store.get('state');
+  if (saved) S = merge(DEFAULT_STATE(), saved);
+  try { navigator.storage && navigator.storage.persist && navigator.storage.persist(); } catch (e) {}
+  if (S.workout.active) route = { tab: 'sport', page: 'session', arg: null }, navStack = [{ tab: 'sport', page: 'sport' }];
+  render();
+  if (S.settings.pin) showLock();
+  Sync.run();
+  setInterval(() => { if (!document.hidden) Sync.run(); }, 60000);
+  addEventListener('online', () => Sync.run());
+  addEventListener('offline', () => Sync.paint());
+  let hiddenAt = 0;
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { hiddenAt = Date.now(); Store.set('state', S); }
+    else if (S.settings.pin && Date.now() - hiddenAt > 60000 && !document.querySelector('.lock')) showLock();
+    if (!document.hidden) { render(); Sync.run(); }
+  });
+  try {
+    const inFrame = window.self !== window.top;
+    if ('serviceWorker' in navigator && !inFrame && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(() => {});
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
