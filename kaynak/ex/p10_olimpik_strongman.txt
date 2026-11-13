@@ -1,0 +1,537 @@
+// Olimpik kaldırışlar (711–745) ve strongman (746–765)
+@c Olimpik
+
+#711 clean *
+n Clean (Omuzlama)
+m gl ha qu / tu fd lb fa ca
+l 3
+- Bar ayak ortasının üstünde; omuz genişliğinde kavra, sırt düz, omuzlar barın biraz önünde.
+- Barı dize kadar kontrollü kaldır; sonra kalça, diz ve bileği patlatıp omuz silk.
+- Barın altına hızla gir; dirsekleri öne çevirip barı ön omuzlarında, çömelmiş halde yakala.
+- Ayağa kalk.
++ Bar gövdeye yakın yükselir; kollar ancak en sonda bükülür.
++ Önce hang clean ve front squat öğren.
+! Teknik bir kaldırıştır; boş barla, mümkünse bir bilenle öğren.
+
+#712 clean jerk *
+n Clean & Jerk (Silkme)
+m gl qu fd / ha tu tr lb ca au
+l 3
+- Barı clean ile omuzlarına al ve ayağa kalk.
+- Dizleri kısa ve dik bir şekilde büküp (dip) patlayarak barı yukarı it.
+- Bar yükselirken bacakları öne-arkaya açıp altına gir, kolları kilitle.
+- Ayakları topla, barı kontrollü indir.
++ Olimpik halterin iki yarışma hareketinden biridir.
+! Baş üstü pozisyonu sağlam olmadan ağırlaşma.
+
+#713 clean deadlift
+n Clean Deadlift
+m ha gl / qu lb tu fa tm
+- Clean tutuşuyla kavra; kalça normal deadlift'e göre daha alçak, göğüs dik.
+- Sırt açısını koruyarak barı yerden kalçaya kadar kaldır.
+- Kontrollü indir.
++ Clean'in yerden kalkış pozisyonunu güçlendirir.
+! Kalça omuzlardan önce yükselmesin.
+
+#714 clean blocks
+n Bloklardan Clean
+m gl qu ha / tu fd lb ca
+l 2
+- Barı diz hizasındaki bloklara koy; clean pozisyonu al.
+- Kalçayı patlatıp omuz silk ve barın altına gir.
+- Ön omuzlarında yakala, kalk.
++ Hareketin patlayıcı ikinci çekişini öne çıkarır.
+! Kollarla erken çekme.
+
+#715 clean pull
+n Clean Pull
+m gl ha qu / tu lb fa ca
+- Clean tutuşuyla barı yerden kaldır.
+- Diz üstünde kalça, diz ve bileği patlat; omuz silk, parmak uçlarına yüksel.
+- Kollar düz kalsın; barı indir.
++ Clean'den daha ağır yüklenebilir; çekiş gücünü geliştirir.
+! Sırt düz, bar yakın.
+
+#716 clean shrug
+n Clean Shrug
+m tu / fa tm
+- Barı clean tutuşuyla, uyluk önünde tut; dizler hafif bükük.
+- Bacakları hafif itip omuzlarını kulaklarına doğru patlayıcı şekilde silk.
+- İndir.
++ Clean'in son çekişini güçlendirir.
+! Kolları bükme.
+
+#717 frankenstein
+n Frankenstein Squat
+m qu / gl au ha
+- Barı ön omuzlarına koy, elleri bırak; kollarını öne düz uzat.
+- Gövde dik, tam çömel.
+- Kalk.
++ Bar doğru yerdeyse düşmez: front squat ve clean için bar konumunu öğretir.
+! Hafif barla yap; dirsekler düşerse bar yuvarlanır.
+
+#718 hang clean *
+n Hang Clean
+m gl ha qu / tu fd lb fa
+l 2
+- Barı uyluk ortasında tut; kalçadan hafif eğil, sırt düz.
+- Kalçayı patlatıp omuz silk; barın altına gir.
+- Ön omuzlarında, dirsekler önde yakala ve kalk.
++ Clean'i öğrenmenin ilk adımıdır; patlayıcı güç için sporcuların favorisi.
+! Barı kollarla curl yapar gibi çekme.
+
+#719 hang clean below knees
+n Hang Clean (Diz Altından)
+m gl ha qu / tu fd lb fa
+l 2
+- Barı dizlerin hemen altına indir; sırt düz, omuzlar barın önünde.
+- Barı dizden geçirip kalçayı patlat, omuz silk.
+- Altına girip ön omuzlarında yakala.
++ Diz geçişini çalıştırır.
+! Bar bacaklardan uzaklaşmasın.
+
+#720 hang snatch
+n Hang Snatch
+m gl ha qu / tu fd tr lb
+l 3
+- Barı geniş (snatch) tutuşla uyluk üstünde tut.
+- Kalçayı patlatıp omuz silk; barı gövdeye yakın yukarı çek.
+- Altına girip kollar kilitli, baş üstünde çömelerek yakala; kalk.
++ Koparmayı öğrenmek için ideal başlangıç.
+! Omuz ve bilek hareketliliği yetersizse önce overhead squat çalış.
+
+#721 hang snatch below knees
+n Hang Snatch (Diz Altından)
+m gl ha qu / tu fd tr lb
+l 3
+- Geniş tutuşla barı dizlerin altına indir.
+- Barı dizden geçir, kalçayı patlat ve yukarı çek.
+- Altına girip baş üstünde yakala.
++ Diz geçişi ve bar yolunu düzeltir.
+! Sırt açısını erken açma.
+
+#722 heaving snatch balance
+n Heaving Snatch Balance
+m qu fd / gl tr au ha
+l 2
+- Bar ensede, geniş tutuş; ayaklar squat duruşunda.
+- Kısa bir dip yapıp barı yukarı it.
+- Ayakları oynatmadan kendini barın altına it; kollar kilitli tam çömel. Kalk.
++ Koparmada barın altına girme güvenini kazandırır.
+! Hafif barla öğren.
+
+#723 jerk balance
+n Jerk Balance
+m fd qu / tr gl ha
+l 2
+- Bar ön omuzlarda; ayaklar kısa bir makas duruşunda.
+- Dip yapıp barı yukarı it.
+- Ön ayağı ileri kaydırarak barın altına in, kolları kilitle.
++ Silkmede geriye kaçmayı düzeltir, alta girmeyi öğretir.
+! Gövde dik kalsın.
+
+#724 jerk dip squat
+n Jerk Dip Squat
+m qu / au ca gl
+- Bar ön omuzlarda, ayaklar kalça altında.
+- Gövde dimdik, dizleri öne-dışa bükerek kısa bir çeyrek squat yap.
+- Kalk.
++ Silkmenin dip kısmını güçlendirir; ağır çalışılabilir.
+! Öne eğilme; topuklar yerde.
+
+#725 kneeling jump squat
+n Diz Üstünden Sıçrayarak Squat
+m gl qu / ha ca
+l 3
+- Diz çök, kalçanı topuklarına oturt (bar sırtta ya da vücut ağırlığıyla).
+- Kalçayı öne patlatıp sıçra, ayaklarının üstüne squat pozisyonunda in.
+- Ayağa kalk.
++ Kalça patlayıcılığını geliştirir.
+! Önce ağırlıksız öğren; yumuşak zemin kullan.
+
+#726 muscle snatch
+n Muscle Snatch
+m gl ha fd / tu tr qu lb
+l 2
+- Geniş tutuşla barı yerden kaldır, kalçayı patlat.
+- Dizleri tekrar bükmeden barı yukarı çekip baş üstüne it.
+- Kontrollü indir.
++ Koparmanın üst çekişini ve dönüşünü (turnover) güçlendirir.
+! Hafif yükle çalışılır.
+
+#727 olympic squat *
+n Olimpik Squat (High Bar)
+m qu gl / ha lb ca
+c Bacak
+- Barı trapezin üstüne, yükseğe yerleştir; ayaklar omuz genişliğinde.
+- Gövde dik, dizler öne giderek tam derinliğe çömel.
+- Aynı yoldan kalk.
++ Ön bacağı normal squat'tan daha çok çalıştırır; halter ayakkabısı işi kolaylaştırır.
+! Topuklar kalkmasın; derinliği hareketliliğin belirlesin.
+
+#728 overhead squat *
+n Overhead Squat
+m qu gl / fd tr au lb ha
+l 3
+- Barı geniş tutuşla baş üstünde kilitle; ayaklar omuz genişliğinde.
+- Bar topukların üstünde kalacak şekilde tam çömel.
+- Kalk.
++ Omuz, kalça ve bilek hareketliliğinin en iyi testi.
+! Boş bar ya da çubukla başla.
+
+#729 power clean blocks
+n Bloklardan Power Clean
+m gl ha qu / tu fd lb
+l 2
+- Barı diz hizasındaki bloklara koy.
+- Kalçayı patlatıp omuz silk.
+- Barı ön omuzlarında, dizler hafif bükük yakala.
++ Tam çömelme yok; saf patlayıcılık.
+! Kollarla çekme.
+
+#730 power jerk
+n Power Jerk
+m fd qu / tr gl ca au
+l 3
+- Bar ön omuzlarda, ayaklar kalça altında.
+- Kısa dip yapıp patlayarak barı yukarı it.
+- Ayakları hafif yana açıp dizler bükük altına gir, kolları kilitle; kalk.
++ Push press'ten farkı: barın altına tekrar girersin.
+! Bar yüzünün yanından düz geçsin.
+
+#731 power snatch *
+n Power Snatch
+m gl ha qu / tu fd tr lb ca
+l 3
+- Geniş tutuşla barı yerden kaldır; sırt düz.
+- Diz üstünde kalçayı patlat, omuz silk ve barı gövdeye yakın yukarı çek.
+- Dizler hafif bükük, kollar kilitli baş üstünde yakala.
++ Tam koparmaya göre öğrenmesi kolaydır; hız ve güç kazandırır.
+! Barı kollarla savurma.
+
+#732 power snatch blocks
+n Bloklardan Power Snatch
+m gl ha qu / tu fd tr lb
+l 2
+- Barı diz hizasındaki bloklara koy; geniş tutuş.
+- Kalçayı patlat, barı yukarı çek.
+- Dizler hafif bükük baş üstünde yakala.
++ İkinci çekişi öne çıkarır.
+! Bar yakın kalsın.
+
+#733 push press *
+n Push Press
+m fd / tr qu gl cu
+c Omuz
+l 2
+- Barı ön omuzlarında tut, ayaklar omuz genişliğinde.
+- Dizleri kısa ve dik şekilde bük, bacaklarla patlayarak barı yukarı it.
+- Kolları baş üstünde kilitle; kontrollü indir.
++ Bacak desteği sayesinde overhead press'ten daha ağır kaldırırsın.
+! Belini geriye yatırma; karın sıkı.
+
+#734 push press behind neck
+n Enseden Push Press
+m fd / tr qu ca
+c Omuz
+l 2
+- Bar ensede, omuzdan biraz geniş tut.
+- Kısa dip yapıp bacaklarla patlayarak barı baş üstüne it.
+- Kontrollü şekilde enseye indir.
++ Halterde silkme ve koparma için omuz gücü kazandırır.
+! Omuz hareketliliğin kısıtlıysa yapma; inişte dizlerle karşıla.
+
+#735 rack delivery
+n Rack Delivery (Bar Teslimi)
+m fd tu / fa
+- Barı dirsekler yukarıda, ön kollar aşağı sarkık (korkuluk pozisyonu) tut.
+- Dirsekleri hızla barın etrafından öne çevir.
+- Barı ön omuzlarına oturt.
++ Clean'in yakalama kısmını öğretir.
+! Boş barla yap.
+
+#736 romanian deadlift deficit
+n Yükseltiden Romanian Deadlift
+m ha gl / lb fa tu
+c Bacak
+- Bir plaka ya da platformun üstünde dur; bar uyluk önünde.
+- Dizler hafif bükük, kalçayı geriye iterek barı ayaklarına doğru indir.
+- Kalçayla doğrul.
++ Yükselti arka bacağın daha çok esnemesini sağlar.
+! Sırt düz; esnekliğinin izin verdiği kadar in.
+
+#737 snatch *
+n Snatch (Koparma)
+m gl ha qu / tu fd tr lb ca
+l 3
+- Barı çok geniş tutuşla kavra; sırt düz, omuzlar barın önünde.
+- Barı dize kadar kontrollü kaldır; sonra kalçayı patlatıp omuz silk.
+- Barın altına hızla gir; kollar kilitli, tam çömelmiş halde baş üstünde yakala.
+- Ayağa kalk.
++ Olimpik halterin en teknik hareketidir; hız, güç ve hareketlilik ister.
+! Mutlaka boş barla ve bir bilenle öğren.
+
+#738 snatch balance
+n Snatch Balance
+m qu fd / gl tr ha ca
+l 2
+- Bar ensede, geniş tutuş; ayaklar kalça altında.
+- Kısa dip yapıp barı it; aynı anda ayakları squat duruşuna açarak altına in.
+- Kollar kilitli tam çömel, kalk.
++ Koparmada alta girme hızını geliştirir.
+! Hafif başla.
+
+#739 snatch deadlift
+n Snatch Deadlift
+m ha gl / qu lb tu fa
+- Çok geniş tutuşla kavra; kalça alçak, göğüs dik.
+- Sırt açısını koruyarak barı kalçaya kadar kaldır.
+- Kontrollü indir.
++ Geniş tutuş üst sırtı ve kavramayı da zorlar.
+! Sırt düz.
+
+#740 snatch blocks
+n Bloklardan Snatch
+m gl qu ha / tu fd tr lb
+l 3
+- Barı diz hizasındaki bloklara koy; geniş tutuş.
+- Kalçayı patlat, barı yukarı çek.
+- Altına girip baş üstünde tam çömelerek yakala; kalk.
++ Patlayıcı kısım ve alta giriş çalışılır.
+! Kollar erken bükülmesin.
+
+#741 snatch shrug
+n Snatch Shrug
+m tu / fa tm
+- Barı çok geniş tutuşla uyluk önünde tut.
+- Bacakları hafif itip omuzlarını patlayıcı şekilde silk.
+- İndir.
++ Koparmanın son çekişini güçlendirir.
+! Kolları bükme.
+
+#742 split clean
+n Split Clean
+m gl qu ha / tu fd lb ca
+l 3
+- Clean gibi çek.
+- Barın altına çömelmek yerine bacakları öne-arkaya açarak gir.
+- Ön omuzlarında yakala, ayakları topla.
++ Eski usul bir tekniktir; hareketliliği kısıtlı olanlara uyar.
+! Ön diz içe kaçmasın.
+
+#743 split jerk
+n Split Jerk
+m fd qu / tr gl ha
+l 3
+- Bar ön omuzlarda; kısa dip yapıp patlayarak yukarı it.
+- Bacakları öne-arkaya açıp altına gir, kolları kilitle.
+- Önce ön ayağı, sonra arka ayağı toplayarak doğrul.
++ En ağır yüklerin baş üstüne çıkarıldığı silkme tekniğidir.
+! Arka diz hafif bükük, gövde dik.
+
+#744 split snatch
+n Split Snatch
+m gl ha qu / tu fd tr lb
+l 3
+- Snatch gibi çek.
+- Barın altına bacakları öne-arkaya açarak gir; kollar kilitli.
+- Ayakları topla.
++ Tam çömelme hareketliliği olmayanlar için alternatif.
+! Hafif barla öğren.
+
+#745 wide stance stiff
+n Geniş Duruş Stiff-Leg Deadlift
+m ha ad / gl lb
+c Bacak
+- Ayaklar omuzdan geniş, bar uyluk önünde.
+- Dizler hafif bükük ve sabit; kalçayı geriye iterek barı indir.
+- Kalçayla doğrul.
++ Geniş duruş iç bacağı da esnetir.
+! Sırtı yuvarlama.
+
+@c Strongman
+@e ot
+
+#746 atlas stone trainer
+n Atlas Taşı Antrenörü
+m lb gl / ha qu bi fa
+- Yüklü aletin üstünde bacakların açık dur; kollarınla alttan sar.
+- Kalça ve belle kaldırıp kucağına al.
+- Kalçayı öne patlatıp göğsüne ya da platforma yükselt.
++ Taş olmadan atlas taşı gücü kazandırır.
+! Sırt yuvarlanır; bu yüzden hafif başla.
+
+#747 atlas stones
+n Atlas Taşı
+m lb gl ha / qu bi fa tu au
+l 3
+- Taşın üstünde dur, kollarınla alttan kavra.
+- Taşı yerden kaldırıp çömelerek kucağına al.
+- Taşı göğsüne sar; kalçayı patlatıp platforma yükle.
++ Strongman'in simge hareketi.
+! Biceps kopması riski var: kolları düz tutmaya çalış, ön kolluk kullan.
+
+#748 axle deadlift
+n Axle (Kalın Bar) Deadlift
+m ha gl lb / qu fa tu tm
+- Kalın barı karışık ya da üstten tutuşla kavra.
+- Sırt düz, bacaklarla yeri iterek kalk.
+- Kontrollü indir.
++ Kalın bar kavramayı çok zorlar.
+! Sırtı yuvarlama.
+
+#749 backward drag
+n Geri Geri Kızak Çekme
+m qu / ca gl ha fa
+- Kızağın ipini tut, yüzün kızağa dönük; hafif çömel.
+- Kısa adımlarla geri geri yürüyerek kızağı çek.
++ Dizleri yormadan ön bacağı pompalar; diz sağlığı için önerilir.
+! Arkanı kontrol et.
+
+#750 bear crawl sled
+n Ayı Yürüyüşüyle Kızak Çekme
+m qu / gl ha ca fd au
+- Kızağı beline bağlı kemerle tak.
+- Eller ve ayaklar üstünde, dizler yerden kalkık ileri yürü.
++ Tüm vücut kondisyon çalışması.
+! Kalça çok yükselmesin.
+
+#751 car deadlift
+n Araba Deadlift
+m qu gl / ha lb tu fa
+l 2
+- Çerçevenin kollarının arasına gir; kolları yanlardan kavra.
+- Göğüs dik, bacaklarla iterek kalk.
+- Kontrollü indir.
++ Tutuş yanlarda ve yüksekte olduğu için trap bar deadlift'e benzer.
+! Sırt düz.
+
+#752 circus bell
+n Circus Dumbbell
+m fd / tr gl ha lb tu
+l 3
+- Dev dambılı iki elle omzuna al.
+- Tek elle tut; bacaklardan destek alarak baş üstüne it.
+- Kolu kilitle, kontrollü indir.
++ Kalın sap ve hacim dengeyi zorlar.
+! Diğer kolu dengeye yardımcı olarak aç.
+
+#753 conan wheel
+n Conan Çarkı
+m qu au / lb bi fa tu fd
+l 2
+- Kolun ucunu dirsek içlerine (zercher tutuşu) al, bileğini kavra.
+- Yükü kaldır; gövde dik.
+- Kısa ve hızlı adımlarla daire çizerek yürü.
++ Nefes almak zorlaşır; kısa nefesler al.
+! Sırtı yuvarlama.
+
+#754 crucifix
+n Crucifix (Haç Tutuşu)
+m sd fd / fa tu
+t s
+- Ağırlıkları iki yana, omuz hizasında, kollar düz tut.
+- Kollar düşmeden olabildiğince uzun süre bekle.
++ Omuz dayanıklılığı için izometrik bir çalışmadır.
+! Geriye yaslanma.
+
+#755 forward drag press
+n İleri Kızak Çekme + Press
+m cm qu / fd tr gl ha ca
+- Kızağa çift kulplu ip bağla; sırtın kızağa dönük, kulplar göğüs hizasında.
+- Bir adım at, öne yaslanıp bacaklarla it ve kulpları ileri pres yap.
+- Adım adım devam et.
++ İtiş ve bacak gücünü birleştirir.
+! Bel çökmesin.
+
+#756 keg load
+n Fıçı Yükleme
+m lb gl / ha qu bi fa tu fd
+- Fıçıyı yan yatırıp üst ve alt kenarından kavra.
+- Kaldırıp kucağına ya da omzuna al.
+- Platforma taşı ve yükle.
++ İçindeki sıvı oynadığı için dengeyi zorlar.
+! Sırt düz kalk.
+
+#757 log lift
+n Log Lift (Kütük Kaldırma)
+m fd / tr cu gl qu lb tu
+l 2
+- Kütüğün kulplarını tut; deadlift gibi kaldırıp kucağına al.
+- Kalçayı patlatıp kütüğü göğsüne yuvarla; dirsekler yukarı.
+- Bacak desteğiyle baş üstüne it, kolları kilitle.
++ Nötr tutuş omuz için bardan daha rahattır.
+! Geriye çok yaslanma.
+
+#758 power stairs
+n Power Stairs (Basamağa Yük Çıkarma)
+m gl ha / qu lb tu fd
+l 2
+- Yükü iki elle tut, ayaklar geniş, göğüs dik.
+- Kalçayı öne patlatıp yükü sallandırarak bir üst basamağa koy.
+- Basamağa çık, tekrarla.
++ Kalça patlayıcılığı ve dayanıklılık ister.
+! Sırt düz.
+
+#759 rickshaw carry
+n Rickshaw Carry (Çerçeve Taşıma)
+m fa tu / gl qu ha lb ca au
+- Çerçevenin ortasında dur, kolları kavra; topuklardan iterek kalk.
+- Göğüs dik, kısa ve hızlı adımlarla yürü.
++ Farmer walk'un çerçeveli hali; kavrama ve trapez için.
+! Yükü dönerken savurma.
+
+#760 rickshaw deadlift
+n Rickshaw Deadlift
+m qu gl / ha lb tu fa
+- Çerçevenin ortasında dur, kolları yanlardan kavra.
+- Göğüs dik, bacaklarla iterek kalk.
+- Kontrollü indir.
++ Yanlardan tutuş bele binen yükü azaltır.
+! Sırt düz.
+
+#761 sandbag load
+n Kum Torbası Yükleme
+m gl qu lb / ha bi fa tu fd au
+- Torbanın üstünde çömel, kollarınla alttan sar.
+- Kaldırıp kucağına al; ayağa kalk.
+- Platforma taşı ve yükle.
++ Evde bile yapılabilen sağlam bir tüm vücut çalışması.
+! Kalkarken sırtını olabildiğince düz tut.
+
+#762 sled drag harness
+n Kemerle Kızak Çekme
+m qu gl / ha ca
+- Kemeri ya da koşumu tak; kızak arkanda.
+- Öne yaslanıp güçlü adımlarla ileri yürü ya da koş.
++ Hızlanma gücü ve kondisyon kazandırır.
+! Gövde düz; belden kırılma.
+
+#763 sled push *
+n Sled Push (Kızak İtme)
+m qu gl / ha ca cm tr
+- Kızağın kollarını tut; kollar düz ya da bükük, gövde öne yatık.
+- Güçlü ve tam adımlarla kızağı it.
+- Mesafeyi bitir, dinlen, tekrarla.
++ Bacak gücü ve kondisyon için en verimli araçlardan; kas ağrısı az yapar.
+! Sırt düz kalsın.
+
+#764 tire flip *
+n Lastik Çevirme
+m qu gl ha / lb tu cm fd tr fa
+l 2
+- Lastiğin önünde çömel; göğsünü lastiğe yasla, alttan kavra.
+- Bacak ve kalçayla öne-yukarı iterek lastiği kaldır.
+- Lastik göğüs hizasına gelince ellerini çevirip it ve devir.
++ Kaldırma değil, öne itme hareketidir.
+! Kollarla curl yaparak kaldırmak biceps'i koparabilir.
+
+#765 yoke walk
+n Yoke Walk (Boyunduruk Yürüyüşü)
+m qu gl / au lb tu ca ha ad
+l 2
+- Yoke'un altına gir, çubuğu üst sırtına oturt; kolları dik direklerden tut.
+- Karnını sıkıp kalk.
+- Kısa ve hızlı adımlarla yürü.
++ Tüm gövdeyi sıkıştırır; sağlamlık için eşsizdir.
+! Yük sallanmaya başlarsa yavaşla.
