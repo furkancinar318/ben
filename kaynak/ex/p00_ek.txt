@@ -1,0 +1,719 @@
+// Veri tabanında olmayan ek hareketler (fotoğrafsız; kas haritasıyla gösterilir)
+
+#+vakum *
+n Karın Vakum (Stomach Vacuum)
+m al au / ob
+c Karın
+e bw
+l 1
+t s
+- Ayakta hafif öne eğilip ellerini dizlerine koy; ya da sırtüstü yat, dizler bükük.
+- Burnundan derin nefes al, sonra ağzından ciğerlerini tamamen boşalt.
+- Nefes vermişken göbeğini omurgana doğru, kaburgalarının altına çeker gibi içeri çek.
+- 15–30 saniye tut; bu sırada küçük nefesler alabilirsin. Bırak, dinlen, tekrarla.
++ Aç karnına, özellikle sabah yapmak en kolayıdır. 10–15 saniyeyle başla, zamanla 45–60 saniyeye çık.
++ Karnı kasıp sertleştirmek değil, içeri çekmek hedef. Derin karın kasını (transversus) çalıştırır ve duruşu toparlar.
++ Önce sırtüstü öğren; sonra dört ayak üstünde, oturarak ve ayakta dene.
+! Yüksek tansiyon, fıtık ya da hamilelik varsa yapma. Baş dönmesi olursa hemen bırak.
+
+#+deadbug *
+n Dead Bug
+m au al / ob
+c Karın
+e bw
+l 1
+- Sırtüstü yat; kollar tavana uzanmış, kalça ve dizler 90° bükük.
+- Belini yere bastır. Sağ kolunu başının üstüne, sol bacağını ileri doğru yere yaklaştır.
+- Başlangıca dön ve diğer çapraz kol-bacakla tekrarla.
++ Bel yerden kalkıyorsa bacağı daha az uzat.
++ Yavaş yap; nefes verirken uzat.
+! Belin kavislenmesine izin verme, hareketin bütün amacı bu.
+
+#+birddog *
+n Bird Dog
+m lb / gl au ob
+c Karın
+e bw
+l 1
+- Dört ayak üstünde dur; eller omuzların, dizler kalçaların altında.
+- Sağ kolunu ileri, sol bacağını geriye, gövdenle aynı hizaya gelene kadar uzat.
+- 1–2 saniye tut, başlangıca dön ve diğer tarafı yap.
++ Kalçanı ve omuzlarını yere paralel tut; belinde bir bardak su taşıyormuş gibi düşün.
++ Bel sağlığı için en güvenli hareketlerden biridir.
+! Bacağı çok yukarı kaldırıp belini çukurlaştırma.
+
+#+hollow *
+n Hollow Body Hold
+m au al / qu
+c Karın
+e bw
+l 2
+t s
+- Sırtüstü yat, belini yere bastır.
+- Omuzlarını ve bacaklarını yerden biraz kaldır; kollar başının üstünde uzansın.
+- Vücudun muz şeklinde, bel yere yapışık halde bekle.
++ Zor gelirse dizleri bük ya da kolları yanında tut.
++ Bel yerden kalktığı an set biter.
+! Boynunu gerginleştirme, çeneyi hafif göğse yaklaştır.
+
+#+lsit
+n L-Sit
+m al au / qu tr
+c Karın
+e bw
+l 3
+t s
+- Paralel barlarda ya da yerde ellerinin üstünde, kollar düz dur.
+- Bacaklarını birleştirip yere paralel olacak şekilde öne uzat.
+- Omuzları aşağı bastırarak pozisyonu koru.
++ Önce dizler bükük (tuck) halde çalış, sonra tek bacağı uzat.
++ Omuzlar kulaklara çıkmasın.
+! Bilek ağrısı olursa paralel bar ya da şınav tutamağı kullan.
+
+#+dragonflag
+n Dragon Flag
+m au al / lb gl
+c Karın
+e bw
+l 3
+- Sehpaya uzan, başının arkasından sehpayı sıkıca tut.
+- Omuzların üstünde kalacak şekilde gövdeni ve bacaklarını dümdüz yukarı kaldır.
+- Vücudun tek parça halinde, yavaşça yere doğru in; yere değmeden geri kalk.
++ Önce sadece iniş (negatif) kısmını çalış.
++ Kalçayı bükme; hareket kalitesi tekrar sayısından önemli.
+! İleri seviye bir harekettir; bel ağrısı varsa yapma.
+
+#+toestobar
+n Toes to Bar
+m al au / la fa
+c Karın
+e bw
+l 3
+- Barfiks barına omuz genişliğinde asıl.
+- Karnını sıkıp bacaklarını düz şekilde yukarı kaldır, ayak uçlarını bara değdir.
+- Sallanmadan, kontrollü şekilde indir.
++ Yapamıyorsan önce dizleri göğse çekerek (knee raise) başla.
++ Kanatlarını aktif tut, omuzlardan sarkma.
+! Savrularak yapmak beli ve omuzu zorlar.
+
+#+hangknee *
+n Barda Diz Çekme (Hanging Knee Raise)
+m al / au fa
+c Karın
+e bw
+l 1
+- Barfiks barına asıl, bacaklar aşağı sarksın.
+- Dizlerini bükerek göğsüne doğru çek; sonunda kalçanı hafif öne kıvır.
+- Sallanmadan yavaşça indir.
++ Kalçayı kıvırmak alt karnı devreye sokar; sadece bacak kaldırmak kalça fleksörlerini çalıştırır.
++ Kolaylaşınca bacakları düz kaldır.
+! Hız alıp sallanma.
+
+#+copenhagen
+n Copenhagen Plank
+m ad / ob au
+c Bacak
+e bw
+l 2
+t s
+- Yan yat, üstteki bacağını bir sehpanın üstüne koy; dirseğin omzunun altında.
+- Kalçanı kaldır; vücudun düz bir çizgi olsun, alttaki bacak havada kalsın.
+- Süre boyunca tut, diğer tarafa geç.
++ Kolay versiyon: sehpaya ayak yerine dizi koy.
++ İç bacak (kasık) sakatlıklarını önlemede etkilidir.
+! Kasıkta keskin ağrı olursa bırak.
+
+#+revplank
+n Reverse Plank (Ters Plank)
+m gl lb / ha rd tr
+c Karın
+e bw
+l 1
+t s
+- Otur, bacaklar uzanmış; ellerini kalçanın arkasında yere koy.
+- Kalçanı kaldır; vücudun omuzdan topuğa düz olsun.
+- Göğsünü aç, kalçayı sıkarak bekle.
++ Parmak uçları ayaklara baksın.
++ Masa başı duruşunu dengelemek için iyi bir harekettir.
+! Omuz ya da bilek ağrısı olursa dirseklerin üstünde yap.
+
+#+plankdokunma
+n Plank Omuz Dokunma (Shoulder Tap)
+m au al / ob fd
+c Karın
+e bw
+l 1
+- Şınav pozisyonu al, ayaklar omuz genişliğinden biraz açık.
+- Bir elini kaldırıp karşı omzuna dokun, yere koy; diğer elle tekrarla.
++ Kalça sağa sola dönmesin; ne kadar az oynarsa o kadar etkili.
++ Ayakları açmak dengeyi kolaylaştırır.
+! Bel çökmesin.
+
+#+plankupdown
+n Plank Up-Down (Komando Plank)
+m au tr / fd cm ob
+c Karın
+e bw
+l 2
+- Dirsek plank pozisyonunda başla.
+- Önce bir elini, sonra diğerini yere basarak şınav pozisyonuna çık.
+- Aynı sırayla dirseklerin üstüne geri in. Her tekrarda başlayan kolu değiştir.
++ Kalçayı sabit tut.
++ Tempolu yapınca nabzı da yükseltir.
+! Bilek ağrısı varsa yumruk üstünde yap.
+
+#+bearcrawl
+n Ayı Yürüyüşü (Bear Crawl)
+m au fd / qu tr ob
+c Karın
+e bw
+l 1
+t s
+- Dört ayak üstünde dur, dizlerini yerden birkaç santim kaldır.
+- Çapraz el ve ayağı aynı anda ileri atarak ilerle.
+- Sırtın düz, kalçan alçak kalsın.
++ Küçük adımlar at; sırtına konan bir bardak devrilmeyecekmiş gibi.
++ İleri, geri ve yana doğru yapılabilir.
+! Bilekleri ısıtmadan başlama.
+
+#+suitcase
+n Suitcase Carry (Tek Elde Yük Taşıma)
+m ob fa / tu gl au
+c Karın
+e db
+l 1
+t s
+- Tek elinde ağır bir dambıl ya da kettlebell tut.
+- Gövden yana eğilmeden, dik durarak yürü.
+- Belirlenen süre ya da mesafe sonunda el değiştir.
++ Karşı taraftaki yan karın gövdeyi dik tutmak için çalışır.
++ Omuzlar aynı hizada kalsın.
+! Ağırlığı yerden düz sırtla al.
+
+#+burpee *
+n Burpee
+m qu cm / gl fd tr au ha
+c Kardiyo
+e bw
+l 2
+- Ayakta başla; çömel ve ellerini yere koy.
+- Ayaklarını geriye atarak şınav pozisyonuna geç, göğsünü yere indir.
+- Ayaklarını ellerine doğru geri çek ve yukarı sıçrayarak ellerini başının üstünde çırp.
++ Tempoyu nefesine göre ayarla; düzgün form hızdan önemli.
++ Kolay versiyon: şınavı ve sıçramayı çıkar.
+! Bel çökerek yere düşme; iniş kontrollü olsun.
+
+#+jumpingjack *
+n Jumping Jack
+m ca sd / qu gl ad
+c Kardiyo
+e bw
+l 1
+t s
+- Ayaklar bitişik, kollar yanda dur.
+- Sıçrayarak ayakları yana aç, kolları başının üstünde birleştir.
+- Tekrar sıçrayarak başlangıca dön; ritmik şekilde devam et.
++ Isınma için idealdir.
++ Parmak uçlarında yumuşak in.
+! Diz ya da ayak bileği ağrısı varsa sıçramadan, adımlayarak yap.
+
+#+highknees *
+n Yerinde Yüksek Diz (High Knees)
+m qu al / ca gl
+c Kardiyo
+e bw
+l 1
+t s
+- Dik dur, yerinde koşmaya başla.
+- Her adımda dizini kalça hizasına kadar kaldır.
+- Kollarını koşar gibi salla, parmak uçlarında kal.
++ Gövdeni dik tut, geriye yaslanma.
++ Tempo yükseldikçe kardiyo etkisi artar.
+! Sert zeminde uzun süre yapma.
+
+#+buttkick
+n Topuk Kalçaya Koşu (Butt Kicks)
+m ha / ca qu
+c Kardiyo
+e bw
+l 1
+t s
+- Yerinde koşmaya başla.
+- Her adımda topuğunu kalçana değdirmeye çalış.
+- Kollar koşu ritminde sallansın.
++ Koşu öncesi arka bacağı ısıtmak için iyidir.
++ Dizler aşağı baksın, öne çıkmasın.
+! Arka bacakta çekme varsa hızlı yapma.
+
+#+assaultbike
+n Air Bike (Assault Bike)
+m qu / ha gl fd tr ca
+c Kardiyo
+e mc
+l 1
+t c
+- Seleyi kalça hizasına ayarla, ayaklarını pedallara koy, kolları tut.
+- Pedal çevirirken kolları da itip çek.
+- Sabit tempoda ya da aralıklı (ör. 20 sn hızlı, 40 sn yavaş) çalış.
++ Direnç hızla birlikte arttığı için HIIT için çok uygundur.
++ Bacak ve kolun birlikte çalışması nabzı hızlı yükseltir.
+! İlk denemede son hızda başlama; çabuk tüketir.
+
+#+skierg
+n Ski Erg
+m la tr / au lb gl
+c Kardiyo
+e mc
+l 1
+t c
+- Makinenin karşısında dur, kulpları yukarıdan tut.
+- Kalçadan hafif menteşe yaparak kulpları güçlü şekilde aşağı çek.
+- Kollar uzayarak yukarı dönerken doğrul.
++ Güç kollardan değil, gövde ve kanatlardan gelsin.
++ Üst vücut ağırlıklı, eklem dostu bir kardiyodur.
+! Belini yuvarlayarak çekme.
+
+#+yuzme
+n Yüzme
+m la fd / tr qu au gl
+c Kardiyo
+e ot
+l 1
+t c
+- Rahat olduğun stilde (serbest, kurbağalama, sırtüstü) başla.
+- Sabit tempoda yüz ya da havuz boylarını dinlenmeli aralıklarla tekrarla.
+- Süreyi ve mesafeyi kaydet.
++ Eklemlere yük bindirmeyen tam vücut kardiyosudur.
++ Nefes ritmini kulaçlara bağla.
+! Yorgunken derin suda tek başına yüzme.
+
+#+egimliyuruyus *
+n Eğimli Yürüyüş (Koşu Bandı)
+m gl ca / ha qu
+c Kardiyo
+e mc
+l 1
+t c
+- Koşu bandını %8–12 eğime, 4,5–6 km/s hıza ayarla.
+- Kolları serbest sallayarak, dik durarak yürü.
+- 20–40 dakika sürdür.
++ Tutamaklara asılma; eğimin etkisini azaltır.
++ Koşmadan yüksek kalori harcatır, dizlere yumuşaktır.
+! Baldırlar ilk seferlerde çok yorulur; süreyi kademeli artır.
+
+#+sprint
+n Sprint Aralıkları (HIIT Koşu)
+m qu ha / gl ca au
+c Kardiyo
+e bw
+l 2
+t c
+- 5–10 dakika hafif koşu ve açma hareketleriyle ısın.
+- 15–30 saniye hızına yakın koş, sonra 60–90 saniye yürü.
+- 6–10 tekrar yap, soğuma yürüyüşüyle bitir.
++ Süre alanına toplam dakikayı yaz.
++ Yokuş yukarı sprint arka bacağa daha az risk bindirir.
+! Isınmadan sprint atmak arka bacak sakatlığının en sık sebebidir.
+
+#+golgeboksu
+n Gölge Boksu
+m fd / au ob tr ca
+c Kardiyo
+e bw
+l 1
+t c
+- Boks duruşu al; eller çene hizasında.
+- Direkt, kroşe ve aparkat kombinasyonlarını havaya at; ayaklarınla sürekli hareket et.
+- 2–3 dakikalık raundlar yap, arada 1 dakika dinlen.
++ Yumruğu kalçanı döndürerek at, sadece kolla değil.
++ Hafif dambılla yapmak omuzları daha çok yorar.
+! Dirseği sertçe kilitleyerek vurma.
+
+#+kumtorbasi
+n Kum Torbası Çalışması
+m fd la / au ob tr ca
+c Kardiyo
+e ot
+l 2
+t c
+- Bandaj ve eldiven tak, torbaya kol boyu mesafede dur.
+- 2–3 dakikalık raundlarda yumruk kombinasyonları at.
+- Raund aralarında 1 dakika dinlen.
++ Bileğini düz tut, yumruğun ilk iki eklemiyle vur.
++ Vuruştan sonra elini çeneye geri getir.
+! Bandajsız vurmak bileği ve parmak eklemlerini sakatlar.
+
+#+wallsit *
+n Duvar Oturuşu (Wall Sit)
+m qu / gl ad
+c Bacak
+e bw
+l 1
+t s
+- Sırtını duvara yasla, ayaklarını yarım metre öne koy.
+- Dizler 90° olana kadar kay; uyluklar yere paralel olsun.
+- Sırtın duvarda, pozisyonu koru.
++ Ellerini bacaklarına dayama.
++ Zorlaştırmak için kucağına ağırlık koy.
+! Dizler ayak parmaklarını geçmesin.
+
+#+nordic
+n Nordic Hamstring Curl
+m ha / gl ca
+c Bacak
+e bw
+l 3
+- Dizlerinin üstüne çök, ayak bileklerini bir yere sabitle ya da biri tutsun.
+- Kalçanı bükmeden, gövdeni dümdüz tutarak yavaşça öne doğru in.
+- Tutamadığın noktada ellerinle yere in, iterek başlangıca dön.
++ İniş kısmını olabildiğince yavaş yap; asıl fayda orada.
++ Arka bacak sakatlıklarını önlediği gösterilmiş bir harekettir.
+! Çok zorlayıcıdır; az tekrarla başla, kramp girebilir.
+
+#+cossack
+n Cossack Squat
+m qu ad / gl ha
+c Bacak
+e bw
+l 2
+- Ayaklarını çok geniş aç.
+- Ağırlığını bir bacağa vererek o tarafa çömel; diğer bacak düz kalsın, ayak ucu yukarı baksın.
+- Ortaya dön ve diğer tarafa in.
++ Topuk yerde kalsın; gerekirse önünde bir ağırlıkla denge kur.
++ Kalça ve iç bacak hareketliliğini geliştirir.
+! Dizin içe çökmesine izin verme.
+
+#+curtsy
+n Curtsy Lunge (Çapraz Lunge)
+m gl qu / ad ha
+c Bacak
+e bw
+l 1
+- Dik dur; bir bacağını diğerinin arkasından çapraza doğru geriye at.
+- İki dizi de bükerek alçal.
+- Öndeki topuktan iterek başlangıca dön.
++ Kalçanın yan kısmını (gluteus medius) iyi çalıştırır.
++ Kalçalar öne baksın, dönmesin.
+! Diz ağrısı olursa adımı kısalt.
+
+#+clamshell
+n Clamshell (İstiridye)
+m gl
+c Bacak
+e bd
+l 1
+- Yan yat, dizler 90° bükük ve üst üste; dizlerinin üstüne direnç bandı takabilirsin.
+- Ayaklar birbirine değerken üstteki dizini yukarı aç.
+- Yavaşça kapat.
++ Kalça geriye yuvarlanmasın; hareket küçük ama etkili.
++ Squat öncesi kalçayı aktive etmek için iyidir.
+! Belinden dönerek hile yapma.
+
+#+firehydrant
+n Fire Hydrant
+m gl / ob
+c Bacak
+e bw
+l 1
+- Dört ayak üstünde dur.
+- Dizin bükük halde bir bacağını yana doğru kalça hizasına kaldır.
+- Yavaşça indir; tüm tekrarları bitirip taraf değiştir.
++ Gövden yana yatmasın.
++ Bant ile zorlaştırılabilir.
+! Belini çukurlaştırma.
+
+#+tibialis
+n Tibialis Raise (Kaval Kası Kaldırışı)
+m ca
+c Bacak
+e bw
+l 1
+- Sırtını duvara yasla, ayaklarını 30–40 cm öne koy.
+- Topukların yerde, ayak uçlarını olabildiğince yukarı kaldır.
+- Yavaşça indir.
++ Kaval kemiği ağrısına (shin splint) karşı koruyucudur.
++ Ayakları öne aldıkça zorlaşır.
+! Dizleri bükerek hile yapma.
+
+#+deadhang *
+n Barda Asılma (Dead Hang)
+m fa la / tu
+c Sırt
+e bw
+l 1
+t s
+- Barfiks barını omuz genişliğinde kavra ve asıl.
+- Kollar düz, omuzlar gevşek ya da hafif aşağı çekili bekle.
+- Süre dolunca kontrollü in.
++ Kavrama gücünü ve omuz hareketliliğini geliştirir; omurgayı rahatlatır.
++ Ayaklar yere değiyorsa dizleri bük.
+! Omuz ağrısı varsa omuzları aktif (aşağı çekili) tut.
+
+#+scappullup
+n Skapula Barfiks (Scapular Pull-Up)
+m tm la / tu
+c Sırt
+e bw
+l 1
+- Bara asıl, kollar düz.
+- Dirseklerini bükmeden kürek kemiklerini aşağı ve geriye çekerek vücudunu birkaç santim yükselt.
+- Yavaşça tam asılmaya dön.
++ Barfiksin ilk hareketini öğretir.
++ Hareket küçüktür; kolları bükersen amaç kaybolur.
+! Boynunu öne uzatma.
+
+#+pendlay
+n Pendlay Row
+m tm la / rd bi lb
+c Sırt
+e bb
+l 2
+- Bar yerde; gövden yere paralel olacak şekilde eğil, barı omuzdan biraz geniş kavra.
+- Barı patlayıcı şekilde göğsünün altına çek.
+- Her tekrarda barı yere tamamen bırak.
++ Gövde açısı hiç değişmesin.
++ Yerden başlamak hile yapmayı engeller, sırt gücünü geliştirir.
+! Sırtını yuvarlama; esnekliğin yetmiyorsa barı plakaların üstüne yükselt.
+
+#+meadows
+n Meadows Row
+m la / tm rd bi
+c Sırt
+e bb
+l 2
+- Barın bir ucunu köşeye sabitle, diğer ucuna plaka tak.
+- Bara yan dur, öne eğil; barın ucunu üstten kavra.
+- Dirseğini yukarı ve geriye çekerek barı kalçana doğru kaldır, kontrollü indir.
++ Kayış kullanmak kavramayı kolaylaştırır.
++ Altta kanadı iyice esnet.
+! Gövdeni döndürerek ağırlığı çekme.
+
+#+makinerow *
+n Makine Kürek (Seated Row Makine)
+m tm la / bi rd
+c Sırt
+e mc
+l 1
+- Göğüs pedini kolların tam uzanacağı şekilde ayarla.
+- Göğsünü pede yasla, kulpları kavra.
+- Dirsekleri geriye çek, kürek kemiklerini sık; kontrollü bırak.
++ Göğüs destekli olduğu için bele yük binmez.
++ Geniş kulp orta sırtı, dar kulp kanatları daha çok çalıştırır.
+! Göğsünü pedden ayırıp geriye yaslanma.
+
+#+destekbarfiks *
+n Destekli Barfiks Makinesi
+m la / bi tm rd
+c Sırt
+e mc
+l 1
+- Destek ağırlığını seç (ne kadar çok ağırlık, o kadar kolay).
+- Dizlerini pede koy, barı geniş kavra.
+- Çenen barı geçene kadar çek, kontrollü in.
++ Destek ağırlığını zamanla azaltarak gerçek barfikse geç.
++ Altta kollar tam uzasın.
+! Pedden inerken dikkat et, ped hızla yukarı çıkar.
+
+#+zpress
+n Z Press
+m fd / sd tr au
+c Omuz
+e bb
+l 2
+- Yere otur, bacaklar önde düz; barı köprücük kemiği hizasında tut.
+- Sırtın dik, barı başının üstüne it.
+- Kontrollü indir.
++ Bacak ve bel desteği olmadığı için gövdeyi çok çalıştırır.
++ Hafif ağırlıkla başla.
+! Geriye yaslanma; esnekliğin yetmiyorsa bir plakanın üstüne otur.
+
+#+landmine
+n Landmine Press
+m fd cu / tr se
+c Omuz
+e bb
+l 1
+- Barın bir ucunu köşeye sabitle; diğer ucunu tek elle omuz hizasında tut.
+- Barı yukarı ve ileri doğru it.
+- Kontrollü şekilde omzuna indir.
++ Omuz dostu bir pres çeşididir.
++ Tek dizin üstünde yapmak gövdeyi daha çok çalıştırır.
+! Belini geriye bükme.
+
+#+pikepushup
+n Pike Şınav
+m fd / tr sd cu
+c Omuz
+e bw
+l 2
+- Şınav pozisyonundan kalçanı yukarı kaldır; vücudun ters V olsun.
+- Dirsekleri bükerek başını ellerinin önüne, yere doğru indir.
+- İterek başlangıca dön.
++ Ayakları yükselttikçe amuda şınava yaklaşır.
++ Dirsekler 45° açıda kalsın.
+! Başını yere çarpma; kontrollü in.
+
+#+makinelateral *
+n Lateral Raise Makine
+m sd
+c Omuz
+e mc
+l 1
+- Koltuğu, omuzların makinenin dönme noktasıyla aynı hizada olacak şekilde ayarla.
+- Kolları pedlere yasla.
+- Dirseklerinle pedleri yana, omuz hizasına kaldır; yavaşça indir.
++ Dirsekle itmek trapezi devreden çıkarır.
++ Tepede 1 saniye bekle.
+! Omuzları kulaklara kaldırma.
+
+#+cableyraise
+n Cable Y-Raise
+m sd rd / tm
+c Omuz
+e cb
+l 1
+- Makaraları en alta ayarla, kabloları çapraz tut.
+- Kolları düz şekilde yukarı ve dışa, Y harfi oluşturacak biçimde kaldır.
+- Yavaşça indir.
++ Çok hafif ağırlık yeterlidir.
++ Alt trapezi ve omuz sağlığını destekler.
+! Belini geriye bükme.
+
+#+bayesian
+n Bayesian Cable Curl
+m bi / fa
+c Kol
+e cb
+l 1
+- Makarayı alta ayarla, kulpu tut ve sırtını makineye dön.
+- Bir adım öne çık; kolun gövdenin arkasında uzansın.
+- Dirseğini sabit tutarak kulpu omzuna doğru kıvır, yavaşça bırak.
++ Biceps'i esnemiş pozisyonda yükler.
++ Dirsek geride kalsın.
+! Omzunu öne yuvarlama.
+
+#+kapigogus *
+n Kapı Eşiğinde Göğüs Esnetme
+m cm cu / fd
+c Esneme
+e bw
+l 1
+t s
+- Kapı eşiğinde dur; ön kollarını çerçevenin iki yanına daya, dirsekler omuz hizasında.
+- Bir adım öne atarak göğsünü ileri doğru bırak.
+- 20–30 saniye tut.
++ Dirsekleri yükseltmek alt göğsü, alçaltmak üst göğsü esnetir.
++ Masa başı duruşunu açmak için her gün yapılabilir.
+! Omzun önünde batma olursa açıyı küçült.
+
+#+asagikopek *
+n Aşağı Bakan Köpek
+m ha ca / la fd
+c Esneme
+e bw
+l 1
+t s
+- Dört ayak üstünden kalçanı yukarı kaldır; vücudun ters V olsun.
+- Ellerinle yeri it, göğsünü bacaklarına yaklaştır.
+- Topuklarını yere doğru bastır, 20–30 saniye tut.
++ Arka bacak gerginse dizleri hafif bük.
++ Dönüşümlü topuk basmak baldırı daha iyi açar.
+! Bilek ağrısı olursa yumruk üstünde yap.
+
+#+guvercin *
+n Güvercin Pozu
+m gl / ad
+c Esneme
+e bw
+l 1
+t s
+- Dört ayak üstünden bir dizini öne, bileğinin arkasına getir; kaval kemiği yere yatsın.
+- Diğer bacağını geriye doğru düz uzat.
+- Kalçanı yere doğru bırak, istersen gövdeni öne yatır; 30–60 saniye tut.
++ Kalça yere gelmiyorsa altına yastık koy.
++ Oturarak çalışanlar için en iyi kalça açıcılardandır.
+! Dizde burulma hissedersen pozisyondan çık.
+
+#+kanepe *
+n Kanepe Esnemesi (Couch Stretch)
+m qu
+c Esneme
+e bw
+l 2
+t s
+- Bir dizini duvarın ya da kanepenin dibine koy; kaval kemiğin duvara yaslansın.
+- Diğer ayağını öne basarak hamle pozisyonu al.
+- Gövdeni dikleştir, kalçanı öne it; 30–60 saniye tut.
++ Kalçayı sıkmak esnemeyi kalça fleksörüne taşır.
++ Ön bacak ve kalça fleksörü için en etkili esnemelerden biridir.
+! Dizin altına yumuşak bir şey koy.
+
+#+igneiplik
+n İğneden İplik (Thread the Needle)
+m tm rd / ob
+c Esneme
+e bw
+l 1
+t s
+- Dört ayak üstünde dur.
+- Bir kolunu, diğer kolunun altından karşı tarafa doğru uzat; omzun ve başın yere değsin.
+- 20–30 saniye tut, taraf değiştir.
++ Üstteki kolu tavana açarak devam edersen sırt dönüşü artar.
++ Sırtın üst kısmındaki sertliği açar.
+! Boynuna yük bindirme.
+
+#+duvarmelegi
+n Duvar Meleği (Wall Slide)
+m rd tm / sd
+c Esneme
+e bw
+l 1
+t w
+- Sırtını, başını ve kalçanı duvara yasla; ayaklar duvardan biraz önde.
+- Kollarını duvara "kaktüs" şeklinde yasla; dirsekler 90°.
+- Kollarını duvardan ayırmadan yukarı kaydır, sonra indir.
++ Belin duvardan kopmasın.
++ Omuz hareketliliği ve duruş için günlük yapılabilir.
+! Ağrıyla zorlama; hareket aralığı zamanla açılır.
+
+#+kobra *
+n Kobra Esnemesi
+m au / ob
+c Esneme
+e bw
+l 1
+t s
+- Yüzüstü yat, ellerini omuzlarının altına koy.
+- Kalçan yerde kalacak şekilde kollarınla göğsünü yukarı kaldır.
+- Omuzları kulaklardan uzak tut, 15–30 saniye bekle.
++ Karın ve kalça fleksörlerini açar.
++ Bel hassassa dirseklerin üstünde (sfenks) yap.
+! Belde sıkışma hissedersen yüksekliği azalt.
+
+#+sirtustudonus *
+n Sırtüstü Omurga Dönüşü
+m lb ob / gl
+c Esneme
+e bw
+l 1
+t s
+- Sırtüstü yat, kollarını iki yana aç.
+- Bir dizini göğsüne çekip karşı tarafa, yere doğru bırak.
+- Omuzlar yerde, başını diğer tarafa çevir; 20–30 saniye tut.
++ Nefes verdikçe diz yere yaklaşır.
++ Antrenman sonrası beli rahatlatır.
+! Fıtık şikâyetin varsa zorlamadan yap.
+
+#+derinsquat
+n Derin Squat Bekleyişi
+m ad gl / ca lb
+c Esneme
+e bw
+l 1
+t s
+- Ayaklar omuz genişliğinden biraz açık, tam çömel.
+- Dirseklerinle dizlerini dışa it, göğsünü dik tut.
+- 30–60 saniye bekle.
++ Topuklar kalkıyorsa altına plaka koy ya da bir yere tutun.
++ Kalça, ayak bileği ve bel hareketliliğini birlikte açar.
+! Dizde ağrı olursa derinliği azalt.

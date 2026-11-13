@@ -4,7 +4,7 @@ const MUSCLES = {
   fdelt: 'Ön omuz', sdelt: 'Yan omuz', rdelt: 'Arka omuz',
   biceps: 'Biceps', triceps: 'Triceps', forearm: 'Ön kol',
   abs_up: 'Üst karın', abs_low: 'Alt karın', obliques: 'Yan karın', serratus: 'Serratus',
-  traps_up: 'Üst trapez', traps_mid: 'Orta sırt', lats: 'Kanat (lat)', lowback: 'Bel',
+  neck: 'Boyun', traps_up: 'Üst trapez', traps_mid: 'Orta sırt', lats: 'Kanat (lat)', lowback: 'Bel',
   glutes: 'Kalça', quads: 'Ön bacak', hams: 'Arka bacak', adductors: 'İç bacak', calves: 'Baldır'
 };
 const OLD_MUSCLE = { chest: 'chest_mid', traps: 'traps_up', abs: 'abs_up' };
@@ -33,6 +33,7 @@ const HEAD_D = smoothPath([[100, 8], [86, 13], [80, 30], [82, 50], [90, 62], [10
 /* Kas şekilleri: [kas, görünüm(f/b), noktalar] — sol yarı */
 const MSHAPES = [
   // ÖN
+  ['neck', 'f', [[93.5, 62], [99.5, 63], [99.5, 87], [96, 86], [94, 76]]],
   ['traps_up', 'f', [[90, 70], [76, 84], [86, 87], [93, 82]]],
   ['chest_up', 'f', [[99.5, 92], [86, 89], [72, 91], [62, 98], [60, 108], [80, 110], [99.5, 111]]],
   ['chest_mid', 'f', [[99.5, 113], [80, 112], [59, 110], [57, 122], [62, 131], [82, 132], [99.5, 130]]],
@@ -54,6 +55,7 @@ const MSHAPES = [
   ['calves', 'f', [[66, 392], [71, 388], [74, 410], [73, 440], [68, 448], [65, 425]]],
   ['calves', 'f', [[91, 392], [95, 398], [94, 425], [90, 446], [87, 430], [88, 410]]],
   // ARKA
+  ['neck', 'b', [[93, 49], [99.5, 49], [99.5, 60.5], [93, 64.5], [91.5, 56]]],
   ['traps_up', 'b', [[99.5, 62], [92, 66], [88, 78], [76, 85], [64, 90], [80, 94], [99.5, 96]]],
   ['traps_mid', 'b', [[99.5, 98], [82, 96], [68, 98], [72, 108], [84, 122], [94, 140], [99.5, 160]]],
   ['rdelt', 'b', [[66, 92], [55, 92], [47, 100], [45, 114], [52, 120], [62, 114], [68, 102]]],

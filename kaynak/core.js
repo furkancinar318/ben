@@ -252,7 +252,7 @@ function showLock(onOk) {
     el.querySelector('#lerr').innerHTML = `<span class="muted">Kilit şifresi sadece bu cihazda. Unuttuysan bu cihazdaki verileri silip ${Sync.on() ? 'buluttan geri yükleyebilirsin (şifreleme şifren gerekir)' : 'baştan başlayabilirsin — yedeğin varsa geri yükleyebilirsin'}.</span><br><button type="button" class="btn danger sm" id="lreset" style="margin-top:10px">Bu cihazı sıfırla</button>`;
     el.querySelector('#lreset').onclick = async () => {
       if (!confirmReset) { confirmReset = true; el.querySelector('#lreset').textContent = 'Emin misin? Tekrar bas'; return; }
-      await Store.set('state', null); await Store.set('meta', null); await Sync.signOut(); location.reload();
+      await Store.set('state', null); await Store.set('meta', null); await Store.set('clearlock', 1); await Sync.signOut(); location.reload();
     };
   };
   let confirmReset = false;

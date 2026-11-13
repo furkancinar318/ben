@@ -10,3 +10,7 @@ Adres: https://furkancinar318.github.io/ben
 ## Fotoğraflar
 
 `img/` klasöründeki egzersiz fotoğrafları [free-exercise-db](https://github.com/yuhonas/free-exercise-db) projesinden alınmıştır (kamu malı / Unlicense).
+
+## Hareket kütüphanesi
+
+`kaynak/ex/` klasörü hareket verisinin kaynağıdır: `p*.txt` dosyaları Türkçe anlatımları, `fedb-meta.json` free-exercise-db künyesini tutar. `python3 kaynak/build.py` hepsini `data/ex.<özet>.js` dosyasına derler.

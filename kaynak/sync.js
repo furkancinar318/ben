@@ -72,6 +72,10 @@ const Sync = {
     const data = await decryptState(row, this.key);
     S = merge(DEFAULT_STATE(), data); await Store.set('state', S);
     Meta.baseRev = row.rev; Meta.dirty = false; Meta.updatedAt = Date.parse(row.updated_at); await Store.set('meta', Meta);
+    if (await Store.get('clearlock')) { // kilit şifresi unutulup cihaz sıfırlandıysa eski kilidi geri getirme
+      await Store.set('clearlock', null);
+      if (S.settings.lock || S.settings.pin) { S.settings.lock = null; S.settings.pin = ''; save(); toast('Uygulama kilidi kaldırıldı; Ayarlar\'dan yenisini koyabilirsin'); }
+    }
     const typing = document.activeElement && /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName);
     if (!sheetStack.length && !typing) render(); else this.pendingRender = true;
   },

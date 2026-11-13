@@ -122,7 +122,7 @@ input[type=checkbox]{width:auto}
 .mrow .v{width:108px;text-align:right;color:var(--muted);font-size:11.5px;flex:none;white-space:nowrap}
 .ex-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line)}
 .ex-item:last-child{border-bottom:0}
-.ex-thumb{width:46px;height:52px;flex:none;border-radius:10px;background:var(--card-2);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.ex-thumb{width:60px;height:48px;flex:none;border-radius:10px;background:var(--card-2);overflow:hidden;display:flex;align-items:center;justify-content:center}
 .ex-thumb img{width:100%;height:100%;object-fit:cover}
 .ex-thumb svg{height:100%;width:auto;max-width:100%;padding:3px 0}
 .ex-thumb.mini{width:62px;height:60px}
@@ -193,6 +193,7 @@ ol.warns{list-style:none;padding-left:0} ol.warns li:before{content:"• ";color
 <div id="app"></div>
 <nav class="tabbar" id="tabs"></nav>
 <div class="toast" id="toast"></div>
+<script src="data/ex.e04e7010.js"></script>
 <script>/* ===== Yardımcılar ===== */
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -447,7 +448,7 @@ function showLock(onOk) {
     el.querySelector('#lerr').innerHTML = `<span class="muted">Kilit şifresi sadece bu cihazda. Unuttuysan bu cihazdaki verileri silip ${Sync.on() ? 'buluttan geri yükleyebilirsin (şifreleme şifren gerekir)' : 'baştan başlayabilirsin — yedeğin varsa geri yükleyebilirsin'}.</span><br><button type="button" class="btn danger sm" id="lreset" style="margin-top:10px">Bu cihazı sıfırla</button>`;
     el.querySelector('#lreset').onclick = async () => {
       if (!confirmReset) { confirmReset = true; el.querySelector('#lreset').textContent = 'Emin misin? Tekrar bas'; return; }
-      await Store.set('state', null); await Store.set('meta', null); await Sync.signOut(); location.reload();
+      await Store.set('state', null); await Store.set('meta', null); await Store.set('clearlock', 1); await Sync.signOut(); location.reload();
     };
   };
   let confirmReset = false;
@@ -527,6 +528,10 @@ const Sync = {
     const data = await decryptState(row, this.key);
     S = merge(DEFAULT_STATE(), data); await Store.set('state', S);
     Meta.baseRev = row.rev; Meta.dirty = false; Meta.updatedAt = Date.parse(row.updated_at); await Store.set('meta', Meta);
+    if (await Store.get('clearlock')) { // kilit şifresi unutulup cihaz sıfırlandıysa eski kilidi geri getirme
+      await Store.set('clearlock', null);
+      if (S.settings.lock || S.settings.pin) { S.settings.lock = null; S.settings.pin = ''; save(); toast('Uygulama kilidi kaldırıldı; Ayarlar\'dan yenisini koyabilirsin'); }
+    }
     const typing = document.activeElement && /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName);
     if (!sheetStack.length && !typing) render(); else this.pendingRender = true;
   },
@@ -680,7 +685,7 @@ const MUSCLES = {
   fdelt: 'Ön omuz', sdelt: 'Yan omuz', rdelt: 'Arka omuz',
   biceps: 'Biceps', triceps: 'Triceps', forearm: 'Ön kol',
   abs_up: 'Üst karın', abs_low: 'Alt karın', obliques: 'Yan karın', serratus: 'Serratus',
-  traps_up: 'Üst trapez', traps_mid: 'Orta sırt', lats: 'Kanat (lat)', lowback: 'Bel',
+  neck: 'Boyun', traps_up: 'Üst trapez', traps_mid: 'Orta sırt', lats: 'Kanat (lat)', lowback: 'Bel',
   glutes: 'Kalça', quads: 'Ön bacak', hams: 'Arka bacak', adductors: 'İç bacak', calves: 'Baldır'
 };
 const OLD_MUSCLE = { chest: 'chest_mid', traps: 'traps_up', abs: 'abs_up' };
@@ -709,6 +714,7 @@ const HEAD_D = smoothPath([[100, 8], [86, 13], [80, 30], [82, 50], [90, 62], [10
 /* Kas şekilleri: [kas, görünüm(f/b), noktalar] — sol yarı */
 const MSHAPES = [
   // ÖN
+  ['neck', 'f', [[93.5, 62], [99.5, 63], [99.5, 87], [96, 86], [94, 76]]],
   ['traps_up', 'f', [[90, 70], [76, 84], [86, 87], [93, 82]]],
   ['chest_up', 'f', [[99.5, 92], [86, 89], [72, 91], [62, 98], [60, 108], [80, 110], [99.5, 111]]],
   ['chest_mid', 'f', [[99.5, 113], [80, 112], [59, 110], [57, 122], [62, 131], [82, 132], [99.5, 130]]],
@@ -730,6 +736,7 @@ const MSHAPES = [
   ['calves', 'f', [[66, 392], [71, 388], [74, 410], [73, 440], [68, 448], [65, 425]]],
   ['calves', 'f', [[91, 392], [95, 398], [94, 425], [90, 446], [87, 430], [88, 410]]],
   // ARKA
+  ['neck', 'b', [[93, 49], [99.5, 49], [99.5, 60.5], [93, 64.5], [91.5, 56]]],
   ['traps_up', 'b', [[99.5, 62], [92, 66], [88, 78], [76, 85], [64, 90], [80, 94], [99.5, 96]]],
   ['traps_mid', 'b', [[99.5, 98], [82, 96], [68, 98], [72, 108], [84, 122], [94, 140], [99.5, 160]]],
   ['rdelt', 'b', [[66, 92], [55, 92], [47, 100], [45, 114], [52, 120], [62, 114], [68, 102]]],
@@ -795,494 +802,65 @@ function wireMuscleFilter(root, cb) {
   const on = root.querySelector('[data-mc].on'); if (on) on.scrollIntoView({ block: 'nearest', inline: 'center' });
 }
 
-/* ===== Hareket kütüphanesi =====
-   Fotoğraflar: free-exercise-db (kamu malı / Unlicense) — github.com/yuhonas/free-exercise-db
-   Yapılış, püf noktası ve dikkat metinleri bu uygulama için yazılmıştır. */
-const X = (id, name, cat, p, s, img, how, tips, warn) => ({ id: 'b_' + id, name, cat, p, s, img, how: how.split('|'), tips: tips.split('|'), warn: warn.split('|'), builtin: true });
-const BUILTIN_EX = [
-  /* ---------- GÖĞÜS ---------- */
-  X('bench', 'Bench Press', 'Göğüs', ['chest_mid'], ['chest_up', 'chest_low', 'fdelt', 'triceps'], 'Barbell_Bench_Press_-_Medium_Grip',
-    'Sehpaya uzan, gözlerin barın altında olsun; ayaklar yere sağlam bassın.|Barı omuz genişliğinden biraz geniş kavra, kürek kemiklerini geriye ve aşağı sıkıştır.|Barı kontrollü şekilde göğsünün alt-orta kısmına (meme ucu hizası) indir.|Göğsünü sıkarak barı yukarı ve hafif geriye doğru it.',
-    'Dirsekler gövdeyle 45–70° açı yapsın, tam yana açma.|Belde hafif doğal kavis olabilir ama kalça sehpadan kalkmasın.|Bileklerin dik dursun, bar avuç içinin alt kısmında otursun.',
-    'Ağır setlerde mutlaka yardımcı (spotter) ya da güvenlik barı kullan.|Barı göğsünden sektirme.'),
-  X('wbench', 'Geniş Tutuş Bench Press', 'Göğüs', ['chest_mid'], ['chest_low', 'fdelt'], 'Wide-Grip_Barbell_Bench_Press',
-    'Barı normal bench tutuşundan bir karış daha geniş kavra.|Kürek kemiklerini sıkıştır, barı göğüs ortasına indir.|Göğsü sıkarak yukarı it.',
-    'Hareket aralığı kısalır, göğsün dış kısmı daha çok çalışır.|Ağırlığı normal bench\'ten biraz düşük tut.',
-    'Omuz problemi varsa çok geniş tutuştan kaçın.'),
-  X('dbpress', 'Dumbbell Bench Press', 'Göğüs', ['chest_mid'], ['chest_up', 'chest_low', 'fdelt', 'triceps'], 'Dumbbell_Bench_Press',
-    'Dambılları dizlerine koyup otur, sırtüstü yatarken onları göğüs hizasına getir.|Avuç içleri ayaklarına baksın, dambıllar göğüs yanında başla.|Yukarı iterken dambılları hafifçe birbirine yaklaştır.|Kontrollü şekilde göğüs hizasına geri indir.',
-    'Bara göre daha derin inebilirsin, göğüste esnemeyi hisset.|Her iki kol eşit hızda hareket etsin.',
-    'Seti bitirince dambılları yere atma; dizlerine alıp otur.'),
-  X('incbb', 'Incline Bench Press', 'Göğüs', ['chest_up'], ['fdelt', 'triceps', 'chest_mid'], 'Barbell_Incline_Bench_Press_-_Medium_Grip',
-    'Sehpayı 30–45° eğime ayarla.|Barı omuz genişliğinden biraz geniş kavra, kürek kemiklerini sıkıştır.|Barı köprücük kemiğinin biraz altına, üst göğse indir.|Yukarı doğru it.',
-    'Eğim 30° civarında üst göğüs en iyi çalışır; daha dik açı ön omza kayar.|Göğsünü yukarı doğru dik tut.',
-    'Barı boynuna doğru indirme.'),
-  X('incdb', 'Incline Dumbbell Press', 'Göğüs', ['chest_up'], ['fdelt', 'triceps', 'chest_mid'], 'Incline_Dumbbell_Press',
-    'Sehpayı 30–45° eğime ayarla, dambıllarla otur.|Dambılları üst göğüs hizasına getir.|Yukarı it, tepede dambıllar birbirine yaklaşsın.|Kontrollü şekilde aşağı indir.',
-    'Dirsekleri çok açma, hafif içeride tut.|Aşağıda üst göğüste esnemeyi hisset.',
-    'Omzun önünde ağrı olursa eğimi düşür.'),
-  X('incfly', 'Incline Dumbbell Fly', 'Göğüs', ['chest_up'], ['fdelt'], 'Incline_Dumbbell_Flyes',
-    'Eğimli sehpada dambılları göğsünün üstünde, avuç içleri birbirine bakacak şekilde tut.|Dirsekler hafif bükük, kolları yay çizerek yana aç.|Göğüste esneme hissedince aynı yayla geri topla.',
-    'Sarılır gibi düşün; dirsek açısı hareket boyunca sabit kalsın.|Hafif ağırlık, yavaş tempo.',
-    'Kolları çok aşağı indirip omzu zorlama.'),
-  X('lowhigh', 'Low-to-High Cable Fly', 'Göğüs', ['chest_up'], ['fdelt', 'chest_mid'], 'Low_Cable_Crossover',
-    'Makaraları en alta ayarla, kulpları tutup ortada dur.|Kollar hafif bükük, kulpları aşağıdan yukarı, göğüs hizasına doğru topla.|Yavaşça başlangıca dön.',
-    'Hareketin sonunda üst göğsü sık.|Gövdeni sabit tut, sallanma.',
-    'Omuzları kulaklara doğru kaldırma.'),
-  X('decline', 'Decline Bench Press', 'Göğüs', ['chest_low'], ['chest_mid', 'triceps'], 'Decline_Barbell_Bench_Press',
-    'Ayaklarını sabitleyip başın aşağıda olacak şekilde yat.|Barı omuz genişliğinden biraz geniş kavra.|Barı göğsün alt kısmına indir.|Yukarı it.',
-    'Alt göğsü hedefler, omuza daha az yük bindirir.|Hareket aralığı kısa, kontrollü çalış.',
-    'Baş aşağı pozisyonda yardımcı olmadan ağır çalışma.'),
-  X('decdb', 'Decline Dumbbell Press', 'Göğüs', ['chest_low'], ['chest_mid', 'triceps'], 'Decline_Dumbbell_Bench_Press',
-    'Decline sehpaya ayaklarını sabitleyip yat.|Dambılları göğsün alt kısmı hizasında tut.|Yukarı it, tepede hafifçe yaklaştır.|Kontrollü indir.',
-    'Dambıllar daha serbest hareket ettiği için omuz dostudur.|Aşağıda alt göğüste esnemeyi hisset.',
-    'Dambılları alıp yatarken dikkatli ol; mümkünse yardım al.'),
-  X('fly', 'Dumbbell Fly', 'Göğüs', ['chest_mid'], ['chest_up', 'chest_low', 'fdelt'], 'Dumbbell_Flyes',
-    'Düz sehpada dambılları göğsün üstünde tut, avuç içleri birbirine baksın.|Dirsekler hafif bükük, kolları yay şeklinde yana aç.|Göğüste esneme hissedince geri topla.',
-    'Ağır değil, hissederek çalış.|Dirsek açısını değiştirme, press\'e dönmesin.',
-    'Aşırı aşağı inmek omuz ön kapsülünü zorlar.'),
-  X('pecdeck', 'Pec Deck (Makine Fly)', 'Göğüs', ['chest_mid'], ['fdelt'], 'Butterfly',
-    'Koltuğu kulplar göğüs hizasında olacak şekilde ayarla.|Sırtını yasla, kulpları/pedleri tut.|Kolları önde birleştir, 1 sn sık.|Yavaşça aç.',
-    'Ortada birleşirken göğsü iyice sık.|Geri açarken ağırlığı yığına çarptırma.',
-    'Omuzlar öne yuvarlanmasın; göğüs dik.'),
-  X('cross', 'Cable Crossover (yukarıdan aşağı)', 'Göğüs', ['chest_low'], ['chest_mid'], 'Cable_Crossover',
-    'Makaraları en üste ayarla, kulpları tut ve bir adım öne çık.|Hafif öne eğil, kollar hafif bükük.|Kulpları aşağı ve öne, göbek hizasında birleştir.|Kontrollü geri dön.',
-    'Birleşme noktası ne kadar aşağıdaysa alt göğüs o kadar çalışır.|Sonunda 1 sn sık.',
-    'Belini aşırı öne bükme.'),
-  X('chpress', 'Chest Press Makine', 'Göğüs', ['chest_mid'], ['chest_low', 'fdelt', 'triceps'], 'Machine_Bench_Press',
-    'Koltuğu kulplar göğüs ortası hizasında olacak şekilde ayarla.|Sırtını yasla, kulpları kavra.|İleri it, dirsekleri kilitlemeden dur.|Kontrollü geri gel.',
-    'Yeni başlayanlar ve tükenme setleri için güvenli.|Kürek kemiklerini geride tut.',
-    'Koltuk çok alçaksa omuz zorlanır.'),
-  X('smithbench', 'Smith Machine Bench Press', 'Göğüs', ['chest_mid'], ['fdelt', 'triceps'], 'Smith_Machine_Bench_Press',
-    'Sehpayı bar göğüs ortasına inecek şekilde yerleştir.|Barı kavra, kilidi çevirip aç.|Göğse indir, yukarı it.|Bitince kilitle.',
-    'Sabit ray sayesinde tek başına güvenle ağır çalışabilirsin.|Güvenlik durdurucularını göğüs hizasının biraz altına ayarla.',
-    'Bar yolu sabit olduğu için sehpanın yeri çok önemli.'),
-  X('inclev', 'Incline Chest Press Makine', 'Göğüs', ['chest_up'], ['fdelt', 'triceps'], 'Leverage_Incline_Chest_Press',
-    'Koltuğu kulplar üst göğüs hizasında olacak şekilde ayarla.|Sırtını yasla, kulpları kavra.|Yukarı-ileri it.|Kontrollü geri gel.',
-    'Üst göğüs için güvenli bir alternatif.|Tepede dirsekleri kilitleme.',
-    'Omuzları kulaklara kaldırma.'),
-  X('svend', 'Svend Press', 'Göğüs', ['chest_mid'], ['fdelt'], 'Svend_Press',
-    'Bir ya da iki plakayı avuç içlerinle göğüs önünde sıkıştır.|Plakaları sıkmaya devam ederek kollarını düz ileri uzat.|Geri çek.',
-    'Bütün hareket boyunca avuçlarla plakaları birbirine bastır.|Hafif ağırlıkla bile göğsü iyi yakar.',
-    'Sırtını kamburlaştırma.'),
-  X('dbpullover', 'Dumbbell Pullover', 'Göğüs', ['chest_mid', 'lats'], ['triceps', 'serratus'], 'Bent-Arm_Dumbbell_Pullover',
-    'Sehpaya enine ya da boyuna yat, bir dambılı iki elle göğsün üstünde tut.|Dirsekler hafif bükük, dambılı başının arkasına doğru indir.|Göğüs ve kanatlarda esneme hissedince geri getir.',
-    'Kalçayı hafif aşağıda tutmak esnemeyi artırır.|Nefesi inerken al.',
-    'Omuz sorunu varsa çok geriye inme.'),
-  X('pushup', 'Şınav', 'Göğüs', ['chest_mid'], ['chest_low', 'triceps', 'fdelt', 'abs_up'], 'Pushups',
-    'Eller omuz genişliğinden biraz geniş, vücut baştan topuğa düz.|Göğsün yere neredeyse değene kadar in.|Yeri iterek yukarı çık.',
-    'Karnı ve kalçayı sık, bel çökmesin.|Zorsa dizler yerde başla; kolaysa ayakları yükselt.',
-    'Dirsekleri tamamen yana açma.'),
-  X('dips', 'Dips', 'Göğüs', ['chest_low', 'triceps'], ['fdelt', 'chest_mid'], 'Dips_-_Chest_Version',
-    'Paralel barlarda kollar düz başla.|Gövdeni hafif öne eğ, dirsekleri bükerek in.|Omuzlar dirsek hizasına gelince yukarı it.',
-    'Öne eğilmek göğsü, dik durmak arka kolu çalıştırır.|Kolaysa kemerle ağırlık ekle.',
-    'Çok derine inmek omuzu zorlar; ağrı varsa aralığı kısalt.'),
-  /* ---------- SIRT ---------- */
-  X('pullup', 'Barfiks', 'Sırt', ['lats'], ['biceps', 'rdelt', 'forearm', 'traps_mid'], 'Pullups',
-    'Barı omuz genişliğinden geniş, avuçlar öne bakacak şekilde kavra.|Kürek kemiklerini aşağı çekerek hareketi başlat.|Çene barı geçene kadar yukarı çek.|Kontrollü şekilde kollar düzleşene kadar in.',
-    'Dirseklerini cebine sokar gibi aşağı çek.|Yapamıyorsan lastikle ya da makine destekli başla.',
-    'Sallanarak (kipping) tekrar sayısını şişirme.'),
-  X('chinup', 'Chin-Up (Ters Tutuş Barfiks)', 'Sırt', ['lats', 'biceps'], ['traps_mid', 'forearm'], 'Chin-Up',
-    'Barı omuz genişliğinde, avuçlar sana bakacak şekilde kavra.|Göğsünü bara doğru çekerek yukarı çık.|Kontrollü in.',
-    'Barfikse göre biceps\'i daha çok çalıştırır.|Tepede kanatları sık.',
-    'Altta dirsekleri sertçe kilitleme.'),
-  X('latpd', 'Lat Pulldown', 'Sırt', ['lats'], ['biceps', 'rdelt', 'traps_mid'], 'Wide-Grip_Lat_Pulldown',
-    'Diz pedini ayarla, barı geniş tutuşla kavra.|Hafif geriye yaslan, göğsünü yukarı kaldır.|Barı üst göğse doğru çek.|Kollar uzayana kadar kontrollü bırak.',
-    'Elinle değil dirseğinle çekiyormuş gibi düşün.|Tepede kanatlarda esnemeyi hisset.',
-    'Barı ensenin arkasına çekme.'),
-  X('cglatpd', 'Dar Tutuş Lat Pulldown', 'Sırt', ['lats'], ['biceps', 'traps_mid'], 'Close-Grip_Front_Lat_Pulldown',
-    'V-kulp ya da dar tutuşla otur.|Göğsünü kaldırıp kulpu göğsüne çek.|Kontrollü bırak.',
-    'Kanatların alt kısmını daha çok çalıştırır.|Dirsekleri gövdeye yakın tut.',
-    'Gövdeyle sallanıp ağırlığı çekme.'),
-  X('bbrow', 'Barbell Row', 'Sırt', ['lats', 'traps_mid'], ['rdelt', 'biceps', 'lowback'], 'Bent_Over_Barbell_Row',
-    'Barı omuz genişliğinde kavra, dizler hafif bükük, gövdeyi 45° öne eğ.|Sırt düz, barı göbek hizasına çek.|Tepede kürek kemiklerini sık.|Kontrollü indir.',
-    'Gövde açısını set boyunca sabit tut.|Dirsekler geriye ve hafif yana gitsin.',
-    'Belini yuvarlama; yorulursan seti bitir.'),
-  X('revrow', 'Ters Tutuş Barbell Row', 'Sırt', ['lats'], ['biceps', 'traps_mid'], 'Reverse_Grip_Bent-Over_Rows',
-    'Barı avuçlar yukarı bakacak şekilde omuz genişliğinde kavra.|Öne eğil, sırt düz.|Barı göbeğine doğru çek, dirsekler gövdeye yakın.|Kontrollü indir.',
-    'Alt kanatlara ve biceps\'e daha çok yük biner.|Bileklerini düz tut.',
-    'Bel ağrın varsa göğüs destekli row tercih et.'),
-  X('cabrow', 'Seated Cable Row', 'Sırt', ['traps_mid', 'lats'], ['biceps', 'rdelt'], 'Seated_Cable_Rows',
-    'Otur, ayakları platforma koy, dizler hafif bükük.|Sırt dik, kulpu karnına doğru çek.|Kürek kemiklerini birbirine yaklaştır.|Kollar uzayana kadar bırak.',
-    'Göğsünü dik tut, omuzları geriye at.|Bırakırken kanatların esnesin ama belin yuvarlanmasın.',
-    'Gövdeyle ileri-geri sallanma.'),
-  X('dbrow', 'Tek Kol Dumbbell Row', 'Sırt', ['lats'], ['traps_mid', 'rdelt', 'biceps'], 'One-Arm_Dumbbell_Row',
-    'Bir el ve diz sehpada, diğer ayak yerde, sırt düz.|Dambılı kalçana doğru çek.|Tepede kanadı sık, kontrollü indir.',
-    'Dirseği kalçaya doğru yay çizerek çek.|Gövdeni döndürme.',
-    'Ağırlık için beli bükme.'),
-  X('tbar', 'T-Bar Row', 'Sırt', ['traps_mid', 'lats'], ['rdelt', 'biceps', 'lowback'], 'T-Bar_Row_with_Handle',
-    'Barın üstünde dur, kulpu kavra, gövde 45° öne eğik.|Sırt düz, kulpu göğsüne doğru çek.|Kontrollü indir.',
-    'Orta sırt kalınlığı için çok etkili.|Göğsünü yukarıda tut.',
-    'Ağır yüklerde bel düz kalmalı.'),
-  X('invrow', 'Inverted Row (Ters Kürek)', 'Sırt', ['traps_mid', 'lats'], ['biceps', 'rdelt'], 'Inverted_Row',
-    'Bel hizasındaki bir barın altına uzan, barı kavra.|Vücudu düz tut, göğsünü bara doğru çek.|Kontrollü in.',
-    'Ayakları yükselttikçe zorlaşır.|Kalçayı sarkıtma.',
-    'Barın sağlam sabitlendiğinden emin ol.'),
-  X('pullover', 'Straight-Arm Pulldown', 'Sırt', ['lats'], ['triceps', 'serratus'], 'Straight-Arm_Pulldown',
-    'Makarayı en üste ayarla, düz barı omuz genişliğinde tut.|Kollar neredeyse düz, barı kalçana doğru indir.|Kontrollü yukarı bırak.',
-    'Sadece kanatlarla çalışmayı hissetmek için ideal.|Hafif öne eğik dur.',
-    'Dirsekleri bükerek triceps\'e kaydırma.'),
-  X('dead', 'Deadlift', 'Sırt', ['lowback', 'glutes', 'hams'], ['traps_up', 'forearm', 'quads', 'lats'], 'Barbell_Deadlift',
-    'Bar ayak ortasının üstünde, ayaklar kalça genişliğinde.|Eğil, barı kavra, kalçayı indir, sırtı düzle, göğüs yukarı.|Yeri iter gibi kalkarken barı bacaklarına yakın tut.|Tepede kalçayı sık, aynı yoldan indir.',
-    'Barı kaldırmadan önce kanatlarını sıkıp gevşekliği al.|Kalça ve omuzlar aynı anda yükselsin.',
-    'Sırtını asla yuvarlama — en sık sakatlık sebebi.|Tepede beli geriye bükme.'),
-  X('sumo', 'Sumo Deadlift', 'Sırt', ['glutes', 'quads', 'lowback'], ['hams', 'adductors', 'traps_up'], 'Sumo_Deadlift',
-    'Ayakları geniş aç, parmak uçları dışa baksın.|Barı bacakların arasından dar tutuşla kavra.|Göğüs yukarı, dizleri dışa iterek kalk.|Kontrollü indir.',
-    'Klasik deadlifte göre bele daha az yük biner.|Dizler parmak uçları yönünde açılsın.',
-    'Kalça mobilitesi azsa çok geniş açılma.'),
-  X('rackpull', 'Rack Pull', 'Sırt', ['lowback', 'traps_up'], ['glutes', 'hams', 'forearm', 'lats'], 'Rack_Pulls',
-    'Barı diz hizasında güvenlik pimlerine koy.|Deadlift pozisyonu al, sırt düz.|Barı kalçanı ileri iterek kaldır.|Pimlere kontrollü bırak.',
-    'Deadliftin üst kısmını ve trapezi güçlendirir.|Deadliftten daha ağır çalışılabilir.',
-    'Tepede omuzları geriye bükme, dik dur yeter.'),
-  X('goodmorning', 'Good Morning', 'Sırt', ['hams', 'lowback'], ['glutes'], 'Good_Morning',
-    'Barı squattaki gibi sırtına al.|Dizler hafif bükük, kalçanı geriye iterek öne eğil.|Arka bacakta gerginlik hissedince doğrul.',
-    'Hafif ağırlıkla başla, teknik çok önemli.|Sırt hareket boyunca düz.',
-    'Bel ağrısı varsa yapma.'),
-  X('hyper', 'Hyperextension', 'Sırt', ['lowback'], ['glutes', 'hams'], 'Hyperextensions_Back_Extensions',
-    'Hyperextension sehpasında kalça pedin üstünde, ayaklar sabit.|Kollar göğüste çapraz, gövdeyi öne indir.|Gövde bacaklarla düz çizgiye gelene kadar kalk.',
-    'Kalçayı sıkarak kalk.|Zorlaşınca göğsünde plaka tut.',
-    'Tepede beli aşırı geriye bükme.'),
-  X('superman', 'Superman', 'Sırt', ['lowback'], ['glutes'], 'Superman',
-    'Yüzüstü yat, kollar ileri uzansın.|Kolları ve bacakları aynı anda yerden kaldır.|1–2 sn tut, indir.',
-    'Evde bel kası için çok iyi.|Boynunu doğal pozisyonda tut, yere bak.',
-    'Ani hareketlerle yapma.'),
-  X('shrug', 'Barbell Shrug', 'Sırt', ['traps_up'], ['forearm'], 'Barbell_Shrug',
-    'Barı uyluk önünde, omuz genişliğinde tut.|Omuzlarını kulaklarına doğru kaldır.|1 sn sık, yavaşça indir.',
-    'Omuzları döndürme, düz yukarı-aşağı.|Kollar düz kalsın.',
-    'Boynu öne uzatma.'),
-  X('dbshrug', 'Dumbbell Shrug', 'Sırt', ['traps_up'], ['forearm'], 'Dumbbell_Shrug',
-    'Her elde bir dambıl, kollar yanda.|Omuzlarını kulaklarına doğru kaldır.|Tepede sık, kontrollü indir.',
-    'Dambıllarla hareket aralığı daha rahat.|Tepede 1–2 sn bekle.',
-    'Çok ağır alıp hareketi yarım yapma.'),
-  /* ---------- OMUZ ---------- */
-  X('ohp', 'Overhead Press', 'Omuz', ['fdelt'], ['sdelt', 'triceps', 'traps_up', 'chest_up'], 'Standing_Military_Press',
-    'Barı köprücük kemiği hizasında, omuz genişliğinde tut.|Kalça ve karnı sık.|Barı başının üstüne düz it; geçerken başını hafif geri çek.|Kontrollü indir.',
-    'Tepede bar başının tam üstünde olsun.|Bacak gücü kullanmadan sadece omuzla it.',
-    'Belini geriye bükme — karnı sıkı tut.'),
-  X('seatohp', 'Oturarak Barbell Press', 'Omuz', ['fdelt'], ['sdelt', 'triceps'], 'Seated_Barbell_Military_Press',
-    'Dik sırtlı sehpada otur, barı köprücük kemiği hizasından al.|Başının üstüne it.|Kontrollü indir.',
-    'Oturmak bel yükünü azaltır.|Sırtını sehpaya yasla.',
-    'Barı ensenin arkasına indirme.'),
-  X('dbsp', 'Dumbbell Shoulder Press', 'Omuz', ['fdelt'], ['sdelt', 'triceps'], 'Dumbbell_Shoulder_Press',
-    'Dik sehpada otur, dambıllar kulak hizasında.|Dambılları başının üstüne it.|Kontrollü kulak hizasına indir.',
-    'Tepede dambıllar birbirine çarpmasın.|Dirsekler hafif önde dursun.',
-    'Belini sehpadan ayırma.'),
-  X('machsp', 'Shoulder Press Makine', 'Omuz', ['fdelt'], ['sdelt', 'triceps'], 'Machine_Shoulder_Military_Press',
-    'Koltuğu kulplar omuz hizasında olacak şekilde ayarla.|Yukarı it.|Kontrollü indir.',
-    'Tükenme setleri için güvenli.|Tepede dirsekleri kilitleme.',
-    'Koltuk yanlışsa omuz sıkışır.'),
-  X('arnold', 'Arnold Press', 'Omuz', ['fdelt', 'sdelt'], ['triceps'], 'Arnold_Dumbbell_Press',
-    'Dambıllar çene önünde, avuçlar sana bakıyor.|İterken avuçları dışa çevir.|Tepede avuçlar öne baksın, aynı yoldan geri dön.',
-    'Dönüşü yavaş ve akıcı yap.|Omzun ön ve yan kısmını birlikte çalıştırır.',
-    'Ağırlığı abartma, teknik bozulur.'),
-  X('lat', 'Lateral Raise', 'Omuz', ['sdelt'], ['traps_up'], 'Side_Lateral_Raise',
-    'Dambıllar yanında, dirsekler hafif bükük.|Kolları omuz hizasına kadar yana kaldır.|Yavaşça indir.',
-    'Sürahiden su döker gibi serçe parmak hafif yukarıda.|Hafif ağırlık, yüksek tekrar (12–20).',
-    'Gövdeyle sallanma; trapez devreye girer.'),
-  X('seatlat', 'Oturarak Lateral Raise', 'Omuz', ['sdelt'], [], 'Seated_Side_Lateral_Raise',
-    'Sehpanın ucunda dik otur, dambıllar yanında.|Kolları omuz hizasına kaldır.|Yavaşça indir.',
-    'Oturmak hile yapmayı engeller.|Tepede 1 sn tut.',
-    'Omuzları kulaklara kaldırma.'),
-  X('cablelat', 'Cable Lateral Raise', 'Omuz', ['sdelt'], [], 'Cable_Seated_Lateral_Raise',
-    'Makara en altta, kulpu karşı elinle tut.|Kolu yana omuz hizasına kaldır.|Yavaşça indir.',
-    'Kablo hareketin başında da gerilim sağlar.|Tek kol yapıp odaklan.',
-    'Gövdeyi yana yatırma.'),
-  X('front', 'Front Raise', 'Omuz', ['fdelt'], ['sdelt', 'chest_up'], 'Front_Dumbbell_Raise',
-    'Dambıllar uyluk önünde.|Kolları öne, omuz hizasına kaldır.|Yavaşça indir.',
-    'Dönüşümlü ya da birlikte yapılabilir.|Gövde sabit.',
-    'Pres hareketleri zaten ön omzu çalıştırır, hacmi abartma.'),
-  X('platefront', 'Plaka ile Front Raise', 'Omuz', ['fdelt'], ['chest_up'], 'Front_Plate_Raise',
-    'Plakayı iki elle saat 3 ve 9 hizasından tut.|Göz hizasına kadar kaldır.|Yavaşça indir.',
-    'Plakayı sıkmak göğsü de devreye sokar.|Kollar hafif bükük.',
-    'Belini geriye bükme.'),
-  X('revfly', 'Reverse Fly', 'Omuz', ['rdelt'], ['traps_mid'], 'Reverse_Flyes',
-    'Öne eğil, sırt düz, dambıllar aşağıda.|Kolları yana, omuz hizasına aç.|Yavaşça indir.',
-    'Kürek kemiklerini çok sıkma; hedef arka omuz.|Hafif ağırlık.',
-    'Belini yuvarlama.'),
-  X('revmach', 'Reverse Pec Deck', 'Omuz', ['rdelt'], ['traps_mid'], 'Reverse_Machine_Flyes',
-    'Pec deck makinesine göğsün pede dönük otur.|Kulpları tut, kolları geriye aç.|Kontrollü geri getir.',
-    'Arka omuz için en kolay izolasyon.|Kollar omuz hizasında kalsın.',
-    'Kolları fazla geriye götürüp omzu zorlama.'),
-  X('cabrear', 'Cable Rear Delt Fly', 'Omuz', ['rdelt'], ['traps_mid'], 'Cable_Rear_Delt_Fly',
-    'Makaraları omuz hizasına ayarla, kabloları çaprazlayarak tut.|Kolları yana aç.|Kontrollü geri getir.',
-    'Sürekli gerilim sağlar.|Hafif ağırlık, yavaş tempo.',
-    'Gövdeyi geriye çekme.'),
-  X('facepull', 'Face Pull', 'Omuz', ['rdelt'], ['traps_mid', 'sdelt'], 'Face_Pull',
-    'Makarayı yüz hizasına ayarla, ip kulpu iki elle tut.|İpi yüzüne doğru çek, elleri kulak yanlarına aç.|Kontrollü bırak.',
-    'Omuz sağlığı için her programa eklenmeli.|Tepede kollar "çift biceps" pozu gibi dursun.',
-    'Ağırlığı abartma, gövdeyle çekme.'),
-  X('uprow', 'Upright Row', 'Omuz', ['sdelt', 'traps_up'], ['biceps'], 'Upright_Barbell_Row',
-    'Barı omuz genişliğinde, uyluk önünde tut.|Dirsekler önde olacak şekilde barı göğüs hizasına çek.|Kontrollü indir.',
-    'Geniş tutuş omuz eklemi için daha güvenli.|Dirsekler ellerden yukarıda olsun.',
-    'Barı çeneye kadar çekmek omzu sıkıştırabilir.'),
-  /* ---------- KOL ---------- */
-  X('bbcurl', 'Barbell Curl', 'Kol', ['biceps'], ['forearm'], 'Barbell_Curl',
-    'Barı omuz genişliğinde, avuçlar öne bakacak şekilde tut.|Dirsekleri gövdeye sabitle, barı göğse doğru kaldır.|Yavaşça indir.',
-    'İnişi 2–3 saniyede yap.|Tepede biceps\'i sık.',
-    'Belinle sallanıp ağırlığı fırlatma.'),
-  X('dbcurl', 'Dumbbell Curl', 'Kol', ['biceps'], ['forearm'], 'Dumbbell_Bicep_Curl',
-    'Dambıllar yanında, avuçlar öne baksın.|Dirsekler sabit, dambılları omuza doğru kaldır.|Yavaşça indir.',
-    'Dönüşümlü yaparsan her kola odaklanırsın.|Kaldırırken serçe parmağını hafif dışa çevir.',
-    'Dirsekleri öne kaydırma.'),
-  X('hammer', 'Hammer Curl', 'Kol', ['biceps', 'forearm'], [], 'Hammer_Curls',
-    'Dambılları avuçlar birbirine bakacak şekilde (çekiç gibi) tut.|Dirsekler sabit, omuza doğru kaldır.|Yavaşça indir.',
-    'Brachialis ve ön kolu kalınlaştırır.|Bilek düz kalsın.',
-    'Sallanma.'),
-  X('preacher', 'Preacher Curl', 'Kol', ['biceps'], [], 'Preacher_Curl',
-    'Preacher sehpasına otur, kolların arkası pede yaslı.|Barı/EZ barı yukarı kaldır.|Kollar neredeyse düzleşene kadar yavaşça indir.',
-    'Hile yapmayı imkansız kılar, saf biceps.|Altta tamamen kilitleme.',
-    'Altta ağırlığı bırakırsan dirsek zorlanır.'),
-  X('cabcurl', 'Cable Curl', 'Kol', ['biceps'], ['forearm'], 'Standing_Biceps_Cable_Curl',
-    'Makara en altta, düz barı tut.|Dirsekler sabit, barı göğse kaldır.|Yavaşça indir.',
-    'Hareket boyunca sabit gerilim.|Set sonu drop set için ideal.',
-    'Öne eğilip çekme.'),
-  X('conc', 'Concentration Curl', 'Kol', ['biceps'], [], 'Concentration_Curls',
-    'Otur, dirseğini iç uyluğuna daya.|Dambılı omuza doğru kaldır.|Yavaşça indir.',
-    'Zirve kasılmayı (tepe) geliştirir.|Tepede 1 sn sık.',
-    'Omzunla yardım etme.'),
-  X('inccurl', 'Incline Dumbbell Curl', 'Kol', ['biceps'], [], 'Incline_Dumbbell_Curl',
-    'Sehpayı 45–60°\'ye ayarla, sırtüstü yaslan, kollar aşağı sarksın.|Dambılları omuza doğru kaldır.|Yavaşça indir.',
-    'Biceps\'in uzun başını esneterek çalıştırır.|Dirsekler geride kalsın.',
-    'Çok ağır alma, omuz önü zorlanabilir.'),
-  X('spider', 'Spider Curl', 'Kol', ['biceps'], [], 'Spider_Curl',
-    'Eğimli sehpaya göğsünle yaslan, kollar aşağı sarksın.|Barı/dambılları yukarı kaldır.|Yavaşça indir.',
-    'Tepede çok güçlü kasılma.|Hafif ağırlık yeter.',
-    'Omuzları öne kaydırma.'),
-  X('revcurl', 'Ters Tutuş Curl', 'Kol', ['forearm'], ['biceps'], 'Reverse_Barbell_Curl',
-    'Barı avuçlar aşağı bakacak şekilde tut.|Dirsekler sabit, barı yukarı kaldır.|Yavaşça indir.',
-    'Ön kolun üst kısmını ve brachialis\'i çalıştırır.|EZ bar bileği rahatlatır.',
-    'Bileği büküp kıvırma.'),
-  X('wrist', 'Wrist Curl', 'Kol', ['forearm'], [], 'Palms-Up_Barbell_Wrist_Curl_Over_A_Bench',
-    'Ön kolların sehpada, bilekler dışarıda, avuçlar yukarı.|Sadece bileği bükerek barı kaldır.|Yavaşça indir.',
-    'Yüksek tekrar (15–25) iyi çalışır.|Barı parmak uçlarına kadar indirebilirsin.',
-    'Ağır yükle ani hareket yapma.'),
-  X('pushdown', 'Triceps Pushdown', 'Kol', ['triceps'], [], 'Triceps_Pushdown',
-    'Makarada düz ya da V barı tut, dirsekler gövde yanında.|Barı kollar düzleşene kadar aşağı it.|Kontrollü yukarı bırak.',
-    'Dirsekler sabit; sadece ön kol hareket etsin.|Altta triceps\'i sık.',
-    'Gövdeyle üstüne yüklenme.'),
-  X('ropepush', 'Rope Pushdown', 'Kol', ['triceps'], [], 'Triceps_Pushdown_-_Rope_Attachment',
-    'İp kulpu tut, dirsekler gövde yanında.|Aşağı it, altta ipi iki yana aç.|Kontrollü yukarı bırak.',
-    'İpi açmak triceps\'in yan başını daha çok çalıştırır.|Tempo yavaş.',
-    'Dirsekleri öne-arkaya oynatma.'),
-  X('skull', 'Skull Crusher', 'Kol', ['triceps'], [], 'EZ-Bar_Skullcrusher',
-    'Sehpaya yat, EZ barı göğsün üstünde kollar düz tut.|Sadece dirsekleri bükerek barı alnına doğru indir.|Kolları düzleterek geri kaldır.',
-    'Kolları hafif başa doğru eğik tutmak gerilimi korur.|Dirsekler içe baksın.',
-    'Ağır yükte barı yüzüne düşürme riski — kontrollü çalış.'),
-  X('ohext', 'Overhead Triceps Extension', 'Kol', ['triceps'], [], 'Standing_Dumbbell_Triceps_Extension',
-    'Bir dambılı iki elle başının üstünde tut.|Dirsekleri bükerek dambılı başının arkasına indir.|Kolları düzleterek kaldır.',
-    'Triceps\'in uzun başını esnetir.|Dirsekler öne baksın, açılmasın.',
-    'Belini geriye bükme; karnı sık.'),
-  X('cabohext', 'Cable Overhead Extension', 'Kol', ['triceps'], [], 'Cable_Rope_Overhead_Triceps_Extension',
-    'Makarayı alta ayarla, ipi tut ve arkanı dön.|Dirsekler başının yanında, ipi başının üstüne doğru it.|Kontrollü geri bırak.',
-    'Sabit gerilim sağlar.|Hafif öne eğilmek dengeyi kolaylaştırır.',
-    'Dirsekleri iki yana açma.'),
-  X('cgbench', 'Close-Grip Bench Press', 'Kol', ['triceps'], ['chest_mid', 'fdelt'], 'Close-Grip_Barbell_Bench_Press',
-    'Barı omuz genişliğinde kavra.|Dirsekler gövdeye yakın, barı göğsün alt kısmına indir.|Yukarı it.',
-    'Triceps için en ağır çalışılabilen hareket.|Çok dar tutuş bilekleri zorlar.',
-    'Ağır setlerde yardımcı kullan.'),
-  X('kickback', 'Triceps Kickback', 'Kol', ['triceps'], [], 'Tricep_Dumbbell_Kickback',
-    'Öne eğil, üst kol gövdeye paralel ve sabit.|Ön kolu geriye doğru düzleştir.|Yavaşça geri bük.',
-    'Tepede 1 sn sık.|Hafif ağırlık yeter.',
-    'Üst kolu aşağı düşürme.'),
-  X('benchdips', 'Sehpa Dips', 'Kol', ['triceps'], ['chest_low', 'fdelt'], 'Bench_Dips',
-    'Ellerini arkandaki sehpaya koy, ayaklar ileride.|Dirsekleri bükerek kalçanı indir.|Yukarı it.',
-    'Ayakları yükseltirsen zorlaşır.|Sırtın sehpaya yakın kalsın.',
-    'Çok derine inme, omuz önü zorlanır.'),
-  /* ---------- BACAK ---------- */
-  X('squat', 'Squat', 'Bacak', ['quads', 'glutes'], ['hams', 'lowback', 'adductors'], 'Barbell_Squat',
-    'Barı üst sırtına (trapez üstüne) yerleştir, ayaklar omuz genişliğinde.|Nefes al, karnı sık, kalçayı geriye-aşağı göndererek çömel.|Uyluklar en az yere paralel olana kadar in.|Ayak ortasından iterek kalk.',
-    'Dizler ayak parmaklarıyla aynı yöne baksın.|Göğüs yukarı, bakış ileri.',
-    'Dizlerin içe çökmesine izin verme.|Ağır setlerde güvenlik pimlerini kullan.'),
-  X('front_sq', 'Front Squat', 'Bacak', ['quads'], ['glutes', 'abs_up'], 'Front_Barbell_Squat',
-    'Barı ön omuzlarına koy, dirsekler yukarı.|Gövde dik, çömel.|Dirsekleri yukarıda tutarak kalk.',
-    'Ön bacağı daha çok çalıştırır, bele daha az yük.|Bilek esnekliği yoksa kolları çaprazla.',
-    'Dirsekler düşerse bar öne kayar.'),
-  X('goblet', 'Goblet Squat', 'Bacak', ['quads', 'glutes'], ['adductors', 'abs_up'], 'Goblet_Squat',
-    'Bir dambılı/kettlebell\'i göğsünün önünde tut.|Dirsekler dizlerin içinden geçecek kadar derin çömel.|Kalk.',
-    'Squat tekniğini öğrenmek için mükemmel.|Gövde dik kalır.',
-    'Topuklar yerden kalkmasın.'),
-  X('hack', 'Hack Squat', 'Bacak', ['quads'], ['glutes'], 'Hack_Squat',
-    'Makineye sırtını yasla, omuzlar pedlerin altında.|Kilidi aç, kontrollü çömel.|Ayaklarınla iterek kalk.',
-    'Ayakları aşağı koymak ön bacağı, yukarı koymak kalçayı çalıştırır.|Derin inmeye çalış.',
-    'Dizleri tepede sertçe kilitleme.'),
-  X('legpress', 'Leg Press', 'Bacak', ['quads', 'glutes'], ['hams', 'adductors'], 'Leg_Press',
-    'Makineye otur, ayaklar platformda omuz genişliğinde.|Kilidi aç, dizleri göğsüne doğru bük.|Platformu topuklarından iterek geri it.',
-    'Kalçan koltuktan kalkmayacak kadar in.|Ayak yerleşimiyle vurgu değişir.',
-    'Dizleri tamamen kilitleme.|Belin koltuktan kalkıyorsa çok derindesin.'),
-  X('legext', 'Leg Extension', 'Bacak', ['quads'], [], 'Leg_Extensions',
-    'Koltuğu dizin makinenin dönme noktasına gelecek şekilde ayarla.|Bacaklarını düzleşene kadar kaldır.|Tepede sık, yavaşça indir.',
-    'Ön bacağı izole eder, ısınma için de iyi.|İniş 2–3 saniye.',
-    'Diz ağrın varsa ağır çalışma.'),
-  X('legcurl', 'Lying Leg Curl', 'Bacak', ['hams'], ['calves'], 'Lying_Leg_Curls',
-    'Yüzüstü yat, ped aşil tendonunun üstünde.|Topukları kalçana doğru çek.|Yavaşça indir.',
-    'Kalçanı pedden kaldırma.|Ayak bileklerini bükmek baldırı da devreye sokar.',
-    'Ağırlığı sektirme.'),
-  X('seatlegcurl', 'Seated Leg Curl', 'Bacak', ['hams'], ['calves'], 'Seated_Leg_Curl',
-    'Otur, ped bileklerin üstünde, uyluk pedi sıkı.|Bacakları aşağı-geri bük.|Yavaşça geri bırak.',
-    'Arka bacağı esnemiş pozisyonda daha iyi çalıştırır.|Gövdeni hafif öne eğebilirsin.',
-    'Uyluk pedi gevşekse kalça kalkar.'),
-  X('rdl', 'Romanian Deadlift', 'Bacak', ['hams', 'glutes'], ['lowback', 'forearm'], 'Romanian_Deadlift',
-    'Barı uyluk önünde tut, dizler hafif bükük.|Kalçayı geriye iterek barı bacaklarına yakın indir.|Arka bacakta gerginlik hissedince (genelde diz altı) kalçayı ileri iterek doğrul.',
-    'Hareket kalçadan gelir, dizler neredeyse sabit.|Bar hep bacağa yakın.',
-    'Sırtını yuvarlama; esneklik bitince dur.'),
-  X('sldl', 'Stiff-Leg Dumbbell Deadlift', 'Bacak', ['hams'], ['glutes', 'lowback'], 'Stiff-Legged_Dumbbell_Deadlift',
-    'Dambılları uyluk önünde tut, dizler neredeyse düz.|Sırt düz, kalçadan öne eğil.|Arka bacak gerilince doğrul.',
-    'Dambılla daha rahat hareket aralığı.|Ağırlık topuklarında.',
-    'Belinden eğilme, kalçadan eğil.'),
-  X('lunge', 'Dumbbell Lunge', 'Bacak', ['quads', 'glutes'], ['hams', 'adductors'], 'Dumbbell_Lunges',
-    'Dambıllar yanında, dik dur.|Bir adım öne at, arka diz yere yaklaşana kadar in.|Öndeki topuktan iterek geri dön.',
-    'Ön diz parmak ucunu çok geçmesin.|Gövde dik.',
-    'Adım çok kısa olursa diz zorlanır.'),
-  X('walklunge', 'Yürüyerek Lunge', 'Bacak', ['quads', 'glutes'], ['hams', 'adductors'], 'Barbell_Walking_Lunge',
-    'Barı sırtına al ya da dambıl tut.|Adım at, in, diğer bacakla adım atarak ilerle.|Her adımda kontrollü in.',
-    'Kalça ve bacak için çok etkili.|Uzun adım kalçayı, kısa adım ön bacağı çalıştırır.',
-    'Dar alanda dikkatli ol.'),
-  X('bulgar', 'Bulgarian Split Squat', 'Bacak', ['quads', 'glutes'], ['hams', 'adductors'], 'One_Leg_Barbell_Squat',
-    'Arka ayağını sehpaya koy, ön ayak bir adım ileride.|Ön bacakla kontrollü çömel.|Ön topuktan iterek kalk.',
-    'Öne eğilmek kalçayı, dik durmak ön bacağı çalıştırır.|Dengeyi önce ağırlıksız oturt.',
-    'Ön diz içe çökmesin.'),
-  X('hipthrust', 'Hip Thrust', 'Bacak', ['glutes'], ['hams'], 'Barbell_Hip_Thrust',
-    'Üst sırtını sehpaya yasla, barı kalçana koy (ped kullan).|Ayaklar kalça genişliğinde, dizler 90°.|Kalçanı sıkarak yukarı it.|Tepede 1 sn tut, indir.',
-    'Kalça için en etkili hareketlerden biri.|Çeneyi hafif göğse çek.',
-    'Tepede beli aşırı bükme.'),
-  X('glutebridge', 'Glute Bridge', 'Bacak', ['glutes'], ['hams'], 'Barbell_Glute_Bridge',
-    'Sırtüstü yat, dizler bükük, bar ya da ağırlık kalçada.|Kalçanı sıkarak yukarı kaldır.|Yavaşça indir.',
-    'Hip thrust\'ın yerde yapılan versiyonu.|Topuklarından it.',
-    'Belinden değil kalçandan kaldır.'),
-  X('adduct', 'Adductor Makine', 'Bacak', ['adductors'], [], 'Thigh_Adductor',
-    'Makineye otur, pedler dizlerinin iç kısmında.|Bacaklarını birleştir.|Yavaşça aç.',
-    'Kontrollü tempo.|Sırtını yasla.',
-    'Ani açma.'),
-  X('abduct', 'Abductor Makine', 'Bacak', ['glutes'], [], 'Thigh_Abductor',
-    'Makineye otur, pedler dizlerinin dış kısmında.|Bacaklarını dışa aç.|Yavaşça kapat.',
-    'Öne hafif eğilmek kalçanın üst kısmını daha çok çalıştırır.|Tepede 1 sn tut.',
-    'Ağırlığı yığına çarptırma.'),
-  X('calf', 'Calf Raise (Ayakta)', 'Bacak', ['calves'], [], 'Standing_Calf_Raises',
-    'Parmak uçların basamakta, topuklar boşta.|Topuklarını mümkün olduğunca yukarı kaldır.|Altta iyice esneyecek şekilde indir.',
-    'Tepede 1–2 sn tut.|Dizler düz kalsın.',
-    'Sektirerek yapma.'),
-  X('seatcalf', 'Calf Raise (Oturarak)', 'Bacak', ['calves'], [], 'Seated_Calf_Raise',
-    'Makineye otur, ped dizlerinin üstünde.|Topuklarını kaldır.|Altta esneyerek indir.',
-    'Baldırın derin kası soleus\'u çalıştırır.|Yavaş tempo.',
-    'Hareket aralığını kısaltma.'),
-  X('calfpress', 'Leg Press\'te Calf Raise', 'Bacak', ['calves'], [], 'Calf_Press_On_The_Leg_Press_Machine',
-    'Leg press makinesinde parmak uçların platformun alt kenarında.|Platformu parmak uçlarınla it.|Kontrollü geri bırak.',
-    'Ayakta yapmaya göre sırta yük binmez.|Tepede sık.',
-    'Ayağın kayarsa platform düşebilir — kilitleri hazır tut.'),
-  X('donkey', 'Donkey Calf Raise', 'Bacak', ['calves'], [], 'Donkey_Calf_Raises',
-    'Kalçadan öne eğil, ellerini bir desteğe koy, parmak uçların basamakta.|Topuklarını kaldır.|Esneyerek indir.',
-    'Baldırın esnemiş pozisyonda çalışmasını sağlar.|Bacaklar düz.',
-    'Sırtını yuvarlama.'),
-  X('ghr', 'Glute Ham Raise', 'Bacak', ['hams'], ['glutes', 'calves'], 'Glute_Ham_Raise',
-    'GHR sehpasında dizler pedde, ayaklar sabit.|Gövdeyi öne indir.|Arka bacakları kullanarak yukarı çek.',
-    'Arka bacak için çok zorlu ve etkili.|Başta ellerinle yardım alabilirsin.',
-    'Arka bacak sakatlığı varsa yapma.'),
-  X('kbswing', 'Kettlebell Swing', 'Bacak', ['glutes', 'hams'], ['lowback', 'fdelt', 'forearm'], 'One-Arm_Kettlebell_Swings',
-    'Kettlebell\'i iki elle tut, ayaklar omuz genişliğinde.|Kalçayı geriye iterek kettlebell\'i bacaklarının arasından geçir.|Kalçanı patlayıcı şekilde ileri iterek göğüs hizasına savur.',
-    'Güç kollardan değil kalçadan gelir.|Tepede kalçayı ve karnı sık.',
-    'Sırtını yuvarlama; squat yapma, kalçadan menteşe yap.'),
-  X('farmer', 'Farmer\'s Walk', 'Bacak', ['forearm', 'traps_up'], ['abs_up', 'calves', 'glutes'], 'Farmers_Walk',
-    'Her elde ağır bir dambıl/kettlebell al.|Dik dur, omuzlar geride.|Kısa adımlarla belirli bir mesafe yürü.',
-    'Kavrama gücü ve gövde dengesi için harika.|Süre ya da metre olarak kaydet.',
-    'Ağırlığı alırken ve bırakırken deadlift gibi düz sırtla eğil.'),
-  /* ---------- KARIN ---------- */
-  X('crunch', 'Crunch', 'Karın', ['abs_up'], [], 'Crunches',
-    'Sırtüstü yat, dizler bükük, eller başının yanında.|Omuzlarını yerden kaldırarak karnını sık.|Yavaşça indir.',
-    'Boynu çekme, çene ile göğüs arası bir yumruk.|Nefesi yukarı çıkarken ver.',
-    'Ellerle başı çekiştirme.'),
-  X('cabcrunch', 'Cable Crunch', 'Karın', ['abs_up'], ['abs_low', 'obliques'], 'Cable_Crunch',
-    'Makarada ip kulpu tut, dizlerinin üstüne çök.|İpi başının yanında tutarak karnınla aşağı kıvrıl.|Kontrollü geri gel.',
-    'Kalça sabit, sadece gövde kıvrılsın.|Ağırlıkla karın kası gelişir.',
-    'Kollarla çekme.'),
-  X('decrunch', 'Decline Crunch', 'Karın', ['abs_up'], ['abs_low'], 'Decline_Crunch',
-    'Decline sehpaya ayaklarını sabitleyip yat.|Gövdeni yukarı kıvır.|Kontrollü indir.',
-    'Eğim arttıkça zorlaşır.|Göğsünde plaka tutabilirsin.',
-    'Bel ağrın varsa eğimi azalt.'),
-  X('plank', 'Plank', 'Karın', ['abs_up', 'abs_low'], ['obliques', 'lowback'], 'Plank',
-    'Dirsekler omuzların altında, vücut baştan topuğa düz.|Karnı ve kalçayı sık.|Süre boyunca pozisyonu koru.',
-    'Kalitesiz 2 dakika yerine kaliteli 30 sn.|Göbeği omurgaya çek.',
-    'Kalçayı sarkıtma ya da çok kaldırma.'),
-  X('sideplank', 'Yan Plank', 'Karın', ['obliques'], ['abs_up'], 'Side_Bridge',
-    'Yan yat, dirsek omzun altında.|Kalçanı kaldır, vücut düz çizgi olsun.|Süre boyunca tut, diğer tarafa geç.',
-    'Kalçayı öne-arkaya kaydırma.|Zorsa alttaki dizi yere koy.',
-    'Omuz ağrısı varsa dikkatli ol.'),
-  X('legraise', 'Leg Raise', 'Karın', ['abs_low'], ['abs_up', 'obliques'], 'Flat_Bench_Lying_Leg_Raise',
-    'Sehpaya ya da yere sırtüstü uzan, ellerinle destek al.|Bacakları düz şekilde 90°\'ye kaldır.|Yere değmeden yavaşça indir.',
-    'Belini yere bastır.|Zorsa dizleri bük.',
-    'Belin kalkıyorsa hareket aralığını kısalt.'),
-  X('hanglr', 'Hanging Leg Raise', 'Karın', ['abs_low'], ['abs_up', 'obliques', 'forearm'], 'Hanging_Leg_Raise',
-    'Barfiks barına asıl.|Bacaklarını (düz ya da bükük) kalça hizasının üstüne kaldır.|Sallanmadan indir.',
-    'Kalçayı öne kıvırmak alt karnı daha çok çalıştırır.|Başta dizleri bükerek yap.',
-    'Sallanarak tekrar yapma.'),
-  X('revcrunch', 'Reverse Crunch', 'Karın', ['abs_low'], ['abs_up'], 'Reverse_Crunch',
-    'Sırtüstü yat, dizler 90° bükük havada.|Kalçanı yerden kaldırarak dizleri göğsüne çek.|Yavaşça indir.',
-    'Hareket kalçanın kıvrılmasından gelsin.|Eller yerde destek.',
-    'Bacakları savurma.'),
-  X('bicycle', 'Bisiklet Crunch', 'Karın', ['obliques', 'abs_up'], ['abs_low'], 'Air_Bike',
-    'Sırtüstü yat, eller başın yanında.|Sağ dirseği sol dize, sol dirseği sağ dize götür.|Bacaklar pedal çevirir gibi hareket etsin.',
-    'Yavaş yap, dönüşü hisset.|Omuzlar yerden kalkık kalsın.',
-    'Boynu çekme.'),
-  X('twist', 'Russian Twist', 'Karın', ['obliques'], ['abs_up'], 'Russian_Twist',
-    'Otur, gövdeni hafif geriye yasla, ayaklar yerde ya da havada.|Ellerinde ağırlıkla gövdeni sağa-sola döndür.',
-    'Hareket gövdeden gelsin, sadece kollar değil.|Sırt düz.',
-    'Bel ağrın varsa ayakları yerde tut.'),
-  X('sidebend', 'Dumbbell Side Bend', 'Karın', ['obliques'], [], 'Dumbbell_Side_Bend',
-    'Tek elde dambıl, dik dur.|Gövdeni dambıl tarafına yana eğ.|Karşı yan karınla doğrul.',
-    'Her seferinde tek taraf.|Yavaş tempo.',
-    'Öne ya da arkaya eğilme.'),
-  X('woodchop', 'Cable Woodchop', 'Karın', ['obliques'], ['abs_up', 'serratus'], 'Standing_Cable_Wood_Chop',
-    'Makarayı üste ayarla, kulpu iki elle tut, yana dön.|Kulpu çapraz olarak karşı dize doğru indir.|Kontrollü geri dön.',
-    'Dönüş gövdeden, kalça ve ayaklar hafif döner.|Kollar neredeyse düz.',
-    'Belinden ani dönme.'),
-  X('pallof', 'Pallof Press', 'Karın', ['obliques'], ['abs_up'], 'Pallof_Press',
-    'Makarayı göğüs hizasına ayarla, yanlamasına dur.|Kulpu göğsünde tut, kollarını öne düz it.|Dönmeye direnerek geri çek.',
-    'Gövdenin dönmeye karşı direnci için harika.|Kalça ve karın sıkı.',
-    'Gövdenin makineye dönmesine izin verme.'),
-  X('mtclimb', 'Mountain Climber', 'Karın', ['abs_low'], ['abs_up', 'quads', 'fdelt'], 'Mountain_Climbers',
-    'Şınav pozisyonu al.|Dizleri sırayla göğsüne doğru hızlıca çek.',
-    'Kalça omuz hizasında kalsın.|Kardiyo etkisi de var.',
-    'Kalçayı havaya kaldırma.'),
-  X('abwheel', 'Ab Wheel', 'Karın', ['abs_up', 'abs_low'], ['lats', 'obliques', 'serratus'], 'Ab_Roller',
-    'Dizlerinin üstünde, tekerleği omuz altında tut.|Tekerleği öne yuvarlayarak gövdeni uzat.|Karnını sıkarak geri gel.',
-    'Belin çökmeden gidebildiğin kadar git.|Kalçayı sık.',
-    'Beli çökertmek ciddi bel ağrısı yapabilir.'),
-];
-
 /* ===== Kas yükü sabitleri ===== */
 const REC_H = { chest_up: 72, chest_mid: 72, chest_low: 72, lats: 72, quads: 72, hams: 72, glutes: 72, lowback: 72, traps_mid: 60 }; // diğerleri 48 saat
 const FULL_SETS = 8; // bir kas için ~8 efektif set = tam yorgunluk
+
+/* ===== Hareket kütüphanesi (veri: data/ex.*.js -> window.EXDATA) ===== */
+const BUILTIN_EX = window.EXDATA || [];
+const EX_INDEX = new Map(BUILTIN_EX.map(e => [e.id, e]));
+const EX_CATS = ['Göğüs', 'Sırt', 'Omuz', 'Kol', 'Bacak', 'Karın', 'Esneme', 'Kardiyo', 'Pliometrik', 'Olimpik', 'Strongman', 'Kendi'];
+const EQ_NAMES = { bb: 'Barbell', db: 'Dumbbell', mc: 'Makine', cb: 'Kablo', bw: 'Vücut ağırlığı', kb: 'Kettlebell', ez: 'EZ bar', bd: 'Direnç bandı', eb: 'Pilates topu', mb: 'Sağlık topu', fr: 'Foam roller', ot: 'Diğer' };
+const LV_NAMES = ['', 'Başlangıç', 'Orta', 'İleri'];
+const allEx = () => S.workout.exercises.length ? BUILTIN_EX.concat(S.workout.exercises) : BUILTIN_EX;
+const exById = id => EX_INDEX.get(id) || S.workout.exercises.find(e => e.id === id);
+const exUserPhoto = ex => ex.builtin ? (S.workout.exPhotos || {})[ex.id] : ex.img;
+
+/* Kayıt türü: w = ağırlık × tekrar, s = süre (saniye), c = kardiyo (dakika + km) */
+const exType = ex => (ex && ex.t) || 'w';
+const TYPES = { w: { a: 'KG', b: 'TEKRAR', u: 'tekrar', def: [3, '10'] }, s: { a: '+KG', b: 'SANİYE', u: 'sn', def: [3, '30'] }, c: { a: 'KM', b: 'DAKİKA', u: 'dk', def: [1, '20'] } };
+function fmtSet(ex, s) {
+  const t = exType(ex), w = num(s.w), r = num(s.r);
+  if (t === 's') return `${r} sn${w ? ` (+${w} kg)` : ''}`;
+  if (t === 'c') return `${r} dk${w ? ` · ${w} km` : ''}`;
+  return `${w} kg × ${r}`;
+}
+const fmtSetShort = (ex, s) => exType(ex) === 'w' ? `${s.w || 0}×${s.r || 0}` : `${s.r || 0} ${TYPES[exType(ex)].u}`;
+const setMetric = (ex, s) => exType(ex) === 'w' ? num(s.w) : num(s.r);
+const metricUnit = ex => ({ w: 'kg', s: 'sn', c: 'dk' })[exType(ex)];
+function fmtTarget(ex, it) {
+  const t = exType(ex);
+  if (t === 's') return `${it.sets} set × ${esc(it.reps)} sn`;
+  if (t === 'c') return `${it.sets > 1 ? it.sets + ' × ' : ''}${esc(it.reps)} dk`;
+  return `${it.sets} set × ${esc(it.reps)}`;
+}
+
 function exThumb(ex) {
   if (!ex) return '<div class="ex-thumb"></div>';
-  const ph = exPhoto(ex);
-  if (ph) return `<div class="ex-thumb"><img src="${ph}" alt="" loading="lazy" onerror="this.remove()"></div>`;
+  const src = exUserPhoto(ex) || (ex.builtin && ex.img ? `img/t/${ex.id.slice(2)}.jpg` : '');
+  if (src) return `<div class="ex-thumb"><img src="${src}" alt="" loading="lazy" onerror="this.remove()"></div>`;
   const v = {}; ex.s.forEach(k => v[k] = .5); ex.p.forEach(k => v[k] = 1);
   const BACK = ['lats', 'triceps', 'lowback', 'glutes', 'hams', 'rdelt', 'traps_up', 'traps_mid'], LOW = ['quads', 'hams', 'glutes', 'calves', 'adductors'];
   const back = ex.p.filter(k => BACK.includes(k)).length > ex.p.filter(k => !BACK.includes(k) && !['calves', 'sdelt', 'forearm'].includes(k)).length;
-  const low = ex.p.every(k => LOW.includes(k));
+  const low = ex.p.length && ex.p.every(k => LOW.includes(k));
   const vb = low ? (back ? VB.lowerB : VB.lowerF) : (back ? VB.upperB : VB.upperF);
   return `<div class="ex-thumb">${bodySVG(v, { mode: 'hi', labels: false, vb })}</div>`;
 }
 function levelLabel(v) { if (v < .01) return '—'; if (v < .3) return 'Hafif'; if (v < .6) return 'Orta'; if (v < .85) return 'Yüksek'; return 'Çok yüksek'; }
-function muscleBars(vals, unit = '') {
+function muscleBars(vals) {
   const arr = Object.entries(vals).filter(([, v]) => v > .005).sort((a, b) => b[1] - a[1]);
   if (!arr.length) return '<div class="muted small" style="text-align:center;padding:6px">Henüz kas yükü yok</div>';
   return arr.map(([k, v]) => `<div class="mrow"><span class="n">${MUSCLES[k]}</span><div class="bar"><i style="width:${Math.round(Math.min(1, v) * 100)}%;background:${heat(v)}"></i></div><span class="v">${levelLabel(v)} · %${Math.round(Math.min(1, v) * 100)}</span></div>`).join('');
 }
 const LEGEND = `<div class="legend"><span><i style="background:${heat(.15)}"></i>Hafif</span><span><i style="background:${heat(.5)}"></i>Orta</span><span><i style="background:${heat(.75)}"></i>Yüksek</span><span><i style="background:${heat(1)}"></i>Çok yüksek</span></div>`;
 
-/* ===== Hareket kütüphanesi ===== */
-const EX_CATS = ['Göğüs', 'Sırt', 'Omuz', 'Kol', 'Bacak', 'Karın', 'Kendi'];
-const allEx = () => [...BUILTIN_EX, ...S.workout.exercises];
-const exById = id => BUILTIN_EX.find(e => e.id === id) || S.workout.exercises.find(e => e.id === id);
-const exPhoto = ex => ex.builtin ? (S.workout.exPhotos || {})[ex.id] || (ex.img ? `img/${ex.id.slice(2)}_0.jpg` : '') : ex.img;
-const exUserPhoto = ex => ex.builtin ? (S.workout.exPhotos || {})[ex.id] : ex.img;
-
 /* ===== Yük ve toparlanma hesapları ===== */
+const loadW = ex => ex.cat === 'Esneme' ? 0 : 1; // esneme kas yorgunluğuna sayılmaz
 function dayLoad(items) {
   const m = {};
   for (const it of items) {
     const ex = exById(it.exId); if (!ex) continue;
-    const n = it.sets !== undefined ? (+it.sets || 0) : (it.sets_arr || []).length;
+    const n = (+it.sets || 0) * loadW(ex); if (!n) continue;
     ex.p.forEach(k => m[k] = (m[k] || 0) + n);
     ex.s.forEach(k => m[k] = (m[k] || 0) + n * .5);
   }
@@ -1293,7 +871,7 @@ function recovery() {
   for (const lg of S.workout.logs) {
     const h = (now - lg.ts) / 36e5; if (h > 80 || h < 0) continue;
     for (const en of lg.entries) {
-      const ex = exById(en.exId); if (!ex) continue;
+      const ex = exById(en.exId); if (!ex || !loadW(ex)) continue;
       const n = en.sets.length;
       const add = (k, w) => { const dec = Math.max(0, 1 - h / (REC_H[k] || 48)); m[k] = (m[k] || 0) + n * w * dec / FULL_SETS; };
       ex.p.forEach(k => add(k, 1)); ex.s.forEach(k => add(k, .5));
@@ -1309,19 +887,21 @@ function lastPerf(exId) {
   return null;
 }
 function exHistory(exId) {
-  const pts = [];
+  const ex = exById(exId), t = exType(ex), pts = [];
   for (const lg of S.workout.logs) {
     const en = lg.entries.find(e => e.exId === exId); if (!en || !en.sets.length) continue;
-    const best = Math.max(...en.sets.map(s => num(s.w)));
-    const e1rm = Math.max(...en.sets.map(s => num(s.w) * (1 + num(s.r) / 30)));
-    const vol = en.sets.reduce((a, s) => a + num(s.w) * num(s.r), 0);
-    pts.push({ date: lg.date, best, e1rm, vol, sets: en.sets });
+    const best = Math.max(...en.sets.map(s => setMetric(ex, s)));
+    const e1rm = t === 'w' ? Math.max(...en.sets.map(s => num(s.w) * (1 + num(s.r) / 30))) : 0;
+    const vol = t === 'w' ? en.sets.reduce((a, s) => a + num(s.w) * num(s.r), 0) : en.sets.reduce((a, s) => a + num(s.r), 0);
+    const dist = t === 'c' ? en.sets.reduce((a, s) => a + num(s.w), 0) : 0;
+    pts.push({ date: lg.date, best, e1rm, vol, dist, sets: en.sets });
   }
   return pts;
 }
+const logVolume = l => l.entries.reduce((a, e) => a + (exType(exById(e.exId)) === 'w' ? e.sets.reduce((b, s) => b + num(s.w) * num(s.r), 0) : 0), 0);
 
 /* ===== Basit çizgi grafik ===== */
-function lineChart(pts, { unit = '', color = 'var(--accent)', h = 150 } = {}) {
+function lineChart(pts, { color = 'var(--accent)', h = 150 } = {}) {
   if (pts.length < 1) return '<div class="muted small" style="text-align:center;padding:18px">Grafik için veri yok</div>';
   const W = 320, H = h, P = 26;
   const ys = pts.map(p => p.y); let mn = Math.min(...ys), mx = Math.max(...ys);
@@ -1357,8 +937,8 @@ Pages.sport = () => {
   <div class="grid2">
     <button class="tile" onclick="startSession(null)"><span class="ic">⚡</span><span class="nm">Serbest antrenman</span><span class="ds">Programsız başla</span></button>
     <button class="tile" onclick="go('whist')"><span class="ic">📈</span><span class="nm">Geçmiş</span><span class="ds">${W.logs.length} antrenman</span></button>
-    <button class="tile" onclick="go('exlib')"><span class="ic">📚</span><span class="nm">Hareketler</span><span class="ds">${allEx().length} hareket · rekorlar</span></button>
-    <button class="tile" onclick="go('records')"><span class="ic">🏆</span><span class="nm">Rekorlarım</span><span class="ds">En iyi ağırlıklar</span></button>
+    <button class="tile" onclick="go('exlib')"><span class="ic">📚</span><span class="nm">Hareketler</span><span class="ds">${allEx().length} hareket · ara ve filtrele</span></button>
+    <button class="tile" onclick="go('records')"><span class="ic">🏆</span><span class="nm">Rekorlarım</span><span class="ds">En iyi dereceler</span></button>
   </div>`;
 };
 
@@ -1378,8 +958,8 @@ Pages.day = id => {
   const items = d.items.length ? d.items.map((it, i) => {
     const ex = exById(it.exId); if (!ex) return '';
     const lp = lastPerf(ex.id);
-    const last = lp ? `Son: ${lp.sets.map(s => `${s.w || 0}×${s.r || 0}`).slice(0, 4).join(', ')}` : 'Henüz yapılmadı';
-    return `<div class="ex-item"><div onclick="go('ex','${ex.id}')" style="cursor:pointer">${exThumb(ex)}</div><div class="grow" onclick="editItem('${d.id}',${i})" style="cursor:pointer"><div class="b ellip">${esc(ex.name)}</div><div class="small"><b style="color:var(--accent)">${it.sets} set × ${esc(it.reps)}</b>${it.note ? ' · ' + esc(it.note) : ''}</div><div class="tiny muted ellip">${last}</div></div>
+    const last = lp ? `Son: ${lp.sets.map(s => fmtSetShort(ex, s)).slice(0, 4).join(', ')}` : 'Henüz yapılmadı';
+    return `<div class="ex-item"><div onclick="go('ex','${ex.id}')" style="cursor:pointer">${exThumb(ex)}</div><div class="grow" onclick="editItem('${d.id}',${i})" style="cursor:pointer"><div class="b ellip">${esc(ex.name)}</div><div class="small"><b style="color:var(--accent)">${fmtTarget(ex, it)}</b>${it.note ? ' · ' + esc(it.note) : ''}</div><div class="tiny muted ellip">${last}</div></div>
     <div style="display:flex;flex-direction:column;gap:4px"><button class="muted" onclick="moveItem('${d.id}',${i},-1)" ${i === 0 ? 'style="opacity:.25"' : ''}>▲</button><button class="muted" onclick="moveItem('${d.id}',${i},1)" ${i === d.items.length - 1 ? 'style="opacity:.25"' : ''}>▼</button></div></div>`;
   }).join('') : '<div class="empty"><div class="e">➕</div>Bu güne hareket ekle</div>';
   return header(esc(d.name), (d.wd || []).map(x => WD_LONG[x]).join(', ') || 'Antrenman günü', `<button class="icon-btn" onclick="editDay('${d.id}')">✎</button>`) + `
@@ -1388,12 +968,17 @@ Pages.day = id => {
   <div class="card"><h3>Çalışan kaslar · olası yorgunluk</h3>
     <div class="body-map" style="max-width:380px;margin:0 auto">${bodySVG(load)}</div>${LEGEND}
     <div class="hr"></div>${muscleBars(load)}
-    <div class="tiny muted" style="margin-top:8px">Toplam ${totalSets} set. Hesap: ana kas 1 set, yardımcı kas yarım set sayılır; ~${FULL_SETS} set tam yorgunluk kabul edilir. Hareket ekleyip çıkardıkça güncellenir.</div></div>
+    <div class="tiny muted" style="margin-top:8px">Toplam ${totalSets} set. Hesap: ana kas 1 set, yardımcı kas yarım set sayılır; ~${FULL_SETS} set tam yorgunluk kabul edilir. Esneme hareketleri sayılmaz. Hareket ekleyip çıkardıkça güncellenir.</div></div>
   ${d.note ? `<div class="card"><h3>Not</h3>${esc(d.note)}</div>` : ''}`;
 };
 function addToDay(dayId, ex) {
-  const d = S.workout.days.find(x => x.id === dayId);
-  d.items.push({ exId: ex.id, sets: 3, reps: '10' }); save(); render(); toast(ex.name + ' eklendi');
+  const d = S.workout.days.find(x => x.id === dayId); const [n, r] = TYPES[exType(ex)].def;
+  d.items.push({ exId: ex.id, sets: n, reps: r }); save(); render(); toast(ex.name + ' eklendi');
+}
+function addExToDay(id) {
+  const W = S.workout; if (!W.days.length) { toast('Önce Spor sayfasından bir antrenman günü ekle'); return; }
+  const s = openSheet({ title: 'Hangi güne eklensin?', body: `<div class="card tight">${W.days.map(d => `<div class="list-item" data-d="${d.id}" style="cursor:pointer"><div class="grow b">${esc(d.name)}</div><span class="muted small">${d.items.length} hareket</span></div>`).join('')}</div>` });
+  s.sh.querySelectorAll('[data-d]').forEach(el => el.onclick = () => { closeSheet(s); addToDay(el.dataset.d, exById(id)); });
 }
 function moveItem(dayId, i, dir) {
   const d = S.workout.days.find(x => x.id === dayId); const j = i + dir;
@@ -1401,47 +986,82 @@ function moveItem(dayId, i, dir) {
   [d.items[i], d.items[j]] = [d.items[j], d.items[i]]; save(); render();
 }
 function editItem(dayId, i) {
-  const d = S.workout.days.find(x => x.id === dayId); const it = d.items[i]; const ex = exById(it.exId);
+  const d = S.workout.days.find(x => x.id === dayId); const it = d.items[i]; const ex = exById(it.exId); const t = exType(ex);
+  const lab = { w: 'Tekrar', s: 'Süre (saniye)', c: 'Süre (dakika)' }[t], ph = { w: 'ör. 8-12', s: 'ör. 30', c: 'ör. 20' }[t];
   const s = openSheet({
     title: ex.name, left: 'Vazgeç', right: 'Kaydet',
-    body: `<div class="grid2"><div class="field"><label>Set sayısı</label><input id="es" type="number" inputmode="numeric" value="${it.sets}"></div><div class="field"><label>Tekrar</label><input id="er" value="${esc(it.reps)}" placeholder="ör. 8-12"></div></div>
+    body: `<div class="grid2"><div class="field"><label>Set sayısı</label><input id="es" type="number" inputmode="numeric" value="${it.sets}"></div><div class="field"><label>${lab}</label><input id="er" value="${esc(it.reps)}" placeholder="${ph}"></div></div>
       <div class="field"><label>Not</label><input id="en" value="${esc(it.note || '')}" placeholder="ör. son set drop set"></div>
       <button class="btn plain full" id="eex" style="margin-bottom:8px">Hareket detayları ve geçmişi</button>
       <button class="btn danger full" id="edel">Programdan çıkar</button>`,
-    onRight: sh => { it.sets = Math.max(1, Math.round(num(sh.querySelector('#es').value)) || 1); it.reps = sh.querySelector('#er').value.trim() || '10'; it.note = sh.querySelector('#en').value.trim(); save(); render(); }
+    onRight: sh => { it.sets = Math.max(1, Math.round(num(sh.querySelector('#es').value)) || 1); it.reps = sh.querySelector('#er').value.trim() || TYPES[t].def[1]; it.note = sh.querySelector('#en').value.trim(); save(); render(); }
   });
   s.sh.querySelector('#edel').onclick = () => { d.items.splice(i, 1); save(); closeSheet(s); render(); };
   s.sh.querySelector('#eex').onclick = () => { closeSheet(s); go('ex', ex.id); };
 }
 
+/* ===== Arama ve filtre ===== */
+const trNorm = s => String(s || '').toLocaleLowerCase('tr').replace(/ı/g, 'i').replace(/ş/g, 's').replace(/ç/g, 'c').replace(/ğ/g, 'g').replace(/ö/g, 'o').replace(/ü/g, 'u').replace(/[^a-z0-9]+/g, ' ').trim();
+const EX_KEYS = new WeakMap();
+function exKey(e) {
+  let k = EX_KEYS.get(e);
+  if (!k) { k = trNorm(`${e.name} ${e.alt || ''} ${e.cat || ''} ${EQ_NAMES[e.eq] || ''} ${e.p.concat(e.s).map(m => MUSCLES[m]).join(' ')}`); EX_KEYS.set(e, k); }
+  return k;
+}
+/* mus verilirse: önce ana kası o olanlar, sonra yardımcı kası o olanlar; np = ana kas sayısı */
+function exFilter({ q = '', cat = '', eq = '', mus = '' }) {
+  const words = trNorm(q).split(' ').filter(Boolean);
+  const list = allEx().filter(e => (!cat || (cat === 'Kendi' ? !e.builtin : e.cat === cat)) && (!eq || e.eq === eq) && (!words.length || words.every(w => exKey(e).includes(w))));
+  if (!mus) return { list, np: -1 };
+  const p = list.filter(e => e.p.includes(mus)), s = list.filter(e => !e.p.includes(mus) && e.s.includes(mus));
+  return { list: p.concat(s), np: p.length };
+}
+const exSub = e => `${e.p.map(k => MUSCLES[k]).join(', ')}${e.eq ? ' · ' + EQ_NAMES[e.eq] : ''}`;
+function exListHTML(list, np, limit, rowFn) {
+  let h = '';
+  list.slice(0, limit).forEach((e, i) => {
+    if (np > 0 && i === 0) h += `<h3 style="padding:12px 16px 0">Ana kas olarak (${np})</h3>`;
+    if (np >= 0 && i === np) h += `<h3 style="padding:12px 16px 0">Yardımcı kas olarak (${list.length - np})</h3>`;
+    h += rowFn(e);
+  });
+  return h;
+}
+function chipsFocus(root) { root.querySelectorAll('.chips').forEach(c => { const on = c.querySelector('.chip.on'); if (on) c.scrollLeft = Math.max(0, on.offsetLeft - 60); }); }
+
 /* Hareket seçici */
 function pickExercise(onPick) {
-  let q = '', cat = '', mus = '', showMap = false;
-  const s = openSheet({ title: 'Hareket seç', body: `<input id="pq" placeholder="Ara… (ör. squat, curl)" style="margin-bottom:10px"><div class="chips" id="pc"></div><div id="pm"></div><div class="card tight" id="pl"></div><button class="btn ghost full" id="pn">+ Yeni hareket oluştur</button>`, left: 'Bitti' });
+  let q = '', cat = '', eq = '', mus = '', showMap = false, limit = 40;
+  const s = openSheet({ title: 'Hareket seç', full: true, left: 'Bitti', body: `<input id="pq" placeholder="Ara… (ör. squat, curl, esneme)" style="margin-bottom:10px"><div class="chips" id="pc"></div><div class="chips" id="pe"></div><div id="pm"></div><div class="card tight" id="pl"></div><div id="pmore"></div><button class="btn ghost full" id="pn" style="margin-top:8px">+ Yeni hareket oluştur</button>` });
+  const root = s.sh;
   const draw = () => {
-    s.sh.querySelector('#pc').innerHTML = `<button class="chip ${showMap || mus ? 'on' : ''}" data-map="1">🧍 ${mus ? MUSCLES[mus] + ' ✕' : 'Kasa göre'}</button>` + ['', ...EX_CATS].map(c => `<button class="chip ${c === cat ? 'on' : ''}" data-c="${c}">${c || 'Tümü'}</button>`).join('');
-    s.sh.querySelectorAll('#pc [data-c]').forEach(b => b.onclick = () => { cat = b.dataset.c; draw(); });
-    s.sh.querySelector('#pc [data-map]').onclick = () => { if (mus) { mus = ''; showMap = false; } else showMap = !showMap; draw(); };
-    const pm = s.sh.querySelector('#pm');
+    root.querySelector('#pc').innerHTML = `<button class="chip ${mus || showMap ? 'on' : ''}" data-map="1">🧍 ${mus ? MUSCLES[mus] + ' ✕' : 'Kasa göre'}</button>` + ['', ...EX_CATS].map(c => `<button class="chip ${c === cat ? 'on' : ''}" data-c="${c}">${c || 'Tümü'}</button>`).join('');
+    root.querySelector('#pe').innerHTML = [['', 'Tüm ekipman'], ...Object.entries(EQ_NAMES)].map(([k, l]) => `<button class="chip ${k === eq ? 'on' : ''}" data-e="${k}">${l}</button>`).join('');
+    root.querySelectorAll('#pc [data-c]').forEach(b => b.onclick = () => { cat = b.dataset.c; limit = 40; draw(); });
+    root.querySelectorAll('#pe [data-e]').forEach(b => b.onclick = () => { eq = b.dataset.e; limit = 40; draw(); });
+    root.querySelector('#pc [data-map]').onclick = () => { if (mus) { mus = ''; showMap = false; } else showMap = !showMap; limit = 40; draw(); };
+    const pm = root.querySelector('#pm');
     pm.innerHTML = showMap ? `<div class="card">${muscleFilterHTML(mus)}</div>` : '';
-    if (showMap) wireMuscleFilter(pm, m => { mus = mus === m ? '' : m; showMap = false; draw(); });
-    const ql = q.toLocaleLowerCase('tr');
-    let list = allEx().filter(e => (!cat || (cat === 'Kendi' ? !e.builtin : e.cat === cat)) && (!ql || e.name.toLocaleLowerCase('tr').includes(ql) || e.p.some(k => MUSCLES[k].toLocaleLowerCase('tr').includes(ql))));
-    if (mus) { const r = exByMuscle(mus, list); list = [...r.p, ...r.s]; }
-    s.sh.querySelector('#pl').innerHTML = list.length ? list.map(e => `<div class="ex-item" data-id="${e.id}" style="cursor:pointer">${exThumb(e)}<div class="grow"><div class="b">${esc(e.name)}</div><div class="tiny muted">${e.p.map(k => MUSCLES[k]).join(', ')}${e.s.length ? ' · ' + e.s.map(k => MUSCLES[k]).join(', ') : ''}</div></div><span style="color:var(--accent);font-size:22px">＋</span></div>`).join('') : '<div class="empty">Bulunamadı</div>';
-    s.sh.querySelectorAll('#pl [data-id]').forEach(el => el.onclick = () => { onPick(exById(el.dataset.id)); el.style.background = 'var(--accent-soft)'; });
+    if (showMap) wireMuscleFilter(pm, m => { mus = mus === m ? '' : m; showMap = false; limit = 40; draw(); });
+    const { list, np } = exFilter({ q, cat, eq, mus });
+    root.querySelector('#pl').innerHTML = list.length ? exListHTML(list, np, limit, e => `<div class="ex-item" data-id="${e.id}" style="cursor:pointer">${exThumb(e)}<div class="grow"><div class="b">${esc(e.name)}</div><div class="tiny muted ellip">${exSub(e)}</div></div><span style="color:var(--accent);font-size:22px">＋</span></div>`) : '<div class="empty">Bulunamadı</div>';
+    root.querySelectorAll('#pl [data-id]').forEach(el => el.onclick = () => { onPick(exById(el.dataset.id)); el.style.background = 'var(--accent-soft)'; });
+    root.querySelector('#pmore').innerHTML = list.length > limit ? `<button class="btn plain full" style="margin-top:8px">Daha fazla göster (${list.length - limit} hareket daha)</button>` : '';
+    const mb = root.querySelector('#pmore button'); if (mb) mb.onclick = () => { limit += 60; draw(); };
+    chipsFocus(root);
   };
-  s.sh.querySelector('#pq').oninput = e => { q = e.target.value; draw(); };
-  s.sh.querySelector('#pn').onclick = () => editExercise(null, ex => { onPick(ex); draw(); });
+  let qt;
+  root.querySelector('#pq').oninput = e => { q = e.target.value; limit = 40; clearTimeout(qt); qt = setTimeout(draw, 200); };
+  root.querySelector('#pn').onclick = () => editExercise(null, ex => { onPick(ex); draw(); });
   draw();
 }
 function editExercise(id, cb) {
   const ex = id ? S.workout.exercises.find(e => e.id === id) : null;
   const st = {}; if (ex) { ex.p.forEach(k => st[k] = 'p'); ex.s.forEach(k => st[k] = 's'); }
-  let img = ex?.img || '';
+  let img = ex?.img || '', typ = ex?.t || 'w';
   const s = openSheet({
     title: ex ? 'Hareketi düzenle' : 'Yeni hareket', left: 'Vazgeç', right: 'Kaydet',
     body: `<div class="field"><label>Hareket adı</label><input id="xn" value="${esc(ex?.name || '')}" placeholder="ör. Smith Machine Squat"></div>
+    <div class="field"><label>Nasıl kaydedilsin?</label><div class="seg" id="xt" style="margin:0"><button type="button" data-t="w">Ağırlık × tekrar</button><button type="button" data-t="s">Süre (sn)</button><button type="button" data-t="c">Kardiyo (dk)</button></div></div>
     <div class="field"><label>Çalışan kaslar — 1 dokunuş: ana kas, 2: yardımcı kas</label><div class="chips" id="xm" style="flex-wrap:wrap"></div></div>
     <div class="body-map" id="xb" style="max-width:260px;margin:0 auto 12px"></div>
     <div class="field"><label>Fotoğraf (isteğe bağlı)</label><div class="row"><div id="xi"></div><button class="btn plain sm" id="xp">Fotoğraf seç</button></div></div>
@@ -1451,69 +1071,68 @@ function editExercise(id, cb) {
       const p = Object.keys(st).filter(k => st[k] === 'p'), s2 = Object.keys(st).filter(k => st[k] === 's');
       if (!p.length) { toast('En az bir ana kas seç'); return false; }
       let o = ex; if (!o) { o = { id: uid(), cat: 'Kendi' }; S.workout.exercises.push(o); }
-      Object.assign(o, { name, p, s: s2, img }); save(); render(); cb && cb(o);
+      Object.assign(o, { name, p, s: s2, img }); if (typ === 'w') delete o.t; else o.t = typ;
+      EX_KEYS.delete(o); save(); render(); cb && cb(o);
     }
   });
   const draw = () => {
+    s.sh.querySelectorAll('#xt button').forEach(b => b.classList.toggle('on', b.dataset.t === typ));
     s.sh.querySelector('#xm').innerHTML = Object.keys(MUSCLES).map(k => `<button class="chip ${st[k] || ''}" data-k="${k}">${st[k] === 'p' ? '● ' : st[k] === 's' ? '○ ' : ''}${MUSCLES[k]}</button>`).join('');
     s.sh.querySelectorAll('#xm button').forEach(b => b.onclick = () => { const k = b.dataset.k; st[k] = !st[k] ? 'p' : st[k] === 'p' ? 's' : undefined; if (!st[k]) delete st[k]; draw(); });
     const v = {}; for (const k in st) v[k] = st[k] === 'p' ? 1 : .5;
     s.sh.querySelector('#xb').innerHTML = bodySVG(v, { mode: 'hi' });
     s.sh.querySelector('#xi').innerHTML = img ? `<img src="${img}" style="width:54px;height:66px;object-fit:cover;border-radius:10px">` : '';
   };
+  s.sh.querySelectorAll('#xt button').forEach(b => b.onclick = () => { typ = b.dataset.t; draw(); });
   s.sh.querySelector('#xp').onclick = () => pickImage(d => { img = d; draw(); });
   const del = s.sh.querySelector('#xd');
   if (del) del.onclick = () => confirmSheet('Hareket silinecek (geçmiş kayıtların kalır).', () => { S.workout.exercises.splice(S.workout.exercises.indexOf(ex), 1); S.workout.days.forEach(d => d.items = d.items.filter(i => i.exId !== ex.id)); closeSheet(s); save(); goBack(); });
   draw();
 }
 
-let exMuscle = '', exQ = '';
-const exRow = e => `<div class="ex-item" onclick="go('ex','${e.id}')" style="cursor:pointer">${exThumb(e)}<div class="grow"><div class="b">${esc(e.name)}</div><div class="tiny muted">${e.p.map(k => MUSCLES[k]).join(', ')}${e.s.length ? ' · ' + e.s.map(k => MUSCLES[k]).join(', ') : ''}</div></div><span class="muted">›</span></div>`;
-function exByMuscle(m, list = allEx()) {
-  return { p: list.filter(e => e.p.includes(m)), s: list.filter(e => !e.p.includes(m) && e.s.includes(m)) };
-}
+/* ===== Hareketler sayfası ===== */
+let exMuscle = '', exQ = '', exCat = '', exEq = '', exLimit = 40, exMapOpen = false;
+const exRow = e => `<div class="ex-item" onclick="go('ex','${e.id}')" style="cursor:pointer">${exThumb(e)}<div class="grow"><div class="b">${esc(e.name)}</div><div class="tiny muted ellip">${exSub(e)}</div></div><span class="muted">›</span></div>`;
 Pages.exlib = () => {
-  const ql = exQ.toLocaleLowerCase('tr');
-  const base = allEx().filter(e => !ql || e.name.toLocaleLowerCase('tr').includes(ql));
-  let body;
-  if (exMuscle) {
-    const r = exByMuscle(exMuscle, base);
-    body = `<div class="card tight"><h3 style="padding:12px 16px 0">${MUSCLES[exMuscle]} · ana kas olarak (${r.p.length})</h3>${r.p.map(exRow).join('') || '<div class="empty">Yok</div>'}</div>
-    ${r.s.length ? `<div class="card tight"><h3 style="padding:12px 16px 0">Yardımcı kas olarak (${r.s.length})</h3>${r.s.map(exRow).join('')}</div>` : ''}`;
-  } else {
-    body = EX_CATS.map(c => {
-      const l = base.filter(e => c === 'Kendi' ? !e.builtin : e.cat === c); if (!l.length) return '';
-      return `<div class="card tight"><h3 style="padding:12px 16px 0">${c} (${l.length})</h3>${l.map(exRow).join('')}</div>`;
-    }).join('') || '<div class="card empty">Bulunamadı</div>';
-  }
-  return header('Hareketler', allEx().length + ' hareket', `<button class="icon-btn" onclick="editExercise(null)">＋</button>`) + `
-  <input id="exq" placeholder="Hareket ara…" value="${esc(exQ)}" style="margin-bottom:12px" oninput="exQ=this.value;clearTimeout(window._exq);window._exq=setTimeout(()=>{render();const i=document.querySelector('#exq');i.focus();i.setSelectionRange(99,99)},300)">
-  <div class="card"><div class="row between" style="margin-bottom:6px"><h3 style="margin:0">Kasa dokun</h3>${exMuscle ? `<button class="btn ghost sm" onclick="exMuscle='';render()">✕ Temizle</button>` : ''}</div>${muscleFilterHTML(exMuscle)}</div>
-  ${body}`;
+  const { list, np } = exFilter({ q: exQ, cat: exCat, eq: exEq, mus: exMuscle });
+  const chips = (arr, cur, v) => `<div class="chips">${arr.map(([k, l]) => `<button class="chip ${cur === k ? 'on' : ''}" onclick="${v}='${k}';exLimit=40;render()">${l}</button>`).join('')}</div>`;
+  const active = exCat || exEq || exMuscle || exQ, total = allEx().length;
+  return header('Hareketler', `${list.length === total ? total : list.length + ' / ' + total} hareket`, `<button class="icon-btn" onclick="editExercise(null)">＋</button>`) + `
+  <input id="exq" placeholder="Hareket ara… (ör. curl, şınav, esneme)" value="${esc(exQ)}" style="margin-bottom:10px" oninput="exQ=this.value;exLimit=40;clearTimeout(window._exq);window._exq=setTimeout(()=>{render();const i=document.querySelector('#exq');i.focus();i.setSelectionRange(99,99)},300)">
+  ${chips([['', 'Tüm kategoriler'], ...EX_CATS.map(c => [c, c])], exCat, 'exCat')}
+  ${chips([['', 'Tüm ekipman'], ...Object.entries(EQ_NAMES)], exEq, 'exEq')}
+  <div class="card" style="padding:12px 16px"><div class="row between"><button class="b" style="color:var(--accent)" onclick="exMapOpen=!exMapOpen;render()">🧍 ${exMuscle ? MUSCLES[exMuscle] : 'Kasa dokunarak filtrele'} ${exMapOpen ? '▴' : '▾'}</button>${active ? `<button class="btn ghost sm" onclick="exCat='';exEq='';exMuscle='';exQ='';exLimit=40;render()">✕ Temizle</button>` : ''}</div>${exMapOpen ? `<div style="margin-top:10px">${muscleFilterHTML(exMuscle)}</div>` : ''}</div>
+  ${list.length ? `<div class="card tight">${exListHTML(list, np, exLimit, exRow)}</div>` : '<div class="card empty"><div class="e">🔍</div>Bu filtrelerle hareket bulunamadı</div>'}
+  ${list.length > exLimit ? `<button class="btn plain full" onclick="exLimit+=60;render()">Daha fazla göster (${list.length - exLimit} hareket daha)</button>` : ''}`;
 };
-Pages.exlib.after = () => wireMuscleFilter($('#app'), m => { exMuscle = exMuscle === m ? '' : m; render(); });
+Pages.exlib.after = () => { wireMuscleFilter($('#app'), m => { exMuscle = exMuscle === m ? '' : m; exLimit = 40; render(); }); chipsFocus($('#app')); };
 
 Pages.ex = id => {
   const ex = exById(id); if (!ex) return Pages.exlib();
-  const v = {}; ex.s.forEach(k => v[k] = .5); ex.p.forEach(k => v[k] = 1);
-  const h = exHistory(id); const up = exUserPhoto(ex);
-  const pr = h.length ? Math.max(...h.map(p => p.best)) : 0;
+  const t = exType(ex), v = {}; ex.s.forEach(k => v[k] = .5); ex.p.forEach(k => v[k] = 1);
+  const h = exHistory(id), up = exUserPhoto(ex);
+  const best = h.length ? Math.max(...h.map(p => p.best)) : 0;
   const e1 = h.length ? Math.max(...h.map(p => p.e1rm)) : 0;
+  const dist = h.length ? Math.max(...h.map(p => p.dist)) : 0;
   const base = ex.builtin && ex.img ? `img/${ex.id.slice(2)}_` : '';
   const photos = base ? `<div class="exanim"><img src="${base}0.jpg" alt=""><img src="${base}1.jpg" alt="" class="b"></div><div class="tiny muted" style="text-align:center;margin-top:6px">Başlangıç ⇄ bitiş pozisyonu</div>` : '';
-  const list = (arr, cls) => arr && arr.length && arr[0] ? `<ol class="${cls}">${arr.map(x => `<li>${esc(x)}</li>`).join('')}</ol>` : '';
-  return header(esc(ex.name), ex.builtin ? ex.cat : 'Kendi hareketin', !ex.builtin ? `<button class="icon-btn" onclick="editExercise('${ex.id}')">✎</button>` : '') + `
+  const list = (arr, cls) => arr && arr.length ? `<ol class="${cls}">${arr.map(x => `<li>${esc(x)}</li>`).join('')}</ol>` : '';
+  const tags = [ex.cat, EQ_NAMES[ex.eq], LV_NAMES[ex.lv || 0], ex.mech === 'c' ? 'Bileşik' : ex.mech === 'i' ? 'İzole' : '', t === 's' ? 'Süreyle yapılır' : ''].filter(Boolean).map(x => `<span class="tag">${x}</span>`).join('');
+  const stat1 = [{ w: 'En iyi ağırlık', s: 'En uzun süre', c: 'En uzun süre' }[t], best ? r1(best) + ' ' + metricUnit(ex) : '—'];
+  const stat2 = t === 'w' ? ['Tahmini 1 tekrar max', e1 ? r1(e1) + ' kg' : '—'] : t === 'c' ? ['En uzun mesafe', dist ? r1(dist) + ' km' : '—'] : ['Kayıtlı seans', h.length || '—'];
+  return header(esc(ex.name), ex.alt ? esc(ex.alt) : (ex.builtin ? ex.cat : 'Kendi hareketin'), !ex.builtin ? `<button class="icon-btn" onclick="editExercise('${ex.id}')">✎</button>` : '') + `
+  <div style="margin:-8px 0 12px;line-height:2">${tags}</div>
   ${photos ? `<div class="card" style="padding:10px">${photos}</div>` : ''}
   ${up ? `<div class="card" style="padding:10px"><img src="${up}" style="width:100%;border-radius:14px;display:block"><div class="tiny muted" style="text-align:center;margin-top:6px">Senin fotoğrafın</div></div>` : ''}
-  <div class="card"><h3>Çalışan kaslar</h3><div class="row" style="align-items:center"><div class="body-map" style="width:52%">${bodySVG(v, { mode: 'hi', labels: false, vb: VB.bothNoLabel })}</div>
+  <div class="card"><h3>${ex.cat === 'Esneme' ? 'Esneyen kaslar' : 'Çalışan kaslar'}</h3><div class="row" style="align-items:center"><div class="body-map" style="width:52%">${bodySVG(v, { mode: 'hi', labels: false, vb: VB.bothNoLabel })}</div>
     <div class="grow">${ex.p.map(k => `<div class="chip p" style="display:inline-block;margin:0 6px 6px 0">${MUSCLES[k]}</div>`).join('')}${ex.s.map(k => `<div class="chip s" style="display:inline-block;margin:0 6px 6px 0">${MUSCLES[k]}</div>`).join('')}<div class="tiny muted">Koyu: ana kas<br>Açık: yardımcı kas</div></div></div></div>
-  ${ex.how ? `<div class="card"><h3>📋 Nasıl yapılır</h3>${list(ex.how, 'steps')}</div>` : ''}
+  ${ex.how ? `<div class="card"><h3>📋 Nasıl yapılır</h3>${list(ex.how, 'steps')}</div>` : ex.builtin ? '<div class="card small muted">Bu hareketin Türkçe anlatımı henüz eklenmedi; fotoğraflar başlangıç ve bitiş pozisyonunu gösteriyor.</div>' : ''}
   ${ex.tips ? `<div class="card"><h3>💡 Püf noktaları</h3>${list(ex.tips, 'ticks')}</div>` : ''}
   ${ex.warn ? `<div class="card warnc"><h3>⚠️ Dikkat</h3>${list(ex.warn, 'warns')}</div>` : ''}
-  <button class="btn plain sm full" style="margin-bottom:12px" onclick="setExPhoto('${ex.id}')">📷 ${up ? 'Kendi fotoğrafını değiştir' : 'Kendi fotoğrafını / formunu ekle'}</button>
-  <div class="grid2"><div class="card"><div class="small muted">En iyi ağırlık</div><div class="kpi">${pr ? r1(pr) + ' kg' : '—'}</div></div><div class="card"><div class="small muted">Tahmini 1 tekrar max</div><div class="kpi">${e1 ? r1(e1) + ' kg' : '—'}</div></div></div>
-  <div class="card"><h3>Ağırlık gelişimi</h3>${lineChart(h.map(p => ({ x: fmtDate(p.date, { day: 'numeric', month: 'short' }), y: p.best })), { unit: 'kg' })}</div>
-  <div class="card tight"><h3 style="padding:12px 16px 0">Son seanslar</h3>${h.length ? h.slice(-8).reverse().map(p => `<div class="list-item"><div class="grow"><div class="b small">${fmtDate(p.date, { day: 'numeric', month: 'long', weekday: 'short' })}</div><div class="small muted">${p.sets.map(s => `${s.w || 0} kg × ${s.r || 0}`).join(' · ')}</div></div><div class="small b">${Math.round(p.vol)} kg</div></div>`).join('') : '<div class="empty">Henüz kayıt yok</div>'}</div>
+  <div class="row" style="margin-bottom:12px"><button class="btn ghost sm grow" onclick="addExToDay('${ex.id}')">＋ Programa ekle</button><button class="btn plain sm grow" onclick="setExPhoto('${ex.id}')">📷 ${up ? 'Fotoğrafını değiştir' : 'Kendi fotoğrafını ekle'}</button></div>
+  <div class="grid2"><div class="card"><div class="small muted">${stat1[0]}</div><div class="kpi">${stat1[1]}</div></div><div class="card"><div class="small muted">${stat2[0]}</div><div class="kpi">${stat2[1]}</div></div></div>
+  <div class="card"><h3>${{ w: 'Ağırlık gelişimi', s: 'Süre gelişimi (sn)', c: 'Süre gelişimi (dk)' }[t]}</h3>${lineChart(h.map(p => ({ x: fmtDate(p.date, { day: 'numeric', month: 'short' }), y: p.best })))}</div>
+  <div class="card tight"><h3 style="padding:12px 16px 0">Son seanslar</h3>${h.length ? h.slice(-8).reverse().map(p => `<div class="list-item"><div class="grow"><div class="b small">${fmtDate(p.date, { day: 'numeric', month: 'long', weekday: 'short' })}</div><div class="small muted">${p.sets.map(s => fmtSet(ex, s)).join(' · ')}</div></div>${t === 'w' ? `<div class="small b">${Math.round(p.vol)} kg</div>` : ''}</div>`).join('') : '<div class="empty">Henüz kayıt yok</div>'}</div>
   ${base ? '<div class="tiny muted" style="text-align:center">Fotoğraflar: free-exercise-db (kamu malı)</div>' : ''}`;
 };
 function setExPhoto(id) {
@@ -1522,16 +1141,18 @@ function setExPhoto(id) {
 }
 
 Pages.records = () => {
-  const rows = allEx().map(e => { const h = exHistory(e.id); if (!h.length) return null; const best = h.reduce((a, p) => p.best > a.best ? p : a, h[0]); return { e, best }; }).filter(Boolean).sort((a, b) => b.best.best - a.best.best);
-  return header('Rekorlarım', 'Her hareketteki en iyi ağırlık') + `<div class="card tight">${rows.length ? rows.map(({ e, best }) => `<div class="ex-item" onclick="go('ex','${e.id}')" style="cursor:pointer">${exThumb(e)}<div class="grow"><div class="b">${esc(e.name)}</div><div class="tiny muted">${fmtDate(best.date)}</div></div><div class="kpi" style="font-size:20px">${r1(best.best)} <span class="small muted">kg</span></div></div>`).join('') : '<div class="empty"><div class="e">🏆</div>Antrenman kaydettikçe rekorların burada görünür</div>'}</div>`;
+  const ids = [...new Set(S.workout.logs.flatMap(l => l.entries.map(e => e.exId)))];
+  const ord = { w: 0, s: 1, c: 2 };
+  const rows = ids.map(id => { const e = exById(id); if (!e) return null; const h = exHistory(id); if (!h.length) return null; return { e, best: h.reduce((a, p) => p.best > a.best ? p : a, h[0]) }; })
+    .filter(Boolean).sort((a, b) => ord[exType(a.e)] - ord[exType(b.e)] || b.best.best - a.best.best);
+  return header('Rekorlarım', 'Her hareketteki en iyi derecen') + `<div class="card tight">${rows.length ? rows.map(({ e, best }) => `<div class="ex-item" onclick="go('ex','${e.id}')" style="cursor:pointer">${exThumb(e)}<div class="grow"><div class="b">${esc(e.name)}</div><div class="tiny muted">${fmtDate(best.date)}</div></div><div class="kpi" style="font-size:20px">${r1(best.best)} <span class="small muted">${metricUnit(e)}</span></div></div>`).join('') : '<div class="empty"><div class="e">🏆</div>Antrenman kaydettikçe rekorların burada görünür</div>'}</div>`;
 };
 
 Pages.whist = () => {
   const L = [...S.workout.logs].reverse();
   return header('Geçmiş', S.workout.logs.length + ' antrenman') + `<div class="card tight">${L.length ? L.map(l => {
-    const sets = l.entries.reduce((a, e) => a + e.sets.length, 0);
-    const vol = l.entries.reduce((a, e) => a + e.sets.reduce((b, s) => b + num(s.w) * num(s.r), 0), 0);
-    return `<div class="list-item" onclick="showLog('${l.id}')" style="cursor:pointer"><div class="ex-thumb mini">${bodySVG(dayLoad(l.entries.map(e => ({ exId: e.exId, sets: e.sets.length }))), { labels: false, vb: VB.bothNoLabel })}</div><div class="grow"><div class="t">${esc(l.name)}</div><div class="small muted">${fmtDate(l.date, { weekday: 'long', day: 'numeric', month: 'long' })}</div><div class="tiny muted">${l.entries.length} hareket · ${sets} set · ${Math.round(vol).toLocaleString('tr-TR')} kg hacim${l.min ? ' · ' + l.min + ' dk' : ''}</div></div><span class="muted">›</span></div>`;
+    const sets = l.entries.reduce((a, e) => a + e.sets.length, 0), vol = logVolume(l);
+    return `<div class="list-item" onclick="showLog('${l.id}')" style="cursor:pointer"><div class="ex-thumb mini">${bodySVG(dayLoad(l.entries.map(e => ({ exId: e.exId, sets: e.sets.length }))), { labels: false, vb: VB.bothNoLabel })}</div><div class="grow"><div class="t">${esc(l.name)}</div><div class="small muted">${fmtDate(l.date, { weekday: 'long', day: 'numeric', month: 'long' })}</div><div class="tiny muted">${l.entries.length} hareket · ${sets} set${vol ? ' · ' + Math.round(vol).toLocaleString('tr-TR') + ' kg hacim' : ''}${l.min ? ' · ' + l.min + ' dk' : ''}</div></div><span class="muted">›</span></div>`;
   }).join('') : '<div class="empty"><div class="e">📈</div>Henüz antrenman kaydı yok</div>'}</div>`;
 };
 function showLog(id) {
@@ -1540,7 +1161,7 @@ function showLog(id) {
   const s = openSheet({
     title: l.name, body: `<div class="muted small" style="text-align:center;margin-bottom:10px">${fmtDate(l.date, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}</div>
     <div class="card"><div class="body-map" style="max-width:280px;margin:0 auto">${bodySVG(load)}</div></div>
-    <div class="card tight">${l.entries.map(e => { const ex = exById(e.exId); return `<div class="list-item"><div class="grow"><div class="b">${esc(ex?.name || 'Silinmiş hareket')}</div><div class="small muted">${e.sets.map(s => `${s.w || 0} kg × ${s.r || 0}`).join(' · ')}</div></div></div>`; }).join('')}</div>
+    <div class="card tight">${l.entries.map(e => { const ex = exById(e.exId); return `<div class="list-item"><div class="grow"><div class="b">${esc(ex?.name || 'Silinmiş hareket')}</div><div class="small muted">${e.sets.map(s => fmtSet(ex, s)).join(' · ')}</div></div></div>`; }).join('')}</div>
     ${l.note ? `<div class="card">${esc(l.note)}</div>` : ''}
     <button class="btn danger full" id="ld">Kaydı sil</button>`
   });
@@ -1554,13 +1175,14 @@ function startSession(dayId) {
     const d = dayId ? W.days.find(x => x.id === dayId) : null;
     W.active = {
       dayId, name: d ? d.name : 'Serbest antrenman', start: Date.now(),
-      entries: d ? d.items.map(it => newEntry(it.exId, +it.sets || 3, it.reps)) : []
+      entries: d ? d.items.filter(it => exById(it.exId)).map(it => newEntry(it.exId, +it.sets || 3, it.reps)) : []
     };
     save(); navStack = [{ tab: 'sport', page: 'sport' }]; route = { tab: 'sport', page: 'session' }; render(); window.scrollTo(0, 0);
   };
   if (W.active) confirmSheet('Devam eden bir antrenman var. Onu silip yenisine başlansın mı?', begin, 'Yeniden başla'); else begin();
 }
-function newEntry(exId, n = 3, reps = '10') {
+function newEntry(exId, n, reps) {
+  const ex = exById(exId), def = TYPES[exType(ex)].def; n = n || def[0]; reps = reps || def[1];
   const lp = lastPerf(exId); const rr = String(reps).match(/\d+/g); const target = rr ? rr[rr.length - 1] : '';
   const sets = []; for (let i = 0; i < n; i++) { const prev = lp?.sets[i] || lp?.sets[lp.sets.length - 1]; sets.push({ w: prev ? prev.w : '', r: prev ? prev.r : target, done: false }); }
   return { exId, reps, sets };
@@ -1570,11 +1192,11 @@ Pages.session = () => {
   const doneSets = A.entries.reduce((a, e) => a + e.sets.filter(s => s.done).length, 0);
   const totalSets = A.entries.reduce((a, e) => a + e.sets.length, 0);
   const ents = A.entries.map((e, ei) => {
-    const ex = exById(e.exId); const lp = lastPerf(e.exId);
-    return `<div class="card"><div class="row" style="margin-bottom:6px"><div onclick="go('ex','${e.exId}')" style="cursor:pointer">${exThumb(ex)}</div><div class="grow"><div class="b">${esc(ex?.name || '?')}</div><div class="tiny muted">Hedef: ${esc(e.reps || '-')} tekrar${lp ? ` · Son (${fmtDate(lp.log.date, { day: 'numeric', month: 'short' })}): ${lp.sets.map(s => `${s.w || 0}×${s.r || 0}`).join(', ')}` : ''}</div></div><button class="muted" style="font-size:20px;padding:4px" onclick="entryMenu(${ei})">⋯</button></div>
-      <div class="set-row tiny muted b"><span class="no">SET</span><span style="text-align:center">KG</span><span style="text-align:center">TEKRAR</span><span></span></div>
-      ${e.sets.map((s, si) => `<div class="set-row ${s.done ? 'ok' : ''}" id="sr_${ei}_${si}"><span class="no">${si + 1}</span><input inputmode="decimal" value="${esc(s.w)}" placeholder="0" oninput="setVal(${ei},${si},'w',this.value)"><input inputmode="numeric" value="${esc(s.r)}" placeholder="0" oninput="setVal(${ei},${si},'r',this.value)"><button class="chk" onclick="toggleSet(${ei},${si})">✓</button></div>`).join('')}
-      <div class="row" style="margin-top:8px"><button class="btn plain sm grow" onclick="addSet(${ei})">+ Set ekle</button>${e.sets.length > 1 ? `<button class="btn plain sm" onclick="delSet(${ei})">− Set</button>` : ''}</div></div>`;
+    const ex = exById(e.exId), t = exType(ex), T = TYPES[t], lp = lastPerf(e.exId);
+    return `<div class="card"><div class="row" style="margin-bottom:6px"><div onclick="go('ex','${e.exId}')" style="cursor:pointer">${exThumb(ex)}</div><div class="grow"><div class="b">${esc(ex?.name || '?')}</div><div class="tiny muted">Hedef: ${esc(e.reps || '-')} ${T.u}${lp ? ` · Son (${fmtDate(lp.log.date, { day: 'numeric', month: 'short' })}): ${lp.sets.map(s => fmtSetShort(ex, s)).join(', ')}` : ''}</div></div><button class="muted" style="font-size:20px;padding:4px" onclick="entryMenu(${ei})">⋯</button></div>
+      <div class="set-row tiny muted b"><span class="no">SET</span><span style="text-align:center">${T.a}</span><span style="text-align:center">${T.b}</span><span></span></div>
+      ${e.sets.map((s, si) => `<div class="set-row ${s.done ? 'ok' : ''}" id="sr_${ei}_${si}"><span class="no">${si + 1}</span><input inputmode="decimal" value="${esc(s.w)}" placeholder="${t === 'w' ? '0' : '–'}" oninput="setVal(${ei},${si},'w',this.value)"><input inputmode="numeric" value="${esc(s.r)}" placeholder="0" oninput="setVal(${ei},${si},'r',this.value)"><button class="chk" onclick="toggleSet(${ei},${si})">✓</button></div>`).join('')}
+      <div class="row" style="margin-top:8px">${t === 's' ? `<button class="btn ghost sm grow" onclick="startHold(${ei})">⏱ Süreyi başlat</button>` : ''}<button class="btn plain sm grow" onclick="addSet(${ei})">+ Set ekle</button>${e.sets.length > 1 ? `<button class="btn plain sm" onclick="delSet(${ei})">− Set</button>` : ''}</div></div>`;
   }).join('');
   const live = dayLoad(A.entries.map(e => ({ exId: e.exId, sets: e.sets.filter(s => s.done).length })));
   return header(esc(A.name), `<span id="elapsed">${elapsed(A.start)}</span> · ${doneSets}/${totalSets} set`) + `
@@ -1584,14 +1206,14 @@ Pages.session = () => {
   <div class="card"><h3>Bu antrenmanda çalışan kaslar</h3><div class="body-map" style="max-width:280px;margin:0 auto">${bodySVG(live)}</div>${muscleBars(live)}</div>
   <div class="field"><label>Antrenman notu</label><textarea rows="2" oninput="S.workout.active.note=this.value;save()" placeholder="Nasıl hissettin?">${esc(A.note || '')}</textarea></div>
   <button class="btn full" style="background:var(--ok);margin-bottom:10px" onclick="finishSession()">✓ Antrenmanı bitir</button>
-  <button class="btn danger full" onclick="confirmSheet('Bu antrenman kaydedilmeden silinecek.',()=>{S.workout.active=null;save();setTab('sport')},'İptal et')">Antrenmanı iptal et</button>`;
+  <button class="btn danger full" onclick="confirmSheet('Bu antrenman kaydedilmeden silinecek.',()=>{S.workout.active=null;stopTimer();save();setTab('sport')},'İptal et')">Antrenmanı iptal et</button>`;
 };
 Pages.session.after = () => { clearInterval(window._el); window._el = setInterval(() => { const e = $('#elapsed'); if (e && S.workout.active) e.textContent = elapsed(S.workout.active.start); else clearInterval(window._el); }, 1000); };
 function elapsed(t) { const s = Math.floor((Date.now() - t) / 1000); const h = Math.floor(s / 3600); return (h ? h + ':' : '') + pad(Math.floor(s / 60) % 60) + ':' + pad(s % 60); }
 function setVal(ei, si, k, v) { S.workout.active.entries[ei].sets[si][k] = v.replace(',', '.'); save(); }
 function toggleSet(ei, si) {
-  const s = S.workout.active.entries[ei].sets[si]; s.done = !s.done; save();
-  if (s.done) { const nxt = S.workout.active.entries[ei].sets[si + 1]; if (nxt && nxt.w === '' && s.w !== '') nxt.w = s.w; startRest(); }
+  const e = S.workout.active.entries[ei], s = e.sets[si]; s.done = !s.done; save();
+  if (s.done) { const nxt = e.sets[si + 1]; if (nxt && nxt.w === '' && s.w !== '') nxt.w = s.w; if (exType(exById(e.exId)) !== 'c') startRest(); }
   render();
 }
 function addSet(ei) { const e = S.workout.active.entries[ei]; const l = e.sets[e.sets.length - 1]; e.sets.push({ w: l ? l.w : '', r: l ? l.r : '', done: false }); save(); render(); }
@@ -1603,30 +1225,44 @@ function entryMenu(ei) {
   s.sh.querySelector('#m1').onclick = () => mv(-1); s.sh.querySelector('#m2').onclick = () => mv(1);
   s.sh.querySelector('#m3').onclick = () => { A.entries.splice(ei, 1); save(); closeSheet(s); render(); };
 }
+/* Süreli hareket: ilk yapılmamış setin süresini geri sayar, bitince seti işaretler */
+function startHold(ei) {
+  const e = S.workout.active.entries[ei]; const si = e.sets.findIndex(s => !s.done);
+  if (si < 0) { toast('Tüm setler tamamlandı'); return; }
+  const sec = Math.round(num(e.sets[si].r)) || 30; const set = e.sets[si];
+  startTimer(sec, `${exById(e.exId)?.name || 'Süre'} · ${si + 1}. set`, () => {
+    if (!S.workout.active) return;
+    set.done = true; save(); toast('✓ Süre doldu');
+    if (e.sets.some(s => !s.done)) startRest();
+    if (route.page === 'session') render();
+  });
+}
 function finishSession() {
   const A = S.workout.active;
   const entries = A.entries.map(e => ({ exId: e.exId, sets: e.sets.filter(s => s.done).map(s => ({ w: num(s.w), r: num(s.r) })) })).filter(e => e.sets.length);
   if (!entries.length) { toast('Önce en az bir seti ✓ ile işaretle'); return; }
   const prs = [];
-  entries.forEach(e => { const h = exHistory(e.exId); const prev = h.length ? Math.max(...h.map(p => p.best)) : 0; const best = Math.max(...e.sets.map(s => s.w)); if (h.length && best > prev) prs.push(exById(e.exId)?.name); });
+  entries.forEach(e => { const ex = exById(e.exId), h = exHistory(e.exId); if (!h.length) return; const prev = Math.max(...h.map(p => p.best)), best = Math.max(...e.sets.map(s => setMetric(ex, s))); if (best > prev) prs.push(ex?.name); });
   S.workout.logs.push({ id: uid(), ts: Date.now(), date: today(), dayId: A.dayId, name: A.name, entries, note: A.note || '', min: Math.round((Date.now() - A.start) / 60000) });
-  S.workout.active = null; stopRest(); save(); setTab('sport');
+  S.workout.active = null; stopTimer(); save(); setTab('sport');
   toast(prs.length ? '🏆 Yeni rekor: ' + prs.join(', ') : '💪 Antrenman kaydedildi');
 }
 
-/* Dinlenme sayacı */
-let restEnd = 0, restInt;
-function startRest(sec) {
-  sec = sec || S.settings.rest || 90; restEnd = Date.now() + sec * 1000;
+/* Geri sayım çubuğu: dinlenme ve süreli hareketler */
+let timerEnd = 0, timerInt, timerDone = null, timerLabel = '';
+function startTimer(sec, label, onDone) {
+  timerEnd = Date.now() + sec * 1000; timerLabel = label; timerDone = onDone || null;
   let el = $('#timer'); if (!el) { el = document.createElement('div'); el.id = 'timer'; el.className = 'timer'; document.body.append(el); }
   const draw = () => {
-    const left = Math.max(0, Math.round((restEnd - Date.now()) / 1000));
-    el.innerHTML = `<span>⏱</span><div class="grow"><div class="tiny" style="opacity:.7">Dinlenme</div><div class="tm">${Math.floor(left / 60)}:${pad(left % 60)}</div></div><button onclick="restEnd-=15000">−15</button><button onclick="restEnd+=15000">+15</button><button onclick="stopRest()">✕</button>`;
-    if (left <= 0) { beep(); stopRest(); toast('⏰ Dinlenme bitti, sıradaki set!'); }
+    const left = Math.max(0, Math.round((timerEnd - Date.now()) / 1000));
+    el.innerHTML = `<span>⏱</span><div class="grow" style="min-width:0"><div class="tiny ellip" style="opacity:.7">${esc(timerLabel)}</div><div class="tm">${Math.floor(left / 60)}:${pad(left % 60)}</div></div><button onclick="timerEnd-=15000">−15</button><button onclick="timerEnd+=15000">+15</button><button onclick="stopTimer()">✕</button>`;
+    if (left <= 0) { const cb = timerDone; beep(); stopTimer(); if (cb) cb(); else toast('⏰ Dinlenme bitti, sıradaki set!'); }
   };
-  clearInterval(restInt); draw(); restInt = setInterval(draw, 500);
+  clearInterval(timerInt); draw(); timerInt = setInterval(draw, 500);
 }
-function stopRest() { clearInterval(restInt); const el = $('#timer'); if (el) el.remove(); }
+function stopTimer() { clearInterval(timerInt); timerDone = null; const el = $('#timer'); if (el) el.remove(); }
+const startRest = sec => startTimer(sec || S.settings.rest || 90, 'Dinlenme');
+const stopRest = stopTimer;
 function beep() {
   try { const c = new (window.AudioContext || window.webkitAudioContext)(); [0, .25, .5].forEach(t => { const o = c.createOscillator(), g = c.createGain(); o.frequency.value = 880; g.gain.value = .15; o.connect(g); g.connect(c.destination); o.start(c.currentTime + t); o.stop(c.currentTime + t + .15); }); } catch (e) {}
   try { navigator.vibrate && navigator.vibrate([200, 100, 200]); } catch (e) {}
