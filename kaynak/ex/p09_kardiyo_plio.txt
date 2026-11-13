@@ -1,0 +1,690 @@
+// Kardiyo (637–650) ve pliometrik (651–710)
+@c Kardiyo
+
+#637 bicycling *
+n Bisiklet (Açık Havada)
+m qu / gl ha ca
+- Sele yüksekliğini ayarla: pedal en alttayken diz hafif bükük kalsın.
+- Rahat bir tempoda başla, 5–10 dakika ısın.
+- Hedefine göre sabit tempo ya da yokuş/sprint aralıklarıyla sür.
++ Eklemleri yormadan uzun süre yağ yakmak için çok uygundur.
++ Konuşabildiğin tempo = yağ yakım bölgesi.
+! Kask tak; trafikte görünür ol.
+
+#638 bicycling stationary *
+n Sabit Bisiklet
+m qu / gl ha ca
+- Seleyi kalça kemiği hizasına ayarla; pedal alttayken diz hafif bükük olsun.
+- Düşük dirençle 5 dakika ısın.
+- Sabit tempo (20–40 dk) ya da aralıklı (30 sn hızlı / 90 sn yavaş) çalış.
++ Dizlere yük bindirmez; bacak günü sonrası toparlanma için de iyidir.
+! Sırtı yuvarlayıp gidona yüklenme.
+
+#639 elliptical *
+n Eliptik Bisiklet
+m qu gl / ha ca
+- Pedallara bas, kolları tut; dik dur.
+- Akıcı bir ritimle ileri doğru çevir; kolları da it-çek.
+- Direnci ve eğimi hedefine göre ayarla.
++ Koşuya göre eklemlere çok daha az darbe bindirir.
++ Kollara asılmazsan bacaklar daha çok çalışır.
+! Topukları pedaldan kaldırma; ayak uyuşabilir.
+
+#640 jogging treadmill *
+n Koşu Bandında Hafif Koşu
+m qu / gl ha ca
+- Yürüyüşle başla, 3–5 dakikada hafif koşu temposuna çık.
+- Dik dur, kollar 90° ve rahat; adımlar kısa ve yumuşak.
+- Bitirirken 3–5 dakika yürüyerek soğu.
++ Konuşabildiğin tempoda 20–40 dakika yağ yakımı ve kalp sağlığı için idealdir.
++ %1 eğim açık hava koşusuna yakın his verir.
+! Tutunma çubuklarına asılma; aşağıya değil ileriye bak.
+
+#641 prowler sprint
+n Prowler Sprint (Kızak İtme Koşusu)
+m qu gl / ha ca cm fd
+t w
+- Kızağın kollarını tut, gövdeni öne yatır; kollar düz ya da bükük.
+- Güçlü ve hızlı adımlarla kızağı it.
+- Belirlenen mesafeyi bitir, tam dinlen, tekrarla.
++ Kondisyonu ve bacak gücünü aynı anda geliştirir; ertesi gün kas ağrısı az olur.
+! Sırt düz; belden kırılma.
+
+#642 recumbent bike
+n Yatar Bisiklet
+m qu / gl ha ca
+- Koltuğu ayarla: pedal en uzaktayken diz hafif bükük kalsın.
+- Sırtını yasla, rahat tempoda çevir.
+- Direnci kademeli artır.
++ Bel ve diz sorunu olanlar için en rahat kardiyo makinesidir.
+! Dizleri tam kilitleme.
+
+#643 rope jumping *
+n İp Atlama
+m ca / qu fa sd
+- İpin uçlarını tut; dirsekler gövdeye yakın.
+- İpi bileklerinle çevir, parmak uçlarında küçük sıçrayışlarla atla.
+- 30–60 saniye atla, 30 saniye dinlen; tekrarla.
++ Az yerde çok kalori yakar; koordinasyonu ve baldırı geliştirir.
++ Yüksek zıplama; ipin geçeceği kadar yeter.
+! Sert zeminde uzun süre yapmak kaval kemiğini yorar; yumuşak zemin ve iyi ayakkabı seç.
+
+#644 rowing stationary *
+n Kürek Makinesi
+m la tm qu / bi ha gl lb
+- Ayakları bağla, kolu üstten tut; dizler bükük, kollar düz.
+- Önce bacaklarla it, sonra gövdeni hafif geriye yatır, en son kolu karnına çek.
+- Dönüşte sırayı tersine çevir: kollar, gövde, bacaklar.
++ Tüm vücudu çalıştıran, eklem dostu en iyi kardiyolardan biridir.
++ Gücün çoğu bacaklardan gelir.
+! Sırtı yuvarlama; kolları erken bükme.
+
+#645 running treadmill *
+n Koşu Bandında Koşu
+m qu / gl ha ca
+- 5 dakika yürüyüş ve hafif koşuyla ısın.
+- Hedef temponda koş ya da aralıklı çalış (1 dk hızlı / 2 dk yavaş).
+- 3–5 dakika yürüyerek soğu.
++ Ayağın gövdenin altına bassın; uzun adım atma.
+! Bandın ortasında kal; hızı birden artırma.
+
+#646 skating
+n Paten
+m qu gl / ad ca ha
+- Dizler bükük, gövde hafif önde dur.
+- Bir ayağınla yana-geriye iterek diğerinin üstünde kay.
+- Ritmik şekilde taraf değiştir.
++ Kalça ve bacağın yan kaslarını çalıştırır.
+! Kask ve koruyucu tak.
+
+#647 stairmaster *
+n Merdiven Makinesi (Stairmaster)
+m qu gl / ha ca
+- Makineye çık, düşük hızla başla.
+- Dik dur, basamağa tüm ayağınla bas; kalçadan iterek çık.
+- 10–30 dakika sabit ya da aralıklı çalış.
++ Kalça ve bacağı en çok çalıştıran kardiyo makinesidir.
+! Kollara asılma; yakılan kaloriyi ve etkisini düşürür.
+
+#648 step mill
+n Yürüyen Merdiven (Step Mill)
+m qu gl / ha ca
+- Düşük hızla başla, dik dur.
+- Her basamağa tüm ayağınla bas.
+- Basamak atlayarak ya da yana dönerek çeşitlendirebilirsin.
++ Kısa sürede nabzı yükseltir.
+! Tutunma kollarına yüklenme.
+
+#649 trail
+n Doğa Yürüyüşü / Arazi Koşusu
+m qu gl / ha ca
+- Uygun bir parkur seç; ilk 5–10 dakika hafif tempoda ısın.
+- Yokuş yukarı kısa adımlarla, yokuş aşağı kontrollü in.
+- Bitirirken yavaşla ve esne.
++ Engebeli zemin ayak bileğini ve dengeyi de çalıştırır; kafa dağıtmak için birebirdir.
+! Zemine uygun ayakkabı giy; yanına su al.
+
+#650 walking treadmill *
+n Koşu Bandında Yürüyüş
+m qu / gl ha ca
+- Rahat bir hızla başla, dik dur.
+- Tempolu yürüyüşe çık: konuşabildiğin ama hafif nefeslendiğin hız.
+- 20–45 dakika yürü.
++ Antrenman sonrası ya da dinlenme gününde yağ yakımı için en kolay seçenektir.
++ Eğimi artırmak, hızı artırmaktan daha etkilidir.
+! Tutunarak yürüme.
+
+@c Pliometrik
+@t w
+
+#651 diagonal bound
+n Çapraz Sıçrama Adımı
+m qu gl / ad ca ha
+- Bir ayak hafif önde dur.
+- Öndeki bacakla iterek çapraz ileri sıçra; karşı dizi yukarı çek.
+- Diğer ayağa in ve hemen öbür çapraza sıçra.
++ Yerde kalma süresini kısa tut.
+! Yumuşak in.
+
+#652 backward medicine ball throw
+n Sağlık Topunu Geriye Fırlatma
+m gl ha / lb fd qu
+- Topu iki elle önünde tut, yarım çömel.
+- Patlayıcı şekilde doğrulup topu başının üstünden geriye fırlat.
++ Kalça patlayıcılığını ölçmek ve geliştirmek için kullanılır.
+! Arkanın boş olduğundan emin ol.
+
+#653 bench jump
+n Sehpanın Üstünden Sıçrama
+m qu gl / ca ha
+l 2
+- Sehpanın önünde dur; kollarını geriye savurarak yarım çömel.
+- Patlayıcı şekilde sıçrayıp sehpanın üstünden atla.
+- Dizler bükük, yumuşak in.
++ Alçak bir engelle başla.
+! Takılma riski var; emin değilsen kutuya sıçramayı tercih et.
+
+#654 bench sprint
+n Sehpada Ayak Değiştirme
+m qu / gl ca ha
+- Bir ayağın sehpanın üstünde, diğeri yerde.
+- Üstteki ayakla it, havada ayak değiştir; diğer ayak sehpaya insin.
+- Hızlı tempoda devam et.
++ Kısa sürede nabzı yükseltir.
+! Sehpa sabit olmalı.
+
+#655 box jump multiple *
+n Seri Box Jump
+m qu gl / ha ca
+- Kutunun önünde dur; kollarını savurarak sıçra ve kutunun üstüne yumuşak in.
+- Aşağı in ve yere değer değmez tekrar sıçra.
++ Yerde bekleme yok; elastik gücü geliştirir.
+! Yorulunca dur; kaval kemiğini kutuya vurmak en sık sakatlıktır.
+
+#656 box skip
+n Kutular Arası Sekme
+m gl ha / qu ca
+- Birkaç kutuyu aralıklı diz.
+- Arka bacakla iterek kutuya sek; kalçayı olabildiğince yükselt.
+- Kutudan inip sıradaki kutuya devam et.
++ Kalça itişini geliştirir.
+! Kutular kaymamalı.
+
+#657 carioca
+n Karyoka Adımı
+m ad gl / ob ca qu
+- Yan dur, kollar rahat.
+- Arkadaki ayağı öndekinin arkasından hızlı geçirip dizi yukarı çek; yana ilerle.
+- Diğer yöne tekrarla.
++ Kalça dönüşü ve ayak hızını geliştirir.
+! Omuzlar öne baksın; kalça dönsün.
+
+#658 catch overhead throw
+n Baş Üstünden Top Fırlatma (Yakalamalı)
+m la au / cm tr
+- Duvara ya da partnere dön; topu iki elle başının arkasına götür.
+- Tüm gövdenle topu ileri fırlat.
+- Dönen topu yakala ve durmadan tekrarla.
++ Gücü karından ve kanattan al.
+! Belini aşırı geriye bükme.
+
+#659 chest push multiple
+n Diz Üstü Göğüsten Top İtme (Seri)
+m cm / fd tr au
+- Duvara ya da partnere karşı diz çök; topu göğsünde tut.
+- Kalçanı öne patlatıp topu tüm gücünle it; ellerinin üstüne öne düş.
+- Hemen doğrul, topu al ve tekrarla.
++ İtiş gücünü ve hızını geliştirir.
+! Düşerken dirsekleri yumuşak tut.
+
+#660 chest push single
+n Diz Üstü Göğüsten Top İtme
+m cm / fd tr au
+- Diz çök, topu göğsünde tut.
+- Kalçanı öne patlatıp topu olabildiğince uzağa it.
+- Ellerinin üstüne düşerek bitir.
++ Her tekrar tam güçle; arada dinlen.
+! Dizlerin altına minder koy.
+
+#661 chest push point stance
+n Çıkış Pozisyonundan Top İtme
+m cm / fd tr qu
+- Üç nokta duruşu al (bir el yerde), top önünde.
+- İlk adımı atarken topu göğsüne al.
+- İkinci adımda topu patlayıcı şekilde it.
++ Çıkış hızını üst vücut gücüyle birleştirir.
+! Sırt düz başla.
+
+#662 chest push run release
+n Top İtip Koşma
+m cm / fd tr qu
+- Atletik duruşta topu bacaklarının yanında tut.
+- İlk adımla topu göğsüne al ve ileri it.
+- Topu bırakır bırakmaz 10–20 metre sprint at.
++ Patlayıcı itişi hızlanmayla birleştirir.
+! Geniş, boş bir alanda yap.
+
+#663 depth jump leap
+n Derinlik Sıçraması (Kutudan Kutuya)
+m qu gl / ca ha
+l 2
+- Alçak kutunun üstünde dur; karşısına daha yüksek bir kutu koy.
+- Kutudan adım atarak in; yere değer değmez yüksek kutuya sıçra.
++ Yerde kalma süresi ne kadar kısaysa o kadar etkilidir.
+! İleri seviye; eklemlere yükü fazladır, az tekrar yap.
+
+#664 double leg butt kick
+n Çift Ayak Topuk-Kalça Sıçraması
+m qu / ha gl ca
+- Hafif çömel ve olabildiğince yükseğe sıçra.
+- Havada topuklarını kalçana değdirmeye çalış.
+- Yumuşak in, hemen tekrarla.
++ Dizleri öne çekme; topuklar geriye gelsin.
+! Yumuşak zemin tercih et.
+
+#665 drop push
+n Düşüşlü Şınav
+m cm / fd tr
+l 2
+- İki alçak platformu omuzdan biraz geniş yerleştir; ellerin platformlarda şınav pozisyonu al.
+- Ellerini itip platformların arasına, dirsekler bükük in.
+- Patlayıcı şekilde iterek platformlara geri çık.
++ Göğüs ve triceps patlayıcılığını geliştirir.
+! Bilek ve omuz sağlam değilse yapma.
+
+#666 dumbbell seated box jump
+n Oturuştan Ağırlıklı Box Jump
+m qu gl / ca ha
+l 2
+- Kutunun karşısına sehpa koy; dambılı göğsünde tutarak otur.
+- Ayaklarını yere basıp patlayıcı şekilde kalk ve kutuya sıçra.
+- Yumuşak in, aşağı adımla in.
++ Oturuştan başlamak yaylanmayı engeller; saf patlayıcı güç ister.
+! Hafif dambıl ve alçak kutuyla başla.
+
+#667 fast skipping
+n Hızlı Sekme
+m qu / gl ca ha
+t s
+- Bir bacak hafif önde başla.
+- Sağ-sağ, sol-sol adım-sekme ritmiyle ilerle.
+- Yerde kalma süresini kısa tutarak hızlan.
++ Isınma ve ayak hızı için idealdir.
+! Dik dur.
+
+#668 front box jump *
+n Box Jump
+m qu gl / ha ca
+- Kutunun önünde ayaklar omuz genişliğinde dur.
+- Kollarını geriye savurup yarım çömel; patlayıcı şekilde sıçra.
+- Kutunun üstüne dizler bükük, yumuşak in; tam doğrul.
+- Aşağı adımla in.
++ Sessiz iniş = iyi iniş.
++ Yüksek kutu yerine temiz teknik hedefle.
+! Aşağı sıçrayarak inmek aşil tendonunu yorar; adımla in.
+
+#669 front cone hops
+n Öne Engel Sıçraması (Koniler)
+m qu / gl ca ha
+- Konileri ya da alçak engelleri aralıklı diz.
+- Ayaklar bitişik, her engelin üstünden art arda sıçra.
++ Yere değer değmez tekrar sıçra.
+! Engeller devrilebilir olmalı.
+
+#670 heavy bag thrust
+n Kum Torbası İtişi
+m cm / fd tr au
+- Kum torbasının önünde bir ayak geride dur; bir elini göğüs hizasında torbaya koy.
+- Kalça ve gövdeni döndürerek torbayı patlayıcı şekilde it.
+- Dönen torbayı karşıla ve tekrarla.
++ Yumruk ve itiş gücünü geliştirir.
+! Bilek düz kalsın.
+
+#671 hurdle hops
+n Engel Sıçraması
+m qu gl / ha ca
+- Engelleri aralıklı diz.
+- İki ayakla sıçrayıp dizleri çekerek engeli geç.
+- İner inmez sıradaki engele sıçra.
++ Kollarını aktif kullan.
+! Engel yüksekliğini yavaş artır.
+
+#672 incline push-up depth jump
+n Ayaklar Yukarıda Derinlik Şınavı
+m cu / fd tr
+l 3
+- Ayaklarını kutuya koy; ellerini omuzların dışındaki iki basamağa yerleştir.
+- Ellerini basamaklardan itip ortaya, yere düş.
+- Yere değer değmez patlayıcı şekilde itip basamaklara geri çık.
++ Çok ileri seviye bir patlayıcı güç çalışmasıdır.
+! Omuz ve bilek sağlığın tam değilse yapma.
+
+#673 isometric chest squeezes
+n Avuç Sıkıştırma (İzometrik Göğüs)
+m cm / fd tr
+c Göğüs
+t s
+- Avuçlarını göğsünün önünde birleştir, dirsekler 90°.
+- Avuçlarını birbirine tüm gücünle bastır.
+- 10–20 saniye tut, bırak; tekrarla.
++ Ekipmansız göğüs sıkıştırma; ısınmada ya da set sonunda kullan.
+! Nefesini tutma.
+
+#674 knee tuck jump *
+n Tuck Jump (Dizleri Çekerek Sıçrama)
+m qu gl / ha ca al
+- Ayaklar omuz genişliğinde dur, yarım çömel.
+- Olabildiğince yükseğe sıçra; havada dizlerini göğsüne çek.
+- Yumuşak in, hemen tekrarla.
++ Kısa sürede nabzı çok yükseltir.
+! Yorulunca iniş bozulur; az tekrar, temiz yap.
+
+#675 kneeling arm drill
+n Diz Üstü Kol Koşu Çalışması
+m fd / au
+t s
+- Tek diz üstünde çök; öndeki topuğa bas.
+- Dirsekler 90°, kollarını koşar gibi hızlı ve güçlü salla.
+- El çene hizasına çıksın, geride kalçayı geçsin.
++ Koşuda kol tekniğini düzeltir.
+! Omuzları kasma.
+
+#676 lateral bound *
+n Yana Sıçrama (Skater)
+m gl ad / qu ca ha
+- Tek ayak üstünde, hafif çömel.
+- Yana doğru patlayıcı şekilde sıçra, diğer ayağa in.
+- Dengeni bul ve geri sıçra.
++ Kalçanın yan kaslarını ve dizin sağlamlığını geliştirir.
+! Diz içe çökmeden in.
+
+#677 lateral box jump
+n Yana Box Jump
+m gl ad / qu ca ha
+- Kutunun yanında dur.
+- Yarım çömelip yana sıçrayarak kutunun üstüne in.
+- Adımla in, tekrarla; sonra diğer taraf.
++ Yön değiştirme gücü kazandırır.
+! Alçak kutuyla başla.
+
+#678 lateral cone hops
+n Yana Engel Sıçraması
+m ad gl / ca qu ha
+- Koninin yanında ayaklar bitişik dur.
+- Koninin üstünden yana sıçra; iner inmez geri sıçra.
++ Ayak bileği sertliğini ve çevikliği geliştirir.
+! Dizler yumuşak kalsın.
+
+#679 linear 3-part start
+n Sprint Çıkış Tekniği
+m ha gl / qu ca
+t s
+- Çizgide dur; bir ayağı geriye al, öne eğilip ağırlığını ön ayağa ver.
+- Ters kolu öne al.
+- Öne düşer gibi olup ilk adımları güçlü ve kısa atarak hızlan.
++ İlk 3–5 adım gövde öne eğik kalmalı.
+! Isınmadan sprint atma.
+
+#680 linear acceleration wall
+n Duvarda Hızlanma Çalışması
+m ha gl / qu ca
+t s
+- Duvara 45° yaslan; gövde düz, kalça sıkı.
+- Bir dizini hızla yukarı çek, dur, sonra yere doğru sertçe it.
+- Bacak değiştir; sonra ikili ve üçlü seri yap.
++ Sprint çıkışındaki gövde açısını öğretir.
+! Kalça geriye çıkmasın.
+
+#681 linear depth jump *
+n Depth Jump (Derinlik Sıçraması)
+m qu gl / ca ha
+l 2
+- Kutunun üstünde dur; adım atarak (sıçramadan) in.
+- İki ayakla yere değer değmez dikey ya da ikinci kutuya sıçra.
++ Sıçrama yüksekliğini en çok geliştiren çalışmalardandır.
+! Eklemlere yükü fazladır: 3–5 tekrarlık az set, tam dinlenme.
+
+#682 medicine ball chest pass *
+n Sağlık Topu Göğüs Pası
+m cm / fd tr
+- Duvara ya da partnere dön; topu göğsünde tut.
+- Topu iki elle patlayıcı şekilde ileri it.
+- Dönen topu yakala, tekrarla.
++ Bench press hızını ve itiş gücünü geliştirir.
+! Dirsekleri kilitleyerek sertçe bitirme.
+
+#683 medicine ball full twist
+n Sırt Sırta Top Verme
+m ob / au fd
+- Partnerinle sırt sırta, bir adım aralıklı dur.
+- Gövdeni döndürüp topu bir yandan partnerine ver.
+- Diğer yana dönüp topu geri al; yön değiştirerek devam et.
++ Partner yoksa duvara yakın durup topu duvara değdir.
+! Ayakların üstünde dön.
+
+#684 medicine ball scoop throw
+n Sağlık Topunu Yukarı Fırlatma (Scoop)
+m gl qu / fd ha au
+- Yarım çömel, top ayaklarının arasında.
+- Kalçanı öne patlatıp sıçrarken topu kollar düz, yukarı-geriye fırlat.
++ Tüm vücut patlayıcılığı çalışması.
+! Topun düşeceği yere dikkat et.
+
+#685 moving claw
+n Pençe Adımı (Koşu Tekniği)
+m ha / ca qu
+t s
+- Koşarken dizini bük, topuğu kalçaya çek.
+- Bacağı öne aç, sonra ayağı pençe atar gibi aşağı-geriye çekerek yere bas.
+- Hafif tempoda başla, giderek hızlan.
++ Sprint adımını ve arka bacak kullanımını öğretir.
+! Topuğa basma.
+
+#686 overhead slam *
+n Sağlık Topu Slam
+m la au / fd tr
+- Topu iki elle başının üstüne kaldır, parmak uçlarına yüksel.
+- Tüm gövdenle topu önüne, yere çarp.
+- Topu al, tekrarla.
++ Kanat ve karın birlikte çalışır; stres atmak için de harika.
+! Sekmeyen (slam) top kullan; sekerse yüzüne gelebilir.
+
+#687 plyo push-up *
+n Patlayıcı Şınav (Plyo Push-Up)
+m cm / fd tr
+l 2
+- Şınav pozisyonu al, göğsünü yere indir.
+- Patlayıcı şekilde it; ellerin yerden kalksın (istersen havada alkış).
+- Dirsekler yumuşak in ve hemen tekrarla.
++ Zor gelirse dizlerin üstünde ya da eller yüksekte yap.
+! Bileklerin üstüne sert düşme.
+
+#688 quick leap
+n Kutuya Hızlı Sıçrama
+m qu / ca ha
+- Kutunun yarım adım önünde dur.
+- Kalçayla sıçrayıp kutuya iki ayakla, dizler bükük in.
+- Hemen geri sıçrayıp yere in ve tekrarla.
++ Hız ve ritim çalışmasıdır; alçak kutu kullan.
+! Yorulunca bırak.
+
+#689 return push stance
+n Yakalayıp Geri İtme
+m cm fd / tr
+- Partnerinle karşılıklı, atletik duruşta bekle.
+- Partnerin attığı topu iki elle yakala.
+- Durmadan patlayıcı şekilde geri it.
++ Tepki süresini ve itiş gücünü geliştirir.
+! Top göğse çarpmasın; ellerle karşıla.
+
+#690 rocket jump
+n Roket Sıçrama
+m qu / ca ha gl
+- Ayaklar omuz genişliğinde, kollar gövdeye yakın.
+- Yarım çömel ve olabildiğince yükseğe sıçra; kollarını tavana uzat.
+- Yumuşak in.
++ Vücut havada dümdüz olsun.
+! Dizler içe çökmesin.
+
+#691 scissors jump *
+n Makas Sıçrama (Scissor Jump)
+m qu gl / ha ca
+- Hamle pozisyonunda dur.
+- Sıçrayıp havada bacakları değiştir.
+- Hamleye in ve durmadan tekrarla.
++ Bacak gücü ve kondisyon bir arada.
+! Ön diz içe kaçmasın; arka diz yere çarpmasın.
+
+#692 side hop-sprint
+n Yana Sıçrama + Sprint
+m qu gl / ad ca ha
+- Koninin yanında dur; üstünden yana sıçra, geri sıçra.
+- Belirli sayıda tekrar yap.
+- Son inişte durmadan ileri sprint at.
++ Yön değiştirip hızlanmayı öğretir.
+! Zemin kaygan olmasın.
+
+#693 side standing long jump
+n Yana Durarak Uzun Atlama
+m qu gl / ad ca ha
+- Atletik duruşta dur.
+- Bir yana eğilip kalça, diz ve bilekle iterek yana doğru sıçra.
+- İki ayakla yumuşak in.
++ Yana doğru patlayıcı güç kazandırır.
+! İnişte dizler yumuşak.
+
+#694 side to side box shuffle
+n Kutu Üstünde Yan Geçiş
+m qu / gl ad ca ha
+- Kutunun yanında dur; iç ayağın kutunun ortasında.
+- Sıçrayıp kutunun üstünden karşıya geç; diğer ayak kutuya, ilk ayak yere insin.
+- Durmadan sağa-sola devam et.
++ Ritmik ve hızlı yap.
+! Kutu sabit olmalı.
+
+#695 single leg butt kick
+n Tek Ayak Topuk-Kalça Sıçraması
+m qu / ha ca gl
+l 2
+- Tek ayak üstünde dur, diğer diz yukarıda.
+- Yerdeki bacakla yukarı sıçra; havada o bacağın topuğunu kalçana çek.
+- Aynı ayağa yumuşak in; tekrarla.
++ Tek bacak patlayıcılığını geliştirir.
+! Diz ya da bilek sorunu varsa yapma.
+
+#696 single leg push-off
+n Tek Bacak Kutudan İtiş
+m qu gl / ca ha
+- Bir ayağın kutunun üstünde, topuk kenara yakın.
+- Üstteki ayakla iterek olabildiğince yükseğe sıçra.
+- Aynı pozisyona in; set bitince bacak değiştir.
++ Kollarını yukarı savur.
+! Yerdeki ayakla itme; iş üstteki bacakta.
+
+#697 single-cone sprint
+n Koni Etrafında Hızlı Adım
+m qu / ca gl ha
+t s
+- Koninin yanında dur.
+- Çok kısa ve hızlı adımlarla koninin etrafında dön.
+- Turu bitirince 5–10 metre sprint at.
++ Ayak hızını geliştirir.
+! Dik dur, kollarını kullan.
+
+#698 single-leg hop progression
+n Tek Ayak Öne Sıçrama Serisi
+m qu gl / ad ca ha
+l 2
+- Konileri bir sıra diz; tek ayak üstünde dur.
+- Aynı ayakla her koninin üstünden öne sıçra.
+- Önce her inişte dur; ilerledikçe durmadan yap.
++ Diz ve bilek sağlamlığını geliştirir.
+! Diz içe kaçmadan in.
+
+#699 single-leg lateral hop
+n Tek Ayak Yana Sıçrama
+m gl ad / qu ca ha
+l 2
+- Koninin yanında tek ayak üstünde dur.
+- Koninin üstünden yana sıçra, aynı ayağa in.
+- Hemen geri sıçra.
++ Bilek burkulmalarına karşı sağlamlık kazandırır.
+! Alçak engelle başla.
+
+#700 single-leg stride jump
+n Tek Bacak Adım Sıçraması
+m qu gl / ad ca ha
+- Kutunun yanında dur, iç ayağın kutunun üstünde.
+- Kollarını savurup üstteki bacakla iterek yukarı sıçra.
+- Aynı pozisyona in; tekrarla.
++ Havada tam uzan.
+! Kutu kaymamalı.
+
+#701 sledgehammer swings
+n Balyoz Vuruşu (Lastiğe)
+m au ob / la fd fa tm
+- Lastiğin önünde bir ayak geride dur; balyozu iki elle tut.
+- Balyozu omzunun üstünden kaldırırken üstteki elin başa doğru kaysın.
+- Tüm gövdenle lastiğe indir; üstteki el sapın ucuna doğru kaysın.
++ Karın, kanat ve kavrama için sert bir kondisyon çalışmasıdır. Taraf değiştir.
+! Balyoz lastikten seker; sıkı tut ve çevrende kimse olmasın.
+
+#702 split jump
+n Split Jump (Hamle Sıçraması)
+m qu gl / ha ca
+- Hamle pozisyonuna in.
+- Yukarı sıçra ve aynı bacak önde olacak şekilde hamleye in.
+- Set bitince bacak değiştir.
++ Havada bacak değiştirirsen makas sıçrama olur.
+! Gövde dik; ön diz ayak ucunu çok geçmesin.
+
+#703 standing long jump *
+n Durarak Uzun Atlama
+m qu gl / ha ca
+- Ayaklar omuz genişliğinde dur.
+- Kollarını geriye savurup çömel; ileri-yukarı patlayarak sıçra.
+- İki ayakla, dizler bükük in.
++ Patlayıcı gücünü ölçmenin en basit yolu: mesafeyi not et.
+! Kaygan zeminde yapma.
+
+#704 standing two-arm overhead throw
+n Ayakta Baş Üstünden Top Fırlatma
+m au la / fd cm tr
+- Topu iki elle başının arkasına götür, dizler hafif bükük, geriye yaslan.
+- Tüm gövdenle topu ileri fırlat.
++ Taç atışı gibi; güç karından gelir.
+! Belini aşırı bükme.
+
+#705 star jump
+n Yıldız Sıçrama
+m qu / ca gl ha sd
+- Ayaklar omuz genişliğinde, kollar gövdeye yakın.
+- Yarım çömel, patlayarak sıçra; havada kollarını ve bacaklarını yıldız gibi aç.
+- Toplanarak yumuşak in.
++ Isınma ve kondisyon için uygundur.
+! İnişte dizler yumuşak.
+
+#706 stride jump crossover
+n Kutu Üstünden Çapraz Geçiş Sıçraması
+m qu gl / ad ca ha
+- Kutunun yanında dur, iç ayağın kutunun üstünde.
+- Üstteki bacakla iterek sıçra ve kutunun üstünden karşıya geç.
+- Diğer ayak kutuda, ilk ayak yerde in; durmadan geri dön.
++ Yanal güç ve ritim geliştirir.
+! Kutu sabit olmalı.
+
+#707 supine chest throw
+n Sırtüstü Top Fırlatma
+m cm tr / fd
+- Sırtüstü yat, dizler bükük; top göğsünde.
+- Topu patlayıcı şekilde dik yukarı fırlat.
+- İki elle yakala, göğse indir ve tekrarla.
++ Partner ya da duvar olmadan itiş gücü çalışması.
+! Hafif topla başla; top yüzüne düşmesin.
+
+#708 supine one-arm overhead throw
+n Sırtüstü Tek Kol Top Fırlatma
+m au / la cm fd
+- Sırtüstü yat, dizler bükük; top tek elde, kol başının arkasında uzanmış.
+- Doğrulurken topu ileri, duvara ya da partnere fırlat.
+- Topu yakala, yavaşça yat.
++ Karın ve omuz birlikte çalışır.
+! Hafif top kullan.
+
+#709 supine two-arm overhead throw
+n Sırtüstü İki Kol Top Fırlatma
+m au / la cm fd
+- Sırtüstü yat, dizler bükük; topu iki elle başının arkasında tut.
+- Doğrulurken topu ileri fırlat.
+- Topu yakala, yavaşça yat.
++ Sit-up'ın patlayıcı hali.
+! Boynu öne itme.
+
+#710 vertical swing
+n Dumbbell Swing
+m gl ha / qu fd lb
+- Dambılı iki elle bacaklarının arasında tut; sırt düz.
+- Kalçadan eğilip dambılı geriye sallandır.
+- Kalçayı öne patlatarak dambılı baş üstüne kadar savur.
++ Kettlebell yoksa dambıl aynı işi görür.
+! Sırtı yuvarlama; dambılı sıkı tut.
