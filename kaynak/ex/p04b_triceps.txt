@@ -1,0 +1,526 @@
+// Triceps (254–313)
+
+@m tr
+#254 band skull crusher
+n Bantla Skull Crusher
+- Bandı sehpanın arkasında alçak bir yere bağla; sehpaya yat, bandı tut, kollar yukarıda.
+- Üst kollar sabit, ellerini alnına doğru indir.
+- Kolları düzleştir.
++ Tepede direnç en yüksektir; kilitlenmeyi güçlendirir.
+! Dirsekleri yana açma.
+
+#255 bench press powerlifting
+n Powerlifting Bench Press
+m cm tr / fd la
+c Göğüs
+- Sehpada kürek kemiklerini sıkıştır, belde kavis oluştur, ayakları yere sağlam bas.
+- Barı sıkı kavra, kanatlarını gererek göğsünün alt kısmına indir.
+- Bacak itişiyle birlikte barı yukarı ve hafif geriye it.
++ Amaç en ağır yükü en kısa yoldan kaldırmaktır; tüm vücut gergin kalır.
++ Kalça sehpada kalmalı.
+! Yardımcısız maksimal deneme yapma.
+
+#256 bench press chains
+n Zincirli Bench Press
+m cm tr / fd la
+c Göğüs
+- Zincirleri barın iki ucuna as; bar aşağıdayken zincirin çoğu yerde olsun.
+- Barı göğsüne indir; zincir yere yığıldıkça yük hafifler.
+- Yukarı it; zincir kalktıkça yük artar.
++ Kilitlenme gücünü ve hızı geliştirir.
+! Zincirlerin eşit asıldığını kontrol et.
+
+#257 board press
+n Board Press (Tahta ile Bench)
+m tr cm / fd
+c Göğüs
+- Göğsüne 5–10 cm kalınlığında bir tahta koy (ya da biri tutsun).
+- Barı tahtaya değene kadar indir.
+- Durup yukarı it.
++ Hareketin üst yarısını aşırı yükleyip arka kolu güçlendirir.
+! Tahtayı sabit tut; yardımcıyla çalış.
+
+#258 body tricep press
+n Vücut Ağırlığıyla Triceps Press (Barda)
+m tr / au
+- Bel hizasındaki sabit bir barı omuz genişliğinde kavra, ayaklarını geriye al; vücut düz.
+- Dirsekleri bükerek alnını barın altına doğru indir.
+- Kolları düzleştirerek kalk.
++ Ayaklar geriye gittikçe zorlaşır.
++ Skull crusher'ın vücut ağırlığıyla yapılan halidir.
+! Dirsekler içe baksın; bel çökmesin.
+
+#259 body-up
+n Body-Up
+m tr / au fa
+- Dirsek plank pozisyonunda başla; ön kollar yerde.
+- Ellerinle yere bastırıp iki dirseği aynı anda kaldırarak kollarını düzleştir.
+- Kontrollü şekilde ön kollarına geri in.
++ Dizlerin üstünde yaparsan kolaylaşır.
+! Dirseklere yük biner; ağrı olursa bırak.
+
+#260 cable incline triceps extension
+n Incline Cable Triceps Extension
+- Eğimli sehpayı sırtı alt makaraya dönük koy, yaslan; ipi başının arkasında tut.
+- Dirsekler yukarı bakarken kolları düzleştir.
+- Yavaşça başının arkasına indir.
++ Triceps'in uzun başını esneterek çalıştırır.
+! Dirsekler açılmasın.
+
+#261 cable lying triceps extension
+n Yatarak Cable Triceps Extension
+- Düz sehpayı alt makaranın önüne koy, başın makineye dönük yat; barı tut.
+- Üst kollar dik, barı alnına doğru indir.
+- Kolları düzleştir.
++ Kablo, skull crusher'da altta kaybolan gerilimi korur.
+! Üst kolları oynatma.
+
+#262 cable one arm tricep extension
+n Tek Kol Ters Tutuş Pushdown
+- Üst makaraya tek kulp tak, kulpu avuç yukarı bakacak şekilde tut.
+- Dirsek gövde yanında, kolu aşağı düzleştir.
+- Yavaşça bırak.
++ Ters tutuş triceps'in iç başını vurgular.
+! Omuzla bastırma.
+
+#263 chain handle extension
+n Zincirle Triceps Extension
+- Kulplara zincir bağla, düz sehpaya yat; dirsekler tavana baksın.
+- Üst kollar sabit, kolları düzleştir; zincir kalktıkça yük artar.
+- Yavaşça indir.
++ Kilitlenme gücü için kullanılır.
+! Kulplar serbest; kontrollü çalış.
+
+#264 close-grip dumbbell press *
+n Dar Tutuş Dumbbell Press
+m tr cm / fd
+- Düz sehpaya yat, dambılları birbirine değecek şekilde göğsünün üstünde tut; avuçlar birbirine baksın.
+- Dambılları birbirine bastırarak göğsüne indir.
+- Yukarı it.
++ Dambılları birbirine bastırmak göğsün iç kısmını da çalıştırır.
+! Dirsekler gövdeye yakın.
+
+#265 close-grip ez-bar press
+n Dar Tutuş EZ Bar Press
+m tr / cm fd
+- Düz sehpaya yat, EZ barı dar tutuşla kavra.
+- Dirsekler gövdeye yakın, barı göğsüne indir.
+- Yukarı it.
++ EZ bar bilekleri düz bara göre rahatlatır.
+! Çok dar tutma.
+
+#266 close-grip push-up off dumbbell
+n Dumbbell Üstünde Dar Şınav
+m tr / cm fd au
+- Yere yatay koyduğun bir dambılın üstüne iki elini koy, şınav pozisyonu al.
+- Dirsekler gövdeye yakın, göğsünü dambıla indir.
+- İterek kalk.
++ Dengesiz yüzey sabitleyici kasları çalıştırır.
+! Altıgen dambıl kullan; yuvarlak dambıl kayar.
+
+#267 decline close-grip bench skull crusher
+n Decline Dar Bench + Skull Crusher
+m tr / cl fd
+- Decline sehpada barı dar tutuşla tut.
+- Bir tekrar dar tutuş bench press yap.
+- Sonraki tekrarda barı alnına indirip skull crusher yap; dönüşümlü devam et.
++ İki hareket arka kolu farklı açılardan yorar.
+! Yardımcıyla çalış; bar yüzünün üstündedir.
+
+#268 decline dumbbell triceps extension
+n Decline Dumbbell Triceps Extension
+- Decline sehpaya yat, dambıllar kollar düz yukarıda; avuçlar birbirine baksın.
+- Üst kollar sabit, dambılları başının yanlarına indir.
+- Kolları düzleştir.
++ Decline açı, hareket boyunca gerilimi artırır.
+! Dambılları başına çarpma.
+
+#269 decline ez bar triceps extension
+n Decline EZ Bar Triceps Extension
+- Decline sehpaya yat, EZ barı dar tutuşla kollar düz yukarıda tut.
+- Üst kollar sabit, barı alnına doğru indir.
+- Kolları düzleştir.
++ Uzun başı iyi esnetir.
+! Dirsekler içe baksın.
+
+#270 dip machine *
+n Dips Makinesi
+m tr / cl fd
+- Makineye otur, kulpları yanlardan kavra.
+- Kolları aşağı doğru düzleştirerek kulpları it.
+- Kontrollü yukarı bırak.
++ Dik oturursan arka kol, öne eğilirsen göğüs çalışır.
+! Omuzları kulaklara çekme.
+
+#271 dips triceps version *
+n Dips (Triceps Versiyonu)
+m tr / cl fd
+- Paralel barlarda kollar düz başla; gövde dik, bacaklar aşağıda.
+- Dirsekler gövdeye yakın ve geriye bakarken, üst kollar yere paralel olana kadar in.
+- Kolları düzleştirerek kalk.
++ Gövdeyi dik tutmak yükü arka kola verir.
++ Kolaylaşınca kemerle ağırlık ekle.
+! Çok derine inme; omuz önü zorlanır.
+
+#272 dumbbell floor press
+n Dumbbell Floor Press
+m cm tr / fd
+c Göğüs
+- Yere sırtüstü yat, dizler bükük; dambıllar göğüs yanında.
+- Dambılları yukarı it.
+- Üst kollar yere değene kadar indir, kısa dur ve tekrar it.
++ Yer, hareket aralığını sınırlar; omuz dostudur.
++ Sehpa yokken evde bench press'in yerini tutar.
+! Dirsekleri yere çarpma.
+
+#273 dumbbell one-arm triceps extension *
+n Tek Kol Baş Üstü Triceps Extension
+- Tek elde dambıl, kol başının üstünde düz.
+- Dirsek tavana bakarken dambılı başının arkasına indir.
+- Kolu düzleştir.
++ Boş elinle çalışan kolun dirseğini destekle.
+! Dirsek yana açılmasın.
+
+#274 dumbbell tricep extension pronated grip
+n Yatarak Dumbbell Triceps Extension (Avuçlar Öne)
+- Düz sehpaya yat, dambıllar kollar düz yukarıda; avuçlar ayaklarına baksın.
+- Üst kollar sabit, dambılları başının yanlarına indir.
+- Kolları düzleştir.
++ Tutuş açısı triceps'in dış başını vurgular.
+! Hafif ağırlıkla başla.
+
+#275 floor press *
+n Floor Press (Barbell)
+m tr cm / fd
+c Göğüs
+- Barı alçak kancalara koy, altına yere uzan; dizler bükük.
+- Barı göğsüne doğru indir; üst kolların yere değince dur.
+- Yukarı it.
++ Bench'in üst yarısını ve arka kolu güçlendirir.
+! Dirsekleri yere çarpıp sektirme.
+
+#276 floor press chains
+n Zincirli Floor Press
+m tr cm / fd
+c Göğüs
+- Zincirleri barın uçlarına as, yere uzan.
+- Barı üst kollar yere değene kadar indir.
+- Yukarı it; zincir kalktıkça yük artar.
++ Kilitlenme için özel bir güç çalışmasıdır.
+! Yardımcıyla çalış.
+
+#277 incline barbell triceps extension
+n Incline Barbell Triceps Extension
+- Eğimli sehpaya yat, barı dar tutuşla başının üstünde düz tut.
+- Dirsekler ileri bakarken barı başının arkasına indir.
+- Kolları düzleştir.
++ Uzun başı esnemiş pozisyonda çalıştırır.
+! Dirsekler açılmasın.
+
+#278 incline push-up close-grip
+n Incline Dar Şınav
+m tr / cl fd
+- Ellerini yüksek bir yüzeye omuz genişliğinden dar koy.
+- Dirsekler gövdeye yakın, göğsünü yüzeye indir.
+- İterek kalk.
++ Dar şınavın kolay versiyonudur.
+! Bilekler zorlanırsa elleri biraz aç.
+
+#279 jm press
+n JM Press
+m tr / cm fd
+- Düz sehpaya yat, barı dar tutuşla kavra.
+- Barı indirirken dirsekleri öne doğru bük; bar çene-boyun hizasına, ön kollar üst kollara yaklaşacak şekilde insin.
+- Aynı yoldan yukarı it.
++ Dar bench ile skull crusher karışımıdır; ağır triceps çalışması sağlar.
+! Dirseklere yük biner; hafif başla.
+
+#280 kettlebell overhead triceps extension
+n Kettlebell Baş Üstü Triceps Extension
+m tr / fd au
+- Kettlebell'i iki elle boynuzlarından tut, başının üstüne kaldır.
+- Dirsekler öne bakarken başının arkasına indir.
+- Kolları düzleştir.
++ Karnı sık, bel kavislenmesin.
+! Kettlebell'i ensene çarpma.
+
+#281 kneeling cable triceps extension
+n Diz Üstü Cable Triceps Extension
+- Üst makaranın önüne sehpa koy, sırtın makineye dönük diz çök; dirseklerini sehpaya daya.
+- İpi başının arkasında tut.
+- Kolları öne doğru düzleştir, yavaşça geri bük.
++ Dirsekler sabit olduğu için tam izolasyon sağlar.
+! Belini çukurlaştırma.
+
+#282 low cable triceps extension
+n Alt Makaradan Triceps Extension
+- Alt makaraya ip tak, sırtını makineye dön; ipi başının arkasında tut.
+- Dirsekler yukarı bakarken kolları başının üstünde düzleştir.
+- Yavaşça indir.
++ Bir ayak önde dur.
+! Belini geriye bükme.
+
+#283 lying close-grip barbell triceps extension behind head
+n Baş Arkasına Yatarak Triceps Extension
+- Düz sehpaya yat, barı dar tutuşla kollar düz yukarıda tut.
+- Barı alnın yerine başının arkasına doğru indir; üst kollar hafif geriye yatsın.
+- Kolları düzleştir.
++ Başın arkasına inmek uzun başı daha çok esnetir ve dirseğe daha naziktir.
+! Barı kontrol et.
+
+#284 lying close-grip barbell triceps press to chin
+n Yatarak Dar Tutuş Çeneye Press
+- Düz sehpaya yat, EZ barı dar tutuşla tut.
+- Dirsekleri bükerek barı çenene doğru indir.
+- Yukarı it.
++ Skull crusher'dan ağır çalışılabilir.
+! Dirsekleri yana açma.
+
+#285 lying dumbbell tricep extension *
+n Yatarak Dumbbell Triceps Extension
+- Düz sehpaya yat, dambıllar kollar düz yukarıda; avuçlar birbirine baksın.
+- Üst kollar sabit, dambılları kulaklarının yanına indir.
+- Kolları düzleştir.
++ Nötr tutuş dirsekleri bara göre rahatlatır.
+! Dambılları yüzüne yaklaştırma.
+
+#286 lying triceps press
+n Yatarak Triceps Press (EZ Bar)
+- Düz sehpaya yat, EZ barı dar tutuşla kollar düz yukarıda tut.
+- Üst kollar sabit, barı alnına doğru indir.
+- Kolları düzleştir.
++ Üst kolları hafif geriye yatırmak gerilimi korur.
+! Ağır yükte yardımcı kullan.
+
+#287 machine triceps extension
+n Triceps Extension Makinesi
+- Koltuğu ayarla, üst kollarını pede yasla; kulpları kavra.
+- Kolları aşağı doğru düzleştir.
+- Yavaşça geri bük.
++ Sabit yol dirseği korur; tükenme setlerine uygundur.
+! Omuzlarla bastırma.
+
+#288 one arm floor press
+n Tek Kol Floor Press (Barbell)
+m tr cm / fd ob
+c Göğüs
+- Yere uzan, barı tek elle ortasından kavrayıp yukarı kilitle.
+- Üst kol yere değene kadar indir.
+- Yukarı it.
++ Uzun barı dengelemek omuz ve gövdeyi çok çalıştırır.
+! Hafif başla; bar devrilmeye meyillidir.
+
+#289 one arm pronated dumbbell triceps extension
+n Yatarak Tek Kol Triceps Extension (Avuç Aşağı)
+- Düz sehpaya yat, tek elde dambıl kol düz yukarıda; avuç ayaklarına baksın.
+- Dirseği bükerek dambılı karşı omzuna doğru indir.
+- Kolu düzleştir.
++ Çapraz iniş triceps'in dış başını vurgular.
+! Boş elle üst kolu sabitle.
+
+#290 one arm supinated dumbbell triceps extension
+n Yatarak Tek Kol Triceps Extension (Avuç Yukarı)
+- Düz sehpaya yat, tek elde dambıl kol düz yukarıda; avuç yüzüne baksın.
+- Dirseği bükerek dambılı aynı taraftaki omzuna indir.
+- Kolu düzleştir.
++ Farklı tutuş farklı bir uyarı verir.
+! Hafif ağırlık.
+
+#291 parallel bar dip *
+n Paralel Bar Dips
+m tr cl / fd
+- Paralel barlarda kollar düz başla.
+- Dirsekleri bükerek üst kollar yere paralel olana kadar in.
+- İterek kalk.
++ Dik gövde arka kolu, öne eğik gövde göğsü çalıştırır.
+! Omuz ağrısı olursa derinliği azalt.
+
+#292 pin presses
+n Pin Press
+m tr cm / fd
+c Göğüs
+- Kafeste güvenlik pimlerini göğsünün birkaç santim üstüne ayarla; barı pimlere koy.
+- Sehpaya yat, barı ölü noktadan yukarı it.
+- Pimlere indir, tamamen durup tekrar it.
++ Takıldığın noktayı güçlendirir.
+! Pimlerin sağlam olduğundan emin ol.
+
+#293 push-ups close triceps position *
+n Dar Şınav (Diamond)
+m tr / cm fd
+- Ellerini göğsünün altında, başparmak ve işaret parmakları birbirine değecek şekilde koy.
+- Dirsekler gövdeye yakın, göğsünü ellerine indir.
+- İterek kalk.
++ Vücut ağırlığıyla en etkili arka kol hareketidir.
++ Zor gelirse dizlerin üstünde yap.
+! Bilek ağrısı olursa elleri biraz ayır.
+
+#294 reverse band bench press
+n Ters Bantlı Bench Press
+m cm tr / fd
+c Göğüs
+- Bantları kafesin üstüne as ve barın uçlarına geçir.
+- Bar aşağıdayken bantlar yükü hafifletir; göğsüne indir.
+- Yukarı it; bantın yardımı azaldıkça yük artar.
++ Normalden ağır yükle kilitlenmeyi çalıştırır.
+! Bantların eşit yükseklikte olduğunu kontrol et.
+
+#295 reverse grip triceps pushdown
+n Ters Tutuş Triceps Pushdown
+- Üst makarada düz barı avuçlar yukarı kavra.
+- Dirsekler gövde yanında, barı aşağı it.
+- Yavaşça bırak.
++ Triceps'in iç başını vurgular.
+! Bilekleri düz tut.
+
+#296 reverse triceps bench press
+n Ters Tutuş Bench Press
+m tr cu / fd
+- Düz sehpaya yat, barı omuz genişliğinde ters tutuşla (avuçlar yüzüne) kavra.
+- Barı göğsünün alt kısmına indir; dirsekler gövdeye yakın.
+- Yukarı it.
++ Üst göğüs ve arka kolu birlikte çalıştırır.
+! Bar bileklerden kayabilir; yardımcı şart.
+
+#297 ring dips
+n Halka Dips
+m tr cl / fd au
+l 3
+- Halkalarda kollar düz, halkalar gövdeye yakın destek pozisyonu al.
+- Dirsekleri bükerek in.
+- İterek kalk; tepede halkaları dışa çevir.
++ Önce halkalarda sadece destek bekleyişi çalış.
+! Halkalar oynaktır; omuzlar hazır değilse sakatlar.
+
+#298 seated bent-over one-arm dumbbell triceps extension
+n Oturarak Tek Kol Kickback
+- Sehpanın ucuna otur, öne eğil; tek elde dambıl, üst kol gövdeye paralel.
+- Ön kolu geriye doğru düzleştir.
+- Yavaşça bük.
++ Tepede 1 saniye sık.
+! Üst kol düşmesin.
+
+#299 seated bent-over two-arm dumbbell triceps extension
+n Oturarak Çift Kol Kickback
+- Sehpanın ucuna otur, öne eğil; dambıllar elde, üst kollar gövdeye paralel.
+- İki ön kolu birlikte geriye düzleştir.
+- Yavaşça bük.
++ Hafif ağırlık, tam kasılma.
+! Sallanma.
+
+#300 seated triceps press *
+n Oturarak Baş Üstü Triceps Press
+- Dik sehpaya otur, tek dambılı iki elle başının üstünde tut.
+- Dirsekler öne bakarken dambılı başının arkasına indir.
+- Kolları düzleştir.
++ Sırt desteği ağır çalışmayı kolaylaştırır.
+! Dirsekleri yana açma.
+
+#301 sled overhead triceps extension
+n Kızakla Baş Üstü Triceps Extension
+- Kızağa bağlı kayışı tut, sırtını kızağa dön; eller başının arkasında.
+- Öne eğilip kolları düzleştirerek kızağı çek.
+- Bir adım at, tekrarla.
++ Yürüyerek yapılan bir triceps çalışmasıdır.
+! Belini bükme.
+
+#302 smith machine close-grip bench press
+n Smith Machine Dar Tutuş Bench Press
+m tr / cm fd
+- Smith barının altına sehpa koy, barı omuz genişliğinde kavra.
+- Dirsekler gövdeye yakın, barı göğsünün alt kısmına indir.
+- Yukarı it.
++ Sabit ray tek başına ağır triceps çalışması sağlar.
+! Durdurucuları ayarla.
+
+#303 speed band overhead triceps
+n Bantla Hızlı Baş Üstü Triceps
+- Bandı yukarıda bir yere bağla, sırtını dön ve öne eğil; eller başının arkasında.
+- Kolları hızlı tempoda düzleştir ve bük.
+- Yüksek tekrar yap.
++ Dirsek sağlığı ve kan pompası için kullanılır (25–50 tekrar).
+! Dirsekler sabit.
+
+#304 standing bent-over one-arm dumbbell triceps extension
+n Ayakta Tek Kol Kickback
+m tr / rd
+- Öne eğil, boş elini dizine daya; üst kol gövdeye paralel.
+- Ön kolu geriye düzleştir.
+- Yavaşça bük.
++ Tepede avucu yukarı çevirmek kasılmayı artırır.
+! Üst kolu sallama.
+
+#305 standing bent-over two-arm dumbbell triceps extension
+n Ayakta Çift Kol Kickback
+- Öne eğil, sırt düz; üst kollar gövdeye paralel.
+- Ön kolları geriye düzleştir.
+- Yavaşça bük.
++ Hafif ağırlık yeter.
+! Belini yuvarlama.
+
+#306 standing low-pulley one-arm triceps extension
+n Alt Makaradan Tek Kol Baş Üstü Extension
+- Alt makaraya tek kulp tak, sırtını dön; kulpu başının arkasında tut.
+- Dirsek tavana bakarken kolu düzleştir.
+- Yavaşça indir.
++ Boş elle dirseği destekle.
+! Gövde yana eğilmesin.
+
+#307 standing one-arm dumbbell triceps extension
+n Ayakta Tek Kol Baş Üstü Triceps Extension
+- Tek elde dambıl, kol başının üstünde.
+- Dambılı başının arkasına indir.
+- Kolu düzleştir.
++ Karnı sık, dik dur.
+! Dirsek kulağa yakın kalsın.
+
+#308 standing overhead barbell triceps extension
+n Ayakta Baş Üstü Barbell Triceps Extension
+m tr / fd
+- Barı dar tutuşla başının üstüne kaldır.
+- Dirsekler öne bakarken barı ensenin arkasına indir.
+- Kolları düzleştir.
++ EZ bar bilekler için daha rahattır.
+! Belini geriye bükme.
+
+#309 standing towel triceps extension
+n Havluyla Triceps Extension (Partnerli)
+- Havluyu iki elle başının arkasında tut; partnerin arkandan uçlarını tutsun.
+- Partnerin direnç gösterirken kollarını başının üstünde düzleştir.
+- Partnerin çekerken yavaşça indir.
++ Ekipmansız arka kol çalışmasıdır.
+! Partner direnci ani değil, akıcı versin.
+
+#310 tate press
+n Tate Press
+m tr / cm fd
+- Düz sehpaya yat, dambıllar kollar düz yukarıda; avuçlar ayaklarına baksın.
+- Dirsekleri yana açarak dambılların iç başlarını göğsüne indir.
+- Dirsekleri düzleştirerek kaldır.
++ Triceps'in dış başını ve kilitlenmeyi güçlendirir.
+! Hafif başla; dirsek için alışılmadık bir açıdır.
+
+#311 triceps overhead extension rope
+n İple Baş Üstü Triceps Extension
+- Üst makaraya ip tak, sırtını dön ve öne eğil; ip başının arkasında.
+- Dirsekler ileri bakarken kolları öne doğru düzleştir.
+- Yavaşça geri bük.
++ Sonunda ipi iki yana ayır.
+! Dirsekler açılmasın.
+
+#312 triceps pushdown v-bar *
+n V-Bar Triceps Pushdown
+- Üst makaraya V bar tak, dirsekler gövde yanında.
+- Barı kollar düzleşene kadar aşağı it.
+- Yavaşça bırak.
++ V bar bilekleri rahatlatır; ağır çalışmaya uygundur.
+! Gövdeyle üstüne yüklenme.
+
+#313 weighted bench dip
+n Ağırlıklı Sehpa Dips
+m tr / cl fd
+- Ellerin arkadaki sehpada, ayakların öndeki sehpada; kucağına plaka koy.
+- Dirsekleri bükerek kalçanı indir.
+- İterek kalk.
++ Plakayı bir yardımcı koyup alsın.
+! Omuz önünü zorlar; derine inme.

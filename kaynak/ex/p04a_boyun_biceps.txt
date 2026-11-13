@@ -1,0 +1,395 @@
+// Boyun (208–212) ve biceps (213–253)
+
+@m ne
+#208 isometric neck front back
+n İzometrik Boyun (Ön ve Arka)
+t s
+- Dik otur ya da dur. Avucunu alnına koy.
+- Başını öne itmeye çalışırken elinle karşı koy; baş hareket etmesin. 5–10 saniye tut.
+- Aynısını ellerin başın arkasındayken geriye iterek yap.
++ Gücünün yarısıyla başla.
++ Masa başında boyun sertliğine iyi gelir.
+! Ani ve tam güçle itme; boyun fıtığı varsa hekime danış.
+
+#209 isometric neck sides
+n İzometrik Boyun (Yanlar)
+t s
+- Avucunu başının yan tarafına, kulağın üstüne koy.
+- Başını o yana eğmeye çalışırken elinle karşı koy; 5–10 saniye tut.
+- Diğer tarafı yap.
++ Omuzlar gevşek ve aşağıda kalsın.
++ Nefesini tutma.
+! Ağrı olursa bırak.
+
+#210 lying face down plate neck resistance
+n Yüzüstü Plakayla Boyun Ekstansiyonu
+m ne / tu
+- Düz sehpaya yüzüstü uzan, başın sehpanın ucundan dışarıda.
+- Hafif bir plakayı başının arkasında tut.
+- Başını aşağı indir, sonra yukarı kaldır.
++ 2,5–5 kg ile başla; yavaş tempo.
++ Plaka ile başın arasına havlu koy.
+! Boynu aşırı geriye kırma.
+
+#211 lying face up plate neck resistance
+n Sırtüstü Plakayla Boyun Fleksiyonu
+- Düz sehpaya sırtüstü uzan, başın sehpanın ucundan dışarıda.
+- Hafif bir plakayı alnında tut (araya havlu koy).
+- Başını geriye indir, sonra çeneni göğsüne doğru kaldır.
++ Çok hafif başla; boyun önü kasları zayıftır.
++ Yavaş ve kontrollü.
+! Baş dönmesi olursa bırak.
+
+#212 seated head harness neck resistance
+n Baş Askısıyla Boyun Ekstansiyonu
+m ne / tu
+- Baş askısını tak, ağırlığı askıya bağla; sehpaya oturup öne eğil, eller dizlerde.
+- Başını aşağı indir.
+- Boyun kaslarıyla başını yukarı ve geriye kaldır.
++ Güreş ve boks gibi sporlar için klasik boyun çalışmasıdır.
++ Hafif ağırlık, 12–20 tekrar.
+! Sarsarak kaldırma.
+
+@m bi / fa
+#213 alternate hammer curl *
+n Dönüşümlü Hammer Curl
+m bi fa
+- Dambıllar yanında, avuçlar birbirine baksın.
+- Bir dambılı omzuna doğru kaldır, indirirken diğerini kaldır.
++ Bilek hareket boyunca nötr kalsın.
++ Brachialis ve ön kolu kalınlaştırır.
+! Dirsekleri öne kaydırma.
+
+#214 alternate incline dumbbell curl
+n Dönüşümlü Incline Dumbbell Curl
+- 45° eğimli sehpaya yaslan, kollar aşağı sarksın.
+- Bir dambılı kıvırarak kaldır, indirirken diğerini kaldır.
++ Dirsekler geride kalsın; biceps esnemiş pozisyondan çalışır.
++ Kaldırırken avucu dışa çevir.
+! Omuzları sehpadan kaldırma.
+
+#215 barbell curls lying against incline
+n Göğüs Destekli Barbell Curl (Eğimli Sehpa)
+- Eğimli sehpaya yüzüstü, göğsünle yaslan; barı alttan tut, kollar aşağı sarksın.
+- Barı omuzlarına doğru kıvır.
+- Yavaşça indir.
++ Gövde sabit kaldığı için hile yapılamaz.
+! Altta dirsekleri sertçe açma.
+
+#216 cable hammer curls rope *
+n İple Cable Hammer Curl
+m bi fa
+- Alt makaraya ip tak, ipi avuçlar birbirine bakacak şekilde tut.
+- Dirsekler gövde yanında, ipi omuzlarına doğru kaldır.
+- Yavaşça indir.
++ Tepede ipin uçlarını hafifçe ayır.
++ Sabit gerilim sağlar.
+! Geriye yaslanma.
+
+#217 cable preacher curl
+n Cable Preacher Curl
+- Preacher sehpasını alt makaranın önüne koy, kolların arkasını pede yasla.
+- Barı omuzlarına doğru kıvır.
+- Kollar neredeyse düzleşene kadar yavaşça bırak.
++ Kablo, tepede de gerilimi korur.
+! Altta ağırlığı bırakıverme.
+
+#218 close-grip ez bar curl
+n Dar Tutuş EZ Bar Curl
+- EZ barı iç kıvrımlardan dar tutuşla kavra.
+- Dirsekler sabit, barı göğsüne kıvır.
+- Yavaşça indir.
++ Dar tutuş biceps'in dış (uzun) başını vurgular.
+! Sallanma.
+
+#219 close-grip ez-bar curl band
+n Bantlı Dar Tutuş EZ Bar Curl
+- Bandın ortasına bas, uçlarını EZ barın iki yanına tak.
+- Barı dar tutuşla göğsüne kıvır; yukarı çıktıkça direnç artar.
+- Yavaşça indir.
++ Tepe sıkışmasını güçlendirir.
+! Bandın ayağının altında sabit olduğundan emin ol.
+
+#220 close-grip standing barbell curl
+n Dar Tutuş Barbell Curl
+- Barı omuz genişliğinden dar, avuçlar yukarı kavra.
+- Dirsekler sabit, barı göğsüne kıvır.
+- Yavaşça indir.
++ Biceps'in dış başını vurgular.
+! Bilek ağrısı olursa EZ bara geç.
+
+#221 cross body hammer curl *
+n Cross Body Hammer Curl
+m bi fa
+- Dambıllar yanında, avuçlar gövdeye baksın.
+- Bir dambılı gövdenin önünden karşı omza doğru kaldır.
+- İndir, diğer kolla tekrarla.
++ Brachialis'i güçlü çalıştırır; kol kalınlığı kazandırır.
+! Gövdeyi döndürme.
+
+#222 drag curl
+n Drag Curl
+m bi / rd fa
+- Barı omuz genişliğinde tut.
+- Dirsekleri geriye çekerek barı gövdene sürterek yukarı, göğsünün altına kadar kaldır.
+- Aynı yoldan indir.
++ Dirsekler geriye gittiği için ön omuz devreden çıkar; biceps'in tepe kısmı çalışır.
+! Omuzları kaldırma.
+
+#223 dumbbell alternate bicep curl *
+n Dönüşümlü Dumbbell Curl
+- Dambıllar yanında, avuçlar gövdeye baksın.
+- Bir dambılı kaldırırken avucu yukarı çevir, omzuna getir.
+- İndirirken diğerini kaldır.
++ Dönüş (supinasyon) biceps'i tam kasar.
++ Tepede 1 saniye sık.
+! Dirsekleri sabit tut, sallanma.
+
+#224 dumbbell prone incline curl
+n Yüzüstü Incline Dumbbell Curl
+- Eğimli sehpaya göğsünle yaslan, kollar aşağı sarksın.
+- Dambılları omuzlarına kıvır.
+- Yavaşça indir.
++ Spider curl ile aynı mantık: tepe sıkışması çok güçlüdür.
+! Dirsekleri geriye çekme.
+
+#225 ez-bar curl *
+n EZ Bar Curl
+- EZ barı dış kıvrımlardan kavra.
+- Dirsekler gövde yanında, barı göğsüne kıvır.
+- Yavaşça indir.
++ Kıvrımlı bar bilekleri düz bara göre rahatlatır.
++ İnişi 2–3 saniyede yap.
+! Belinle sallanma.
+
+#226 flexor incline dumbbell curls
+n Incline Dumbbell Curl (Bilek Geride)
+- 45° eğimli sehpaya yaslan; dambılı sapın dış ucuna yakın tut.
+- Bilekleri hafif geriye bükülü tutarak dambılları kıvır.
+- Yavaşça indir.
++ Bileği geride tutmak ön kolun yardımını azaltır, yükü biceps'e verir.
+! Hafif ağırlık seç.
+
+#227 high cable curls *
+n Yüksek Makara Curl (Çift Biceps Pozu)
+- İki üst makaranın ortasında dur, kulpları tut; kollar yana açık, omuz hizasında.
+- Üst kollar sabit, kulpları kulaklarına doğru kıvır.
+- Yavaşça aç.
++ Çift biceps pozundaki gibi tepe kasılması verir.
+! Dirsekleri düşürme.
+
+#228 incline hammer curls
+n Incline Hammer Curl
+m bi fa
+- Eğimli sehpaya yaslan, dambıllar aşağıda avuçlar birbirine baksın.
+- Dirsekler geride, dambılları omuzlarına kaldır.
+- Yavaşça indir.
++ Esnemiş pozisyonda brachialis ve biceps çalışır.
+! Omuzlar öne gelmesin.
+
+#229 incline inner biceps curl
+n Incline Inner Biceps Curl
+- Eğimli sehpaya yaslan, dambıllar yanlarda; avuçlar dışa baksın.
+- Dambılları dışa doğru açık bir çizgide, omuzların yanına kıvır.
+- Yavaşça indir.
++ Kolları yana açmak biceps'in iç (kısa) başını vurgular.
+! Omuzda rahatsızlık olursa açıyı daralt.
+
+#230 lying cable curl
+n Yatarak Cable Curl
+- Alt makaranın önüne sırtüstü yat, ayaklar makineye dönük; barı tut.
+- Dirsekler yerde ve gövde yanında, barı omuzlarına kıvır.
+- Yavaşça bırak.
++ Yerde yatmak hileyi tamamen engeller.
+! Dirsekleri yerden kaldırma.
+
+#231 lying close-grip bar curl high pulley
+n Yatarak Yüksek Makara Curl
+- Düz sehpayı üst makaranın altına koy, sırtüstü yat; barı dar tutuşla kollar yukarı uzanmış tut.
+- Üst kollar sabit, barı alnına doğru kıvır.
+- Yavaşça bırak.
++ Tepede biceps'i 1 saniye sık.
+! Dirsekleri yana açma.
+
+#232 lying high bench barbell curl
+n Yüksek Sehpada Yüzüstü Barbell Curl
+- Yüksek, düz bir sehpaya yüzüstü uzan; barı alttan tut, kollar aşağı sarksın.
+- Barı yukarı kıvır.
+- Yavaşça indir.
++ Gövde tamamen devre dışıdır.
+! Sehpa dengeli olmalı.
+
+#233 lying supine dumbbell curl
+n Sırtüstü Yatarak Dumbbell Curl
+- Düz sehpaya sırtüstü yat, kollar yanlardan aşağı sarksın.
+- Dambılları omuzlarına kıvır.
+- Yavaşça indir.
++ Biceps çok esnemiş pozisyondan başlar; hafif ağırlık kullan.
+! Omuz önünde ağrı olursa eğimli sehpaya geç.
+
+#234 machine bicep curl
+n Biceps Curl Makinesi
+- Koltuğu, dirseklerin makinenin dönme noktasıyla aynı hizada olacak şekilde ayarla.
+- Kulpları omuzlarına kıvır.
+- Yavaşça indir.
++ Sabit yol yeni başlayanlar ve tükenme setleri için uygundur.
+! Altta kolları sertçe kilitleme.
+
+#235 machine preacher curls *
+n Preacher Curl Makinesi
+- Kolların arkasını pede yasla, kulpları kavra.
+- Kulpları omuzlarına kıvır.
+- Kollar neredeyse düzleşene kadar yavaşça indir.
++ Drop set için çok pratik.
+! Kalçanı koltuktan kaldırma.
+
+#236 one arm dumbbell preacher curl
+n Tek Kol Dumbbell Preacher Curl
+- Preacher sehpasına tek kolunun arkasını yasla.
+- Dambılı omzuna kıvır.
+- Yavaşça indir.
++ Boş elinle çalışan kolu sabitle.
+! Altta dambılı bırakıverme; dirsek zorlanır.
+
+#237 overhead cable curl
+n Baş Üstü Cable Curl
+- İki üst makaranın ortasında dur, kulpları tut; kollar omuz hizasında yana açık.
+- Kulpları başının yanlarına doğru kıvır.
+- Yavaşça aç.
++ Tek kol da yapılabilir.
+! Üst kollar yere paralel kalsın.
+
+#238 preacher hammer dumbbell curl
+n Preacher Hammer Curl
+m bi fa
+- Preacher sehpasında dambılları avuçlar birbirine bakacak şekilde tut.
+- Dambılları omuzlarına kaldır.
+- Yavaşça indir.
++ Brachialis'i izole eder.
+! Altta kilitleme.
+
+#239 reverse barbell preacher curls
+n Ters Tutuş Preacher Curl
+m fa bi
+- Preacher sehpasında EZ barı üstten (avuçlar aşağı) kavra.
+- Barı yukarı kıvır.
+- Yavaşça indir.
++ Ön kolun üst kısmını (brachioradialis) çalıştırır.
+! Hafif ağırlık; bilekler düz.
+
+#240 reverse cable curl
+n Ters Tutuş Cable Curl
+m fa bi
+- Alt makaraya düz bar tak, barı üstten kavra.
+- Dirsekler sabit, barı yukarı kıvır.
+- Yavaşça indir.
++ Ön kol ve brachialis için sürekli gerilim.
+! Bilekleri bükme.
+
+#241 reverse plate curls
+n Plakayla Ters Curl
+m fa bi
+- Bir plakayı üstten, saat 11 ve 1 hizasından tut; kollar aşağıda.
+- Dirsekler sabit, plakayı yukarı kıvır.
+- Yavaşça indir.
++ Kavrama ve ön kol gücü geliştirir.
+! Plakayı ayağına düşürmemek için sıkı tut.
+
+#242 seated close-grip concentration barbell curl
+n Oturarak Barbell Concentration Curl
+- Sehpanın ucuna otur, öne eğil; barı dar tutuşla tut, dirseklerini iç uyluklarına daya.
+- Barı omuzlarına kıvır.
+- Yavaşça indir.
++ Dirsekler sabit olduğu için tam izolasyon sağlar.
+! Sırtı fazla yuvarlama.
+
+#243 seated dumbbell curl
+n Oturarak Dumbbell Curl
+- Dik sehpaya otur, dambıllar yanında.
+- İkisini birlikte kıvırarak omuzlarına kaldır; kaldırırken avuçları yukarı çevir.
+- Yavaşça indir.
++ Oturmak sallanmayı azaltır.
+! Sırtını sehpaya yasla.
+
+#244 seated dumbbell inner biceps curl
+n Oturarak Inner Biceps Curl
+- Otur, dambıllar yanında; avuçlar öne, dirsekler gövdede.
+- Dambılları dışa doğru açık bir çizgide omuzların yanına kıvır.
+- Yavaşça indir.
++ Biceps'in iç başını vurgular.
+! Omuzları öne yuvarlama.
+
+#245 standing concentration curl
+n Ayakta Concentration Curl
+- Öne eğil, tek elde dambıl aşağı sarksın; boş elini dizine daya.
+- Üst kol dik ve sabit, dambılı omzuna kıvır.
+- Yavaşça indir.
++ Tepede serçe parmağı yukarı çevir.
+! Kolu sallama.
+
+#246 standing dumbbell reverse curl
+n Dumbbell Ters Curl
+m fa bi
+- Dambılları üstten (avuçlar aşağı) tut.
+- Dirsekler sabit, dambılları yukarı kıvır.
+- Yavaşça indir.
++ Ön kolun üst kısmını geliştirir.
+! Bilekleri düz tut.
+
+#247 standing inner-biceps curl
+n Ayakta Inner Biceps Curl
+- Dambıllar yanında, avuçlar öne.
+- Dambılları dışa doğru açarak omuzların yanına kıvır.
+- Yavaşça indir.
++ Ön kollar omuzlarla aynı hizada kalsın.
+! Sallanma.
+
+#248 standing one-arm cable curl
+n Tek Kol Cable Curl
+- Alt makaraya tek kulp tak, tek elle tut.
+- Dirsek gövde yanında, kulpu omzuna kıvır.
+- Yavaşça indir.
++ Tek kol çalışmak iki kol arasındaki farkı düzeltir.
+! Gövdeyi döndürme.
+
+#249 standing one-arm dumbbell curl over incline bench
+n Eğimli Sehpa Üstünde Tek Kol Curl
+- Eğimli sehpanın arkasında dur, kolunun arkasını sehpanın sırtlığına yasla.
+- Dambılı omzuna kıvır.
+- Yavaşça indir.
++ Preacher sehpası yoksa aynı işi görür.
+! Altta kilitleme.
+
+#250 two-arm dumbbell preacher curl
+n Çift Dumbbell Preacher Curl
+- Preacher sehpasına iki kolunun arkasını yasla, dambıllar elde.
+- Dambılları omuzlarına kıvır.
+- Yavaşça indir.
++ Dambıl, bara göre bileklere serbestlik verir.
+! Altta ağırlığı kontrol et.
+
+#251 wide-grip standing barbell curl
+n Geniş Tutuş Barbell Curl
+- Barı omuzdan geniş kavra.
+- Dirsekler sabit, barı göğsüne kıvır.
+- Yavaşça indir.
++ Geniş tutuş biceps'in iç (kısa) başını vurgular.
+! Bilek rahatsız olursa tutuşu daralt.
+
+#252 zottman curl *
+n Zottman Curl
+m bi fa
+- Dambılları avuçlar yukarı bakacak şekilde kıvırarak kaldır.
+- Tepede bilekleri çevir; avuçlar aşağı baksın.
+- Ters tutuşla yavaşça indir, altta tekrar çevir.
++ Çıkışta biceps, inişte ön kol çalışır.
++ İnişi 3 saniyede yap.
+! Hafif ağırlık seç.
+
+#253 zottman preacher curl
+n Zottman Preacher Curl
+m bi fa
+- Preacher sehpasında dambılları avuçlar yukarı kıvır.
+- Tepede bilekleri çevirip avuçlar aşağı bakarken yavaşça indir.
++ Preacher desteği hileyi tamamen engeller.
+! Altta kilitleme.
