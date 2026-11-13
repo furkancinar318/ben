@@ -1,0 +1,478 @@
+// Arka bacak (392–421), kalça (422–434), baldır (435–445), iç/dış bacak (446–447)
+
+@m ha gl / lb
+#392 alternating hang clean
+n Dönüşümlü Kettlebell Hang Clean
+m gl ha / fd tu lb fa
+- İki kettlebell'i yanlarda, diz hizasında tut.
+- Kalçayla patlayıp birini omzuna al; indirirken diğerini al.
++ Güç kalçadan gelir; kol sadece yönlendirir.
+! Kettlebell ön kola çarpmasın.
+
+#393 ball leg curl *
+n Pilates Topunda Leg Curl
+m ha / gl ca
+- Sırtüstü yat, topuklarını topun üstüne koy; kalçanı kaldır.
+- Topuklarınla topu kalçana doğru çek.
+- Yavaşça geri uzat; kalça havada kalsın.
++ Evde arka bacak çalışmak için çok iyi.
+! Kalça düşmesin.
+
+#394 band good morning
+n Bantla Good Morning
+- Bandın bir ucuna bas, diğer ucunu ensenin arkasına geçir.
+- Sırt düz, kalçayı geriye iterek öne eğil.
+- Doğrul.
++ Isınma ve yüksek tekrar için uygundur.
+! Sırtı yuvarlama.
+
+#395 band good morning pull through
+n Bantla Pull Through
+m gl ha / lb
+- Bandı arkanda alçak bir yere bağla, bacaklarının arasından tut; birkaç adım öne çık.
+- Kalçayı geriye iterek eğil; eller bacak arasından geriye gitsin.
+- Kalçayı sıkarak doğrul.
++ Kalça menteşesini öğretir.
+! Kollarla çekme; iş kalçadadır.
+
+#396 double kettlebell alternating hang clean
+n Çift Kettlebell Dönüşümlü Hang Clean
+m gl ha / fd tu lb fa qu
+- İki kettlebell diz hizasında.
+- Dönüşümlü olarak kalçayla patlayıp birini omza al, diğeri aşağıda kalsın.
++ Ritmik bir kondisyon çalışmasıdır.
+! Sırt düz.
+
+#397 dumbbell clean
+n Dumbbell Clean
+m gl ha / fd tu qu lb fa
+- Dambıllar diz hizasında, kalçadan eğil.
+- Patlayıcı şekilde doğrulup omuz silk; dambılları omuzlarına al, dirsekler önde.
+- Kontrollü indir.
++ Olimpik kaldırışa giriş için iyidir.
+! Kollarla curl yapma.
+
+#398 floor glute-ham raise
+n Yerde Glute-Ham Raise
+m ha / gl ca
+l 3
+- Dizlerinin üstüne çök, ayak bileklerini sabitle.
+- Gövde düz, yavaşça öne in.
+- Ellerinle hafif itip arka bacakla geri kalk.
++ İnişi olabildiğince yavaşlat.
+! Arka bacağa çok yük biner; kramp girebilir.
+
+#399 good morning off pins
+n Pimlerden Good Morning
+- Barı kafeste bel-göğüs hizasındaki pimlere koy, altına eğilerek gir.
+- Ölü noktadan kalçayla doğrul.
+- Pimlere geri indir.
++ Deadlift ve squat'ın zayıf noktasını güçlendirir.
+! Hafif başla; sırt düz.
+
+#400 hanging bar good morning
+n Askılı Bar Good Morning
+- Barı kafeste zincir ya da kayışla bel hizasında as; altına gir.
+- Ölü noktadan doğrul, geri indir.
++ Her tekrar durarak başlar; saf güç çalışmasıdır.
+! İleri seviye; sırtı koru.
+
+#401 kettlebell dead clean
+n Kettlebell Dead Clean
+m gl ha / qu tu lb
+- Kettlebell ayaklarının arasında yerde.
+- Sırt düz, tek harekette kalça ve bacakla kaldırıp omzuna al.
+- Yere geri koy.
++ Her tekrar yerden başlar; sallanma yok.
+! Kettlebell'i gövdene yakın tut.
+
+#402 kettlebell hang clean
+n Kettlebell Hang Clean
+m gl ha / fd tu lb
+- Kettlebell'i diz hizasında tut.
+- Kalçayla patlayıp omzuna al.
+- İndir.
++ Elini kulpun etrafında döndür.
+! Bileğe çarptırma.
+
+#403 kettlebell one-legged deadlift *
+n Tek Bacak Kettlebell Deadlift
+m ha gl / lb
+- Tek ayak üstünde dur, karşı elde kettlebell.
+- Kalçadan öne eğilirken boştaki bacağını geriye uzat; sırt düz.
+- Kettlebell yere yaklaşınca kalçayla doğrul.
++ Denge ve tek bacak arka zincir gücü geliştirir.
+! Kalça yana açılmasın.
+
+#404 lunge pass through
+n Hamlede Kettlebell Geçirme
+m qu gl / ha
+- Kettlebell elde, öne hamle at.
+- Altta kettlebell'i öndeki bacağının altından diğer eline geçir.
+- Kalk, diğer bacakla tekrarla.
++ Koordinasyon ve kondisyon çalışmasıdır.
+! Gövde dik.
+
+#405 natural glute ham raise
+n Natural Glute-Ham Raise
+m ha / gl ca lb
+l 3
+- Dizlerin yumuşak bir zeminde, ayak bileklerin sabit.
+- Gövde düz, öne doğru in.
+- Arka bacakla geri kalk.
++ Nordic curl ile aynı mantık.
+! Az tekrarla başla.
+
+#406 one-arm kettlebell clean
+n Tek Kol Kettlebell Clean
+m gl ha / fd tu lb
+- Kettlebell'i bacaklarının arasından sallandır.
+- Kalçayla patlayıp gövdene yakın çekerek omzuna al.
+- Geri sallandır.
++ Kettlebell yumuşak oturmalı.
+! Sırt düz.
+
+#407 one-arm open palm kettlebell clean
+n Tek Kol Açık Avuç Kettlebell Clean
+m gl ha / fa fd lb qu
+- Kettlebell'i sallandırıp yukarı çek.
+- Havada kulpu bırak ve kettlebell'in gövdesini açık avucunla omuz hizasında yakala.
+- İndirip tekrarla.
++ El-göz koordinasyonu ister.
+! Düşürme riski var; yumuşak zeminde çalış.
+
+#408 open palm kettlebell clean
+n Açık Avuç Kettlebell Clean (Çift El)
+m gl ha / fd lb qu
+l 3
+- Kettlebell'i iki elle sallandır ve yukarı fırlat.
+- Kulpu bırakıp gövdesini iki avucunla göğüs önünde yakala.
+- Bırakıp kulptan yakalayarak indir.
++ Hafif kettlebell ile öğren.
+! Ayaklarını koru.
+
+#409 platform hamstring slides
+n Kaydırarak Hamstring Curl
+m ha / gl
+- Sırtüstü yat, topuklarının altına kaygan bir şey (havlu, disk) koy; kalçanı kaldır.
+- Topukları ileri kaydırarak bacakları uzat.
+- Geri çek.
++ Evde makinesiz leg curl.
+! Kalça düşmesin.
+
+#410 power clean *
+n Power Clean
+m gl ha qu / tu fd lb fa ca
+c Olimpik
+- Bar yerde, deadlift pozisyonu; omuzlar barın biraz önünde.
+- Barı dizlere kadar kontrollü kaldır, sonra kalça-diz-ayak bileğini patlayıcı şekilde aç ve omuz silk.
+- Barın altına hızla girip ön omuzlarında, dizler hafif bükük yakala.
++ Patlayıcı güç için en iyi hareketlerden biridir.
++ Bar gövdeye yakın yükselsin.
+! Teknik bir harekettir; hafif barla öğren.
+
+#411 prone manual hamstring
+n Partnerli Yüzüstü Hamstring
+m ha
+- Yüzüstü yat; partnerin topuklarından tutsun.
+- Partner direnç gösterirken topuklarını kalçana çek.
+- Partner iterken direnerek indir.
++ Makinesiz leg curl.
+! Partner direnci akıcı versin.
+
+#412 reverse band sumo deadlift
+n Ters Bantlı Sumo Deadlift
+m gl ha ad / qu lb tu
+- Bantları kafesin üstüne as, bara geçir.
+- Sumo duruşla kaldır.
++ Kilitlenmeyi aşırı yükler.
+! Sırt düz.
+
+#413 reverse hyperextension *
+n Reverse Hyperextension
+m gl ha / lb
+- Sehpaya ya da makineye yüzüstü uzan; kalçan kenarda, bacaklar aşağıda.
+- Bacaklarını düz şekilde gövde hizasına kaldır.
+- Yavaşça indir.
++ Bele yük bindirmeden kalça ve beli güçlendirir.
+! Sallanarak yapma.
+
+#414 seated band hamstring curl
+n Oturarak Bantla Leg Curl
+m ha
+- Bandı önünde bir yere bağla, ayak bileklerine tak; sehpaya otur.
+- Topuklarını sehpanın altına doğru çek.
+- Yavaşça bırak.
++ Yüksek tekrar için uygundur.
+! Gövde sabit.
+
+#415 smith machine hang power clean
+n Smith Machine Hang Power Clean
+m gl ha / qu fd tu lb
+- Smith barını diz üstünde tut.
+- Kalçayla patlayıp barı omuzlarına al.
++ Ray, bar yolunu sabitler; hareketin ritmini öğretir.
+! Gerçek clean tekniğinin yerini tutmaz.
+
+#416 smith machine stiff-legged deadlift
+n Smith Machine Stiff-Leg Deadlift
+- Smith barını uyluk önünde tut, dizler hafif bükük.
+- Kalçayı geriye iterek barı kaval kemiğine indir.
+- Kalçayla doğrul.
++ Dengeyle uğraşmadan arka bacağa odaklanırsın.
+! Sırtı yuvarlama.
+
+#417 snatch pull
+n Snatch Pull
+m gl ha / qu tu lb ca
+c Olimpik
+- Barı çok geniş (snatch) tutuşla kavra.
+- Yerden kaldır, kalçayı patlat ve omuz silkerek parmak uçlarına yüksel.
+- Kolları bükmeden barı indir.
++ Koparmanın çekiş kısmını güçlendirir.
+! Sırt düz, bar yakın.
+
+#418 standing leg curl
+n Ayakta Leg Curl
+m ha
+- Makinede tek bacağını pedin önüne koy.
+- Topuğunu kalçana çek.
+- Yavaşça indir.
++ Tek bacak çalışıldığı için odak yüksektir.
+! Kalçayı geriye çıkarma.
+
+#419 stiff-legged barbell deadlift *
+n Stiff-Leg Deadlift (Barbell)
+- Barı uyluk önünde tut, dizler hafif bükük ve sabit.
+- Kalçayı geriye iterek barı ayaklarının üstüne doğru indir.
+- Arka bacak ve kalçayla doğrul.
++ Arka bacakta güçlü esneme hissedersin.
+! Sırt düz; esnekliğin bittiği yerde dur.
+
+#420 sumo deadlift bands
+n Bantlı Sumo Deadlift
+m gl ha ad / qu lb tu
+- Bantları bara ve yere bağla.
+- Sumo duruşla hızlanarak kaldır.
++ Kilitlenme hızını geliştirir.
+! Bantları kontrol et.
+
+#421 sumo deadlift chains
+n Zincirli Sumo Deadlift
+m gl ha ad / qu lb tu
+- Zincirleri bara as.
+- Sumo duruşla kaldır; zincir kalktıkça yük artar.
++ Üst kısmı güçlendirir.
+! Sırt düz.
+
+@m gl / ha
+#422 butt lift bridge *
+n Kalça Köprüsü (Glute Bridge)
+- Sırtüstü yat, dizler bükük, ayaklar yerde.
+- Topuklardan iterek kalçanı kaldır; diz-kalça-omuz düz olsun.
+- Tepede sık, yavaşça indir.
++ Kalçayı aktive etmek için en temel harekettir.
+! Belinden değil kalçandan kaldır.
+
+#423 downward facing balance
+n Pilates Topunda Yüzüstü Denge
+m gl / au lb
+- Topun üstüne karnınla uzan, eller ve ayak uçları yerde.
+- Karşı kol ve bacağı aynı anda kaldır.
+- İndir, taraf değiştir.
++ Denge ve bel-kalça kontrolü çalıştırır.
+! Yavaş hareket et.
+
+#424 flutter kicks *
+n Flutter Kick (Makas Tekme)
+m al / qu gl
+c Karın
+- Sırtüstü yat, eller kalçanın altında; bacakları yerden biraz kaldır.
+- Bacakları küçük, hızlı hareketlerle dönüşümlü yukarı-aşağı çırp.
++ Belini yere bastır.
+! Bel kalkıyorsa bacakları daha yukarıda tut.
+
+#425 glute kickback *
+n Glute Kickback (Eşek Tekmesi)
+- Dört ayak üstünde dur.
+- Dizin bükük halde bir bacağını topuk tavana gidecek şekilde kaldır.
+- Yavaşça indir.
++ Tepede kalçayı sık.
+! Belini çukurlaştırma.
+
+#426 hip extension bands
+n Bantla Kalça Ekstansiyonu
+- Bandı alçak bir yere bağla, ayak bileğine tak; yüzün bağlantıya dönük.
+- Bacağını düz şekilde geriye it.
+- Yavaşça geri getir.
++ Gövde dik; bir yere tutun.
+! Belden geriye yatma.
+
+#427 hip lift band
+n Bantlı Hip Lift
+- Sırtüstü yat; bandı kalçanın üstünden geçirip iki yanda sabitle.
+- Kalçanı banta karşı kaldır.
+- Yavaşça indir.
++ Tepede direnç en yüksektir.
+! Bel aşırı bükülmesin.
+
+#428 kneeling squat
+n Diz Üstü Squat
+m gl / ha lb
+- Kafeste dizlerinin üstünde dur, barı sırtına al.
+- Kalçanı topuklarına doğru indir.
+- Kalçayı ileri iterek doğrul.
++ Kalça itişini güçlendirir.
+! Dizlerin altına kalın minder koy.
+
+#429 leg lift
+n Ayakta Geriye Bacak Kaldırma
+- Bir yere tutun, dik dur.
+- Bir bacağını düz şekilde geriye kaldır.
+- Yavaşça indir.
++ Basit bir kalça aktivasyonu.
+! Gövdeyi öne eğme.
+
+#430 one-legged cable kickback *
+n Cable Kickback
+- Alt makaraya bilek bandı tak, ayak bileğine bağla; makineye dönük, hafif öne eğil.
+- Bacağını geriye ve yukarı it.
+- Yavaşça geri getir.
++ Tepede kalçayı 1 saniye sık.
+! Beli kavislendirerek yükseltme.
+
+#431 physioball hip bridge
+n Pilates Topunda Kalça Köprüsü
+m gl / ha au
+- Üst sırtını topa yasla, ayaklar yerde, dizler 90°.
+- Kalçanı indir, sonra yukarı it.
++ Dengesiz zemin gövdeyi de çalıştırır.
+! Top kaymasın.
+
+#432 pull through *
+n Cable Pull Through
+m gl ha / lb
+- Alt makaraya ip tak, sırtını dön ve ipi bacaklarının arasından tut; birkaç adım öne çık.
+- Kalçayı geriye iterek eğil.
+- Kalçayı sıkarak doğrul.
++ Kalça menteşesini bele yük bindirmeden öğretir.
+! Kollar gevşek; çeken kalçadır.
+
+#433 single leg glute bridge *
+n Tek Bacak Kalça Köprüsü
+- Sırtüstü yat, bir ayak yerde, diğer bacak havada.
+- Yerdeki topuktan iterek kalçanı kaldır.
+- Yavaşça indir.
++ Kalça iki yanda aynı hizada kalsın.
+! Arka bacağa kramp girerse ayağı kalçaya yaklaştır.
+
+#434 step-up knee raise
+n Dizi Çekerek Step-Up
+m gl qu / ha
+- Platforma bir ayağını bas, üstüne çık.
+- Diğer dizini kalça hizasına çek.
+- Kontrollü in.
++ Denge ve kalça kontrolü geliştirir.
+! Platform sabit olmalı.
+
+@m ca
+#435 balance board
+n Denge Tahtası
+t s
+- Denge tahtasının üstünde dur, dizler hafif bükük.
+- Tahtanın kenarları yere değmeden dengede kal.
++ Ayak bileği sağlamlığını geliştirir.
+! Yakınında tutunacak bir yer olsun.
+
+#436 barbell seated calf raise
+n Oturarak Barbell Calf Raise
+- Otur, parmak uçların bir plakanın üstünde; barı dizlerinin üstüne koy (ped kullan).
+- Topuklarını kaldır.
+- Altta esneterek indir.
++ Soleus kasını çalıştırır.
+! Barı elinle dengede tut.
+
+#437 calf press
+n Calf Press (Makine)
+- Makinede parmak uçlarını platformun kenarına koy.
+- Platformu parmak uçlarınla it.
+- Topuklar aşağı esneyene kadar bırak.
++ Tepede 1 saniye sık.
+! Dizleri kilitleme.
+
+#438 calf raise on a dumbbell
+n Dumbbell Üstünde Calf Raise
+- Yere yatırılmış altıgen bir dambılın sapına parmak uçlarınla bas; bir yere tutun.
+- Topuklarını kaldır, indir.
++ Dengesiz yüzey ayak bileğini de çalıştırır.
+! Dambıl yuvarlanmasın.
+
+#439 calf raises bands
+n Bantla Calf Raise
+- Bandın ortasına parmak uçlarınla bas, uçlarını omuzlarına al.
+- Topuklarını kaldır, indir.
++ Evde yüksek tekrar için uygundur.
+! Bant kaymasın.
+
+#440 dumbbell seated one-leg calf raise
+n Oturarak Tek Bacak Calf Raise
+- Otur, bir ayağının ucu plakanın üstünde; dambılı o dizin üstüne koy.
+- Topuğu kaldır, esneterek indir.
++ İki baldır arasındaki farkı kapatır.
+! Dambılı elinle tut.
+
+#441 rocking standing calf raise
+n Sallanarak Calf Raise
+- Barı sırtına al.
+- Topuklarının üstüne geç (parmak uçları yukarı), sonra parmak uçlarına yüksel.
+- Ritmik şekilde ileri-geri devam et.
++ Baldır ve kaval kasını birlikte çalıştırır.
+! Dengeni kaybetmemek için hafif yük.
+
+#442 smith machine calf raise *
+n Smith Machine Calf Raise
+- Smith barını sırtına al, parmak uçlarını bir basamağa koy.
+- Topuklarını kaldır.
+- Altta esneterek indir.
++ Ray dengeyi sağlar; ağır çalışılabilir.
+! Sektirme.
+
+#443 smith machine reverse calf raises
+n Smith Machine Ters Calf Raise
+- Smith barını sırtına al, topuklarını basamağa koy; parmak uçları boşta.
+- Parmak uçlarını yukarı kaldır.
+- İndir.
++ Kaval kası (tibialis) çalışır.
+! Hafif yük.
+
+#444 standing barbell calf raise
+n Ayakta Barbell Calf Raise
+- Barı sırtına al, parmak uçların basamakta.
+- Topuklarını kaldır, esneterek indir.
++ Tepede 1–2 saniye bekle.
+! Denge için kafes içinde yap.
+
+#445 standing dumbbell calf raise *
+n Ayakta Dumbbell Calf Raise
+- Dambıllar yanında, parmak uçların basamakta.
+- Topuklarını kaldır.
+- Altta esneterek indir.
++ Tek bacak yaparsan vücut ağırlığı bile yeter.
+! Dizler düz ama kilitli değil.
+
+#446 band hip adductions
+n Bantla Kalça Adduksiyonu
+m ad
+- Bandı yanında alçak bir yere bağla, yakın ayak bileğine tak.
+- Bacağını gövdenin önünden karşıya çek.
+- Yavaşça bırak.
++ İç bacağı evde çalıştırır.
+! Bir yere tutun.
+
+#447 monster walk *
+n Monster Walk (Bantla Yan Yürüyüş)
+m gl / qu
+- Direnç bandını dizlerinin üstüne ya da bileklerine tak; hafif çömel.
+- Bant gerginken yana ya da çapraz ileri adımlarla yürü.
++ Kalçanın yan kısmını (gluteus medius) aktive eder; squat öncesi ideal.
+! Dizler içe çökmesin.

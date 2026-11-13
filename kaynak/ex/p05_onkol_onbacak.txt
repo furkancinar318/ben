@@ -1,0 +1,662 @@
+// Ön kol (314–333) ve ön bacak (334–391)
+
+@m fa
+#314 bottoms-up clean hang
+n Bottoms-Up Clean (Kettlebell Ters)
+m fa / bi fd
+- Kettlebell'i bacaklarının arasından sallandır.
+- Omuz hizasına çekerken kulpu sıkıca kavra; kettlebell'in gövdesi yukarı baksın.
+- Ters pozisyonda dengede tut, indir.
++ Kavrama ve bilek dengesini çok çalıştırır.
+! Kettlebell devrilirse yüzünden uzağa bırak.
+
+#315 cable wrist curl
+n Cable Wrist Curl
+- Alt makaraya düz bar tak, sehpaya otur; ön kollarını uyluklarına ya da sehpaya yasla, avuçlar yukarı.
+- Yalnızca bilekleri bükerek barı kaldır.
+- Yavaşça indir.
++ Sabit gerilim ön kolu çabuk yakar.
+! Ön kollar yerinden kalkmasın.
+
+#316 dumbbell lying pronation
+n Yatarak Bilek Pronasyonu
+- Yüzüstü ya da yan uzan; ön kolun sehpada, elin dışarıda. Dambılı bir ucundan (çekiç gibi) tut, avuç yukarı.
+- Bileği çevirerek avucu aşağı döndür.
+- Yavaşça geri çevir.
++ Dirsek sağlığı (tenisçi/golfçü dirseği) için faydalıdır.
+! Çok hafif ağırlık kullan.
+
+#317 dumbbell lying supination
+n Yatarak Bilek Supinasyonu
+- Ön kolun sehpada, elin dışarıda; dambılı bir ucundan tut, avuç aşağı.
+- Bileği çevirerek avucu yukarı döndür.
+- Yavaşça geri çevir.
++ Pronasyonla birlikte yap; ön kolun dönüş kaslarını dengeler.
+! Dirseği sabit tut.
+
+#318 finger curls
+n Parmak Curl
+- Barı uyluk önünde, avuçlar öne bakacak şekilde tut.
+- Parmaklarını açarak barı parmak uçlarına kadar indir.
+- Parmakları kapatıp barı avucuna topla.
++ Kavrama gücünü doğrudan geliştirir.
+! Barı düşürmemek için kontrollü aç.
+
+#319 palms-down dumbbell wrist curl bench
+n Ters Bilek Curl (Dumbbell, Sehpada)
+- Ön kollarını sehpaya yasla, eller dışarıda; dambıllar üstten tutulmuş.
+- Bilekleri yukarı doğru kaldır.
+- Yavaşça indir.
++ Ön kolun üst (ekstansör) tarafını çalıştırır.
+! Hafif ağırlık; bu kaslar küçüktür.
+
+#320 palms-down wrist curl bench
+n Ters Bilek Curl (Barbell, Sehpada)
+- Ön kollarını sehpaya yasla, barı üstten tut; bilekler sehpanın dışında.
+- Bilekleri yukarı kaldır.
+- Yavaşça indir.
++ Bilek ekstansörlerini güçlendirmek dirsek ağrısını önler.
+! Sarsmadan yap.
+
+#321 palms-up dumbbell wrist curl bench
+n Bilek Curl (Dumbbell, Sehpada)
+- Ön kollarını sehpaya yasla, avuçlar yukarı; bilekler dışarıda.
+- Bilekleri bükerek dambılları kaldır.
+- Yavaşça indir.
++ Yüksek tekrar (15–20) iyi çalışır.
+! Ön kollar sehpadan kalkmasın.
+
+#322 plate pinch
+n Plaka Sıkıştırma (Plate Pinch)
+t s
+- İki plakayı düz yüzleri dışa bakacak şekilde birleştir.
+- Başparmak bir yanda, diğer parmaklar öbür yanda, plakaları sıkıştırarak kaldır.
+- Düşene kadar ya da belirlenen süre boyunca tut.
++ Başparmak ve sıkıştırma gücünü geliştirir.
+! Ayaklarını plakaların altından uzak tut.
+
+#323 seated dumbbell palms-down wrist curl
+n Oturarak Ters Bilek Curl (Dumbbell)
+- Otur, ön kollarını uyluklarına yasla; avuçlar aşağı, bilekler dizlerin önünde.
+- Bilekleri yukarı kaldır.
+- Yavaşça indir.
++ Tepede 1 saniye bekle.
+! Hafif dambıl.
+
+#324 seated dumbbell palms-up wrist curl
+n Oturarak Bilek Curl (Dumbbell)
+- Otur, ön kollarını uyluklarına yasla; avuçlar yukarı.
+- Bilekleri bükerek dambılları kaldır.
+- Yavaşça indir.
++ Altta parmakları hafif açmak hareket aralığını artırır.
+! Sektirme.
+
+#325 seated one-arm dumbbell palms-down wrist curl
+n Tek Kol Ters Bilek Curl
+- Otur, tek ön kolunu uyluğuna yasla; avuç aşağı.
+- Bileği yukarı kaldır, yavaşça indir.
++ Boş elle ön kolu sabitle.
+! Hafif ağırlık.
+
+#326 seated one-arm dumbbell palms-up wrist curl
+n Tek Kol Bilek Curl
+- Otur, tek ön kolunu uyluğuna yasla; avuç yukarı.
+- Bileği bükerek dambılı kaldır, yavaşça indir.
++ İki kol arasındaki farkı kapatır.
+! Ön kol kalkmasın.
+
+#327 seated palm-up barbell wrist curl
+n Oturarak Barbell Bilek Curl
+- Otur, ön kollarını uyluklarına yasla; barı avuçlar yukarı tut.
+- Bilekleri bükerek barı kaldır.
+- Yavaşça indir.
++ Klasik ön kol hareketi; 12–20 tekrar.
+! Ağır yükte bilek zorlanır.
+
+#328 seated palms-down barbell wrist curl
+n Oturarak Barbell Ters Bilek Curl
+- Otur, ön kollarını uyluklarına yasla; barı üstten tut.
+- Bilekleri yukarı kaldır.
+- Yavaşça indir.
++ EZ bar bilekleri rahatlatır.
+! Hafif başla.
+
+#329 seated two-arm palms-up low-pulley wrist curl
+n Alt Makarada Bilek Curl
+- Alt makaranın önüne otur, ön kollarını uyluklarına yasla; barı avuçlar yukarı tut.
+- Bilekleri bükerek barı kaldır.
+- Yavaşça indir.
++ Kablo altta da gerilim verir.
+! Dirsekler sabit.
+
+#330 standing olympic plate hand squeeze
+n Plaka Sıkma (Ayakta)
+t s
+- İki elinde birer plakayı kenarından kavra, kollar yanda.
+- Parmaklarınla plakayı açıp kapatarak sık; ya da süreyle tut.
++ Kavrama dayanıklılığı geliştirir.
+! Plakayı ayağına düşürme.
+
+#331 standing palms-up barbell behind the back wrist curl
+n Arkadan Barbell Bilek Curl
+- Barı arkanda, kalçanın altında avuçlar arkaya bakacak şekilde tut.
+- Bilekleri bükerek barı yukarı kıvır.
+- Yavaşça indir.
++ Ayakta yapıldığı için ağır çalışılabilir.
+! Kollar düz kalsın.
+
+#332 wrist roller *
+n Wrist Roller (Bilek Makarası)
+m fa / fd
+- İpine ağırlık bağlı çubuğu kollar önde, omuz hizasında tut.
+- Bilekleri sırayla çevirerek ipi çubuğa sar.
+- Aynı şekilde kontrollü çözerek indir.
++ Ön kol için en yakıcı hareketlerden biridir.
+! Omuzlar yorulursa kolları indir, ara ver.
+
+#333 wrist rotations straight bar
+n Barla Bilek Çevirme
+- Barı üstten tut, kollar aşağıda.
+- Bilekleri öne ve arkaya doğru çevirerek barı döndür.
++ Hafif barla, ısınma olarak da yapılabilir.
+! Ani hareket yapma.
+
+@m qu gl / ha
+#334 barbell full squat *
+n Tam Derinlikte Squat
+m qu gl / ha ad lb
+- Barı üst sırtına al, ayaklar omuz genişliğinde.
+- Kalça diz hizasının altına inene kadar çömel.
+- Topuklardan iterek kalk.
++ Derin squat kalçayı daha çok çalıştırır.
++ Ayak bileği esnekliği yetmiyorsa topukların altına plaka koy.
+! Altta bel yuvarlanıyorsa (butt wink) derinliği azalt.
+
+#335 barbell hack squat
+n Barbell Hack Squat
+m qu / gl ha fa
+- Bar arkanda yerde; çömelip barı baldırlarının arkasından kavra.
+- Göğüs dik, bacaklarla iterek kalk; bar bacaklarının arkasından yükselsin.
+- Kontrollü indir.
++ Topukların altına plaka koymak ön bacağı daha çok çalıştırır.
+! Dizlere yük biner; hafif başla.
+
+#336 barbell lunge
+n Barbell Lunge
+- Barı üst sırtına al.
+- Bir adım öne at, arka diz yere yaklaşana kadar in.
+- Ön topuktan iterek başlangıca dön.
++ Uzun adım kalçayı, kısa adım ön bacağı çalıştırır.
+! Dengeni kaybetmemek için kafes içinde çalış.
+
+#337 barbell side split squat
+n Barbell Yan Lunge
+m qu ad / gl ha
+- Barı üst sırtına al, ayakları geniş aç.
+- Ağırlığını bir bacağa vererek o yana çömel; diğer bacak düz kalsın.
+- İterek ortaya dön, diğer tarafa in.
++ İç bacak ve kalça hareketliliğini geliştirir.
+! Diz ayak ucu yönünde kalsın.
+
+#338 barbell squat to a bench
+n Sehpaya Squat (Barbell)
+- Arkana diz hizasında bir sehpa koy, barı sırtına al.
+- Kalçan sehpaya hafifçe değene kadar çömel.
+- Oturmadan iterek kalk.
++ Derinliği her tekrarda aynı tutmayı öğretir.
+! Sehpaya çökme; sadece dokun.
+
+#339 barbell step ups
+n Barbell Step-Up
+- Barı sırtına al, önüne diz hizasında bir platform koy.
+- Bir ayağını platforma bas ve o bacakla iterek üstüne çık.
+- Kontrollü in; tekrarları bitirip bacak değiştir.
++ Alttaki ayakla zıplayarak yardım etme.
+! Platform sağlam ve kaymaz olmalı.
+
+#340 bodyweight squat *
+n Vücut Ağırlığıyla Squat
+- Ayaklar omuz genişliğinde, kollar önde.
+- Kalçanı geriye ve aşağı göndererek çömel; uyluklar en az yere paralel olsun.
+- Topuklardan iterek kalk.
++ Dizler ayak uçlarıyla aynı yöne baksın, göğüs dik.
++ Isınma ve teknik öğrenmek için temel harekettir.
+! Topuklar yerden kalkmasın.
+
+#341 bodyweight walking lunge
+n Yürüyerek Lunge (Vücut Ağırlığı)
+- Bir adım öne at, arka diz yere yaklaşana kadar in.
+- Arka ayağı öne getirerek diğer bacakla adım at.
+- Yürüyerek devam et.
++ Gövde dik, adımlar uzun.
+! Diz içe çökmesin.
+
+#342 box squat
+n Box Squat
+m gl qu / ha lb ad
+- Arkana uyluk paralel olacak yükseklikte bir kutu koy; barı sırtına al, ayaklar geniş.
+- Kalçanı geriye göndererek kutuya otur; kaval kemikleri dik kalsın.
+- Kısa dur, kalçayla patlayarak kalk.
++ Kalça ve arka zinciri öne çıkarır; durarak kalkmak patlayıcı güç geliştirir.
+! Kutuya düşme; kontrollü otur.
+
+#343 box squat bands
+n Bantlı Box Squat
+m gl qu / ha lb ad
+- Bantları bara ve kafesin altına bağla.
+- Kutuya kontrollü otur.
+- Banta karşı hızlanarak kalk.
++ Yukarı çıktıkça direnç artar; hız çalışmasıdır.
+! Bantlar eşit gergin olmalı.
+
+#344 box squat chains
+n Zincirli Box Squat
+m gl qu / ha lb ad
+- Zincirleri barın uçlarına as.
+- Kutuya otur; zincir yere yığıldıkça yük hafifler.
+- Kalk; zincir kalktıkça yük artar.
++ Kilitlenme gücünü geliştirir.
+! Zincir uzunlukları eşit olsun.
+
+#345 cable deadlifts
+n Cable Deadlift
+m gl ha qu / lb fa
+- İki alt makaranın ortasında alçak bir platformda dur, kulpları kavra.
+- Sırt düz, bacak ve kalçayla doğrul.
+- Kontrollü çömel.
++ Yeni başlayanlar için deadlift kalıbını öğretir.
+! Sırtı yuvarlama.
+
+#346 cable hip adduction
+n Cable Kalça Adduksiyonu
+m ad
+- Alt makaraya bilek bandı tak, makineye yakın bileğine bağla; yan dur.
+- Bacağını gövdenin önünden karşı tarafa doğru çek.
+- Yavaşça geri bırak.
++ İç bacağı ayakta izole eder.
+! Gövdeyi yana yatırma; bir yere tutun.
+
+#347 chair squat
+n Chair Squat (Smith'te)
+- Smith barını sırtına al, ayaklarını barın epey önüne koy.
+- Sandalyeye oturur gibi, sırtın dik inerek çömel.
+- Topuklardan iterek kalk.
++ Ayaklar önde olduğu için dizlere daha az yük biner.
+! Ayakların kaymadığından emin ol.
+
+#348 dumbbell rear lunge *
+n Dumbbell Reverse Lunge (Geri Hamle)
+- Dambıllar yanında, dik dur.
+- Bir adım geriye at, arka diz yere yaklaşana kadar in.
+- Ön topuktan iterek başlangıca dön.
++ Öne hamleye göre dizlere daha naziktir.
++ Gövdeyi hafif öne eğmek kalçayı daha çok çalıştırır.
+! Ön diz içe çökmesin.
+
+#349 dumbbell squat
+n Dumbbell Squat
+- Dambıllar yanında, ayaklar omuz genişliğinde.
+- Uyluklar yere paralel olana kadar çömel.
+- Topuklardan iterek kalk.
++ Bar olmadan squat yapmanın kolay yoludur.
+! Sırt dik kalsın; dambıllar öne çekmesin.
+
+#350 dumbbell squat to a bench
+n Sehpaya Dumbbell Squat
+- Arkana bir sehpa koy, dambıllar yanında.
+- Kalçan sehpaya değene kadar çömel.
+- Oturmadan kalk.
++ Yeni başlayanlar için derinlik rehberi.
+! Sehpaya çökme.
+
+#351 dumbbell step ups *
+n Dumbbell Step-Up
+- Dambıllar yanında, önünde diz hizasında bir platform.
+- Bir ayağını platforma bas, o bacakla iterek çık.
+- Kontrollü in.
++ İnişi yavaş yapmak kalçayı daha çok çalıştırır.
+! Alttaki ayakla sıçrama.
+
+#352 elevated back lunge
+n Yükseltiden Geri Hamle
+- Barı sırtına al, 10–15 cm'lik bir platformun üstünde dur.
+- Bir ayağını platformdan geriye, yere at ve derin bir hamleye in.
+- Ön bacakla iterek platforma dön.
++ Yükselti, kalça ve ön bacağın hareket aralığını artırır.
+! Dengen için hafif başla.
+
+#353 freehand jump squat
+n Jump Squat (Vücut Ağırlığı)
+- Uyluklar yere paralel olana kadar çömel.
+- Patlayıcı şekilde yukarı sıçra.
+- Parmak uçlarından topuğa yumuşak in ve doğrudan sonraki tekrara geç.
++ Patlayıcı güç ve kondisyon geliştirir.
+! Dizler içe çökerek inme; sert zeminden kaçın.
+
+#354 front barbell squat to a bench
+n Sehpaya Front Squat
+m qu / gl au
+- Barı ön omuzlarına al, arkana sehpa koy.
+- Kalçan sehpaya değene kadar çömel.
+- Dirsekler yukarıda, kalk.
++ Derinliği sabitler.
+! Dirsekler düşmesin.
+
+#355 front squat clean grip *
+n Front Squat (Clean Tutuş)
+m qu / gl au lb
+- Barı ön omuzlarına, parmak uçlarınla (clean tutuş) yerleştir; dirsekler yukarı ve ileri.
+- Gövde dik, çömel.
+- Dirsekleri yukarıda tutarak kalk.
++ Bilek esnekliği clean tutuş için şarttır; yetmiyorsa kayış kullan.
+! Dirsekler düşerse bar öne kayar.
+
+#356 front squats two kettlebells
+n Çift Kettlebell Front Squat
+m qu / gl au
+- İki kettlebell'i omuzlarına al (rack).
+- Gövde dik, çömel.
+- Topuklardan iterek kalk.
++ Karın çok çalışır; dirsekler gövdeye yakın.
+! Kettlebell'ler öne çekerse sırt yuvarlanır.
+
+#357 hip flexion band
+n Bantla Kalça Fleksiyonu
+m qu / al
+- Bandı alçak bir yere bağla, ayak bileğine tak; sırtını dön.
+- Dizini kalça hizasına doğru öne-yukarı kaldır.
+- Yavaşça indir.
++ Kalça fleksörlerini güçlendirir; koşucular için faydalı.
+! Belini kavislendirme.
+
+#358 jefferson squats
+n Jefferson Squat
+m qu gl / ha ad lb tu
+- Barın üstünde bir ayak önde, bir ayak arkada dur (bar bacaklarının arasında).
+- Çömel, barı bir el önden bir el arkadan kavra.
+- Gövde dik, bacaklarla kalk; kontrollü indir.
++ Eski ekol bir harekettir; bele az yük bindirir.
+! Her sette ayak ve el pozisyonunu değiştir.
+
+#359 kettlebell pistol squat
+n Kettlebell Pistol Squat
+m qu gl / ha au
+l 3
+- Kettlebell'i göğsünün önünde tut, bir bacağını öne uzat.
+- Tek bacak üstünde tam çömel.
+- İterek kalk.
++ Öndeki ağırlık dengeyi kolaylaştırır.
+! Diz içe kaçmasın; önce kutuya oturarak çalış.
+
+#360 leverage deadlift
+n Leverage Deadlift (Makine)
+m gl ha qu / lb
+- Makinenin kulplarını kavra, ayaklar omuz genişliğinde.
+- Sırt düz, bacak ve kalçayla doğrul.
+- Kontrollü indir.
++ Sabit yol, deadlift kalıbını güvenle öğretir.
+! Sırtı yuvarlama.
+
+#361 lunge sprint
+n Lunge Sprint (Sıçramalı Hamle)
+- Smith barının ya da bir desteğin altında hamle pozisyonu al.
+- Sıçrayarak havada bacak değiştir.
+- Yumuşak in ve ritmik devam et.
++ Kondisyon ve patlayıcılık çalışmasıdır.
+! Dizlerin yere çarpmasına dikkat.
+
+#362 lying machine squat
+n Yatarak Squat Makinesi
+- Makineye sırtüstü yerleş, omuzlar pedlerin altında; ayaklar platformda.
+- Kilidi aç, dizleri bükerek in.
+- Ayaklarınla iterek kalk.
++ Bele yük bindirmeden ağır çalışılır.
+! Dizleri tepede kilitleme.
+
+#363 narrow stance hack squats
+n Dar Duruş Hack Squat
+m qu / gl
+- Hack squat makinesinde ayakları bitişik ya da dar koy.
+- Kontrollü çömel.
+- İterek kalk.
++ Dar duruş ön bacağın dış kısmını vurgular.
+! Dizlerde ağrı olursa duruşu genişlet.
+
+#364 narrow stance leg press
+n Dar Duruş Leg Press
+m qu / gl
+- Leg press'te ayakları platformun ortasına dar koy.
+- Dizleri göğsüne doğru bük.
+- İterek bacakları düzleştir; dizleri kilitleme.
++ Ön bacağın dış kısmını vurgular.
+! Kalça koltuktan kalkmasın.
+
+#365 narrow stance squats
+n Dar Duruş Squat
+m qu / gl lb
+- Barı sırtına al, ayakları kalça genişliğinden dar koy.
+- Çömel.
+- İterek kalk.
++ Ön bacağa daha çok yük biner; topuk yükseltisi yardımcı olur.
+! Denge zorlaşır; hafif başla.
+
+#366 one-arm overhead kettlebell squats
+n Tek Kol Baş Üstü Kettlebell Squat
+m qu gl / fd au ha
+l 3
+- Kettlebell'i tek kolla başının üstünde kilitle.
+- Gözün ağırlıkta, kol dik kalarak çömel.
+- İterek kalk.
++ Omuz dengesi ve hareketliliği ister.
+! Kol öne düşerse derinliği azalt.
+
+#367 one-arm side deadlift
+n Tek Kol Yan Deadlift (Suitcase)
+m qu gl / ob ha lb tu fa
+- Bar yanında yerde; çömelip barı tek elle ortasından kavra.
+- Gövde yana eğilmeden doğrul.
+- Kontrollü indir.
++ Yan karın gövdeyi dik tutmak için çalışır.
+! Barın dengesini bul; hafif başla.
+
+#368 plie dumbbell squat *
+n Plie (Sumo) Dumbbell Squat
+m qu ad gl / ha
+- Ayakları geniş aç, parmak uçları dışa baksın; bir dambılı iki elle önünde tut.
+- Dizleri dışa iterek çömel.
+- Topuklardan iterek kalk.
++ İç bacak ve kalçayı vurgular.
+! Dizler ayak uçlarıyla aynı yönde.
+
+#369 reverse band box squat
+n Ters Bantlı Box Squat
+m gl qu / ha lb
+- Bantları kafesin üstüne as, barın uçlarına geçir.
+- Kutuya otur; bant altta yükü hafifletir.
+- Kalk.
++ Ağır yüklere alışmak için kullanılır.
+! Bantlar eşit yükseklikte olsun.
+
+#370 reverse band power squat
+n Ters Bantlı Squat
+m qu gl / ha lb
+- Bantları kafesin üstüne as, bara geçir.
+- Normal squat yap; bant altta yardım eder.
++ Üst kısımda aşırı yük çalışması sağlar.
+! Yardımcı ve güvenlik pimleri şart.
+
+#371 single-leg high box squat
+n Tek Bacak Yüksek Kutu Squat
+- Yüksek bir kutunun kenarında tek ayak üstünde dur; diğer bacak boşta.
+- Boştaki topuk yere değene kadar çömel.
+- Kutudaki bacakla iterek kalk.
++ Pistol squat'a hazırlar; diz dengesi geliştirir.
+! Diz içe çökmesin.
+
+#372 single-leg leg extension
+n Tek Bacak Leg Extension
+m qu
+- Makineye otur, tek bacağını pedin arkasına koy.
+- Bacağını düzleştir, tepede sık.
+- Yavaşça indir.
++ İki bacak arasındaki güç farkını kapatır.
+! Ağır yük dizi zorlar.
+
+#373 smith machine leg press
+n Smith Machine ile Leg Press
+- Smith barının altına sırtüstü yat, ayaklarını barın altına yerleştir.
+- Kilidi aç, dizleri göğsüne doğru bük.
+- Ayaklarınla barı yukarı it.
++ Güvenlik durdurucularını mutlaka ayarla.
+! Bar ayaklarından kayarsa üstüne düşer; riskli bir harekettir, leg press makinesi varken tercih etme.
+
+#374 smith machine pistol squat
+n Smith Machine Tek Bacak Squat
+- Smith barını sırtına al, bir bacağını öne uzat.
+- Tek bacakla çömel.
+- İterek kalk.
++ Ray dengeyi sağlar; tek bacak gücü çalışır.
+! Derinliği kademeli artır.
+
+#375 smith machine squat *
+n Smith Machine Squat
+- Barı üst sırtına al, ayakları barın biraz önüne koy.
+- Kilidi aç, uyluklar yere paralel olana kadar çömel.
+- Topuklardan iterek kalk, bitince kilitle.
++ Sabit ray dengeyi kolaylaştırır; tek başına güvenlidir.
++ Ayakları öne aldıkça kalça, geri aldıkça ön bacak çalışır.
+! Dizleri tepede kilitleme.
+
+#376 smith single-leg split squat
+n Smith Machine Split Squat
+- Barı sırtına al, bir ayak önde bir ayak arkada dur.
+- Arka diz yere yaklaşana kadar in.
+- Ön bacakla iterek kalk.
++ Ray sayesinde dengeyle uğraşmadan bacağa odaklanırsın.
+! Ön diz ayak ucunu çok geçmesin.
+
+#377 speed box squat
+n Hız Box Squat
+m gl qu / ha
+- Maksimalinin yaklaşık yarısı kadar yükle kutuya otur.
+- Olabildiğince hızlı kalk.
++ Az tekrar (2–3), çok set; her tekrar patlayıcı olsun.
+! Hız için formu bozma.
+
+#378 speed squats
+n Hız Squat
+- Hafif-orta yükle kontrollü in.
+- Olabildiğince hızlı kalk.
++ Patlayıcı güç çalışmasıdır.
+! Tepede bar omuzlarından sıçramasın.
+
+#379 split squat dumbbells *
+n Dumbbell Split Squat
+- Dambıllar yanında, bir ayak önde bir ayak arkada dur.
+- Arka diz yere yaklaşana kadar dikey olarak in.
+- Ön topuktan iterek kalk.
++ Ayaklar yerinde kalır; hamleden daha kolay dengelenir.
+! Gövde dik, ön diz sabit.
+
+#380 squat jerk
+n Squat Jerk
+m qu fd / gl tr
+c Olimpik
+l 3
+- Bar ön omuzlarda; dizleri büküp patlayıcı şekilde it.
+- Bar yükselirken tam squat pozisyonuna inerek altına gir, kolları kilitle.
+- Squat'tan kalk.
++ Çok yüksek hareketlilik ve denge ister.
+! Antrenör gözetimi olmadan ağır yüklenme.
+
+#381 squat bands
+n Bantlı Squat
+- Bantları bara ve kafesin altına bağla.
+- Çömel, banta karşı hızlanarak kalk.
++ Üst kısımda direnç artar.
+! Bantları kontrol et.
+
+#382 squat chains
+n Zincirli Squat
+- Zincirleri barın uçlarına as.
+- Çömel; zincir yere yığıldıkça yük azalır, kalkarken artar.
++ Kilitlenme ve hız geliştirir.
+! Zincirler eşit olsun.
+
+#383 squat plate movers
+n Squat'ta Plaka Taşıma
+t s
+- Barı sırtına al ve derin squat pozisyonunda bekle.
+- Bu pozisyonda önündeki küçük plakaları bir yandan diğerine taşı.
++ Squat'ın alt pozisyonunda dayanıklılık ve denge geliştirir.
+! Sırt yuvarlanmaya başlarsa kalk.
+
+#384 squats with bands
+n Bantla Squat
+- Bandın ortasına bas, uçlarını omuzlarına al.
+- Çömel.
+- İterek kalk.
++ Evde squat için pratik direnç.
+! Bant ayağının altından kaymasın.
+
+#385 suspended split squat
+n Askıda Bulgarian Split Squat
+m qu gl / ha ad
+- Arka ayağını askı kayışının içine koy.
+- Ön bacakla çömel; arka diz geriye gitsin.
+- İterek kalk.
++ Oynak arka ayak dengeyi ve kalçayı çok çalıştırır.
+! Bir yere tutunarak başla.
+
+#386 trap bar deadlift *
+n Trap Bar Deadlift
+m qu gl ha / lb tu fa
+- Altıgen barın içine gir, kulpları yanlardan kavra.
+- Göğüs dik, sırt düz; bacaklarla yeri iterek kalk.
+- Kontrollü indir.
++ Normal deadlifte göre bele daha az yük biner; öğrenmesi kolaydır.
+! Sırtı yuvarlama.
+
+#387 weighted jump squat
+n Ağırlıklı Jump Squat
+- Hafif bir barı sırtına al (ya da dambıl tut).
+- Yarım çömel ve patlayıcı şekilde sıçra.
+- Yumuşak in.
++ Vücut ağırlığının %20–30'u kadar yük yeterli.
+! İnişte dizlere çok yük biner; hafif tut.
+
+#388 weighted sissy squat
+n Ağırlıklı Sissy Squat
+m qu
+l 3
+- Bir elinle bir yere tutun, diğerinde plakayı göğsünde tut; parmak uçlarına kalk.
+- Dizlerini öne iterken gövdeni geriye yatır; diz-kalça-omuz düz bir çizgi olsun.
+- Ön bacakla iterek doğrul.
++ Ön bacağı çok esneterek izole eder.
+! Dizlere çok yük biner; sorunlu dizlerde yapma.
+
+#389 weighted squat
+n Kemerle Ağırlıklı Squat
+- Ağırlık kemerine plaka tak, iki sehpa ya da kutunun üstünde dur; ağırlık arada sarksın.
+- Derin çömel.
+- İterek kalk.
++ Omurgaya yük bindirmeden bacak çalışır.
+! Kutular sağlam ve sabit olmalı.
+
+#390 wide stance barbell squat
+n Geniş Duruş Squat
+m qu gl ad / ha lb
+- Barı sırtına al, ayakları omuzdan geniş aç; parmak uçları dışa.
+- Dizleri dışa iterek çömel.
+- Kalk.
++ Kalça ve iç bacağı daha çok çalıştırır.
+! Dizler içe kaçmasın.
+
+#391 zercher squats
+n Zercher Squat
+m qu gl / au ha lb bi
+- Barı dirseklerinin iç kıvrımında, karnına yakın tut.
+- Gövde dik, çömel.
+- Kalk.
++ Karın ve üst sırtı çok çalıştırır.
+! Bar dirsek kıvrımını acıtır; havlu ya da ped kullan.

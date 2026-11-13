@@ -16,19 +16,6 @@ t s
 + Önce sırtüstü öğren; sonra dört ayak üstünde, oturarak ve ayakta dene.
 ! Yüksek tansiyon, fıtık ya da hamilelik varsa yapma. Baş dönmesi olursa hemen bırak.
 
-#+deadbug *
-n Dead Bug
-m au al / ob
-c Karın
-e bw
-l 1
-- Sırtüstü yat; kollar tavana uzanmış, kalça ve dizler 90° bükük.
-- Belini yere bastır. Sağ kolunu başının üstüne, sol bacağını ileri doğru yere yaklaştır.
-- Başlangıca dön ve diğer çapraz kol-bacakla tekrarla.
-+ Bel yerden kalkıyorsa bacağı daha az uzat.
-+ Yavaş yap; nefes verirken uzat.
-! Belin kavislenmesine izin verme, hareketin bütün amacı bu.
-
 #+birddog *
 n Bird Dog
 m lb / gl au ob
