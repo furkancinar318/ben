@@ -158,16 +158,18 @@ function readFields(root, fields) {
   return o;
 }
 /* list: dizi, item: mevcut kayıt veya null */
-function editRecord({ title, list, item, fields, required, defaults = {}, after }) {
+function editRecord({ title, list, item, fields, required, defaults = {}, after, afterSave, extra }) {
   const isNew = !item; const cur = item || { ...defaults };
-  const body = fields.map(f => fieldHTML(f, cur[f.k])).join('') + (isNew ? '' : `<button class="btn danger full" id="del" style="margin-top:8px">Sil</button>`);
+  const body = fields.map(f => fieldHTML(f, cur[f.k])).join('') + (!isNew && extra ? extra(item) : '') + (isNew ? '' : `<button class="btn danger full" id="del" style="margin-top:8px">Sil</button>`);
   const s = openSheet({
     title: (isNew ? 'Yeni ' : '') + title, body, left: 'Vazgeç', right: 'Kaydet',
     onRight: sh => {
       const v = readFields(sh, fields);
       if (required && !v[required]) { toast('Lütfen ' + fields.find(f => f.k === required).label.toLowerCase() + ' gir'); return false; }
-      if (isNew) list.unshift({ id: uid(), created: Date.now(), ...defaults, ...v }); else Object.assign(item, v, { updated: Date.now() });
+      let rec;
+      if (isNew) { rec = { id: uid(), created: Date.now(), ...defaults, ...v }; list.unshift(rec); } else { rec = item; Object.assign(item, v, { updated: Date.now() }); }
       save(); after ? after() : render();
+      if (afterSave) setTimeout(() => afterSave(rec, isNew), 320);
     }
   });
   wireFields(s.sh);

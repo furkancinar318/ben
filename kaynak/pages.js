@@ -57,11 +57,14 @@ Pages.habits = () => header('Alışkanlıklar', 'Her gün küçük adımlar', `<
   }).join('') : `<div class="card empty"><div class="e">🔥</div>Su içmek, kitap okumak, erken kalkmak…<br>Takip etmek istediğin ilk alışkanlığı ekle.</div>`);
 
 /* ===== Yapılacaklar ===== */
-const TODO_F = [{ k: 'text', label: 'Görev', ph: 'Ne yapılacak?' }, { k: 'due', label: 'Tarih', type: 'date' }, { k: 'prio', label: 'Öncelik', type: 'select', options: [['0', 'Normal'], ['1', 'Önemli'], ['2', 'Acil']] }, { k: 'note', label: 'Not', type: 'textarea', rows: 3 }];
+const TODO_F = [{ k: 'text', label: 'Görev', ph: 'Ne yapılacak?' }, { k: 'due', label: 'Tarih', type: 'date' }, { k: 'time', label: 'Saat (isteğe bağlı)', type: 'time' }, { k: 'remind', label: 'Ne zaman hatırlatsın?', type: 'select', options: REMIND_T, def: '15' }, { k: 'prio', label: 'Öncelik', type: 'select', options: [['0', 'Normal'], ['1', 'Önemli'], ['2', 'Acil']] }, { k: 'note', label: 'Not', type: 'textarea', rows: 3 }, { k: 'addcal', label: 'Takvime ekle ve bildirim gönder', type: 'toggle', on: 'Evet', off: 'Hayır' }];
+const todoCalAfter = (r, isNew) => { const want = r.addcal; delete r.addcal; save(); if (want && r.due && (isNew || !r.cal || r._chg)) calTodo(r.id); };
+const todoExtra = r => `<button type="button" class="btn ghost full" style="margin-bottom:8px" onclick="closeSheet();setTimeout(()=>calTodo('${r.id}'),300)">📅 ${r.cal ? 'Takvime tekrar ekle' : 'Takvime ekle'}</button>`;
+const TODO_ED = (item, defaults) => ({ title: 'görev', list: S.todos, item, fields: TODO_F, required: 'text', defaults: defaults || { prio: '0', addcal: true }, afterSave: todoCalAfter, extra: todoExtra });
 function todoRow(x) {
   const k = today(); const late = x.due && x.due < k && !x.done;
   const pr = x.prio === '2' ? '<span class="tag" style="background:rgba(255,77,94,.15);color:var(--bad)">Acil</span>' : x.prio === '1' ? '<span class="tag" style="background:rgba(255,176,32,.15);color:#D98E00">Önemli</span>' : '';
-  return `<div class="list-item ${x.done ? 'done' : ''}"><button class="check ${x.done ? 'on' : ''}" onclick="toggleTodo('${x.id}')">${x.done ? '✓' : ''}</button><div class="grow" onclick="editRecord({title:'görev',list:S.todos,item:S.todos.find(t=>t.id==='${x.id}'),fields:TODO_F,required:'text'})" style="cursor:pointer"><div class="t">${esc(x.text)}</div><div class="tiny ${late ? '' : 'muted'}" style="${late ? 'color:var(--bad)' : ''}">${pr}${x.due ? (x.due === k ? 'Bugün' : x.due === addDays(k, 1) ? 'Yarın' : fmtDate(x.due, { day: 'numeric', month: 'short', weekday: 'short' })) : ''}${x.note ? ' · 📝' : ''}</div></div></div>`;
+  return `<div class="list-item ${x.done ? 'done' : ''}"><button class="check ${x.done ? 'on' : ''}" onclick="toggleTodo('${x.id}')">${x.done ? '✓' : ''}</button><div class="grow" onclick="editRecord(TODO_ED(S.todos.find(t=>t.id==='${x.id}')))" style="cursor:pointer"><div class="t">${esc(x.text)}</div><div class="tiny ${late ? '' : 'muted'}" style="${late ? 'color:var(--bad)' : ''}">${pr}${x.due ? (x.due === k ? 'Bugün' : x.due === addDays(k, 1) ? 'Yarın' : fmtDate(x.due, { day: 'numeric', month: 'short', weekday: 'short' })) : ''}${x.time ? ' ' + esc(x.time) : ''}${x.note ? ' · 📝' : ''}</div></div>${x.due && !x.done ? `<button onclick="calTodo('${x.id}')" title="Takvime ekle" style="font-size:18px;opacity:${x.cal ? 1 : .45}">${x.cal ? '🔔' : '📅'}</button>` : ''}</div>`;
 }
 function toggleTodo(id) { const t = S.todos.find(x => x.id === id); t.done = !t.done; t.doneAt = t.done ? Date.now() : null; save(); render(); }
 function quickTodo(inp) {
@@ -80,9 +83,10 @@ Pages.todos = () => {
     ['📥 Tarihsiz', open.filter(x => !x.due)]
   ].filter(g => g[1].length);
   const done = S.todos.filter(x => x.done).sort((a, b) => (b.doneAt || 0) - (a.doneAt || 0));
-  return header('Yapılacaklar', open.length + ' açık görev') + `
+  return header('Yapılacaklar', open.length + ' açık görev', `<button class="icon-btn" title="Tümünü takvime ekle" onclick="calAll('todos')">📅</button>`) + `
+  <div class="tiny muted" style="margin:-8px 2px 10px">📅 = takvime ekle · 🔔 = takvimde, bildirim gelecek</div>
   <div class="card" style="padding:10px"><form onsubmit="event.preventDefault();quickTodo(this.q)" class="row"><input id="qt" name="q" placeholder="Yeni görev ekle…" autocomplete="off"><button class="btn sm" type="submit">Ekle</button></form>
-    <div class="chips" style="margin:10px 0 0">${[['', 'Tarihsiz'], [k, 'Bugün'], [addDays(k, 1), 'Yarın']].map(([v, l]) => `<button class="chip ${(S._todoDue || '') === v ? 'on' : ''}" onclick="S._todoDue='${v}';render()">${l}</button>`).join('')}<button class="chip" onclick="editRecord({title:'görev',list:S.todos,item:null,fields:TODO_F,required:'text',defaults:{prio:'0'}})">Ayrıntılı…</button></div></div>
+    <div class="chips" style="margin:10px 0 0">${[['', 'Tarihsiz'], [k, 'Bugün'], [addDays(k, 1), 'Yarın']].map(([v, l]) => `<button class="chip ${(S._todoDue || '') === v ? 'on' : ''}" onclick="S._todoDue='${v}';render()">${l}</button>`).join('')}<button class="chip" onclick="editRecord(TODO_ED(null))">Ayrıntılı / saatli…</button></div></div>
   ${groups.length ? groups.map(([t, l]) => `<div class="card tight"><h3 style="padding:12px 16px 0">${t}</h3>${l.sort(sortF).map(todoRow).join('')}</div>`).join('') : '<div class="card empty"><div class="e">🎉</div>Hiç açık görevin yok</div>'}
   ${done.length ? `<button class="btn plain full" onclick="showDone=!showDone;render()" style="margin-bottom:12px">${showDone ? 'Tamamlananları gizle' : `Tamamlananlar (${done.length})`}</button>${showDone ? `<div class="card tight">${done.slice(0, 50).map(todoRow).join('')}</div><button class="btn danger full sm" onclick="confirmSheet('Tamamlanan tüm görevler silinecek.',()=>{S.todos=S.todos.filter(x=>!x.done);save();render()})">Tamamlananları temizle</button>` : ''}` : ''}`;
 };
@@ -290,7 +294,8 @@ Pages.movies = () => {
 };
 
 /* ===== Önemli tarihler ===== */
-const DATE_F = [{ k: 'emoji', label: 'Simge', ph: '🎂' }, { k: 'title', label: 'Ne?', ph: 'ör. Annemin doğum günü' }, { k: 'date', label: 'Tarih', type: 'date' }, { k: 'yearly', label: 'Her yıl tekrarlar mı?', type: 'toggle', on: 'Her yıl', off: 'Tek sefer' }, { k: 'note', label: 'Not (hediye fikri vs.)', type: 'textarea', rows: 3 }];
+const DATE_F = [{ k: 'emoji', label: 'Simge', ph: '🎂' }, { k: 'title', label: 'Ne?', ph: 'ör. Annemin doğum günü' }, { k: 'date', label: 'Tarih', type: 'date' }, { k: 'yearly', label: 'Her yıl tekrarlar mı?', type: 'toggle', on: 'Her yıl', off: 'Tek sefer' }, { k: 'remind', label: 'Hatırlatma', type: 'select', options: REMIND_D, def: '1440' }, { k: 'note', label: 'Not (hediye fikri vs.)', type: 'textarea', rows: 3 }, { k: 'addcal', label: 'Takvime ekle ve bildirim gönder', type: 'toggle', on: 'Evet', off: 'Hayır' }];
+const DATE_ED = item => ({ title: 'tarih', list: S.dates, item, fields: DATE_F, required: 'title', defaults: { yearly: true, addcal: true, remind: '1440' }, afterSave: (r, isNew) => { const w = r.addcal; delete r.addcal; save(); if (w && r.date) calDate(r.id); }, extra: r => `<button type="button" class="btn ghost full" style="margin-bottom:8px" onclick="closeSheet();setTimeout(()=>calDate('${r.id}'),300)">📅 ${r.cal ? 'Takvime tekrar ekle' : 'Takvime ekle'}</button>` });
 function nextOcc(d) {
   if (!d.date) return null; const k = today();
   if (!d.yearly) return { date: d.date, left: daysBetween(k, d.date), years: 0 };
@@ -299,8 +304,8 @@ function nextOcc(d) {
 }
 Pages.dates = () => {
   const L = S.dates.map(d => ({ d, n: nextOcc(d) })).sort((a, b) => (a.n?.left ?? 9e9) < 0 ? 1 : (b.n?.left ?? 9e9) < 0 ? -1 : (a.n?.left ?? 9e9) - (b.n?.left ?? 9e9));
-  return header('Önemli tarihler', '', `<button class="icon-btn" onclick="editRecord({title:'tarih',list:S.dates,item:null,fields:DATE_F,required:'title',defaults:{yearly:true}})">＋</button>`) +
-    (L.length ? `<div class="card tight">${L.map(({ d, n }) => `<div class="list-item" style="cursor:pointer" onclick="editRecord({title:'tarih',list:S.dates,item:S.dates.find(x=>x.id==='${d.id}'),fields:DATE_F,required:'title'})"><span style="font-size:28px">${esc(d.emoji || '📅')}</span><div class="grow"><div class="t">${esc(d.title)}</div><div class="tiny muted">${n ? fmtDate(n.date, { day: 'numeric', month: 'long', weekday: 'long' }) : 'Tarih yok'}${n?.years > 0 ? ` · ${n.years}. yıl` : ''}</div></div>${n ? `<div style="text-align:right"><div class="b" style="${n.left <= 7 && n.left >= 0 ? 'color:var(--accent)' : ''}">${n.left === 0 ? 'Bugün 🎉' : n.left < 0 ? 'Geçti' : n.left}</div>${n.left > 0 ? '<div class="tiny muted">gün</div>' : ''}</div>` : ''}</div>`).join('')}</div>` : '<div class="card empty"><div class="e">🎂</div>Doğum günleri, yıldönümleri, önemli günler…</div>');
+  return header('Önemli tarihler', '', `<div class="row"><button class="icon-btn" title="Tümünü takvime ekle" onclick="calAll('dates')">📅</button><button class="icon-btn" onclick="editRecord(DATE_ED(null))">＋</button></div>`) +
+    (L.length ? `<div class="card tight">${L.map(({ d, n }) => `<div class="list-item" style="cursor:pointer" onclick="if(event.target.closest('[data-cal]'))return;editRecord(DATE_ED(S.dates.find(x=>x.id==='${d.id}')))"><span style="font-size:28px">${esc(d.emoji || '📅')}</span><div class="grow"><div class="t">${esc(d.title)}</div><div class="tiny muted">${n ? fmtDate(n.date, { day: 'numeric', month: 'long', weekday: 'long' }) : 'Tarih yok'}${n?.years > 0 ? ` · ${n.years}. yıl` : ''}</div></div>${n ? `<div style="text-align:right"><div class="b" style="${n.left <= 7 && n.left >= 0 ? 'color:var(--accent)' : ''}">${n.left === 0 ? 'Bugün 🎉' : n.left < 0 ? 'Geçti' : n.left}</div>${n.left > 0 ? '<div class="tiny muted">gün</div>' : ''}</div>` : ''}${d.date ? `<button data-cal onclick="calDate('${d.id}')" style="font-size:18px;opacity:${d.cal ? 1 : .45};margin-left:4px">${d.cal ? '🔔' : '📅'}</button>` : ''}</div>`).join('')}</div>` : '<div class="card empty"><div class="e">🎂</div>Doğum günleri, yıldönümleri, önemli günler…</div>');
 };
 
 /* ===== Ayarlar ===== */
