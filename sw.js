@@ -1,5 +1,5 @@
-const C='ben-0253725b',IMG='ben-img-v1';
-const FILES=['./','index.html','manifest.webmanifest','icon-180.png','icon-192.png','icon-512.png','data/ex.e04e7010.js'];
+const C='ben-99a56aa7',IMG='ben-img-v1';
+const FILES=['./','index.html','manifest.webmanifest','icon-180.png','icon-192.png','icon-512.png','data/ex.637f828c.js'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(FILES.map(f=>new Request(f,{cache:'reload'})))));self.skipWaiting();});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C&&x!==IMG).map(x=>caches.delete(x)))));self.clients.claim();});
 self.addEventListener('fetch',e=>{

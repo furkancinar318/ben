@@ -1,0 +1,494 @@
+// Göğüs (veri tabanı 0–48)
+
+#0 alternating floor press
+n Dönüşümlü Kettlebell Floor Press
+m cm / tr fd au
+- Yere sırtüstü yat, iki kettlebell'i göğüs yanında tut; dizler bükük.
+- Bir kolu yukarı iterken diğeri yerde beklesin.
+- İten kolu indir, dirsek yere hafifçe değsin; diğer kolla tekrarla.
++ Yerde yapmak omuz hareketini sınırladığı için omuz dostudur.
++ Bekleyen tarafta gövdeyi sabit tut.
+! Dirseği yere çarpma, kontrollü indir.
+
+#1 around the worlds
+n Around The World (Dumbbell)
+m cm / fd cu
+- Düz sehpaya yat; dambıllar kalçanın yanında, avuçlar tavana baksın.
+- Dirsekler hafif bükük, kolları yere paralel bir yarım daire çizerek başının üstüne götür.
+- Aynı yoldan kalçanın yanına geri getir.
++ Çok hafif dambılla başla; hareket boyunca göğüste gerilim hisset.
++ Kollar yere paralel kalsın.
+! Omuz ağrısı varsa hareket aralığını küçült.
+
+#2 guillotine bench press
+n Guillotine Bench Press (Boyna İniş)
+m cu cm / fd tr
+- Sehpaya uzan, barı geniş tutuşla kavra.
+- Dirsekler tamamen yana açık, barı boynunun alt kısmına doğru yavaşça indir.
+- Göğsü sıkarak yukarı it.
++ Üst göğsü çok esnetir; normal bench'in yarısı kadar ağırlıkla yap.
++ İnişi çok yavaş tut.
+! Bar boğaza doğru indiği için tehlikelidir: mutlaka yardımcı ya da güvenlik barı kullan.
+! Omuz sorunu olanlar yapmamalı.
+
+#3 bench press with bands
+n Bantlı Bench Press
+m cm / fd tr cu cl
+e bb
+- Direnç bantlarını barın iki ucuna ve sehpanın altına ya da ağır dambıllara bağla.
+- Normal bench press gibi barı göğsüne indir.
+- Yukarı iterken bant gerildikçe direnç artar; hızlı ve güçlü it.
++ Hareketin üst kısmındaki kilitlenme gücünü geliştirir.
++ Bantların iki tarafta eşit gerildiğinden emin ol.
+! Bant koparsa bar dengesi bozulur; bantları her seferinde kontrol et.
+
+#4 bodyweight flyes
+n Bar Üstünde Vücut Ağırlığıyla Fly
+m cm / fd au tr
+- Yuvarlanabilen iki EZ barı yan yana yere koy, ellerinle barları tutarak şınav pozisyonu al.
+- Kollar hafif bükük, barları yavaşça iki yana doğru yuvarlayarak göğsünü yere yaklaştır.
+- Göğsünü sıkarak barları tekrar birbirine yaklaştır.
++ Önce dizlerin üstünde dene.
++ Karın ve kalça sıkı kalsın.
+! Çok ileri seviye bir harekettir; fazla açılırsan omuz ve göğüs kası zorlanır.
+
+#5 cable chest press
+n Cable Chest Press (Oturarak)
+m cm / fd tr
+- Makineye otur, kulpları göğüs hizasında kavra; dirsekler yaklaşık 90°.
+- Kulpları ileri it, sonunda ellerini birbirine yaklaştır.
+- Kontrollü şekilde geri getir.
++ Kablo sürekli gerilim sağlar; tepede göğsü 1 saniye sık.
++ Kürek kemiklerini geride tut.
+! Omuzları öne yuvarlama.
+
+#6 cable iron cross
+n Cable Iron Cross
+m cl / la cm
+- İki üst makaranın ortasında dur, kulpları tut; kollar iki yana açık.
+- Kollar düz, kulpları aşağı ve öne doğru, kalçanın önünde buluşacak şekilde indir.
+- Kontrollü şekilde yana geri aç.
++ Hafif öne eğil, dirsekleri kilitleme.
++ Altta 1 saniye sık.
+! Ağır yükte omuzları zorlar; hafif başla.
+
+#7 chain press
+n Zincir Press (Chain Press)
+m cm / fd tr
+- Kulplara zincir bağla; düz sehpada dambıl pres pozisyonunda yat.
+- Kulpları göğüs hizasına indir; zincirin bir kısmı yere yığılır ve yük hafifler.
+- Yukarı it; zincir yerden kalktıkça ağırlık artar.
++ Kilitlenme gücü ve denge çalıştırır.
++ Yavaş başla, zincirlerin sallanmasını kontrol et.
+! Kulplar serbest olduğu için omuzlara dikkat.
+
+#8 clock push-up
+n Saat Şınavı (Clock Push-Up)
+m cm / fd tr au
+- Şınav pozisyonu al, bir tekrar yap.
+- Yukarı iterken ellerinle hafifçe sıçrayıp vücudunu saat yönünde biraz döndür.
+- Her tekrarda döne döne tam bir daire tamamla.
++ Patlayıcı güç ve koordinasyon geliştirir.
++ Vücudu düz tut.
+! Bilekleri iyi ısıt; yere sert düşme.
+
+#9 cross over with bands
+n Bantla Crossover
+m cm / fd
+- Direnç bandını arkanda sabit bir yere bağla, uçlarını iki elinle tut.
+- Bir adım öne çık; kollar hafif bükük, yana açık.
+- Ellerini önünde birleştir, kontrollü geri aç.
++ Evde kablo makinesinin yerini tutar.
++ Birleşme noktasında göğsü sık.
+! Bandın sağlam bağlandığından emin ol.
+
+#10 decline dumbbell flyes
+n Decline Dumbbell Fly
+m cl / cm fd
+- Decline sehpaya ayaklarını sabitleyip yat; dambıllar göğsün üstünde, avuçlar birbirine baksın.
+- Dirsekler hafif bükük, kolları yay çizerek yana aç.
+- Alt göğüste esneme hissedince geri topla.
++ Hafif ağırlık, yavaş tempo.
++ Dirsek açısı sabit kalsın.
+! Dambılları alıp bırakırken yardım iste.
+
+#11 decline push-up
+n Decline Şınav (Ayaklar Yüksekte)
+m cu / fd tr cm
+- Ayaklarını bir sehpaya koy, ellerini yere omuz genişliğinden biraz açık bas.
+- Vücut düz, göğsünü yere indir.
+- İterek kalk.
++ Ayaklar ne kadar yüksekse üst göğüs ve omuz o kadar çalışır.
++ Karnı sık, bel çökmesin.
+! Başını öne uzatma.
+
+#12 decline smith press
+n Decline Smith Press
+m cl / tr cm
+- Decline sehpayı Smith makinesinin altına, bar alt göğse inecek şekilde yerleştir.
+- Barı kavra, kilidi aç ve alt göğsüne indir.
+- Yukarı it, bitince kilitle.
++ Sabit ray tek başına güvenli çalışmayı sağlar.
++ Durdurucuları göğüs hizasının biraz altına ayarla.
+! Sehpanın yerini ağırlıksız barla dene.
+
+#13 dumbbell bench press neutral grip
+n Nötr Tutuş Dumbbell Bench Press
+m cm / tr fd
+- Düz sehpaya yat; dambılları avuçlar birbirine bakacak şekilde göğüs yanında tut.
+- Dirsekler gövdeye yakın, dambılları yukarı it.
+- Kontrollü indir.
++ Omuz eklemine en nazik bench çeşididir.
++ Arka kol daha çok devreye girer.
+! Dambılları tepede çarpıştırma.
+
+#14 extended range kettlebell floor press
+n Geniş Açılı Tek Kol Kettlebell Floor Press
+m cm / tr fd ob
+- Yere yat, tek elde kettlebell tut; aynı taraftaki dizini bükerek gövdenin üstünden çaprazla.
+- Kettlebell'i yukarı it.
+- Dirseğin yere değene kadar indir; gövden hafif döndüğü için hareket aralığı uzar.
++ Normal floor press'ten daha derin iniş sağlar.
++ Boştaki kolu yana açarak denge kur.
+! Omuzda sıkışma olursa dönüşü azalt.
+
+#15 flat bench cable flyes
+n Düz Sehpada Cable Fly
+m cm / fd
+- Düz sehpayı iki alt makaranın ortasına koy, kulpları alıp yat.
+- Kollar hafif bükük, kulpları göğsünün üstünde birleştir.
+- Yay çizerek yana aç, göğüs esneyince geri topla.
++ Dambıldan farkı: tepede de gerilim sürer.
++ Tepede 1 saniye sık.
+! Çok derine inme.
+
+#16 front raise and pullover
+n Front Raise + Pullover (Barbell)
+m cm la / fd tr se
+- Düz sehpaya yat, barı dar tutuşla uyluklarının üstünde tut.
+- Kollar neredeyse düz, barı yarım daire çizerek başının arkasına götür.
+- Aynı yoldan uyluklarına geri getir.
++ Hafif bir barla yap; göğüs, kanat ve omuzu birlikte çalıştırır.
++ Dirsek açısını sabit tut.
+! Başının arkasında fazla aşağı inme.
+
+#17 hammer grip incline bench press
+n Incline Dumbbell Press (Çekiç Tutuş)
+m cu / fd tr
+- Sehpayı 30–45° eğime ayarla; dambılları avuçlar birbirine bakacak şekilde tut.
+- Dambılları yukarı it.
+- Üst göğüs hizasına kontrollü indir.
++ Nötr tutuş omuzları rahatlatır.
++ Dirsekler gövdeye yakın insin.
+! Eğimi çok dikleştirme, yük omza kayar.
+
+#18 incline cable chest press
+n Incline Cable Chest Press
+m cu / fd tr
+- Eğimli sehpayı iki alt makaranın ortasına koy, kulpları al.
+- Kulpları üst göğüs hizasından yukarı it, tepede birbirine yaklaştır.
+- Kontrollü indir.
++ Sürekli gerilim üst göğsü iyi yakar.
++ Sehpa 30–45° olsun.
+! Kabloların kollarına sürtünmemesi için sehpayı biraz öne al.
+
+#19 incline cable flye
+n Incline Cable Fly
+m cu / fd
+- Eğimli sehpayı iki alt makaranın ortasına koy.
+- Kollar hafif bükük, kulpları göğsünün üstünde birleştir.
+- Yana açarak üst göğsü esnet, geri topla.
++ Tepede elleri hafifçe çaprazlamak sıkışmayı artırır.
++ Hafif ağırlıkla hisset.
+! Omuzları sehpadan kaldırma.
+
+#20 incline dumbbell bench palms facing in
+n Incline Dumbbell Press (Avuçlar İçe)
+m cu / fd tr
+- Eğimli sehpada dambılları avuçlar birbirine bakacak şekilde omuz hizasında tut.
+- Yukarı it, tepede dambıllar yaklaşsın.
+- Kontrollü indir.
++ Omuz rahatsızlığı olanlar için iyi bir incline seçeneğidir.
++ Altta üst göğüste esnemeyi hisset.
+! Bileklerini düz tut.
+
+#21 incline dumbbell flyes twist
+n Incline Dumbbell Fly (Dönüşlü)
+m cu / fd
+- Eğimli sehpada dambılları göğsün üstünde, avuçlar birbirine bakacak şekilde tut.
+- Yana açarken avuçları yavaşça tavana çevir.
+- Toplarken serçe parmakları birbirine yaklaştırarak geri dön.
++ Dönüş, tepede üst-iç göğsün sıkışmasını artırır.
++ Hafif ağırlık yeterli.
+! Altta omzu zorlayacak kadar açılma.
+
+#22 incline push-up
+n Incline Şınav (Eller Yüksekte)
+m cl / cm tr fd
+- Ellerini bir sehpaya ya da masaya koy, ayakların yerde; vücut düz.
+- Göğsünü sehpaya doğru indir.
+- İterek kalk.
++ Yeni başlayanlar için en kolay şınav; yükseklik arttıkça kolaylaşır.
++ Alt göğsü vurgular.
+! Sehpanın kaymadığından emin ol.
+
+#23 incline push-up medium
+n Incline Şınav (Orta Tutuş)
+m cl / cm tr fd
+- Ellerini omuz genişliğinde yüksek bir yüzeye koy.
+- Vücut düz, göğsünü yüzeye indir.
+- İterek kalk.
++ Dirsekler 45° açıyla insin.
++ Düz şınava geçiş için basamak hareketidir.
+! Kalçayı sarkıtma.
+
+#24 incline push-up reverse grip
+n Incline Şınav (Ters Tutuş)
+m cl cm / tr fd bi
+- Ellerini yüksek bir bara avuçlar yukarı/öne bakacak şekilde (ters tutuş) koy.
+- Vücut düz, göğsünü bara indir.
+- İterek kalk.
++ Ters tutuş dirsekleri gövdeye yakın tutar.
++ Yavaş ve kontrollü yap.
+! Bilekler zorlanırsa normal tutuşa dön.
+
+#25 incline push-up wide
+n Incline Şınav (Geniş Tutuş)
+m cl / cm fd
+- Ellerini yüksek bir yüzeye omuz genişliğinden belirgin şekilde açık koy.
+- Göğsünü yüzeye indir.
+- İterek kalk.
++ Geniş tutuş göğsü, dar tutuş arka kolu vurgular.
++ Dirsekler bileklerin üstünde kalsın.
+! Omuzda ağrı olursa tutuşu daralt.
+
+#26 isometric wipers
+n İzometrik Silecek Şınavı
+m cm / tr fd ob
+- Şınav pozisyonu al, eller omuzdan biraz geniş.
+- Ağırlığını bir tarafa kaydır; o taraftaki dirsek bükülsün, diğer kol düz kalsın.
+- Yere yakın kalarak diğer tarafa kay.
++ Tek kol şınava hazırlık için iyidir.
++ Gövde yere paralel kalsın.
+! Omuzu ısıtmadan yapma.
+
+#27 leg-over floor press
+n Bacak Çapraz Kettlebell Floor Press
+m cm / tr fd ob
+- Yere yat, tek elde kettlebell göğsünün üstünde.
+- Çalışan taraftaki bacağını diğerinin üstünden çaprazla; boş kolu yana aç.
+- Kettlebell'i yukarı it, dirsek yere değene kadar indir.
++ Çapraz bacak gövdenin dönmeye direnmesini gerektirir.
++ Kettlebell bileğin üstünde dursun.
+! Omuz yerden kalkmasın.
+
+#28 leverage chest press
+n Leverage Chest Press (Plaka Yüklemeli)
+m cm / fd tr
+- Koltuğu kulplar göğüs ortası hizasında olacak şekilde ayarla.
+- Sırtını yasla, kulpları ileri it.
+- Kontrollü geri getir.
++ Her kol bağımsız çalıştığı için güç dengesizliğini gösterir.
++ Tek kol da yapılabilir.
+! Dirsekleri sertçe kilitleme.
+
+#29 leverage decline chest press
+n Leverage Decline Chest Press
+m cl / tr cm
+- Makineye otur, kulplar alt göğüs hizasında.
+- Kulpları aşağı-ileri doğru it.
+- Kontrollü geri getir.
++ Alt göğsü omuza yük bindirmeden çalıştırır.
++ Göğsünü dik tut.
+! Omuzlar öne yuvarlanmasın.
+
+#30 neck press
+n Neck Press
+m cu / fd tr cm
+- Düz sehpaya yat, barı omuzdan geniş kavra.
+- Dirsekler yana açık, barı boyun hizasına doğru yavaşça indir.
+- Yukarı it.
++ Üst göğüs için eski ekol bir harekettir; çok hafif ağırlıkla yapılır.
++ İnişi 3–4 saniyede yap.
+! Yardımcı olmadan yapma; bar boğazın üstündedir.
+! Omuz sakatlığı riski yüksektir.
+
+#31 one arm dumbbell bench press
+n Tek Kol Dumbbell Bench Press
+m cm / tr fd ob
+- Düz sehpaya yat, tek elde dambıl göğüs yanında.
+- Gövdeni sabit tutarak dambılı yukarı it.
+- Kontrollü indir; tekrarları bitirip kol değiştir.
++ Gövde dönmemek için çalışır; karnı sık.
++ Ayakları yere sağlam bas.
+! Ağır dambılla sehpadan kaymamaya dikkat.
+
+#32 one-arm flat bench dumbbell flye
+n Tek Kol Dumbbell Fly
+m cm / fd
+- Düz sehpaya yat, tek elde dambıl göğsün üstünde; diğer elle sehpayı tut.
+- Dirsek hafif bükük, kolu yana aç.
+- Göğsü sıkarak geri topla.
++ Tek kol çalışmak göğse odaklanmayı kolaylaştırır.
++ Hafif ağırlık.
+! Gövden dambıl tarafına dönmesin.
+
+#33 one-arm kettlebell floor press
+n Tek Kol Kettlebell Floor Press
+m cm / tr fd
+- Yere yat, dizler bükük; kettlebell'i tek elle göğüs yanında tut.
+- Yukarı it.
+- Dirsek yere değene kadar indir.
++ Dirseği gövdeye 45° açıda tut.
++ Kettlebell ön kolun dışında dursun.
+! Kettlebell'i yüzünün üstünden geçirme.
+
+#34 plyo kettlebell pushups
+n Pliometrik Kettlebell Şınav
+m cm / fd tr au
+- Bir elin yerde, diğeri kettlebell'in üstünde şınav pozisyonu al.
+- Aşağı in ve patlayıcı şekilde yukarı it.
+- Havadayken el değiştir: diğer el kettlebell'e, öteki yere gelsin.
++ Patlayıcı güç geliştirir.
++ Kettlebell'in sabit durduğundan emin ol.
+! İleri seviye; bilek ve omuz sağlamsa yap.
+
+#35 push up to side plank
+n Şınavdan Yan Planka Geçiş
+m cm / ob tr fd
+- Bir şınav yap.
+- Tepede bir kolunu tavana açarak yan plank pozisyonuna dön.
+- Elini yere koy, bir şınav daha yap ve diğer tarafa dön.
++ Göğüs ve yan karnı birlikte çalıştırır.
++ Kalça düşmesin.
+! Bilek ağrısı olursa yumruk ya da dambıl üstünde yap.
+
+#36 push-up wide
+n Geniş Şınav
+m cm / fd tr
+- Ellerini omuz genişliğinin bir buçuk katı kadar açarak şınav pozisyonu al.
+- Göğsünü yere indir.
+- İterek kalk.
++ Göğsün dış kısmını daha çok çalıştırır.
++ Vücut tek parça hareket etsin.
+! Çok geniş açmak omuzu zorlar.
+
+#37 push-ups feet elevated
+n Ayaklar Yüksekte Şınav
+m cu / fd tr cm
+- Ayak uçlarını bir sehpa ya da basamağa koy.
+- Eller omuz genişliğinde, göğsünü yere indir.
+- İterek kalk.
++ Üst göğüs ve ön omuzu vurgular.
++ Karın sıkı, vücut düz.
+! Bel çökerse yüksekliği azalt.
+
+#38 push-ups feet exercise ball
+n Ayaklar Pilates Topunda Şınav
+m cu cm / au tr fd
+- Ayak bileklerini pilates topunun üstüne koy, eller yerde.
+- Dengeyi koruyarak göğsünü yere indir.
+- İterek kalk.
++ Dengesiz zemin karın kaslarını da çalıştırır.
++ Topu kaval kemiğine yaklaştırırsan kolaylaşır.
+! Top kayarsa yüz üstü düşebilirsin; dikkatli ol.
+
+#39 pushups close wide
+n Şınav (Dar ve Geniş Dönüşümlü)
+m cm / tr fd
+- Bir tekrarı eller dar (omuz içi), bir tekrarı geniş pozisyonda yap.
+- Tepede ellerini hafifçe sıçratarak pozisyon değiştir ya da adımla.
++ Dar tutuş arka kolu, geniş tutuş göğsü çalıştırır.
++ Sıçramak zor gelirse elleri yürüterek değiştir.
+! Bilekleri ısıt.
+
+#40 single-arm cable crossover
+n Tek Kol Cable Crossover
+m cm cl / fd
+- Üst makaraya yan dur, kulpu tek elle tut.
+- Kol hafif bükük, kulpu aşağı ve gövdenin önünden karşı kalçaya doğru çek.
+- Kontrollü geri bırak.
++ Orta hattı geçmek göğsün iç kısmını daha çok sıkıştırır.
++ Boş elini beline koy, gövde dönmesin.
+! Omuzu öne düşürme.
+
+#41 single-arm push-up
+n Tek Kol Şınav
+m cm / tr fd ob
+l 3
+- Ayaklarını geniş aç, bir elini göğsünün altına yere koy; diğer el belinde.
+- Gövdeni döndürmeden göğsünü yere indir.
+- İterek kalk.
++ Önce elin yüksekte (sehpada) çalış.
++ Ayaklar ne kadar açıksa denge o kadar kolay.
+! Omuz ve dirsek için çok yüklüdür; hazırlıksız deneme.
+
+#42 smith machine decline press
+n Smith Machine Decline Press
+m cl / tr cm
+- Decline sehpayı Smith barı alt göğse inecek şekilde yerleştir.
+- Kilidi aç, barı alt göğsüne indir.
+- Yukarı it ve kilitle.
++ Tek başına ağır çalışmak için güvenlidir.
++ Dirsekler 45° açıda.
+! Baş aşağı pozisyondan yavaş kalk.
+
+#43 smith machine incline bench press
+n Smith Machine Incline Bench Press
+m cu / fd tr
+- Sehpayı 30–45° eğimle, bar üst göğse inecek şekilde yerleştir.
+- Kilidi aç, barı köprücük kemiğinin altına indir.
+- Yukarı it ve kilitle.
++ Sabit ray sayesinde üst göğse odaklanmak kolaydır.
++ Durdurucuları ayarla.
+! Sehpa yanlış yerdeyse bar boyna iner; önce boş barla dene.
+
+#44 standing cable chest press
+n Ayakta Cable Chest Press
+m cm / fd tr au
+- Makaraları göğüs hizasına ayarla, kulpları alıp bir adım öne çık.
+- Bir ayak önde, kulpları göğüs hizasından ileri it.
+- Kontrollü geri getir.
++ Gövde dengesi de çalışır.
++ Tek kol yaparsan karın daha çok devreye girer.
+! Belini kavislendirme.
+
+#45 straight-arm dumbbell pullover
+n Düz Kol Dumbbell Pullover
+m cm la / tr se
+- Sehpaya enine uzan; yalnızca üst sırtın sehpada, kalça aşağıda.
+- Dambılı iki elle göğsünün üstünde, kollar neredeyse düz tut.
+- Dambılı başının arkasına indir, göğüs ve kanat esneyince geri getir.
++ İnerken derin nefes al; göğüs kafesini açar.
++ Kalçayı aşağıda tutmak esnemeyi artırır.
+! Dambılın plakalarının sıkı olduğunu kontrol et; yüzünün üstünden geçiyor.
+
+#46 suspended push-up
+n Askıda Şınav (TRX)
+m cm / au tr fd
+- Askı kayışlarının kulplarını tut, ayaklar geride; vücut eğik ve düz.
+- Dirsekleri bükerek göğsünü ellerinin arasına indir.
+- İterek kalk.
++ Ayaklar geriye gittikçe zorlaşır.
++ Kulplar oynak olduğu için sabitleyici kaslar çok çalışır.
+! Bel çökmesin; karın hep sıkı.
+
+#47 wide-grip decline barbell bench press
+n Geniş Tutuş Decline Bench Press
+m cl / cm fd
+- Decline sehpaya ayaklarını sabitleyip yat, barı geniş kavra.
+- Barı alt göğsüne indir.
+- Yukarı it.
++ Kısa hareket aralığıyla alt-dış göğsü vurgular.
++ Yardımcıyla çalış.
+! Geniş tutuş omuzu zorlayabilir.
+
+#48 wide-grip decline barbell pullover
+n Decline Barbell Pullover (Geniş Tutuş)
+m cl la / tr se
+- Decline sehpaya yat, barı geniş tutuşla göğsünün üstünde tut.
+- Kollar hafif bükük, barı başının arkasına doğru indir.
+- Göğüs ve kanatla barı geri getir.
++ Hafif ağırlıkla, esnemeyi hissederek yap.
++ Dirsek açısı sabit.
+! Baş aşağı pozisyonda barı kaçırmamak için yardım al.

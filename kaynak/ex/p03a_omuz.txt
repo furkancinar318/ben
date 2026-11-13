@@ -1,0 +1,453 @@
+// Omuz 1 (veri tabanı 117–161)
+
+#117 alternating cable shoulder press
+n Dönüşümlü Cable Shoulder Press
+m fd / sd tr
+- İki alt makaranın ortasında dur, kulpları omuz hizasında tut.
+- Bir kolu başının üstüne it, indirirken diğerini it.
+- Dönüşümlü devam et.
++ Kablo, hareketin her noktasında gerilim sağlar.
++ Karnı sık, gövde yana eğilmesin.
+! Belini geriye bükme.
+
+#118 alternating deltoid raise
+n Dönüşümlü Front Raise
+m fd / sd
+- Dambıllar yanında, dik dur.
+- Dirsek hafif bükük, bir kolu öne doğru omuz hizasına kaldır.
+- İndirirken diğer kolu kaldır.
++ Sallanmadan, yavaş yap.
++ Omuz hizasında dur; daha yukarısı trapezi çalıştırır.
+! Gövdeyle geriye yatma.
+
+#119 alternating kettlebell press
+n Dönüşümlü Kettlebell Press
+m fd / tr sd
+- İki kettlebell'i omuzlarına al (rack pozisyonu).
+- Birini başının üstüne it, indir; sonra diğerini it.
++ Bekleyen kettlebell göğsüne yaslı dursun.
++ Kalça ve karın sıkı.
+! Bileğin geriye kırılmasın.
+
+#120 anti-gravity press
+n Anti-Gravity Press (Yüzüstü Eğimli Pres)
+m fd / tm tu tr rd
+- Eğimli sehpaya yüzüstü uzan, yerdeki barı üstten kavrayıp göğsüne getir.
+- Barı gövdenle aynı doğrultuda, başının ilerisine doğru it.
+- Kontrollü şekilde göğsüne geri getir.
++ Yer çekimine karşı ileri itildiği için çok hafif ağırlık yeter.
++ Alt trapez ve omuzu birlikte çalıştırır.
+! Boynunu geriye kırma.
+
+#121 back flyes with bands
+n Bantla Reverse Fly
+m rd / tm
+- Bandı göğüs hizasında sabitle, iki ucunu tut; bir adım geri çekil.
+- Kollar hafif bükük, elleri yana ve geriye aç.
+- Kontrollü öne getir.
++ Kürek kemiklerini sonunda hafifçe sık.
++ Evde arka omuz çalışmanın en kolay yoludur.
+! Omuzları kulaklara kaldırma.
+
+#122 band pull apart *
+n Band Pull-Apart
+m rd tm / tu
+- Direnç bandını omuz genişliğinde, kollar önde düz tut.
+- Bandı göğsüne değene kadar iki yana çekerek aç.
+- Kontrollü geri dön.
++ Isınmada ve setler arasında yapılabilir; duruşu düzeltir.
++ Yüksek tekrar (15–25) iyi çalışır.
+! Belini kavislendirme, kaburgalar aşağıda.
+
+#123 barbell incline shoulder raise
+n Incline Barbell Shoulder Raise
+m fd se / cu
+- Eğimli sehpaya yat, barı omuzdan biraz geniş tutup kollar düz yukarıda tut.
+- Kolları bükmeden omuzlarını sehpadan kaldırarak barı birkaç santim yükselt.
+- Yavaşça omuzlarını geri indir.
++ Hareket çok kısadır; kürek kemiği öne kayar.
++ Serratus ve ön omuzu çalıştırır.
+! Dirsekleri bükme.
+
+#124 barbell rear delt row
+n Barbell Rear Delt Row
+m rd / tm bi la
+- Barı geniş tutuşla kavra, gövdeni yere paralel olacak kadar eğ.
+- Dirsekler tamamen yana açık, barı göğsünün üst kısmına çek.
+- Kontrollü indir.
++ Normal bent over row'dan hafif çalış.
++ Dirsekleri omuz hizasında tutmak yükü arka omza verir.
+! Sırtı yuvarlama.
+
+#125 barbell shoulder press *
+n Oturarak Barbell Shoulder Press
+m fd / sd tr cu
+- Dik sırtlı sehpaya otur, barı omuzdan biraz geniş kavra.
+- Barı köprücük kemiği hizasından başının üstüne it.
+- Kontrollü indir.
++ Dirsekler barın altında kalsın.
++ Sırt desteği ağır çalışmayı kolaylaştırır.
+! Belini sehpadan ayırma.
+
+#126 battling ropes *
+n Battle Rope (Halat Sallama)
+m fd / fa au sd la
+c Kardiyo
+t s
+- Halatın iki ucunu tut, dizler hafif bükük, gövde hafif öne eğik.
+- Kollarını dönüşümlü olarak hızlıca yukarı-aşağı sallayıp halatta dalga oluştur.
+- Belirlenen süre boyunca tempoyu koru.
++ 20–30 sn çalış, 30–40 sn dinlen; birkaç tur yap.
++ İki kol birlikte (slam) ya da yana dalga gibi çeşitleri var.
+! Belini yuvarlama; güç bacak ve gövdeden de gelsin.
+
+#127 bent over rear delt raise head on bench
+n Baş Sehpada Rear Delt Raise
+m rd / tm
+- Öne eğil, alnını eğimli sehpanın üst ucuna daya.
+- Dambıllar aşağıda; kolları yana, omuz hizasına aç.
+- Yavaşça indir.
++ Alnı dayamak hile yapmayı engeller.
++ Serçe parmak tarafı yukarı baksın.
+! Ağır dambılla savurma.
+
+#128 bent over low-pulley side lateral
+n Eğilerek Cable Rear Lateral
+m rd / tm sd
+- Alt makaraya yan dur, kulpu uzaktaki elinle tut; gövdeni yere paralel eğ.
+- Kolu yana, omuz hizasına kaldır.
+- Yavaşça indir.
++ Kablo altta da gerilim sağlar.
++ Boştaki eli dizine daya.
+! Gövdeyi döndürme.
+
+#129 bradford rocky presses
+n Bradford Press
+m fd sd / tr
+- Otur, barı köprücük kemiği hizasında tut.
+- Barı başının hemen üstünden geçecek kadar kaldırıp ensenin arkasına indir.
+- Aynı yoldan öne geri getir; kolları tam kilitleme.
++ Sürekli gerilim omuzları çabuk yakar.
++ Hafif ağırlıkla yap.
+! Ense arkası kısmı omuz esnekliği ister; ağrı varsa yapma.
+
+#130 cable internal rotation
+n Cable İç Rotasyon
+m fd / cm
+- Makarayı dirsek hizasına ayarla, makineye yan dur; yakın elinle kulpu tut.
+- Dirsek 90° bükük ve gövdeye yapışık.
+- Ön kolu karnına doğru içe çevir, yavaşça geri aç.
++ Koltuk altına havlu sıkıştırmak dirseği sabitler.
++ Rotator manşet için hafif ağırlık, yüksek tekrar.
+! Hızlı ve ağır yapma; küçük kaslardır.
+
+#131 cable rope rear-delt rows
+n İple Cable Rear Delt Row
+m rd / tm bi
+- Kürek makinesine ip tak, otur.
+- İpi üstten tut; dirsekler yana açık, ipi üst göğsüne çek.
+- Kontrollü bırak.
++ Dirsekleri omuz hizasında tut.
++ Sonunda ipi iki yana ayır.
+! Geriye yaslanma.
+
+#132 cable shoulder press
+n Cable Shoulder Press
+m fd / sd tr
+- İki alt makaranın ortasında dur, kulpları omuz hizasına getir.
+- İkisini birden başının üstüne it.
+- Kontrollü indir.
++ Bir ayak önde durmak dengeyi kolaylaştırır.
++ Tepede kollar birbirine yaklaşsın.
+! Belini kavislendirme.
+
+#133 car drivers
+n Plaka Çevirme (Car Driver)
+m fd / fa sd
+- Bir plakayı saat 3 ve 9 hizasından tut, kollarını önünde düz uzat.
+- Plakayı direksiyon gibi bir yana, sonra diğer yana çevir.
+- Kollar omuz hizasında kalsın.
++ Süreyle ya da tekrar sayısıyla yapılır.
++ Ön omuz ve ön kolda yanma hissi verir.
+! Omuzları kulaklara çekme.
+
+#134 clean and press *
+n Clean and Press
+m fd qu gl / tu ha lb tr ca
+- Bar yerde; deadlift pozisyonu al.
+- Bacak ve kalçayla patlayıcı şekilde kalkıp barı omuzlarına al (clean).
+- Barı başının üstüne it (press), omuzlara ve sonra yere kontrollü indir.
++ Tüm vücudu çalıştıran klasik bir güç hareketidir.
++ Barı kollarla çekme; güç kalçadan gelir.
+! Teknik öğrenilmeden ağır yüklenme; sırt düz kalsın.
+
+#135 cuban press
+n Cuban Press
+m rd sd / tu fd
+- Dambılları üstten tut; üst kolları yere paralel kaldır, ön kollar aşağı sarksın.
+- Üst kol sabit, ön kolları yukarı çevir (dış rotasyon).
+- Dambılları başının üstüne it; aynı sırayla geri dön.
++ Rotator manşet ve omuz sağlığı için çok faydalıdır.
++ Çok hafif dambılla yap.
+! Ağır yük omuz eklemini zorlar.
+
+#136 double kettlebell jerk
+n Çift Kettlebell Jerk
+m fd / qu tr ca gl
+- İki kettlebell'i omuzlarına al.
+- Dizleri hafif büküp patlayıcı şekilde yukarı it.
+- Kettlebell'ler yükselirken tekrar hafifçe çömelerek altına gir, kolları kilitle ve doğrul.
++ Güç bacaklardan gelir; kollar sadece kilitler.
++ İkinci çömelme zamanlaması önemlidir.
+! Baş üstünde kontrolü kaybedersen ağırlıkları öne bırak.
+
+#137 double kettlebell push press
+n Çift Kettlebell Push Press
+m fd / qu tr ca
+- İki kettlebell omuzlarda, dik dur.
+- Dizleri hafif bük ve hızla doğrularak kettlebell'leri yukarı it.
+- Kolları kilitle, kontrollü indir.
++ Bacak itişi, düz presten daha ağır yük kaldırmanı sağlar.
++ Topuklar yerde başlasın.
+! Belini geriye bükme.
+
+#138 double kettlebell snatch
+n Çift Kettlebell Snatch
+m fd gl ha / qu tu lb
+l 3
+- İki kettlebell'i bacaklarının arasından geriye sallandır.
+- Kalçayı patlayıcı şekilde ileri iterek ikisini tek harekette başının üstüne çıkar.
+- Kollar kilitli dur, kontrollü indirip tekrar sallandır.
++ Önce tek kol snatch'te ustalaş.
++ Kettlebell bileğe çarpmasın; elini içinden geçir.
+! İleri seviye; omuz ve bel sağlamsa yap.
+
+#139 dumbbell incline shoulder raise
+n Incline Dumbbell Shoulder Raise
+m fd se / cu
+- Eğimli sehpaya yat, dambılları kollar düz yukarıda tut.
+- Kolları bükmeden omuzlarını sehpadan kaldırarak dambılları yükselt.
+- Yavaşça geri indir.
++ Kısa bir harekettir; kürek kemikleri öne kayar.
++ Hafif ağırlıkla hisset.
+! Dirsekleri kilitleyip zorlamadan yap.
+
+#140 dumbbell lying one-arm rear lateral raise
+n Yüzüstü Tek Kol Rear Lateral Raise
+m rd / tm
+- Hafif eğimli sehpaya yüzüstü uzan, tek elde dambıl aşağı sarksın.
+- Kol hafif bükük, dambılı yana omuz hizasına kaldır.
+- Yavaşça indir.
++ Boştaki elle sehpayı tut.
++ Tepede 1 saniye bekle.
+! Gövdeni döndürerek yardım etme.
+
+#141 dumbbell lying rear lateral raise
+n Yüzüstü Rear Lateral Raise
+m rd / tm
+- Hafif eğimli sehpaya yüzüstü uzan, iki elde dambıl.
+- Kolları yana, omuz hizasına aç.
+- Yavaşça indir.
++ Göğüs sehpada kaldığı için arka omuz tam izole olur.
++ Hafif ağırlık, 12–15 tekrar.
+! Kürek kemiklerini aşırı sıkıp yükü sırta verme.
+
+#142 dumbbell one-arm shoulder press
+n Tek Kol Dumbbell Shoulder Press
+m fd / sd tr ob
+- Dik dur ya da otur; tek elde dambıl omuz hizasında.
+- Dambılı başının üstüne it.
+- Kontrollü indir.
++ Boş elini beline koy; gövde yana eğilmesin.
++ Yan karın dengede tutmak için çalışır.
+! Karşı tarafa yaslanma.
+
+#143 dumbbell one-arm upright row
+n Tek Kol Dumbbell Upright Row
+m sd tu / bi
+- Tek elde dambıl uyluk önünde.
+- Dirsek önde, dambılı göğüs hizasına çek.
+- Kontrollü indir.
++ Tek kol yapmak omuz için daha rahat bir yol verir.
++ Boş elle bir yere tutunabilirsin.
+! Dirseği omuzdan yukarı zorlama.
+
+#144 dumbbell raise
+n Yanlardan Dumbbell Çekiş
+m sd tu / bi
+- Dambıllar uyluk yanında, avuçlar arkaya baksın.
+- Dirsekler öncü, dambılları gövdenin yanından çene hizasına doğru çek.
+- Kontrollü indir.
++ Dirsek her zaman ön koldan yüksekte.
++ Gövde sabit.
+! Omuzda sıkışma olursa göğüs hizasında dur.
+
+#145 dumbbell scaption
+n Scaption (Y Kaldırış)
+m sd fd / tu se
+- Dambıllar yanında, başparmaklar yukarı baksın.
+- Kolları tam yana değil, yaklaşık 30° öne doğru açıyla omuz hizasına kaldır.
+- Yavaşça indir.
++ Omuz ekleminin doğal düzlemidir; en omuz dostu kaldırış.
++ Rehabilitasyon ve ısınmada çok kullanılır.
+! Hafif ağırlık; omuzları kulaklara çekme.
+
+#146 external rotation
+n Yan Yatarak Dış Rotasyon
+m rd
+- Yan yat, üstteki dirseğin 90° bükük ve beline yapışık; elde hafif dambıl.
+- Ön kolu yukarı, tavana doğru çevir.
+- Yavaşça indir.
++ Rotator manşeti güçlendirir, omuz sakatlıklarını önler.
++ 1–3 kg yeterlidir.
+! Dirseği gövdeden ayırma.
+
+#147 external rotation with band
+n Bantla Dış Rotasyon
+m rd
+- Bandı dirsek hizasında sabitle, yan dur; uzaktaki elinle tut.
+- Dirsek 90° ve gövdeye yapışık, ön kolu dışa doğru aç.
+- Yavaşça geri getir.
++ Koltuk altına havlu koy.
++ Pres günlerinden önce ısınma olarak yap.
+! Bileği kırma, hareket omuzdan gelsin.
+
+#148 external rotation with cable
+n Cable Dış Rotasyon
+m rd
+- Makarayı dirsek hizasına ayarla, yan dur; uzaktaki elinle kulpu tut.
+- Dirsek 90° ve gövdeye yapışık, ön kolu dışa aç.
+- Yavaşça geri getir.
++ Çok hafif ağırlık, 12–20 tekrar.
++ Gövde dönmesin.
+! Ağrı varsa zorlamadan bırak.
+
+#149 front cable raise
+n Cable Front Raise
+m fd / sd
+- Alt makaraya sırtını dön, kulpu tek elle tut (kablo bacaklarının yanından geçsin).
+- Kolu öne, omuz hizasına kaldır.
+- Yavaşça indir.
++ Kablo altta da gerilim verir.
++ İki elle düz barla da yapılabilir.
+! Gövdeyle geriye yatma.
+
+#150 front incline dumbbell raise
+n Incline Sehpada Front Raise
+m fd / cu
+- 30–60° eğimli sehpaya sırtüstü yaslan, dambıllar aşağı sarksın.
+- Kolları düz şekilde öne, omuz hizasına kaldır.
+- Yavaşça indir.
++ Eğim, hareketin başında daha fazla esneme sağlar.
++ Sallanamazsın; hafif ağırlık seç.
+! Omuz önünde ağrı olursa eğimi dikleştir.
+
+#151 front two-dumbbell raise
+n Çift Dumbbell Front Raise
+m fd / sd
+- Dambıllar uyluk önünde.
+- İki kolu birlikte öne, omuz hizasına kaldır.
+- Yavaşça indir.
++ İkisini birlikte kaldırmak beli daha çok zorlar; karnı sık.
++ Dirsekler hafif bükük.
+! Sallanma.
+
+#152 handstand push-ups
+n Amuda Şınav
+m fd / tr sd tu
+l 3
+- Duvara karşı amuda kalk; eller omuzdan biraz geniş.
+- Başını yere doğru kontrollü indir.
+- İterek kollarını düzleştir.
++ Önce pike şınav ve duvarda amut bekleyişi çalış.
++ Başının altına minder koy.
+! Boyun üstüne düşme riski var; yorulunca bırak.
+
+#153 internal rotation with band
+n Bantla İç Rotasyon
+m fd / cm
+- Bandı dirsek hizasında sabitle, yan dur; yakın elinle tut.
+- Dirsek 90° ve gövdeye yapışık, ön kolu karnına doğru çevir.
+- Yavaşça geri aç.
++ Dış rotasyonla birlikte yap; denge için ikisi de gerekir.
++ Hafif direnç.
+! Gövdeyi döndürme.
+
+#154 iron cross
+n Iron Cross (Dumbbell)
+m sd fd / qu gl cm
+- Dambılları kollar iki yana açık, omuz hizasında tut.
+- Çömelirken kollarını önünde birleştir.
+- Kalkarken kolları tekrar yana aç.
++ Omuzlar sürekli gerilim altında kalır.
++ Hafif dambıl seç.
+! Kollar omuz hizasından düşmesin; bel düz.
+
+#155 kettlebell arnold press
+n Kettlebell Arnold Press
+m fd sd / tr
+- Kettlebell'i avuç sana bakacak şekilde omuz önünde tut.
+- İterken avucu dışa çevir.
+- Tepede kol kilitli; aynı yoldan indir.
++ Dönüş, omzun ön ve yan kısmını birlikte çalıştırır.
++ Tek kol yap, diğer el belinde.
+! Bileği düz tut.
+
+#156 kettlebell halo *
+n Kettlebell Halo
+m fd rd / tu au tr
+- Kettlebell'i ters çevirip (gövde yukarıda) boynuzlarından göğüs önünde tut.
+- Başının etrafında yavaşça bir daire çiz.
+- Göğüs önüne dön, diğer yöne çevir.
++ Omuz ısınması ve hareketliliği için mükemmeldir.
++ Kaburgalar aşağıda, bel sabit.
+! Kettlebell'i başına yakın ama dikkatli geçir.
+
+#157 kettlebell halo overhead extension
+n Kettlebell Halo + Overhead Extension
+m fd tr / tu au
+- Halo hareketiyle kettlebell'i başının etrafından dolaştır.
+- Kettlebell ensenin arkasına gelince dirsekleri açarak yukarı uzat (triceps extension).
+- İndir, daireyi tamamla ve diğer yöne tekrarla.
++ Omuz hareketliliği ile arka kolu birleştirir.
++ Dirsekler öne baksın.
+! Hafif kettlebell seç.
+
+#158 kettlebell pirate ships
+n Kettlebell Pirate Ship
+m fd / ob au
+- Ayaklar geniş, kettlebell'i iki elle bel hizasında tut.
+- Gövdeni bir yana çevirirken kettlebell'i baş hizasına savur.
+- Aşağıdan geçirip diğer yana savur.
++ Hareket bir salıncak gibi akıcı olsun.
++ Ayak ve kalça dönüşe eşlik etsin.
+! Belden zorlayarak dönme.
+
+#159 kettlebell seated press
+n Oturarak Kettlebell Press
+m fd / tr sd
+- Yere otur, bacaklar önde açık; kettlebell'i omzuna al.
+- Gövde dik, başının üstüne it.
+- Kontrollü indir.
++ Bacak desteği olmadığı için gövde çok çalışır.
++ Hafif başla.
+! Geriye yaslanma.
+
+#160 kettlebell seesaw press
+n Kettlebell Seesaw Press
+m fd / tr sd
+- İki kettlebell'i omuzlarına al.
+- Birini iterken diğerini aynı anda indir; tahterevalli gibi.
++ Akıcı bir ritim tut.
++ Gövde hafifçe yana kayabilir ama bel bükülmesin.
+! Ağırlıkları başının üstünde çarpıştırma.
+
+#161 kettlebell thruster
+n Kettlebell Thruster
+m qu fd / gl tr
+- İki kettlebell'i omuzlarına al.
+- Tam çömel.
+- Kalkarken hızı kullanıp kettlebell'leri tek harekette başının üstüne it.
++ Squat ve presi birleştirir; nabzı hızla yükseltir.
++ Dirsekler çömelirken yukarıda kalsın.
+! Topuklar yerde; sırt dik.

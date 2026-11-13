@@ -1,0 +1,688 @@
+// Sırt: kanat, orta sırt, bel, trapez (veri tabanı 49–116)
+
+#49 band assisted pull-up *
+n Bant Destekli Barfiks
+m la / bi tm rd fa
+- Direnç bandını bara as, diz ya da ayağını bandın içine koy.
+- Barı omuzdan geniş kavra, kollar düz asıl.
+- Çenen barı geçene kadar çek, kontrollü in.
++ Bant en çok altta yardım eder; zamanla daha ince banda geç.
++ Gerçek barfikse geçişin en iyi yollarından biridir.
+! Banttan çıkarken dikkat et; ayağından fırlayabilir.
+
+#50 bent-arm barbell pullover
+n Barbell Pullover (Kollar Bükük)
+m la cm / tr se
+- Düz sehpaya yat, barı dar tutuşla göğsünün üstünde tut; dirsekler bükük.
+- Dirsek açısını koruyarak barı başının arkasına indir.
+- Kanat ve göğüsle barı geri çek.
++ Dirsekler içe baksın.
++ Kollar bükük olduğu için düz kol pullover'dan ağır çalışılabilir.
+! Omuz esnekliğin yetmiyorsa derine inme.
+
+#51 cable incline pushdown
+n Eğimli Sehpada Cable Pushdown
+m la / tr se
+- Eğimli sehpayı sırtı üst makaraya dönük koy ve yaslan.
+- Barı baş üstünde kollar düz tut.
+- Kollar düz, barı uyluklarına doğru indir; kontrollü geri bırak.
++ Sehpa gövdeyi sabitlediği için kanatlara tam odaklanırsın.
++ Altta kanatları sık.
+! Dirsekleri bükme, yük arka kola kayar.
+
+#52 elevated cable rows
+n Yükseltilmiş Cable Row
+m la tm / bi rd lb
+- Kürek makinesinin oturağına 10–15 cm'lik bir platform koy ve otur.
+- Kulpu kavra, sırt dik.
+- Kulpu alt karnına doğru çek, kontrollü bırak.
++ Yüksekten çekmek kanatların alt kısmını daha çok çalıştırır.
++ Göğsünü dik tut.
+! Belini yuvarlayarak öne uzanma.
+
+#53 full range-of-motion lat pulldown
+n Tam Hareket Açılı Lat Pulldown (Çapraz Kablo)
+m la / bi tm rd
+- İki üst makaranın ortasına otur; kulpları çapraz tut (sağ el sol makara).
+- Göğsün dik, dirsekleri aşağı ve yana doğru çek; kablolar çözülsün.
+- Kollar tekrar çaprazlanana kadar kontrollü bırak.
++ Normal bara göre hem daha çok esneme hem daha çok sıkışma sağlar.
++ Altta 1 saniye sık.
+! Omuzları kulaklara kaldırma.
+
+#54 gironda sternum chins
+n Gironda Sternum Chin-Up
+m la tm / bi rd
+- Barı ters ya da dar tutuşla kavra ve asıl.
+- Çekerken gövdeni geriye yatır, başını geriye at.
+- Göğsünün alt kısmı bara değene kadar çek; kontrollü in.
++ Barfiks ile kürek hareketinin birleşimidir; orta sırtı da yakar.
++ Tepede sırtın yere neredeyse paralel olur.
+! İleri seviye; önce düzgün barfikste ustalaş.
+
+#55 kipping muscle up
+n Kipping Muscle-Up
+m la / bi tr cl fd au
+l 3
+- Bara asıl, vücudunla ileri-geri salınım (kip) başlat.
+- Geri salınımda kalçanı bara doğru fırlatıp güçlü çek.
+- Göğsün barın üstüne gelince bilekleri çevir ve kolları düzleştirerek yüksel.
++ Önce göğse kadar barfiks ve düz bar dips çalış.
++ Zamanlama güçten önemlidir.
+! Omuz ve dirseklere ani yük biner; hazırlıksız deneme.
+
+#56 kneeling high pulley row
+n Diz Üstü Yüksek Makara Row
+m la / bi tm rd
+- Üst makaraya ip ya da kulp tak, makinenin önünde dizlerinin üstüne çök.
+- Kollar yukarı uzanmış başla.
+- Dirsekleri aşağı ve geriye çekerek kulpu göğsüne getir; kontrollü bırak.
++ Pulldown ile row arası bir açı verir.
++ Sırtı hafif kavisli, göğsü dik tut.
+! Gövdeyle geriye yatarak çekme.
+
+#57 kneeling single-arm high pulley row
+n Diz Üstü Tek Kol Yüksek Makara Row
+m la / bi tm rd
+- Üst makaraya tek kulp tak, dizlerinin üstüne çök.
+- Tek kolla kulpu yukarıdan tut.
+- Dirseği belinin yanına doğru çek; çekerken avucunu içe çevir. Kontrollü bırak.
++ Tek kol çalışmak iki taraf arasındaki farkı düzeltir.
++ Tepede kanadı iyice esnet.
+! Gövdeni yana eğme.
+
+#58 leverage iso row
+n Leverage Iso Row (Plaka Yüklemeli Kürek)
+m la tm / bi rd
+- Göğsünü pede yasla, kulpları kavra.
+- Dirsekleri geriye çek, kürek kemiklerini sık.
+- Kontrollü bırak.
++ Kollar bağımsız çalışır; tek tek de yapılabilir.
++ Göğüs destekli olduğu için bele yük binmez.
+! Göğsünü pedden ayırma.
+
+#59 london bridges
+n London Bridge (İple İniş-Çıkış)
+m la / bi fa tm au
+- Sağlam bağlı tırmanma ipini tut, ayaklarını sabit bir bara ya da kutuya bas.
+- Vücudun dümdüz, elden ele ipi bırakarak yere paralel olana kadar geriye in.
+- Elden ele çekerek başlangıca dön.
++ Kavrama, kanat ve gövde gücünü birlikte çalıştırır.
++ Kalçayı düşürme.
+! İpin ve basılan yüzeyin sağlam olduğundan emin ol.
+
+#60 muscle up
+n Muscle-Up
+m la / bi tr cl fd au
+l 3
+- Barı (ya da halkaları) sahte tutuşla kavra ve asıl.
+- Patlayıcı şekilde, göğsünü bara doğru yüksek çek.
+- Göğsünü barın üstüne aktar, bilekleri çevir ve dips gibi iterek kollarını düzleştir.
++ Yüksek barfiks (göğüs bara) ve düz bar dips ön koşuldur.
++ Çekişten itişe geçiş anı (transition) ayrı çalışılmalı.
+! Dirsek ve omuz için çok yüklüdür.
+
+#61 one arm lat pulldown
+n Tek Kol Lat Pulldown
+m la / bi tm
+- Üst makaraya tek kulp tak, otur.
+- Tek kolla kulpu yukarıdan tut, gövden dik.
+- Dirseği belinin yanına çek, kontrollü bırak.
++ Çekerken hafifçe o tarafa eğilmek kanadı daha çok sıkıştırır.
++ İki taraf arasındaki güç farkını kapatır.
+! Gövdeyi savurma.
+
+#62 rocky pull-ups pulldowns
+n Rocky Barfiks (Ön ve Ense Dönüşümlü)
+m la / bi tm rd
+- Barı geniş kavra.
+- Bir tekrarda çeneni barın üstüne (öne), bir sonrakinde barı ensenin arkasına gelecek şekilde çek.
+- Dönüşümlü devam et.
++ Makinede lat pulldown olarak da yapılabilir.
++ Ense tekrarında başını öne uzatma, gövdeyi dik tut.
+! Ense arkası çekiş omuz esnekliği ister; ağrı varsa sadece öne çek.
+
+#63 rope climb
+n İp Tırmanma
+m la / bi fa tm au
+- İpi başının üstünden iki elle kavra.
+- Ayaklarınla ipi kilitle (ip bir ayağın altından, diğerinin üstünden geçsin).
+- Bacaklarla it, kollarla çek; elden ele tırman. Aynı şekilde kontrollü in.
++ Ayak kilidi kolların yükünü çok azaltır.
++ Bacaksız tırmanış ileri seviyedir.
+! Aşağı kayarak inme; avuçları yakar. Altında minder olsun.
+
+#64 rope straight-arm pulldown
+n İple Straight-Arm Pulldown
+m la / tr se
+- Üst makaraya ip tak, bir adım geri çekil, hafif öne eğil.
+- Kollar neredeyse düz, ipi kalçana doğru indir; sonunda ipi iki yana aç.
+- Kontrollü yukarı bırak.
++ İp, düz bara göre daha uzun hareket aralığı verir.
++ Sırt antrenmanı öncesi kanatları hissetmek için iyidir.
+! Dirsekleri bükme.
+
+#65 shotgun row
+n Shotgun Row (Tek Kol Kablo)
+m la / bi tm rd
+- Alt makaraya tek kulp tak, birkaç adım geri çekil; bacaklar geniş, öne-arkaya açık.
+- Kol uzanmış, omuz öne esnemiş başla.
+- Omzu geri çekip dirseği bükerek kulpu beline çek; çekerken avucu içe çevir. Kontrollü bırak.
++ Başta omzun öne gitmesine izin ver; kanat tam esner.
++ Kalça sabit kalsın.
+! Belden dönerek çekme.
+
+#66 side to side chins
+n Yana Kaymalı Barfiks
+m la / bi fa tm rd
+- Barı geniş kavra ve asıl.
+- Kendini bir eline doğru çek; çenen o elin hizasına gelsin.
+- İn ve diğer ele doğru çek.
++ Bir tarafa daha çok yük bindirir; tek kol barfikse hazırlıktır.
++ Tepede yana kayarak da yapılabilir (typewriter).
+! Sallanmadan, kontrollü yap.
+
+#67 underhand cable pulldowns
+n Ters Tutuş Lat Pulldown
+m la / bi tm rd
+- Barı omuz genişliğinde, avuçlar sana bakacak şekilde kavra.
+- Göğsün dik, barı üst göğsüne çek.
+- Kollar uzayana kadar kontrollü bırak.
++ Biceps daha çok yardım eder; kanatların alt kısmını iyi çalıştırır.
++ Dirsekleri gövdeye yakın indir.
+! Geriye fazla yatma.
+
+#68 v-bar pulldown
+n V-Bar Pulldown
+m la / bi tm rd
+- Üst makaraya V kulp tak, otur.
+- Hafif geriye yaslan, kulpu göğsünün üstüne çek.
+- Kontrollü bırak, tepede kanatları esnet.
++ Nötr tutuş dirsek ve omuzlar için rahattır.
++ Göğsünü kulpa doğru kaldır.
+! Ağırlığı savurarak çekme.
+
+#69 v-bar pullup
+n V-Bar Barfiks
+m la / bi tm rd
+- V kulpu barfiks barının üstüne at ve iki elle kavra.
+- Başını barın bir yanına gelecek şekilde çek; her tekrarda taraf değiştir.
+- Kontrollü in.
++ Nötr tutuş biceps ve kanadı birlikte güçlü çalıştırır.
++ Göğsünü kulpa doğru götür.
+! Kulpun barda kaymadığından emin ol.
+
+#70 weighted pull ups *
+n Ağırlıklı Barfiks
+m la / bi tm rd fa
+- Ağırlık kemerine plaka tak ya da ayaklarının arasına dambıl sıkıştır.
+- Barı omuzdan geniş kavra.
+- Çenen barı geçene kadar çek, tam uzanana kadar in.
++ Vücut ağırlığıyla 10–12 temiz tekrar yapabiliyorsan ağırlık ekle.
++ Küçük artışlarla ilerle (2,5 kg).
+! Ağırlıkla sallanma; dirsekleri altta sertçe açma.
+
+#71 wide-grip pulldown behind the neck
+n Ense Arkası Lat Pulldown
+m la / bi tm rd
+- Barı geniş kavra, otur, gövden dik.
+- Başını hafif öne eğerek barı ensenin arkasına, omuz hizasına çek.
+- Kontrollü bırak.
++ Hafif ağırlıkla ve yavaş yap.
++ Aynı kasları öne çekiş daha güvenli çalıştırır.
+! Omuz ve boyun için risklidir; omuz esnekliğin iyi değilse yapma.
+
+#72 wide-grip rear pull-up
+n Ense Arkası Barfiks
+m la / bi tm rd
+- Barı geniş kavra ve asıl.
+- Başını öne eğip barı ensenin arkasına gelecek şekilde çek.
+- Kontrollü in.
++ Gövdeyi dik tut, sallanma.
++ Öne barfiks aynı işi daha güvenli yapar.
+! Omuz sıkışması riski yüksektir; ağrı varsa bırak.
+
+#73 alternating kettlebell row
+n Dönüşümlü Kettlebell Row
+m tm la / bi rd lb
+- İki kettlebell'i al, kalçadan öne eğil; sırt düz.
+- Bir kettlebell'i beline çek, indirirken diğerini çek.
+- Dönüşümlü devam et.
++ Gövde açısını sabit tut.
++ Dirsekler gövdeye yakın.
+! Belini yuvarlama.
+
+#74 alternating renegade row
+n Renegade Row
+m tm la / au ob bi tr cm
+- İki dambıl ya da kettlebell'in üstünde şınav pozisyonu al; ayaklar geniş.
+- Bir ağırlığı beline çekerken diğer kolla yere bastır.
+- İndir ve diğer kolla çek.
++ Kalça dönmesin; karın bütün hareket boyunca sıkı.
++ Araya şınav ekleyerek zorlaştırabilirsin.
+! Yuvarlak dambıl kayabilir; altıgen dambıl kullan.
+
+#75 bent over one-arm long bar row
+n Tek Kol Landmine Row
+m tm la / bi rd lb
+- Barın bir ucunu köşeye sabitle, diğer ucuna plaka tak.
+- Bara yan dur, öne eğil; barı plakaların hemen arkasından tek elle tut.
+- Dirseği geriye çekerek barı beline kaldır, kontrollü indir.
++ Boş elini dizine daya.
++ Küçük plakalar hareket aralığını artırır.
+! Sırt düz kalsın.
+
+#76 bent over two-arm long bar row
+n T-Bar Row (Landmine)
+m tm la / bi rd lb
+- Barın bir ucunu köşeye sabitle; barı bacaklarının arasına al.
+- V kulpu barın altından geçir ya da barı iki elle kavra; gövde 45° öne eğik.
+- Barı göğsüne çek, kontrollü indir.
++ Orta sırt kalınlığı için klasik harekettir.
++ Göğsünü yukarıda tut.
+! Ağır yükte gövdeyle silkeleme.
+
+#77 bent over two-dumbbell row *
+n Bent Over Dumbbell Row
+m tm la / bi rd lb
+- Her elde bir dambıl, kalçadan öne eğil; sırt düz, dizler hafif bükük.
+- Dambılları belinin yanlarına çek.
+- Tepede kürek kemiklerini sık, kontrollü indir.
++ Dirsekleri yana açarsan orta sırt, gövdeye yakın çekersen kanat çalışır.
++ Gövde açısı sabit.
+! Bel yorulursa göğüs destekli versiyona geç.
+
+#78 bent over two-dumbbell row palms in
+n Bent Over Dumbbell Row (Avuçlar İçe)
+m la tm / bi rd lb
+- Dambılları avuçlar birbirine bakacak şekilde tut, öne eğil.
+- Dirsekler gövdeye yakın, dambılları kalçana doğru çek.
+- Kontrollü indir.
++ Nötr tutuş kanatları daha çok devreye sokar.
++ Altta kanadı esnet.
+! Sırtını yuvarlama.
+
+#79 bodyweight mid row
+n Vücut Ağırlığıyla Row (Smith Barında)
+m tm la / bi rd
+- Smith barını bel hizasında kilitle, altına uzanıp barı geniş kavra.
+- Vücut düz, göğsünü bara çek; dirsekler yana açık.
+- Kontrollü in.
++ Ayakları yükseltmek zorlaştırır.
++ Dirsekleri yana açmak orta sırtı vurgular.
+! Kalçayı sarkıtma.
+
+#80 dumbbell incline row *
+n Göğüs Destekli Dumbbell Row
+m tm la / bi rd
+- Sehpayı 30–45° eğime ayarla, göğsünü sehpaya yaslayarak yüzüstü uzan.
+- Dambıllar aşağı sarksın.
+- Dirsekleri geriye çek, kürek kemiklerini sık; kontrollü indir.
++ Bel devreden çıktığı için hile yapılamaz.
++ Bel ağrısı olanlar için en güvenli kürek hareketidir.
+! Göğsünü sehpadan kaldırma.
+
+#81 incline bench pull
+n Eğimli Sehpada Barbell Row
+m tm la / rd bi
+- Eğimli sehpaya yüzüstü uzan; barı sehpanın altından geniş tutuşla kavra.
+- Barı sehpaya doğru çek.
+- Kontrollü indir.
++ Göğüs destekli olduğu için sırt tek başına çalışır.
++ Tepede 1 saniye sık.
+! Çeneni sehpaya bastırma.
+
+#82 inverted row with straps
+n Askıda Inverted Row (TRX)
+m tm la / bi rd
+- Askı kulplarını tut, geriye yaslan; vücut düz, kollar uzanmış.
+- Göğsünü kulplara doğru çek.
+- Kontrollü in.
++ Ayaklar ileri gittikçe zorlaşır.
++ Çekerken avuçları içe çevirmek rahat bir yol verir.
+! Kalça düşmesin.
+
+#83 leverage high row
+n Leverage High Row
+m la tm / bi rd
+- Makineye otur, göğsünü pede yasla; yukarıdaki kulpları kavra.
+- Dirsekleri aşağı ve geriye çek.
+- Kontrollü bırak, tepede kanatları esnet.
++ Pulldown ile kürek arası bir açıdır.
++ Tek kol çalışılabilir.
+! Kalçanı koltuktan kaldırma.
+
+#84 lying cambered barbell row
+n Yüzüstü Kavisli Bar Row
+m tm la / bi rd
+- Yüksek, düz bir sehpaya yüzüstü uzan; kavisli barı alttan kavra.
+- Barı sehpaya doğru çek; kavis sayesinde daha yukarı çekebilirsin.
+- Kontrollü indir.
++ Tam izole sırt çalışmasıdır.
++ Kavisli bar yoksa dambıl kullan.
+! Sehpanın sağlam olduğundan emin ol.
+
+#85 lying t-bar row
+n Göğüs Destekli T-Bar Row
+m tm la / bi rd
+- T-bar makinesinde göğsünü pede yasla, kulpları kavra.
+- Barı kaldırıp kollarını uzat.
+- Kulpları göğsüne çek, kürek kemiklerini sık; kontrollü indir.
++ Bel yükü yoktur; ağır çalışmaya uygundur.
++ Geniş kulp orta sırtı, dar kulp kanadı vurgular.
+! Ped göğsüne bastığı için nefesini çekişte ver.
+
+#86 middle back shrug
+n Orta Sırt Shrug (Göğüs Destekli)
+m tm / rd tu
+- Eğimli sehpaya yüzüstü uzan, dambıllar aşağı sarksın.
+- Dirsekleri bükmeden yalnızca kürek kemiklerini birbirine yaklaştır.
+- 1 saniye sık, bırak.
++ Hareket çok küçüktür; kollar düz kalır.
++ Duruş ve kürek kemiği kontrolü için çok faydalıdır.
+! Omuzları kulaklara doğru kaldırma; geriye sık.
+
+#87 mixed grip chin
+n Karışık Tutuş Barfiks
+m la / bi tm fa
+- Barı bir el üstten, bir el alttan kavra.
+- Çenen barı geçene kadar çek.
+- Kontrollü in; her sette tutuşu değiştir.
++ Karışık tutuş kavramayı güçlendirir.
++ Gövdenin dönmesine direnç göster.
+! Her iki yönde eşit set yap.
+
+#88 one arm chin-up
+n Tek Kol Barfiks
+m la bi / fa tm au
+l 3
+- Barı tek elle ters tutuşla kavra ve asıl.
+- Omzu aşağı çekerek başla, gövdeni döndürmeden çenen barı geçene kadar çek.
+- Kontrollü in.
++ Önce tek kol negatif ve bir el bileği tutarak destekli çalış.
++ Yıllar süren bir güç hedefidir.
+! Dirsek tendonlarına çok yük biner; acele etme.
+
+#89 one-arm kettlebell row
+n Tek Kol Kettlebell Row
+m la tm / bi rd lb
+- Bir ayak önde, öne eğil; öndeki dizine dirseğini daya.
+- Diğer elle kettlebell'i yerden al.
+- Kettlebell'i beline çek, kontrollü indir.
++ Dirseği kalçaya doğru çek.
++ Sırt düz, bakış yere.
+! Gövdeyi döndürme.
+
+#90 one-arm long bar row
+n Tek Kol Uzun Bar Row
+m la tm / bi rd lb
+- Barın bir ucunu köşeye sabitle; bara paralel dur, öne eğil.
+- Barı plakaların arkasından tek elle kavra.
+- Dirseği geriye çekerek barı kalçana kaldır, kontrollü indir.
++ Kayış kullanırsan kavrama sınırlamaz.
++ Altta kanadı esnet.
+! Sırtı düz tut.
+
+#91 seated one-arm cable pulley rows
+n Oturarak Tek Kol Cable Row
+m tm la / bi rd
+- Kürek makinesine otur, tek kulpu tek elle tut.
+- Sırt dik, kulpu belinin yanına çek; çekerken avucu içe çevir.
+- Kontrollü bırak.
++ Gövdeyi sabit tut, sadece kol ve kürek kemiği hareket etsin.
++ Sonunda kürek kemiğini iyice geri çek.
+! Belden dönme.
+
+#92 sled row
+n Kızak Çekme (Sled Row)
+m tm la / bi rd qu
+- Kızağa kayış ya da ip bağla, kızağa dönük dur.
+- Hafif çömel; ipi kendine doğru kürek çeker gibi çek.
+- Geri adım atıp ipi gerdir ve tekrarla.
++ Kondisyon ve sırt gücünü birlikte çalıştırır.
++ Her çekişte kürek kemiklerini sık.
+! Zemin kaygansa dengeni koru.
+
+#93 smith machine bent over row
+n Smith Machine Bent Over Row
+m tm la / bi rd lb
+- Smith barını diz altı hizasına ayarla, omuz genişliğinde kavra.
+- Kalçadan öne eğil; sırt düz.
+- Barı göbeğine çek, kontrollü indir.
++ Sabit ray dengeyi kolaylaştırır.
++ Ters tutuşla da yapılabilir.
+! Bar yolu sabit olduğu için ayak yerini iyi ayarla.
+
+#94 straight bar bench mid rows
+n Sehpa Üstünde Barbell Row
+m tm la / bi rd lb
+- Barı sehpanın ucuna koy, sehpanın üstünde barın arkasında dur.
+- Kalçadan eğil, barı orta genişlikte üstten kavra; sırt düz.
+- Barı gövdene çek, tam esneyene kadar indir.
++ Yüksekte durmak daha uzun hareket aralığı verir.
++ Kürek kemiklerini her tekrarda sık.
+! Sehpa üstünde dengeni kaybetme; ağır çalışma.
+
+#95 suspended row
+n Askıda Row (TRX)
+m tm la / bi rd
+- Askı kulplarını tut, geriye yaslan; topuklar yerde, vücut düz.
+- Dirsekleri geriye çekerek göğsünü ellerine yaklaştır.
+- Kontrollü in.
++ Gövde yere yaklaştıkça zorlaşır.
++ Evde sırt çalışmanın en pratik yoludur.
+! Omuzları kulaklara çekme.
+
+#96 two-arm kettlebell row
+n Çift Kettlebell Row
+m tm la / bi rd lb
+- İki kettlebell'i önüne koy, kalçadan eğilip kavra.
+- Sırt düz, ikisini birden beline çek.
+- Kontrollü indir.
++ Dirsekler gövdeye yakın.
++ Karnı sık, gövde sabit.
+! Belini yuvarlama.
+
+#97 deadlift with bands
+n Bantlı Deadlift
+m lb gl ha / tu fa qu la
+- Direnç bantlarını barın iki ucuna ve yere (platforma ya da ağır dambıllara) bağla.
+- Normal deadlift tekniğiyle barı kaldır.
+- Bant gerildikçe yük artar; tepeye kadar hızlanarak çek.
++ Kilitlenme gücünü ve hızı geliştirir.
++ Bar ağırlığını normalin altında tut.
+! Bantların eşit gerildiğini kontrol et.
+
+#98 deadlift with chains
+n Zincirli Deadlift
+m lb gl ha / tu fa qu la
+- Zincirleri barın iki ucuna as; bir kısmı yerde yığılı kalsın.
+- Normal deadlift tekniğiyle kaldır.
+- Bar yükseldikçe zincir yerden kalkar ve ağırlık artar.
++ Yerden kalkışı hafif, kilitlenmeyi ağır yapar.
++ Zincirler iki tarafta eşit uzunlukta olsun.
+! Sırt düz; zincirlerin sallanmasına dikkat.
+
+#99 deficit deadlift
+n Deficit Deadlift (Yükseltiden)
+m lb gl ha / qu tu fa la
+- 3–10 cm'lik bir platformun ya da plakanın üstünde dur.
+- Normal deadlift pozisyonu al; kalça biraz daha aşağıda olur.
+- Barı bacaklarına yakın tutarak kaldır, kontrollü indir.
++ Yerden kalkış gücünü geliştirir.
++ Normal deadliftten hafif çalış.
+! Esnekliğin yetmiyorsa sırt yuvarlanır; yüksekliği azalt.
+
+#100 hyperextensions no bench
+n Düz Sehpada Hyperextension
+m lb / gl ha
+- Düz sehpaya yüzüstü uzan; kalçan sehpanın ucunda, gövden boşta. Biri bacaklarını tutsun.
+- Eller göğüste ya da başın arkasında, gövdeni aşağı indir.
+- Gövde bacaklarla düz çizgiye gelene kadar kalk.
++ Hyperextension sehpası yoksa iyi bir alternatiftir.
++ Kalçayı sıkarak kalk.
+! Yardımcının bacaklarını sağlam tuttuğundan emin ol.
+
+#101 rack pull with bands
+n Bantlı Rack Pull
+m lb tu / gl ha fa
+- Barı diz hizasındaki pimlere koy, bantları bara ve kafesin altına bağla.
+- Sırt düz, barı kalçanı ileri iterek kaldır.
+- Pimlere kontrollü indir.
++ Deadliftin son kısmını aşırı yükler.
++ Tepede dik dur, geriye yaslanma.
+! Bant kopması tehlikelidir; bantları kontrol et.
+
+#102 reverse band deadlift
+n Ters Bantlı Deadlift
+m lb gl ha / qu tu fa
+- Bantları kafesin üstüne as ve barın iki ucuna geçir.
+- Bantlar altta barı hafifletir; normal deadlift tekniğiyle kaldır.
+- Bar yükseldikçe bantın yardımı azalır.
++ Normalden ağır yükle çalışıp kilitlenmeyi güçlendirir.
++ Bantların yüksekliği iki tarafta eşit olsun.
+! Aşırı yükle forma dikkat; sırt düz.
+
+#103 seated good mornings
+n Oturarak Good Morning
+m lb / gl ha
+- Sehpaya otur, barı sırtına al; ayaklar geniş.
+- Sırt düz, kalçadan öne eğilerek göğsünü sehpaya yaklaştır.
+- Bel kaslarıyla doğrul.
++ Hafif ağırlıkla başla.
++ Bacaklar devre dışı kaldığı için bel doğrudan çalışır.
+! Bel sorunu varsa yapma; sırtı yuvarlama.
+
+#104 stiff leg barbell good morning
+n Düz Bacak Good Morning
+m ha lb / gl
+- Barı sırtına al, ayaklar kalça genişliğinde, dizler neredeyse düz.
+- Kalçayı geriye iterek gövdeni yere paralel olana kadar eğ.
+- Arka bacak ve kalçayla doğrul.
++ Arka bacakta güçlü bir esneme hissedersin.
++ Sırt hep düz.
+! Hafif ağırlık şart; bel riski yüksektir.
+
+#105 weighted ball hyperextension
+n Pilates Topunda Ağırlıklı Hyperextension
+m lb / gl ha
+- Pilates topuna karnınla uzan, ayaklarını duvara ya da yere sabitle.
+- Göğsünde plaka tut ya da eller başın arkasında.
+- Gövdeni düz çizgiye gelene kadar kaldır, kontrollü indir.
++ Top, hareket aralığını artırır.
++ Kalçayı sıkarak bitir.
+! Ayakların kaymadığından emin ol.
+
+#106 barbell shrug behind the back
+n Arkadan Barbell Shrug
+m tu / tm fa
+- Barı arkanda, kalçanın hemen altında tut; avuçlar arkaya baksın.
+- Omuzlarını kulaklarına doğru kaldır.
+- 1 saniye sık, indir.
++ Arkadan tutuş orta trapezi ve duruşu daha çok çalıştırır.
++ Kollar düz kalsın.
+! Barı kalçana sürterek yaralama; hareket aralığı kısadır.
+
+#107 cable shrugs
+n Cable Shrug
+m tu / fa
+- Alt makaraya düz bar tak, barı uyluk önünde tut.
+- Omuzlarını kulaklarına doğru kaldır.
+- Tepede sık, yavaşça indir.
++ Kablo sabit gerilim verir.
++ Omuzları döndürme, düz yukarı çek.
+! Boynu öne uzatma.
+
+#108 calf-machine shoulder shrug
+n Calf Makinesinde Shrug
+m tu
+- Ayakta calf raise makinesinin omuz pedlerinin altına gir, dik dur.
+- Kollar yanda, omuzlarınla pedleri yukarı it.
+- Tepede sık, indir.
++ Kavrama gerekmediği için trapez tek başına yorulur.
++ Dizler hafif bükük.
+! Boynunu pedlerin arasına sıkıştırma.
+
+#109 kettlebell sumo high pull
+n Kettlebell Sumo High Pull
+m tu sd / gl qu ha ad rd
+- Ayaklar geniş, kettlebell ortada yerde; çömelip iki elle kavra.
+- Bacak ve kalçayla patlayıcı şekilde doğrul.
+- Hızı kullanarak kettlebell'i çene hizasına çek; dirsekler yukarıda. Kontrollü indir.
++ Güç bacaklardan gelir, kollar sadece yönlendirir.
++ Dirsekler ellerden yüksek.
+! Sırtı yuvarlama; omuz ağrısı varsa çekişi göğüs hizasında bitir.
+
+#110 leverage shrug
+n Leverage Shrug (Makine)
+m tu / fa
+- Makinenin kulplarını yanlardan kavra, dik dur.
+- Omuzlarını kulaklarına kaldır.
+- Tepede sık, indir.
++ Ağır çalışmaya uygundur.
++ Başını dik tut.
+! Ağırlığı savurma.
+
+#111 scapular pull-up *
+n Skapula Barfiks (Scapular Pull-Up)
+m tm la / tu
+- Bara asıl, kollar düz.
+- Dirseklerini bükmeden kürek kemiklerini aşağı ve geriye çekerek vücudunu birkaç santim yükselt.
+- Yavaşça tam asılmaya dön.
++ Barfiksin ilk hareketini öğretir.
++ Hareket küçüktür; kolları bükersen amaç kaybolur.
+! Boynunu öne uzatma.
+
+#112 smith machine behind the back shrug
+n Smith Machine Arkadan Shrug
+m tu / tm
+- Smith barını kalça hizasında arkanda tut.
+- Omuzlarını yukarı ve hafif geriye kaldır.
+- Sık, indir.
++ Sabit ray barın kalçaya sürtmesini azaltır.
++ Bir adım öne çıkmak rahatlatır.
+! Hareket aralığını zorlamaya çalışma.
+
+#113 smith machine upright row
+n Smith Machine Upright Row
+m sd tu / bi fd
+c Omuz
+- Smith barını omuz genişliğinde kavra, uyluk önünde tut.
+- Dirsekler önde, barı göğüs hizasına çek.
+- Kontrollü indir.
++ Geniş tutuş omuz eklemi için daha rahattır.
++ Dirsekler ellerden yüksekte.
+! Çeneye kadar çekme; omuz sıkışabilir.
+
+#114 standing dumbbell upright row
+n Dumbbell Upright Row
+m sd tu / bi fd
+c Omuz
+- Dambılları uyluk önünde tut.
+- Dirsekler önde, dambılları göğüs hizasına çek.
+- Kontrollü indir.
++ Dambıllar bileklere serbestlik verir; bara göre omuz dostudur.
++ Dirsekleri omuz hizasında durdur.
+! Omuzda batma olursa bırak.
+
+#115 upright cable row
+n Cable Upright Row
+m sd tu / bi fd
+c Omuz
+- Alt makaraya düz bar ya da ip tak, barı uyluk önünde tut.
+- Dirsekler önde, barı göğüs hizasına çek.
+- Kontrollü indir.
++ İp kullanmak bilekleri rahatlatır.
++ Sürekli gerilim yan omuzu iyi yakar.
+! Gövdeyle geriye yatma.
+
+#116 upright row with bands
+n Bantla Upright Row
+m sd tu / bi
+c Omuz
+- Bandın ortasına bas, uçlarını uyluk önünde tut.
+- Dirsekler önde, elleri göğüs hizasına çek.
+- Kontrollü indir.
++ Evde omuz çalışmak için pratiktir.
++ Bandı kısaltarak zorlaştır.
+! Bant ayağının altından kaymasın.

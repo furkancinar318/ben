@@ -449,19 +449,6 @@ t s
 + Ayaklar yere değiyorsa dizleri bük.
 ! Omuz ağrısı varsa omuzları aktif (aşağı çekili) tut.
 
-#+scappullup
-n Skapula Barfiks (Scapular Pull-Up)
-m tm la / tu
-c Sırt
-e bw
-l 1
-- Bara asıl, kollar düz.
-- Dirseklerini bükmeden kürek kemiklerini aşağı ve geriye çekerek vücudunu birkaç santim yükselt.
-- Yavaşça tam asılmaya dön.
-+ Barfiksin ilk hareketini öğretir.
-+ Hareket küçüktür; kolları bükersen amaç kaybolur.
-! Boynunu öne uzatma.
-
 #+pendlay
 n Pendlay Row
 m tm la / rd bi lb
