@@ -1,21 +1,5 @@
 // Veri tabanında olmayan ek hareketler (fotoğrafsız; kas haritasıyla gösterilir)
 
-#+vakum *
-n Karın Vakum (Stomach Vacuum)
-m al au / ob
-c Karın
-e bw
-l 1
-t s
-- Ayakta hafif öne eğilip ellerini dizlerine koy; ya da sırtüstü yat, dizler bükük.
-- Burnundan derin nefes al, sonra ağzından ciğerlerini tamamen boşalt.
-- Nefes vermişken göbeğini omurgana doğru, kaburgalarının altına çeker gibi içeri çek.
-- 15–30 saniye tut; bu sırada küçük nefesler alabilirsin. Bırak, dinlen, tekrarla.
-+ Aç karnına, özellikle sabah yapmak en kolayıdır. 10–15 saniyeyle başla, zamanla 45–60 saniyeye çık.
-+ Karnı kasıp sertleştirmek değil, içeri çekmek hedef. Derin karın kasını (transversus) çalıştırır ve duruşu toparlar.
-+ Önce sırtüstü öğren; sonra dört ayak üstünde, oturarak ve ayakta dene.
-! Yüksek tansiyon, fıtık ya da hamilelik varsa yapma. Baş dönmesi olursa hemen bırak.
-
 #+birddog *
 n Bird Dog
 m lb / gl au ob
@@ -69,19 +53,6 @@ l 3
 + Önce sadece iniş (negatif) kısmını çalış.
 + Kalçayı bükme; hareket kalitesi tekrar sayısından önemli.
 ! İleri seviye bir harekettir; bel ağrısı varsa yapma.
-
-#+toestobar
-n Toes to Bar
-m al au / la fa
-c Karın
-e bw
-l 3
-- Barfiks barına omuz genişliğinde asıl.
-- Karnını sıkıp bacaklarını düz şekilde yukarı kaldır, ayak uçlarını bara değdir.
-- Sallanmadan, kontrollü şekilde indir.
-+ Yapamıyorsan önce dizleri göğse çekerek (knee raise) başla.
-+ Kanatlarını aktif tut, omuzlardan sarkma.
-! Savrularak yapmak beli ve omuzu zorlar.
 
 #+hangknee *
 n Barda Diz Çekme (Hanging Knee Raise)
@@ -663,20 +634,6 @@ t s
 + Karın ve kalça fleksörlerini açar.
 + Bel hassassa dirseklerin üstünde (sfenks) yap.
 ! Belde sıkışma hissedersen yüksekliği azalt.
-
-#+sirtustudonus *
-n Sırtüstü Omurga Dönüşü
-m lb ob / gl
-c Esneme
-e bw
-l 1
-t s
-- Sırtüstü yat, kollarını iki yana aç.
-- Bir dizini göğsüne çekip karşı tarafa, yere doğru bırak.
-- Omuzlar yerde, başını diğer tarafa çevir; 20–30 saniye tut.
-+ Nefes verdikçe diz yere yaklaşır.
-+ Antrenman sonrası beli rahatlatır.
-! Fıtık şikâyetin varsa zorlamadan yap.
 
 #+derinsquat
 n Derin Squat Bekleyişi

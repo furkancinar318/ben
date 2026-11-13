@@ -151,6 +151,7 @@ def parse_parts():
             elif tag == '+': cur['tips'].append(rest)
             elif tag == '!': cur['warn'].append(rest)
             elif tag in ('n', 'm', 'c', 'e', 'l', 't'): cur[tag] = rest
+            elif tag == 'a': cur['a'] = rest.split()
             else: errs.append(f'{where}: anlaşılmayan satır "{line[:40]}"')
     for key, d in list(db.items()) + list(extra.items()):
         w = d['where']
@@ -209,6 +210,11 @@ def build():
                 if d['t'] == 'w': o.pop('t', None)
                 else: o['t'] = d['t']
             text_fields(o, d)
+            if d.get('a'):
+                o['al'] = ['b_x_' + san(x) for x in d['a']]
+                for x in o['al']:
+                    if x in ids: errs.append(f'çakışan takma kimlik {x}')
+                    ids.add(x)
         add(o)
     for key, d in extra.items():
         if errs and ('p' not in d or 'n' not in d): continue

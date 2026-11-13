@@ -624,6 +624,7 @@ m tu / fa
 ! Ağırlığı savurma.
 
 #111 scapular pull-up *
+a scappullup
 n Skapula Barfiks (Scapular Pull-Up)
 m tm la / tu
 - Bara asıl, kollar düz.

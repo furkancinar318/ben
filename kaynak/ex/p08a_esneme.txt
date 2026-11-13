@@ -1,0 +1,575 @@
+// Esneme, ısınma ve foam roller — 1. bölüm (515–575)
+@c Esneme
+
+#515 hamstring
+n 90/90 Arka Bacak Esnetme
+m ha / ca
+- Sırtüstü yat; bir bacak yerde düz, diğerinde kalça ve diz 90°.
+- Uyluğu ellerinle tut, dizini tavana doğru düzleştir.
+- Gerginliği hissettiğin yerde 20–30 saniye bekle; taraf değiştir.
++ Uyluk sabit kalsın; sadece diz açılsın.
+! Yaylanma.
+
+#516 adductor
+n İç Bacak Foam Roller
+m ad
+- Yüzüstü uzan, bir bacağını yana aç; iç uyluğunu foam roller'ın üstüne koy.
+- Kasıktan dize doğru yavaşça yuvarlan.
+- Hassas noktada 20–30 saniye dur.
++ Kası gevşek bırak; nefes al.
+! Diz ekleminin üstüne bastırma.
+
+#517 adductor groin
+n Partnerli Kasık Esnetme
+m ad
+- Sırtüstü yat, bacakları tavana kaldırıp açabildiğin kadar aç; partner ayaklarını tutsun.
+- 10 saniye bacaklarını kapatmaya çalış; partner direnç göstersin.
+- Gevşe; partner bacakları biraz daha açsın, 20 saniye bekle.
++ Kas–gevşe (PNF) yöntemi esnekliği hızlı artırır.
+! Partner yavaş ve dikkatli olmalı.
+
+#518 all fours quad
+n Dört Ayak Üstünde Ön Bacak Esnetme
+m qu
+- Dört ayak üstünde dur; bir ayağını arkadan aynı taraftaki elinle tut.
+- Topuğu kalçana çek, kalçanı hafif öne it.
+- 20–30 saniye tut; taraf değiştir.
++ Ön bacak ve kalça fleksörünü birlikte açar.
+! Belini çukurlaştırma.
+
+#519 ankle circles
+n Ayak Bileği Çevirme
+m ca
+t w
+- Bir yere tutun, bir ayağını yerden kaldır.
+- Ayak bileğinle büyük daireler çiz; 10 kez bir yöne, 10 kez diğer yöne.
++ Koşu ve bacak antrenmanı öncesi bileği hazırlar.
+! Ağrı varsa zorlamadan yap.
+
+#520 ankle knee *
+n Figür 4 Kalça Esnetme
+m gl
+- Sırtüstü yat, dizler bükük; bir ayak bileğini karşı dizin üstüne koy.
+- Alttaki bacağın uyluğunu tutup iki bacağı göğsüne çek.
+- 20–30 saniye tut; taraf değiştir.
++ Kalçanın derinindeki piriformis kasını açar; bel ve siyatik şikâyetinde rahatlatır.
+! Baş ve omuzlar yerde, gevşek kalsın.
+
+#521 anterior tibialis
+n Kaval Kası Masajı
+m ca
+e ot
+- Yere otur, dizler bükük; masaj çubuğunu (ya da oklavayı) kaval kemiğinin dış yanındaki kasa bastır.
+- Dizin altından bileğe doğru yavaşça yuvarla.
+- Hassas noktada 10–20 saniye dur.
++ Koşucularda sık gerilen bir kastır.
+! Kemiğin üstüne bastırma.
+
+#522 arm circles *
+n Kol Çevirme
+m fd sd rd / tu
+t w
+- Ayakta dur, kollarını iki yana aç.
+- Küçük dairelerle başla, giderek büyüt; 10–15 kez ileri, 10–15 kez geri.
++ Üst vücut antrenmanı öncesi omuzları ısıtır.
+! Omuzda takılma ya da ağrı varsa daireyi küçült.
+
+#523 behind head chest
+n Partnerli Göğüs Esnetme
+m cm / fd
+- Yere dik otur, eller başın arkasında; partner arkandan dirseklerini tutsun.
+- 10 saniye dirseklerini öne getirmeye çalış; partner tutsun.
+- Gevşe; partner dirsekleri nazikçe geriye çeksin, 20 saniye bekle.
++ Göğüs ve ön omuz birlikte açılır.
+! Partner ani çekmesin.
+
+#524 brachialis
+n Üst Kol Foam Roller
+m bi
+- Yan yat, üst kolunun ön-dış kısmını foam roller'ın üstüne koy.
+- Omuzdan dirseğe doğru yavaşça yuvarlan.
+- Hassas noktada 10–20 saniye dur.
++ Çok curl yapanlarda dirsek önü gerginliğini alır.
+! Dirsek eklemine bastırma.
+
+#525 calf elbows wall
+n Duvarda Baldır Esnetme (Ön Kollar Duvarda)
+m ca
+- Duvardan bir-iki adım uzakta dur, ön kollarını duvara yasla.
+- Topuklar yerde, gövdeni düz tutarak duvara yaslan.
+- 10–20 saniye tut.
++ Ayakları geri aldıkça gerilim artar.
+! Topuklar kalkmasın.
+
+#526 calf hands wall *
+n Duvarda Baldır Esnetme
+m ca
+- Ellerini duvara koy, bir ayağını geriye al.
+- Arka topuk yerde, arka diz düz; öndeki dizi bükerek duvara yaklaş.
+- 20–30 saniye tut; taraf değiştir.
++ Arka dizi bükersen alt baldır (soleus) esner.
+! Arka ayağın ucu tam karşıya baksın.
+
+#527 calves smr *
+n Baldır Foam Roller
+m ca
+- Yere otur, bir baldırını foam roller'ın üstüne koy; diğer bacağı üstüne atabilirsin.
+- Ellerinle kalçanı kaldırıp bilekten dize doğru yuvarlan.
+- Hassas noktada 20–30 saniye dur.
++ Ayağını içe-dışa çevirerek baldırın yanlarına da ulaş.
+! Diz arkasına bastırma.
+
+#528 cat stretch *
+n Kedi Esnemesi
+m lb / tm au
+- Dört ayak üstünde dur.
+- Karnını içeri çek, sırtını tavana doğru yuvarla; başını bırak.
+- 15 saniye tut; sonra sırtını çukurlaştırıp tekrarla.
++ Yuvarla–çukurlaştır geçişini yavaşça yaparsan (kedi–inek) omurgayı ısıtır.
+! Ağrısız aralıkta kal.
+
+#529 chair leg extended
+n Sandalyede Bacak Açma
+m ha ad
+t w
+- Sandalyeye dik otur, kenarları tut.
+- Bir bacağını düzleştir, ayak ucunu kendine çek.
+- Bacağı yavaşça dışa aç, ortaya getir ve indir; taraf değiştir.
++ Masa başında yapılabilir.
+! Sırtını yuvarlama.
+
+#530 chair lower back
+n Sandalyede Yana Esneme
+m la ob / lb
+- Sandalyeye dik otur.
+- Bir kolunu başının üstünden aşırıp yana eğil; diğer elinle sandalyeyi tut.
+- 10–15 saniye tut; taraf değiştir.
++ Uzun oturma sonrası beli ve yanları açar.
+! Öne eğilme; sadece yana.
+
+#531 chair upper body
+n Sandalyede Üst Gövde Esnetme
+m fd cm / bi
+- Sandalyenin ucuna otur, arkadan sırtlığını tut.
+- Kollar düz, sırt dik; gövdeni öne doğru çek.
+- 20–30 saniye tut.
++ Omuz önü ve göğüs açılır.
+! Omuzları kulaklara çekme.
+
+#532 chest front shoulder
+n Çubukla Göğüs ve Ön Omuz Esnetme
+m cm fd
+- Bir çubuğu (süpürge sapı) omuzdan geniş tut.
+- Kolları düz tutarak çubuğu başının üstünden arkaya götür.
+- Gerginlikte 10–20 saniye bekle.
++ Tutuşu genişlettikçe kolaylaşır.
+! Omuzda ağrı olursa daha geniş tut ya da bırak.
+
+#533 chest stretch ball
+n Pilates Topunda Göğüs Esnetme
+m cm / fd
+- Topun yanında dört ayak üstünde dur; bir dirseğini topun üstüne koy, kol yana açık.
+- Göğsünü yere doğru indir.
+- 20–30 saniye tut; taraf değiştir.
++ Top yoksa sehpa ya da koltuk kullan.
+! Omuz önünde batma olursa azalt.
+
+#534 child pose *
+n Çocuk Pozu
+m lb la / gl
+- Diz çök, kalçanı topuklarına oturt.
+- Kollarını öne uzat, alnını yere bırak.
+- 30–60 saniye nefes alarak bekle.
++ Antrenman arasında ve sonunda beli dinlendirir.
++ Dizleri açarsan kalça da açılır.
+! Diz ağrısı varsa kalçanın altına yastık koy.
+
+#535 chin chest
+n Çene Göğse Boyun Esnetme
+m ne / tu
+- Otur; ellerini başının arkasında kenetle.
+- Başını yavaşça öne, çeneni göğsüne doğru indir; ellerin ağırlığı yeter.
+- 20–30 saniye tut.
++ Ense ve trapez üstü açılır.
+! Başını elle bastırma.
+
+#536 crossover reverse lunge
+n Dönüşlü Geri Hamle
+m gl qu / ob lb
+t w
+- Ayakta dur; bir ayağını geriye atıp hamleye in.
+- Altta gövdeni öndeki bacağın üstüne doğru döndür.
+- Kalk, diğer bacakla tekrarla.
++ Kalça ve omurgayı antrenman öncesi açar.
+! Ön diz içe kaçmasın.
+
+#537 dancer stretch *
+n Oturarak Omurga Dönüşü
+m lb gl / ob
+- Yere otur; sağ bacağını bükerek sol bacağın üstünden aşır, sol bacak düz.
+- Sol kolunu sağ dizin dışına koy, sağ elini arkana yere bas.
+- Gövdeni sağa döndür, 20–30 saniye tut; taraf değiştir.
++ Her nefes verişte biraz daha dön.
+! Sırt dik kalsın; çökerek dönme.
+
+#538 dynamic back
+n Dinamik Sırt Açma
+m la / fd
+t w
+- Ayakta dur, kollar yanlarda düz.
+- Kollarını düz şekilde öne-yukarı savur; her seferinde biraz daha yükselt.
+- 5–10 tekrar.
++ Barfiks ve çekiş günü öncesi iyi bir ısınma.
+! Kontrolsüz savurma.
+
+#539 dynamic chest *
+n Dinamik Göğüs Açma
+m cm / rd tm
+t w
+- Ayakta dur, kollar önde düz, eller bitişik.
+- Kollarını hızlıca iki yana ve geriye aç, sonra öne kapat.
+- 10–15 tekrar.
++ Bench press öncesi göğsü ve omuzları hazırlar.
+! Hareketin sonunda zorlayarak yaylanma.
+
+#540 elbow circles
+n Dirsek Çevirme
+m fd rd / tu
+t w
+- Ellerini omuzlarına koy, dirsekler omuz hizasında yana baksın.
+- Dirseklerinle yavaş daireler çiz; ileri ve geri.
++ Omuz eklemini nazikçe ısıtır.
+! Ağrısız aralıkta çalış.
+
+#541 elbows back
+n Dirsekleri Geriye Çekme
+m cm fd
+- Dik dur, ellerini beline koy; parmaklar aşağı, dirsekler dışarı.
+- Dirseklerini arkada birbirine yaklaştır.
+- 10–20 saniye tut.
++ Kambur duruşa karşı iyi gelir.
+! Belini aşırı çukurlaştırma.
+
+#542 foot smr
+n Ayak Tabanı Masajı
+m ca
+e ot
+- Otur ya da ayakta dur; ayağının altına masaj topu (ya da tenis topu) koy.
+- Topuktan parmaklara doğru bastırarak yuvarla.
+- Hassas noktada 15–20 saniye dur.
++ Ayak tabanı gevşeyince baldır ve arka bacak da rahatlar.
+! Keskin ağrıda bastırma.
+
+#543 frog hops
+n Kurbağa Zıplaması
+m qu gl / ca ha
+c Pliometrik
+t w
+- Ayaklar geniş, derin çömel; eller önde yere yakın.
+- İleri-yukarı sıçra, yumuşakça çömelerek yere in.
+- Durmadan tekrarla.
++ Bacak gücü ve kondisyon için iyidir.
+! Dizler içe çökmesin; yumuşak in.
+
+#544 front leg raises *
+n Öne-Arkaya Bacak Savurma
+m ha / qu gl
+t w
+- Bir yere tutun, tek ayak üstünde dur.
+- Diğer bacağını düz şekilde öne savur, sonra geriye bırak.
+- 10–15 tekrar; taraf değiştir.
++ Bacak günü ve koşu öncesi kalçayı açar.
+! Gövde dik kalsın; yüksekliği yavaş yavaş artır.
+
+#545 groin back
+n Kelebek Esnemesi (Öne Eğilerek)
+m ad / lb
+- Yere otur, ayak tabanlarını birleştir, dizler yanlara açık.
+- Sırtını uzatıp gövdeni öne eğ; dirseklerinle uylukların içine hafifçe bastır.
+- 20–30 saniye tut.
++ Topukları kasığa yaklaştırdıkça gerilim artar.
+! Dizleri zorla bastırma.
+
+#546 groiners
+n Groiner (Şınavdan Öne Sıçrama)
+m ad / gl ha qu
+t w
+- Şınav pozisyonunda başla.
+- İki ayağınla sıçrayıp ayaklarını ellerinin dışına getir; baş yukarıda.
+- Geri sıçra ve tekrarla.
++ Kasığı açar, nabzı da yükseltir.
+! Bel çökmesin.
+
+#547 hamstring stretch *
+n Kayışla Arka Bacak Esnetme
+m ha / ca
+e ot
+- Sırtüstü yat; bir ayağının tabanına kayış, havlu ya da bant geçir.
+- Bacağını düz şekilde tavana kaldır, kayışla kendine çek.
+- 20–30 saniye tut; taraf değiştir.
++ Diğer bacak yerde düz kalsın.
+! Diz hafif bükülebilir; zorla kilitleme.
+
+#548 hamstring smr
+n Arka Bacak Foam Roller
+m ha
+- Yere otur, uyluklarının arkasını foam roller'ın üstüne koy.
+- Ellerinle destek alıp kalçadan dize doğru yuvarlan.
+- Hassas noktada 20–30 saniye dur.
++ Tek bacakla yaparsan baskı artar.
+! Diz arkasına bastırma.
+
+#549 hip circles prone
+n Dört Ayak Üstünde Kalça Çevirme
+m gl / ad
+t w
+- Dört ayak üstünde dur; bir dizini yerden kaldır.
+- Diz bükük, kalçandan büyük daireler çiz; ileri ve geri.
+- Taraf değiştir.
++ Squat öncesi kalça eklemini ısıtır.
+! Gövde ve bel sabit kalsın.
+
+#550 hug ball
+n Topa Sarılarak Çömelme
+m lb / gl ca
+- Pilates topunu bacaklarının arasına al ve çömel.
+- Topa sarıl, kalçanı yere doğru bırak; ayaklar yerde düz.
+- 20–30 saniye bekle.
++ Bel ve kalça birlikte gevşer.
+! Topuklar kalkıyorsa daha az çömel.
+
+#551 hug knees chest *
+n Dizleri Göğse Çekme
+m lb / gl
+- Sırtüstü yat.
+- İki dizini göğsüne çek, kollarınla sar.
+- 20–30 saniye tut; hafifçe sağa-sola sallanabilirsin.
++ Bel ağrısında en çok rahatlatan esnemelerdendir.
+! Başını yerden kaldırma.
+
+#552 iliotibial
+n IT Bant Foam Roller
+m qu gl
+- Yan yat, uyluğunun dış yanını foam roller'ın üstüne koy; üst ayağı öne yere bas.
+- Kalçadan dizin üstüne kadar yavaşça yuvarlan.
+- Hassas noktada 20–30 saniye dur.
++ Koşucularda diz dışı ağrısına karşı kullanılır.
+! Oldukça acıtabilir; üst bacakla yükü azalt.
+
+#553 inchworm *
+n Inchworm (Tırtıl Yürüyüşü)
+m ha / au fd ca
+t w
+- Ayakta dur, öne eğilip ellerini yere koy.
+- Ellerinle yürüyerek şınav pozisyonuna gel.
+- Bacaklar olabildiğince düz, ayaklarınla ellerine doğru yürü; tekrarla.
++ Arka bacağı, omuzları ve gövdeyi tek harekette ısıtır.
+! Şınav pozisyonunda bel çökmesin.
+
+#554 intermediate groin
+n Kayışla Kasık Esnetme
+m ad / ha
+e ot
+- Sırtüstü yat; bir ayağına kayış geçir ve bacağını düz şekilde yana aç.
+- Kayışla bacağı yana doğru nazikçe çek.
+- 20–30 saniye tut; taraf değiştir.
++ Diğer kalça yerden kalkmasın.
+! Kasıkta keskin ağrı olursa bırak.
+
+#555 hip flexor quad
+n Kayışla Kalça Fleksörü ve Ön Bacak Esnetme
+m qu
+e ot
+- Yüzüstü yat; bir ayağına kayış geçir.
+- Dizini büküp kayışı omzunun üstünden çek; diz ve kalça yerden hafif kalksın.
+- 20–30 saniye tut; taraf değiştir.
++ Uzun oturanlarda kısalan kalça fleksörünü açar.
+! Belde sıkışma olursa azalt.
+
+#556 iron crosses
+n Akrep (Yüzüstü Çapraz Tekme)
+m lb ob / qu gl
+t w
+- Yüzüstü yat, kollar iki yana açık, avuçlar yerde.
+- Bir dizini büküp o ayağı arkadan karşı eline doğru götür.
+- Geri dön, diğer bacakla tekrarla.
++ Kalça fleksörü ve omurga dönüşünü açar.
+! Omuzlar yerde kalsın; yavaş başla.
+
+#557 band glute
+n Kayışla IT Bant ve Kalça Esnetme
+m gl
+e ot
+- Sırtüstü yat; bir ayağına kayış geçir.
+- Bacağını düz tutarak gövdenin üstünden karşı tarafa götür.
+- 20–30 saniye tut; taraf değiştir.
++ Kalçanın dış yanında gerginlik hissedersin.
+! Omuzlar yerde kalsın.
+
+#558 knee across body *
+a sirtustudonus
+n Sırtüstü Omurga Dönüşü
+m lb ob / gl
+- Sırtüstü yat, kollarını iki yana aç.
+- Bir dizini göğsüne çekip karşı tarafa, yere doğru bırak; karşı elinle dizi tutabilirsin.
+- Omuzlar yerde, başını diğer tarafa çevir; 20–30 saniye tut.
++ Nefes verdikçe diz yere yaklaşır.
++ Antrenman sonrası beli rahatlatır.
+! Fıtık şikâyetin varsa zorlamadan yap.
+
+#559 knee circles
+n Diz Çevirme
+m qu ca / ha
+t w
+- Ayaklar bitişik, dizler hafif bükük; ellerini dizlerine koy.
+- Dizlerinle küçük daireler çiz; iki yöne.
++ Hafif bir ısınma hareketidir.
+! Dizde ağrı varsa yapma.
+
+#560 kneeling forearm *
+n Diz Üstü Ön Kol Esnetme
+m fa
+- Diz çök, avuçlarını yere koy; parmak uçları dizlerine baksın.
+- Avuçlar yerde kalacak şekilde yavaşça geriye yaslan.
+- 20–30 saniye tut.
++ Curl, barfiks ve klavye sonrası ön kolu açar.
+! Bilek ağrırsa daha az yaslan.
+
+#561 kneeling hip flexor *
+n Diz Üstü Kalça Fleksörü Esnetme
+m qu
+- Bir dizin yerde, diğer ayak önde hamle pozisyonu al.
+- Gövde dik, kalçanı öne it; arka bacağın kasığında gerginlik hissedeceksin.
+- 20–30 saniye tut; taraf değiştir.
++ Arka kalçayı sıkarsan esneme derinleşir.
++ Masa başında çalışanlar için en değerli esnemelerden.
+! Belini çukurlaştırma.
+
+#562 latissimus
+n Kanat (Lat) Foam Roller
+m la
+- Yan yat, kolunu başının üstüne uzat; foam roller koltuk altının hemen altında olsun.
+- Koltuk altından kaburga ortasına kadar yavaşça yuvarlan.
+- Hassas noktada 20–30 saniye dur.
++ Baş üstü hareketlerde omuz açıklığını artırır.
+! Kaburgalara sert bastırma.
+
+#563 leg-up hamstring
+n Bacak Yukarıda Arka Bacak Esnetme
+m ha
+- Sırtüstü yat, bir dizini büküp ayağını yere bas.
+- Diğer bacağını havaya uzat, uyluğun arkasından tut.
+- Dizini düzleştirmeye çalışarak 20–30 saniye tut.
++ Diz tam düzleşmese de olur.
+! Kalça yerde kalsın.
+
+#564 looking ceiling
+n Diz Üstü Geriye Yaslanma
+m qu / au
+- Diz çök, ellerinle topuklarını tut.
+- Kalçanı yukarı-öne iterken başını geriye bırakıp tavana bak.
+- 10–20 saniye tut.
++ Ön bacak, kalça fleksörü ve karın açılır.
+! Bel ya da boyun sorunun varsa yapma.
+
+#565 lower back curl
+n Yüzüstü Gövde Kaldırma
+m lb / gl
+c Sırt
+t w
+- Yüzüstü yat, kollar yanlara açık.
+- Bel kaslarınla göğsünü yerden kaldır; kollarla itme.
+- Kısa bekle, yavaşça in.
++ Bel dayanıklılığı için basit bir hareket.
+! Başını geriye atma; boyun omurganın devamı olsun.
+
+#566 lower back smr
+n Bel Foam Roller
+m lb
+- Otur, foam roller'ı belinin altına koy; hafifçe bir yana dön.
+- Omurganın yanındaki kas üstünde yavaşça yuvarlan.
+- Hassas noktada 10–20 saniye dur; diğer yana geç.
++ Omurganın tam üstüne değil, yanındaki kasa bas.
+! Bel fıtığı varsa yapma.
+
+#567 lying bent leg groin
+n Partnerli Sırtüstü Kelebek
+m ad
+- Sırtüstü yat, ayak tabanlarını birleştir, dizler açık; partner dizlerini tutsun.
+- 10 saniye dizlerini kapatmaya çalış; partner direnç göstersin.
+- Gevşe; partner dizleri yere doğru nazikçe bastırsın, 20 saniye bekle.
++ Kas–gevşe yöntemiyle kasık hızlı açılır.
+! Partner yavaş bastırmalı.
+
+#568 lying crossover
+n Partnerli Sırtüstü Çapraz Esnetme
+m gl / lb ob
+- Sırtüstü yat; bir dizini büküp gövdenin üstünden karşı tarafa götür.
+- Partner bir eliyle omzunu yerde tutsun, diğeriyle dizini yönlendirsin.
+- 10 saniye dizini geri itmeye çalış, gevşe; 20 saniye daha derin bekle.
++ Bel ve kalça birlikte açılır.
+! Omuz yerden kalkmasın.
+
+#569 lying glute
+n Partnerli Kalça Esnetme
+m gl
+- Sırtüstü yat; bir bacağını kaldırıp ayağını karşı kalçanın hizasına getir, baldır gövdeye dik olsun.
+- Partner dizini ve bileğini tutsun.
+- 10 saniye bacağını partnere doğru it, gevşe; partner biraz daha bastırsın, 20 saniye bekle.
++ Kalçanın derin kaslarını açar.
+! Dizde burulma hissedersen bırak.
+
+#570 lying hamstring
+n Partnerli Arka Bacak Esnetme
+m ha / ca
+- Sırtüstü yat; bir bacağını düz şekilde tavana kaldır, partner bileğinden tutsun.
+- 10 saniye bacağını yere doğru it; partner tutsun.
+- Gevşe; partner bacağı biraz daha geriye götürsün, 20 saniye bekle.
++ En etkili arka bacak esnetme yöntemlerinden.
+! Diğer bacak yerde kalsın; partner yavaş olsun.
+
+#571 lying prone quadriceps
+n Partnerli Ön Bacak Esnetme
+m qu
+- Yüzüstü yat; bir dizini büküp topuğunu kalçana yaklaştır. Partner diz ve bileğini tutsun.
+- 10 saniye dizini düzleştirmeye çalış; partner tutsun.
+- Gevşe; partner topuğu kalçaya yaklaştırsın, 20 saniye bekle.
++ Partner dizi yerden biraz kaldırırsa kalça fleksörü de açılır.
+! Dizde ağrı olursa bırak.
+
+#572 middle back
+n Ayakta Gövde Çevirme
+m tm ob / lb la
+- Ayaklar omuz genişliğinde, eller belde.
+- Belden bir yana dön, gerginlikte 10–15 saniye bekle.
+- Diğer yana dön.
++ Kalça öne baksın; dönen gövde olsun.
+! Hızlı savurma.
+
+#573 neck smr
+n Boyun Masajı (Çubukla)
+m ne / tu
+e ot
+- Masaj çubuğunu ensene, omurganın biraz yanına yerleştir.
+- Kafatası altından omuza doğru yavaşça yuvarla.
+- Hassas noktada 10–15 saniye dur.
++ Hafif baskı yeter.
+! Omurganın tam üstüne ve boynun önüne bastırma.
+
+#574 side quad
+n Yan Yatarak Ön Bacak Esnetme
+m qu
+- Yan yat, alttaki dizini önde 90° bük.
+- Üstteki ayağını arkadan tut, topuğu kalçana çek.
+- 20–30 saniye tut; taraf değiştir.
++ Kalçayı öne itersen esneme artar.
+! Belini çukurlaştırma.
+
+#575 on-your-back quad
+n Sehpada Sırtüstü Ön Bacak Esnetme
+m qu
+- Sehpaya sırtüstü yat; bir bacağını ve kolunu kenardan sarkıt.
+- Sarkan dizini büküp ayağının üstünü tut.
+- 20–30 saniye tut; taraf değiştir.
++ Göbeğini içeri çekersen bel korunur.
+! Bel sehpadan kalkmasın.

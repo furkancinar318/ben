@@ -1,0 +1,579 @@
+// Esneme, ısınma ve foam roller — 2. bölüm (576–636)
+@c Esneme
+
+#576 arm against wall
+n Duvarda Kanat Esnetme
+m la
+- Duvarın ya da kapı kasasının yanında dur; bükülü kolunu başının üstünde duvara yasla.
+- Gövdeni yavaşça koluna doğru yasla.
+- 20–30 saniye tut; taraf değiştir.
++ Koltuk altında ve sırtın yanında gerginlik hissedersin.
+! Omuzda sıkışma olursa azalt.
+
+#577 half locust
+n Yarım Çekirge
+m qu / cm fd au
+- Yüzüstü yat; bir dizini büküp ayağını aynı taraftaki elinle tut.
+- Ayağını yukarı kaldırırken göğsünü de yerden kaldır.
+- 15–20 saniye tut; taraf değiştir.
++ Ön bacak, göğüs ve omuz birlikte açılır.
+! Bel sıkışırsa yüksekliği azalt.
+
+#578 one handed hang
+n Tek Kol Asılma
+m la / bi fa
+- Barfiks demirini tek elle üstten tut; ayaklar yerde ya da basamakta kalsın.
+- Ağırlığının çoğunu o kola bırak.
+- 10–20 saniye tut; taraf değiştir.
++ Kanadı ve omuzu derin açar.
+! Ağırlığın tamamını birden bırakma.
+
+#579 one knee chest *
+n Tek Dizi Göğse Çekme
+m gl lb / ha
+- Sırtüstü yat, bir bacak yerde düz.
+- Diğer dizini, dizin altından tutarak göğsüne çek.
+- 20–30 saniye tut; taraf değiştir.
++ Bel ve kalça gerginliğini alır.
+! Diz kapağının üstünden değil altından tut.
+
+#580 overhead lat
+n Partnerli Kanat Esnetme
+m la / tr
+- Yere dik otur; bir kolunu yukarı kaldırıp dirseği bük, elin sırtına insin. Partner dirseğini ve bileğini tutsun.
+- 10 saniye dirseğini aşağı çekmeye çalış; partner tutsun.
+- Gevşe; partner dirseği nazikçe geriye-içe alsın, 20 saniye bekle.
++ Kanat ve triceps birlikte açılır.
+! Partner ani hareket yapmasın.
+
+#581 overhead stretch
+n Parmaklar Kenetli Yukarı Uzanma
+m la au / fa tr cm
+- Ayakta dur, parmaklarını kenetle ve avuçlarını tavana çevir.
+- Omuzlar aşağıda, kollarını yukarı uzat.
+- 15–20 saniye tut.
++ Tüm gövdeyi uzatır; uzun oturma sonrası iyi gelir.
+! Belini çukurlaştırma.
+
+#582 overhead triceps
+n Partnerli Triceps Esnetme
+m tr / la
+- Otur; bir kolunu yukarı kaldır, dirseği bük. Partner dirseğini tutsun.
+- 10 saniye kolunu düzleştirmeye çalış; partner tutsun.
+- Gevşe; partner dirseği biraz daha geriye alsın, 20 saniye bekle.
++ Triceps'in uzun başını açar.
+! Omuzda ağrı olursa bırak.
+
+#583 pelvic tilt bridge
+n Pelvik Tilt'ten Köprüye
+m lb gl / au
+t w
+- Sırtüstü yat, dizler bükük, topuklar dizlerin altında.
+- Önce sadece kuyruk sokumunu kaldırıp belini yere bastır.
+- Sonra omurgayı boğum boğum kaldırarak köprüye çık; aynı şekilde in.
++ Beli ısıtır, kalçayı uyandırır.
+! Tepede beli aşırı kavislendirme.
+
+#584 peroneals stretch
+n Kayışla Dış Baldır Esnetme
+m ca
+e ot
+- Otur, bir ayağına kayış geçir; bacak düz, topuk havada.
+- Kayışla ayağı içe doğru çevir (taban içe baksın).
+- 20–30 saniye tut; taraf değiştir.
++ Ayak bileği burkulması geçirenlerde sık gergindir.
+! Nazik çek.
+
+#585 peroneals smr
+n Dış Baldır Foam Roller
+m ca
+- Yan yat; baldırının dış yanını foam roller'ın üstüne koy.
+- Dizin altından bileğe doğru yavaşça yuvarlan.
+- Hassas noktada 20–30 saniye dur.
++ Üstteki bacağı yere basarak yükü ayarla.
+! Kemiğe bastırma.
+
+#586 piriformis *
+n Kalça Foam Roller (Piriformis)
+m gl
+- Foam roller'ın üstüne otur; bir ayak bileğini karşı dizin üstüne at.
+- Bacağını attığın tarafın kalçasına doğru yaslan ve küçük hareketlerle yuvarlan.
+- Hassas noktada 20–30 saniye dur.
++ Bacak günü sonrası kalçayı gevşetir.
+! Bacağa vuran elektriklenme olursa yer değiştir.
+
+#587 posterior tibialis
+n Kayışla İç Baldır Esnetme
+m ca
+e ot
+- Otur, bir ayağına kayış geçir; bacak düz, topuk havada.
+- Kayışla ayağı dışa doğru çevir (taban dışa baksın).
+- 20–30 saniye tut; taraf değiştir.
++ Düztabanlık eğilimi olanlarda gergin olabilir.
+! Nazik çek.
+
+#588 pyramid
+n Topta Piramit
+m lb ha / fd
+- Pilates topunun üstüne karnınla uzan; kalçan en yüksek nokta olsun.
+- Eller ve ayaklar yerde, gövdeyi topun üstünde bırak.
+- 20–30 saniye bekle.
++ Omurga kendi ağırlığıyla uzar.
+! Baş dönmesi olursa yavaşça kalk.
+
+#589 quad stretch
+n Kayışla Ön Bacak Esnetme
+m qu
+e ot
+- Yan yat; üstteki ayağına kayış geçir.
+- Dizini büküp kayışla topuğu kalçana çek, kalçayı hafif geriye uzat.
+- 20–30 saniye tut; taraf değiştir.
++ Elin ayağına yetişmiyorsa kayış işi kolaylaştırır.
+! Belini çukurlaştırma.
+
+#590 quadriceps *
+n Ön Bacak Foam Roller
+m qu
+- Yüzüstü, dirseklerin üstünde dur; uylukların önünü foam roller'a koy.
+- Kalçadan dizin üstüne kadar yavaşça yuvarlan.
+- Hassas noktada 20–30 saniye dur.
++ Tek bacakla yaparsan baskı artar; ayağı içe-dışa çevirerek yanlara da ulaş.
+! Diz kapağına bastırma.
+
+#591 rear leg raises
+n Dört Ayak Üstünde Geriye Bacak Uzatma
+m gl / ha lb
+c Bacak
+t w
+- Dört ayak üstünde dur.
+- Bir bacağını geriye uzatıp kalça hizasına kaldır.
+- Dizi geri getir; set bitince taraf değiştir.
++ Tepede kalçayı sık.
+! Belini çukurlaştırma.
+
+#592 rhomboids *
+n Üst Sırt Foam Roller
+m tm / tu
+- Sırtüstü yat, foam roller kürek kemiklerinin altında; kollarını göğsünde çaprazla.
+- Kalçanı kaldırıp sırt ortasından omuz üstüne kadar yuvarlan.
+- Hassas noktada 20–30 saniye dur.
++ Kolları çaprazlamak kürek kemiklerini açar, kasa ulaşmayı kolaylaştırır.
+! Bele ve boyna inme/çıkma.
+
+#593 round world shoulder *
+n Çubukla Omuz Çevirme
+m fd rd / cm bi
+e ot
+t w
+- Bir çubuğu arkanda, kalça hizasında, omuzdan geniş tut.
+- Kollar düz, çubuğu arkadan yukarı kaldırıp başının üstünden öne indir.
+- Aynı yoldan geri götür.
++ Omuz hareketliliği için en bilinen ısınma. Zorlanırsan daha geniş tut.
+! Ağrı olursa zorlama; bant ile de yapılabilir.
+
+#594 runner stretch
+n Koşucu Esnemesi
+m ha / ca qu
+- Hamle pozisyonuna in, ellerini öndeki ayağın iki yanına koy.
+- Öndeki topuk yerde, kalçanı geriye-yukarı alarak ön bacağı düzleştir.
+- 20–30 saniye tut; taraf değiştir.
++ Öne hamle ile dönüşümlü yaparsan kalça fleksörü de açılır.
+! Sırtı yuvarlamadan uzan.
+
+#595 scissor kick
+n Makas (Scissor Kick)
+m al / ob ad
+c Karın
+t w
+- Sırtüstü yat, eller yanda ya da kalçanın altında; bacakları yerden biraz kaldır.
+- Bacakları düz tutarak birini diğerinin üstünden çaprazla; sırayı değiştirerek devam et.
++ Belini yere bastır.
+! Bel kalkıyorsa bacakları daha yukarıda tut.
+
+#596 seated biceps
+n Partnerli Biceps Esnetme
+m bi / fd cm
+- Yere otur, dizler bükük; kollarını arkana düz uzat, avuçlar birbirine baksın. Partner bileklerini tutsun.
+- 10 saniye kollarını öne çekmeye çalış; partner tutsun.
+- Gevşe; partner kolları yukarı kaldırsın, 20 saniye bekle.
++ Biceps ve ön omuz birlikte açılır.
+! Omuz önünde ağrı olursa bırak.
+
+#597 seated calf
+n Oturarak Baldır Esnetme
+m ca / ha
+- Yere otur; bir dizini büküp ayağını yere bas, diğer bacağı uzat.
+- Uzattığın ayağın ucunu elinle ya da havluyla kendine çek.
+- 20–30 saniye tut; taraf değiştir.
++ Sırtı dik tut.
+! Dizi kilitleme.
+
+#598 seated floor hamstring *
+n Oturarak Öne Uzanma
+m ha / ca lb
+- Yere otur; bir bacak düz, diğer ayağın tabanı uyluğun içine dayalı.
+- Kalçadan öne eğilip ayak bileğine doğru uzan.
+- 20–30 saniye tut; taraf değiştir.
++ Sırtı düz tutarak göğsü öne götür; kamburlaşarak uzanma.
+! Yaylanma.
+
+#599 seated front deltoid
+n Partnerli Ön Omuz Esnetme
+m fd / cm
+- Yere otur; kollarını yanlara aç, avuçlar yere baksın. Partner bileklerinden tutsun.
+- 10 saniye kollarını öne getirmeye çalış; partner tutsun.
+- Gevşe; partner kolları nazikçe geriye çeksin, 20 saniye bekle.
++ Ön omuz ve göğüs açılır.
+! Partner yavaş olmalı.
+
+#600 seated glute
+n Partnerli Oturarak Kalça Esnetme
+m gl
+- Otur, dizler bükük; bir ayak bileğini karşı dizin üstüne koy.
+- Öne eğil; partner arkadan omuzlarını desteklesin.
+- 10 saniye geriye it, gevşe; biraz daha öne eğilip 20 saniye bekle.
++ Figür 4 esnemesinin oturarak hali.
+! Sırtı yuvarlama.
+
+#601 seated hamstring
+n Partnerli Oturarak Arka Bacak Esnetme
+m ha / ca
+- Yere otur, bacaklar önde düz; partner arkadan sırtına elleriyle destek olsun.
+- Öne eğil; 10 saniye geriye doğru it, partner tutsun.
+- Gevşe; partner nazikçe öne bastırsın, 20 saniye bekle.
++ Göğsünü dizlerine değil ayaklarına doğru uzat.
+! Partner sert bastırmasın.
+
+#602 seated hamstring calf
+n Kayışla Oturarak Arka Bacak ve Baldır Esnetme
+m ha ca
+e ot
+- Otur, bacaklar önde düz; bir ayağına kayış geçir.
+- Hafif öne eğilip kayışla ayak ucunu kendine çek.
+- 20–30 saniye tut; taraf değiştir.
++ Baldır ve arka bacak aynı anda esner.
+! Sırtı yuvarlama.
+
+#603 seated overhead
+n Oturarak Yana Uzanma
+m ob la / au
+- Yere otur, ayak tabanlarını birleştir.
+- Bir elini yanına yere koy, diğerini başının arkasına al.
+- Yerdeki ele doğru yana eğil; dirsek tavana baksın. 15–20 saniye tut, taraf değiştir.
++ Gövdenin yanı boydan boya açılır.
+! Kalça yerden kalkmasın.
+
+#604 shoulder circles
+n Omuz Çevirme
+m tu / fd rd
+t w
+- Kollar yanlarda gevşek dur.
+- Omuzlarını öne, yukarı, geriye ve aşağı doğru daire çizerek çevir.
+- 10 kez bir yöne, 10 kez diğer yöne.
++ Boyun-omuz gerginliğini alır.
+! Yavaş yap.
+
+#605 shoulder raise
+n Omuz Kaldırma (Isınma)
+m tu
+t w
+- Kollar yanlarda gevşek dur.
+- Omuzlarını kulaklarına doğru kaldır, sonra bırak.
++ Trapezi ısıtır; stres gerginliğini azaltır.
+! Boynu öne uzatma.
+
+#606 shoulder stretch *
+n Çapraz Kol Omuz Esnetme
+m rd / sd tm
+- Bir kolunu düz şekilde göğsünün önünden karşıya uzat.
+- Diğer kolunla dirseğin üstünden kendine doğru çek.
+- 20–30 saniye tut; taraf değiştir.
++ Arka omuzu açar.
+! Omuz kulağa doğru kalkmasın.
+
+#607 side leg raises
+n Yana Bacak Savurma
+m ad gl
+t w
+- Bir yere tutun, tek ayak üstünde dur.
+- Diğer bacağını düz şekilde yana kaldır; inerken duran bacağın önünden çaprazla.
+- 10–15 tekrar; taraf değiştir.
++ Kasığı ve kalçanın yanını ısıtır.
+! Gövde dik kalsın.
+
+#608 side lying groin
+n Yan Yatarak Kasık Esnetme
+m ad / ha
+- Yan yat, alttaki dizini önde bük; başını koluna yasla.
+- Üstteki bacağını yukarı kaldırıp diz arkasından ya da baldırdan tut.
+- Kendine doğru çekerek 15–20 saniye tut; taraf değiştir.
++ Diz düz olursa arka bacak da esner.
+! Gövde geriye yuvarlanmasın.
+
+#609 side neck *
+n Yana Boyun Esnetme
+m ne / tu
+- Omuzların gevşek, başını bir omzuna doğru eğ.
+- Aynı taraftaki elinle başının yanından çok hafif çek.
+- 15–20 saniye tut; taraf değiştir.
++ Karşı omzu aşağıda tutarsan esneme artar.
+! Sert çekme; boyun hassastır.
+
+#610 side wrist pull
+n Bilekten Çekerek Omuz Esnetme
+m sd rd / fa la
+- Ayakta dur; bir kolunu gövdenin önünden karşıya geçir, bileğini kalça hizasında diğer elinle tut.
+- Kolu yavaşça düzleştirip karşı tarafa ve yukarı doğru çek.
+- 15–20 saniye tut; taraf değiştir.
++ Omzun dış yanını açar.
+! Omuz öne yuvarlanmasın.
+
+#611 side-lying floor
+n Yan Yatarak Kanat Esnetme
+m la / ob
+- Yan yat, alttaki dizini önde bük; üstteki bacağı düz uzat.
+- Üstteki kolunu başının üstünden ileri uzat.
+- Parmak uçlarıyla topuğu ters yönlere uzatarak 15–20 saniye tut; taraf değiştir.
++ Gövdenin yanı boydan boya esner.
+! Öne-arkaya yuvarlanma.
+
+#612 sit squats
+n Yarım Squat (Isınma)
+m qu gl / ha
+t w
+- Ayaklar omuz genişliğinde dur.
+- Kalçayı geriye oturtarak yarıya kadar çömel.
+- Kalk; her tekrarda biraz daha derine in.
++ Bacak günü öncesi dizleri ve kalçayı ısıtır.
+! Dizler içe çökmesin.
+
+#613 spinal stretch
+n Sandalyede Omurga Esnetme
+m tm lb / la ne
+t w
+- Sandalyeye dik otur; ellerini başının arkasında kenetle.
+- Gövdeni bir yana çevir; üç kez biraz daha ileri git. Diğer yana tekrarla.
+- Sonra öne eğilip sırtını yuvarla.
++ Uzun oturma sonrası omurgayı açar.
+! Yavaş dön.
+
+#614 split squats
+n Sıçrayarak Hamle Değiştirme
+m qu gl / ha ca
+c Pliometrik
+t w
+- Ayakta dur; sıçrayıp bir ayak önde bir ayak arkada, dizler bükük in.
+- Hemen tekrar sıçra ve bacakları değiştir.
++ Hem kalçayı açar hem nabzı yükseltir.
+! Yumuşak in; ön diz içe kaçmasın.
+
+#615 standing biceps
+n Ayakta Biceps Esnetme
+m bi / fd cm
+- Ellerini arkanda, avuçlar birbirine bakacak şekilde kenetle.
+- Kolları düzleştirip avuçları aşağı çevir.
+- Kollarını yukarı kaldır, 15–20 saniye tut.
++ Göğüs ve ön omuz da açılır.
+! Öne eğilme.
+
+#616 standing elevated quad
+n Ayak Sehpada Ön Bacak Esnetme
+m qu
+- Sırtın sehpaya dönük, bir-iki adım önünde dur.
+- Bir ayağının üstünü sehpaya koy.
+- Kalçanı öne itip duran dizini hafif bük; 20–30 saniye tut, taraf değiştir.
++ Kalça fleksörünü de açar.
+! Belini çukurlaştırma.
+
+#617 standing gastrocnemius
+n Topuk Basamakta Baldır Esnetme
+m ca / ha
+- Bir topuğunu basamağa koy, diz düz.
+- Öne eğilip o ayağın ucunu elinle tut; diğer diz hafif bükük.
+- 20–30 saniye tut; taraf değiştir.
++ Baldır ve arka bacak birlikte esner.
+! Sırt düz kalsın.
+
+#618 standing hamstring calf
+n Kayışla Ayakta Arka Bacak ve Baldır Esnetme
+m ha ca
+e ot
+- Bir ayağına kayış geçir ve o ayağı öne koy.
+- Arka dizi bük, ön bacak düz; ön ayağın ucunu yerden kaldırıp kayışla çek.
+- 20–30 saniye tut; taraf değiştir.
++ Kalçayı geriye oturtursan esneme artar.
+! Sırtı yuvarlama.
+
+#619 standing hip circles
+n Ayakta Kalça Çevirme
+m gl / ad
+t w
+- Bir yere tutun, tek ayak üstünde dur.
+- Diğer dizini kaldırıp kalçandan büyük daireler çiz; içten dışa ve dıştan içe.
+- Taraf değiştir.
++ Squat ve koşu öncesi kalça eklemini açar.
+! Gövde sabit kalsın.
+
+#620 standing hip flexors
+n Ayakta Kalça Fleksörü Esnetme
+m qu
+- Dik dur, bir ayak biraz önde.
+- İki dizi bük, arka topuğu kaldır; arka kalçayı öne it.
+- 20–30 saniye tut; taraf değiştir.
++ Yere çökmeden, her yerde yapılabilir.
+! Gövde dik kalsın.
+
+#621 standing lateral *
+n Ayakta Yana Esneme
+m ob / la
+- Ayaklar kalçadan biraz geniş, dizler hafif bükük; bir el belde.
+- Diğer kolunu yukarı kaldırıp elini başının arkasına koy.
+- Belindeki ele doğru yana eğil; 15–20 saniye tut, taraf değiştir.
++ Yan karın ve kanat açılır.
+! Öne ya da arkaya eğilme.
+
+#622 standing pelvic tilt
+n Ayakta Pelvik Tilt
+m lb / gl au
+- Ayaklar kalça genişliğinde, dizler yumuşak.
+- Leğen kemiğini birkaç kez öne-arkaya oynat.
+- Kuyruk sokumunu öne alıp karnını hafif sıkarak 10–15 saniye tut.
++ Bel çukurunu azaltmayı öğretir.
+! Küçük bir harekettir; zorlamaya gerek yok.
+
+#623 standing soleus
+n Ayakta Soleus ve Aşil Esnetme
+m ca
+- Bir ayak biraz önde dur.
+- İki dizi bük; arka topuk yerde kalsın.
+- 20–30 saniye tut; taraf değiştir.
++ Diz bükükken baldırın alt kısmı ve aşil esner.
+! Topuk kalkmasın.
+
+#624 standing toe touches *
+n Ayakta Öne Eğilme
+m ha / ca lb
+- Ayakta dur, bacaklar düz.
+- Belden eğilip gövdeni ve kollarını aşağı bırak.
+- 20–30 saniye gevşek şekilde bekle.
++ Parmak ucuna değmek şart değil; yerçekimi işini yapsın.
+! Yaylanma; doğrulurken dizleri hafif bük.
+
+#625 stomach vacuum *
+a vakum
+n Karın Vakum (Stomach Vacuum)
+m al au / ob
+c Karın
+t s
+- Ayakta hafif öne eğilip ellerini dizlerine ya da beline koy; ya da sırtüstü yat, dizler bükük.
+- Burnundan derin nefes al, sonra ağzından ciğerlerini tamamen boşalt.
+- Nefes vermişken göbeğini omurgana doğru, kaburgalarının altına çeker gibi içeri çek.
+- 15–30 saniye tut; bu sırada küçük nefesler alabilirsin. Bırak, dinlen, tekrarla.
++ Aç karnına, özellikle sabah yapmak en kolayıdır. 10–15 saniyeyle başla, zamanla 45–60 saniyeye çık.
++ Karnı kasıp sertleştirmek değil, içeri çekmek hedef. Derin karın kasını (transversus) çalıştırır ve duruşu toparlar.
++ Önce sırtüstü öğren; sonra dört ayak üstünde, oturarak ve ayakta dene.
+! Yüksek tansiyon, fıtık ya da hamilelik varsa yapma. Baş dönmesi olursa hemen bırak.
+
+#626 straddle
+n Bacaklar Açık Öne Uzanma
+m ha ad / ca lb
+- Yere dik otur, bacaklarını V şeklinde aç.
+- Ellerini önüne yere koyup kalçadan öne eğil.
+- 10–20 saniye tut.
++ Zamanla bacaklar daha çok açılır.
+! Sırtı yuvarlamadan uzan.
+
+#627 toe touchers
+n Bacaklar Yukarıda Ayak Ucuna Uzanma
+m au / al
+c Karın
+t w
+- Sırtüstü yat, bacaklarını tavana dik kaldır.
+- Kollarını ayak uçlarına doğru uzatarak omuzlarını yerden kaldır.
+- Yavaşça in.
++ Üst karnı kısa hareketle sıkar.
+! Boynu öne itme; bacaklar sabit kalsın.
+
+#628 torso rotation
+n Topla Gövde Çevirme
+m ob
+t w
+- Ayakta dur, pilates topunu kollar düz şekilde önünde tut.
+- Gövdeni bir yana döndür; gözün topta olsun.
+- Diğer yana dön.
++ Dönüş ısınması için uygundur.
+! Kalça öne baksın.
+
+#629 tricep side
+n Çapraz Triceps Esnetme
+m tr / rd
+- Bir kolunu gövdenin önünden karşı omzunun üstüne at.
+- Diğer elinle dirseği tutup geriye doğru it.
+- 15–20 saniye tut; taraf değiştir.
++ Triceps ve arka omuz açılır.
+! Omuz kalkmasın.
+
+#630 triceps stretch *
+n Baş Üstü Triceps Esnetme
+m tr / la
+- Bir kolunu yukarı kaldır, dirseği büküp elini sırtına indir.
+- Diğer elinle dirseği tutup hafifçe içe-aşağı çek.
+- 10–20 saniye tut; taraf değiştir.
++ Triceps'in uzun başını ve kanadı açar.
+! Başını öne itme.
+
+#631 upper back stretch *
+n Üst Sırt Esnetme
+m tm / rd
+- Parmaklarını önünde kenetle, başparmaklar aşağı baksın.
+- Omuzlarını yuvarlayarak ellerini ileri uzat.
+- 15–20 saniye tut.
++ Kürek kemiklerinin arası açılır; çekiş günü sonrası iyi gelir.
+! Boynu gergin tutma.
+
+#632 upper back-leg grab
+n Oturarak Bacaklara Sarılma
+m tm lb / ha
+- Otur, dizler bitişik; öne eğilip kollarınla uyluklarını alttan sar.
+- Göğsünü dizlerine indir; sırtını yukarı doğru yuvarlayarak çek.
+- 15–20 saniye tut.
++ Sırtın ortası ve bel birlikte esner.
+! Nefesini tutma.
+
+#633 upward stretch
+n Yukarı Uzanma
+m la fd / cm
+- İki kolunu başının üstüne uzat, avuçlar bitişik.
+- Ellerini yukarı ve hafif geriye it; sırt düz.
+- 10–20 saniye tut.
++ Sabah ve antrenman öncesi gövdeyi açar.
+! Belini çukurlaştırma.
+
+#634 windmills
+n Sırtüstü Bacak Savurma
+m gl lb / ha ob
+t w
+- Sırtüstü yat, kollar iki yana açık, bacaklar düz.
+- Bir bacağını kaldırıp gövdenin üstünden karşı ele doğru götür.
+- Geri getir, diğer bacakla tekrarla.
++ Kalça ve bel için dinamik bir ısınma.
+! Omuzlar yerde kalsın.
+
+#635 greatest stretch *
+n Dünyanın En İyi Esnemesi
+m ha gl qu / ad tm ca
+t w
+- Öne derin hamle at; arka diz yere yakın.
+- Öndeki ayakla aynı taraftaki dirseği ayağın içine, yere doğru indir.
+- O kolu tavana açarak gövdeni döndür; sonra ön bacağı düzleştirip arka bacağı esnet. Taraf değiştir.
++ Kalça, arka bacak ve omurgayı tek akışta açar; antrenman öncesi tek hareket yapacaksan bunu yap.
+! Acele etme; her aşamada bir nefes bekle.
+
+#636 wrist circles *
+n Bilek Çevirme
+m fa
+t w
+- Kollarını öne uzat ya da parmaklarını kenetle.
+- Bileklerinle daireler çiz; 10 kez bir yöne, 10 kez diğer yöne.
++ Şınav, bench ve curl öncesi bilekleri hazırlar.
+! Ağrılı yönde zorlama.

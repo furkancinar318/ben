@@ -5,6 +5,7 @@ const FULL_SETS = 8; // bir kas için ~8 efektif set = tam yorgunluk
 /* ===== Hareket kütüphanesi (veri: data/ex.*.js -> window.EXDATA) ===== */
 const BUILTIN_EX = window.EXDATA || [];
 const EX_INDEX = new Map(BUILTIN_EX.map(e => [e.id, e]));
+BUILTIN_EX.forEach(e => (e.al || []).forEach(a => EX_INDEX.set(a, e))); // eski kimlikler (birleştirilen hareketler)
 const EX_CATS = ['Göğüs', 'Sırt', 'Omuz', 'Kol', 'Bacak', 'Karın', 'Esneme', 'Kardiyo', 'Pliometrik', 'Olimpik', 'Strongman', 'Kendi'];
 const EQ_NAMES = { bb: 'Barbell', db: 'Dumbbell', mc: 'Makine', cb: 'Kablo', bw: 'Vücut ağırlığı', kb: 'Kettlebell', ez: 'EZ bar', bd: 'Direnç bandı', eb: 'Pilates topu', mb: 'Sağlık topu', fr: 'Foam roller', ot: 'Diğer' };
 const LV_NAMES = ['', 'Başlangıç', 'Orta', 'İleri'];

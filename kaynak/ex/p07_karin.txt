@@ -1,0 +1,591 @@
+// Karın (448–514)
+@c Karın
+@m au / al
+
+#448 sit-up
+n 3/4 Sit-Up
+- Sırtüstü yat, dizler bükük, ayaklar sabit; eller başın yanında.
+- Gövdeni dizlerine doğru tam kaldır.
+- İnerken sadece dörtte üç in, sırtın yere tam değmeden tekrar kalk.
++ Karın hiç gevşemez; set kısa sürede yakar.
+! Boynundan çekme.
+
+#449 ab crunch machine *
+n Crunch Makinesi
+- Makineye otur, ayaklarını pedlerin altına koy, kulpları tut.
+- Karnını sıkarak gövdeni öne-aşağı kıvır.
+- Yavaşça geri dön.
++ Ağırlık eklenebildiği için karnı kalınlaştırmada etkilidir.
+! Kollarla çekme; hareket karından gelsin.
+
+#450 advanced kettlebell windmill
+n İleri Seviye Kettlebell Windmill
+m ob / gl ha fd lb
+l 3
+- Kettlebell'i baş üstünde kilitle; diğer kolunu arkana al.
+- Kalçanı kettlebell tarafına iterek gövdeni yana-öne eğ; göz kettlebell'de.
+- Aynı yoldan doğrul.
++ Destek olmadığı için gövde kontrolü çok daha zordur.
+! Kol hep dik ve kilitli kalsın.
+
+#451 heel touchers *
+n Topuklara Dokunma
+m ob / au
+- Sırtüstü yat, dizler bükük, ayaklar yerde; omuzları hafif kaldır.
+- Sağ elinle sağ topuğuna, sonra sol elinle sol topuğuna uzan.
++ Yan karınlar için basit ve etkili.
+! Boynu gergin tutma; çeneyi göğse yapıştırma.
+
+#452 barbell ab rollout
+n Barbell Rollout (Ayakta)
+m au al / lb la fd
+l 3
+- Yuvarlak plakalı barı yere koy; şınav pozisyonunda barı omuz genişliğinde tut.
+- Kalçanı yukarı çekerek barı ayaklarına doğru yuvarla.
+- Kontrollü şekilde geri aç.
++ Ab wheel'ın çok zor versiyonudur.
+! Bel çökerse dizlerin üstünde yap.
+
+#453 rollout knees *
+n Barbell Rollout (Diz Üstü)
+m au al / lb la fd
+- Dizlerinin üstünde dur, yuvarlak plakalı barı omuz genişliğinde tut.
+- Barı ileri yuvarlayarak gövdeni yere doğru uzat.
+- Karnını sıkarak geri çek.
++ Ab wheel yoksa barbell aynı işi görür.
+! Bel çukurlaşmadan gidebildiğin kadar git.
+
+#454 rollout bench
+n Sehpadan Barbell Rollout
+m au al / la fd lb
+- Sehpanın üstünde diz çök, yerdeki barı tut.
+- Barı ileri yuvarla; kollar başın üstüne uzansın.
+- Karınla geri çek.
++ Yükseklik sayesinde hareket açıklığı artar.
+! İleri seviye; bel çökmesin.
+
+#455 barbell side bend
+n Barbell Side Bend
+m ob / lb
+- Barı sırtına al, ayaklar omuz genişliğinde.
+- Belinden bir yana eğil, doğrul; diğer yana eğil.
++ Hafif yükle, yavaş yap.
+! Öne ya da arkaya eğilme; sadece yana.
+
+#456 bent press
+n Bent Press
+m ob / fd tr gl ha lb
+l 3
+- Kettlebell'i omzuna al.
+- Karşı tarafa ve öne eğilerek gövdeni ağırlığın altından uzaklaştır; kol düzleşene kadar devam et.
+- Kol kilitliyken doğrul.
++ Ağırlığı itmezsin; sen onun altına inersin.
+! Eski usul, teknik bir kaldırış; hafif öğren.
+
+#457 hip raise
+n Dizler Bükük Kalça Kaldırma
+m al / au
+- Sırtüstü yat, eller yanında; dizler bükük, uyluklar dik.
+- Kalçanı yerden kaldırarak dizlerini göğsüne doğru çek.
+- Yavaşça indir.
++ Alt karın için temel ters crunch.
+! Savurarak değil, karınla kaldır.
+
+#458 bosu cable crunch
+n Bosu'da Yana Eğilmeli Cable Crunch
+m ob au
+- Bosu topunun üstünde diz çök, üst makaradaki ipi başının yanında tut.
+- Aşağı kıvrılırken bir yana eğil; sonra diğer yana.
++ Dengesiz zemin gövdeyi daha çok çalıştırır.
+! Kalça sabit; kollarla çekme.
+
+#459 bottoms up
+n Bottoms Up (Kalça Kaldırma)
+m al / au
+- Sırtüstü yat; dizlerini göğsüne çek, sonra bacaklarını tavana uzat.
+- Kalçanı yerden kaldırarak ayaklarını tavana it.
+- Kontrollü in, bacakları uzat.
++ Tepede kısa bir duraklama alt karnı iyice sıkar.
+! Bacakları başına doğru savurma.
+
+#460 butt
+n Butt-Up (Plank Kalça Kaldırma)
+m au al / fd
+- Dirsek plank pozisyonunda dur.
+- Karnını sıkarak kalçanı tavana kaldır.
+- Düz hatta geri in.
++ Plank'a hareket katar.
+! Bel aşağı çökmesin.
+
+#461 judo flip
+n Cable Judo Flip
+m ob au / fd
+- Alt makaraya ip tak; yan dur, geniş duruş.
+- İpi omzunun üstünden çekerek gövdeni makaradan uzağa döndür ve öne-aşağı kıvrıl.
+- Kontrollü geri dön.
++ Dönüş ve kıvrılmayı birleştirir.
+! Ağırlığı ayaklar arasında aktar; belden zorlama.
+
+#462 cable reverse crunch
+n Cable Reverse Crunch
+m al / au
+- Alt makaraya bilek bantlarını tak, ayak bileklerine bağla; sırtüstü yat, başın makinenin ters yönünde.
+- Dizlerini göğsüne çek, kalçanı hafif kaldır.
+- Yavaşça uzat.
++ Alt karna ağırlık eklemenin yolu.
+! Bel yerden kopmasın (dönüşte).
+
+#463 cable russian
+n Cable Russian Twist
+m ob / au
+- Orta makaraya kulp tak; pilates topuna sırtını yaslayıp makineye yan uzan.
+- Kulpu iki elle göğsün üstünde tut, kollar düz.
+- Gövdeni makaradan uzağa döndür, yavaşça geri gel.
++ Kollar değil gövde döner.
+! Kalça düşmesin.
+
+#464 cable seated crunch
+n Oturarak Cable Crunch
+- Üst makaraya ip tak, sırtın makineye dönük otur; ipi omuzlarının üstünde tut.
+- Karnını sıkarak öne-aşağı kıvrıl.
+- Yavaşça doğrul.
++ Kalça sabit kalır; sadece omurga kıvrılır.
+! Kollarla çekme.
+
+#465 cocoons
+n Cocoon (Koza)
+m au al
+- Sırtüstü uzan, kollar başının arkasında, bacaklar düz.
+- Dizlerini göğsüne çekerken kollarını öne getirip top gibi toplan.
+- Yavaşça açıl.
++ Üst ve alt karnı tek harekette çalıştırır.
+! Açılırken bel yerden kalkmasın.
+
+#466 cross body crunch *
+n Çapraz Crunch
+m ob au
+- Sırtüstü yat, dizler bükük, eller başın yanında.
+- Sağ dirseği ve sol dizi birbirine yaklaştır; in.
+- Diğer çaprazla tekrarla.
++ Omzu döndür; sadece dirseği değil.
+! Boynu çekme.
+
+#467 crunch hands overhead
+n Kollar Yukarıda Crunch
+- Sırtüstü yat, dizler bükük; kollarını başının üstünde düz uzat.
+- Kollar kulak hizasında kalacak şekilde omuzlarını yerden kaldır.
+- Yavaşça in.
++ Kolların ağırlığı crunch'ı zorlaştırır.
+! Kolları öne savurma.
+
+#468 crunch legs ball
+n Bacaklar Topta Crunch
+- Sırtüstü yat, baldırlarını pilates topunun üstüne koy; dizler 90°.
+- Omuzlarını yerden kaldırarak crunch yap.
++ Bel yere oturur; kalça fleksörleri devreden çıkar.
+! Boynu çekme.
+
+#469 dead bug *
+a deadbug
+n Dead Bug
+m au al / ob
+- Sırtüstü yat; kollar tavana, dizler 90° havada.
+- Belini yere bastırarak sağ kolu ve sol bacağı aynı anda yere doğru uzat.
+- Geri getir, diğer çaprazla tekrarla.
++ Bel sağlığı için en güvenli karın hareketlerinden.
+! Bel yerden kalkıyorsa bacağı daha az uzat.
+
+#470 decline oblique
+n Decline Oblique Crunch
+m ob / au
+- Decline sehpaya yat, ayakları sabitle; bir el başın arkasında.
+- Kalkarken gövdeni döndürüp dirseğini karşı dize yaklaştır.
+- Yavaşça in.
++ Her tarafı ayrı set yap.
+! Boynu çekme.
+
+#471 decline reverse *
+n Decline Reverse Crunch
+m al / au
+- Decline sehpaya baş yukarıda olacak şekilde yat; başının üstündeki pedleri tut.
+- Dizlerini göğsüne çek, kalçanı sehpadan kaldır.
+- Yavaşça indir.
++ Eğim alt karna binen yükü artırır.
+! Bacakları savurma.
+
+#472 double kettlebell windmill
+n Çift Kettlebell Windmill
+m ob / gl ha fd tr lb
+l 3
+- Bir kettlebell baş üstünde kilitli, diğeri aşağıdaki elde.
+- Kalçanı yana iterek eğil; alttaki kettlebell yere yaklaşsın.
+- Doğrul.
++ Göz üstteki kettlebell'de kalsın.
+! Üst kol hep dik.
+
+#473 elbow knee
+n Dirsek-Diz Crunch
+m ob au
+- Sırtüstü yat; sağ ayak bileğini sol dizinin üstüne koy, sol el başın arkasında.
+- Sol dirseğini sağ dizine doğru kaldır.
+- İn; set bitince taraf değiştir.
++ Yan karna odaklanır.
+! Boynu çekme.
+
+#474 exercise ball crunch *
+n Pilates Topunda Crunch
+- Belini topun üstüne yerleştir, ayaklar yerde; eller başın yanında.
+- Karnını sıkarak gövdeni kıvır.
+- Topun üstünde geriye esneyerek in.
++ Top sayesinde karın tam esner; yer crunch'ından etkilidir.
+! Kalça sabit kalsın.
+
+#475 ball pull
+n Pilates Topunda Diz Çekme
+m al au / fd
+- Şınav pozisyonu al, kaval kemiklerini topun üstüne koy.
+- Dizlerini göğsüne çekerek topu kendine yuvarla.
+- Bacakları geri uzat.
++ Gövde ve omuz sabitliği de çalışır.
+! Kalça düşmesin.
+
+#476 flat bench leg pull
+n Sehpada Diz Çekme (Yatarak)
+m al / au
+- Düz sehpaya sırtüstü yat, bacaklar sehpanın dışında; başının arkasından sehpayı tut.
+- Dizlerini göğsüne çek.
+- Bacakları yere değdirmeden uzat.
+! Bel sehpadan kalkmasın.
+
+#477 frog
+n Kurbağa Sit-Up
+- Sırtüstü yat, ayak tabanlarını birleştir, dizler yanlara açık.
+- Eller önde ya da başın yanında, gövdeni kaldır.
+- Yavaşça in.
++ Kalça fleksörlerini devreden çıkarır; iş karna kalır.
+! Boynu çekme.
+
+#478 gorilla
+n Gorilla Chin (Barfiks + Crunch)
+m au al / bi la
+l 2
+- Barfiks demirine ters tutuşla asıl, dizleri 90° bük.
+- Kendini çekerken dizlerini göğsüne doğru kıvır.
+- Kontrollü in.
++ Kol, sırt ve karnı birlikte çalıştırır.
+! Sallanma.
+
+#479 hanging pike *
+a toestobar
+n Toes to Bar (Hanging Pike)
+m al au / la fa
+l 3
+- Barfiks demirine omuz genişliğinde asıl.
+- Karnını sıkıp bacaklarını düz şekilde yukarı kaldır, ayak uçlarını bara yaklaştır.
+- Sallanmadan, kontrollü şekilde indir.
++ Yapamıyorsan önce dizleri göğse çekerek (knee raise) başla.
++ Kanatlarını aktif tut, omuzlardan sarkma.
+! Savrularak yapmak beli ve omuzu zorlar.
+
+#480 jackknife sit *
+n Jackknife (V-Up)
+m au al
+- Sırtüstü uzan, kollar başın üstünde.
+- Bacakları ve gövdeyi aynı anda kaldırıp ellerinle ayaklarına uzan.
+- Kontrollü in.
++ Zor gelirse dizleri bük.
+! Bel ağrıyorsa bırak.
+
+#481 janda
+n Janda Sit-Up
+- Sit-up pozisyonu al; topuklarını yere bastırıp arka bacak ve kalçayı sık.
+- Bu gerginliği koruyarak çok yavaş kalk.
+- Yavaşça in.
++ Arka bacağı sıkmak kalça fleksörlerini devreden çıkarır; karın tek başına çalışır.
+! Yavaş yapmazsan anlamı kalmaz.
+
+#482 figure
+n Kettlebell Figure 8
+m au ob / ha fd fa
+- Ayaklar geniş, kalçadan eğil; sırt düz.
+- Kettlebell'i bacaklarının arasından geçirip arkadan diğer eline ver.
+- Sekiz çizerek devam et.
++ Kavrama ve gövde dayanıklılığı geliştirir.
+! Sırtı yuvarlama.
+
+#483 pass between
+n Kettlebell Bacak Arası Geçirme
+m au ob / gl ha fd
+- Ayaklar omuzdan geniş, kalçadan eğil.
+- Kettlebell'i bacak arasından elden ele "W" çizerek geçir.
++ Isınma için uygun.
+! Sırt düz.
+
+#484 kettlebell windmill *
+n Kettlebell Windmill
+m ob / gl ha fd lb
+- Kettlebell'i baş üstünde kilitle; ayakları 45° karşı yöne çevir.
+- Kalçanı kettlebell tarafına iterek eğil; boş elin bacağından aşağı kaysın.
+- Doğrul.
++ Omuz sabitliği ve yan karın için çok değerli.
+! Göz kettlebell'de; kol dik.
+
+#485 parallel bars *
+n Paralel Barda Diz Çekme (Captain's Chair)
+m al / au
+- Dirseklerini pedlere yasla, sırtını dayan; bacaklar aşağıda.
+- Dizlerini göğsüne çek, kalçanı hafif öne kıvır.
+- Yavaşça indir.
++ Bacakları düz kaldırırsan zorlaşır.
+! Sallanma; omuzları kulaklara çekme.
+
+#486 kneeling cable crunch
+n Çapraz Dönüşlü Cable Crunch
+m au ob
+- Üst makaranın önünde diz çök, ipi başının yanında tut.
+- Kıvrılırken bir dirseği karşı dize doğru döndür; sonraki tekrarda diğer yana.
++ Düz ve yan karnı birlikte çalıştırır.
+! Kalça sabit.
+
+#487 landmine
+n Landmine 180
+m ob au / fd lb gl
+- Barın bir ucunu köşeye sabitle; diğer ucunu iki elle omuz hizasında, kollar uzun tut.
+- Barı gövdeni döndürerek bir kalçadan diğerine yay çizerek götür.
++ Dönüş gücü için en iyi hareketlerden.
+! Ayak üstünde dön; bel tek başına dönmesin.
+
+#488 leg pull
+n Yerde Diz Çekme
+m al / au
+- Sırtüstü yat, eller kalçanın altında, bacaklar düz ve yerden biraz yukarıda.
+- Dizlerini göğsüne çek.
+- Bacakları yere değdirmeden uzat.
+! Bel yerden kalkmasın.
+
+#489 oblique crunches
+n Oblique Crunch (Bacaklar Yanda)
+m ob
+- Sırtüstü yat; bir el başın arkasında, karşı bacak diğer dizin üstünde.
+- Omzunu karşı dize doğru kaldır.
+- Yavaşça in.
++ Yavaş ve sıkarak yap.
+! Boynu çekme.
+
+#490 oblique crunches floor
+n Yerde Yan Crunch
+m ob
+- Sırtüstü yat, dizleri bükük halde bir yana yatır.
+- Eller başın yanında, omuzlarını düz yukarı kaldır.
+- İn; set bitince dizleri diğer yana yatır.
++ Yan karın doğrudan çalışır.
+! Küçük hareket yeter.
+
+#491 pulley side bends
+n Üst Makarada Tek Kol Yana Eğilme
+m ob
+- Üst makaraya kulp tak, yan dur; kulpu başının yanında tut.
+- Dirseğini kalçana doğru indirerek yana kıvrıl.
+- Yavaşça doğrul.
++ Yan karna sürekli gerilim verir.
+! Öne eğilme.
+
+#492 medicine ball slam
+n Tek Kol Sağlık Topu Slam
+m au ob / la fd
+c Pliometrik
+- Topu tek elde tut, ayaklar hafif çapraz.
+- Topu başının üstüne kaldırıp parmak uçlarına yüksel.
+- Tüm gövdenle topu yere çarp.
++ Patlayıcı güç ve stres atmak için ideal.
+! Sekmeyen (slam) top kullan.
+
+#493 otis
+n Otis-Up
+m au / cm fd tr
+- Ayakları sabitle, sırtüstü yat; plakayı göğsünde tut.
+- Sit-up yaparken plakayı yukarı it; tepede baş üstünde olsun.
+- İnerken plakayı göğse geri al.
++ Karın ve itiş kaslarını birleştirir.
+! Hafif plakayla başla.
+
+#494 pallof rotation *
+n Dönüşlü Pallof Press
+m ob / au fd
+- Makarayı göğüs hizasına ayarla, yan dur; kulpu iki elle göğsünde tut.
+- Kolları öne uzat; sonra gövdeni makaradan uzağa döndür.
+- Ortaya dön, kulpu göğse geri çek.
++ Dönmeye direnmek gövdeyi çok iyi çalıştırır.
+! Kalça öne baksın.
+
+#495 plate twist
+n Plaka ile Twist
+m ob / au
+- Yere otur, gövdeni hafif geriye yatır, ayakları kaldır; plakayı iki elle tut.
+- Plakayı bir yana, sonra diğer yana götür.
++ Russian twist'in plakalı hali.
+! Sırtı yuvarlama.
+
+#496 press sit
+n Press Sit-Up
+m au / cm fd tr
+l 3
+- Decline sehpaya yat, ayaklar sabit; bar göğsünde.
+- Sit-up yaparken barı baş üstüne it.
+- İnerken barı göğse indir.
++ Çok zor bir kombinasyon; hafif barla başla.
+! Bel zorlanıyorsa yapma.
+
+#497 rope crunch
+n Rope Crunch
+- Üst makaranın önünde diz çök, ipi başının iki yanında tut.
+- Kalça sabit, karnını sıkarak dirseklerini dizlerine doğru kıvır.
+- Yavaşça doğrul.
++ Karnı ağırlıkla çalıştırmanın en iyi yolu.
+! Kalçayı geriye oturtma; kıvrılma omurgadan olsun.
+
+#498 seated barbell twist
+n Oturarak Barbell Twist
+m ob
+- Sehpaya otur, barı (ya da boş çubuğu) ensenin arkasına al.
+- Gövdeni bir yana, sonra diğer yana döndür.
++ Hafif çubukla, yavaş yap.
+! Hızlı savurma beli zorlar.
+
+#499 seated flat bench
+n Sehpada Diz Çekme (Oturarak)
+m al au
+- Sehpanın kenarına otur, arkadan kenarları tut; gövdeni hafif geriye yatır, bacakları uzat.
+- Dizlerini göğsüne çekerken gövdeni öne getir.
+- Açıl.
++ Tepede karnı sık.
+! Sırtı yuvarlayıp çökme.
+
+#500 leg tucks
+n Oturarak Leg Tuck
+m al au
+- Sehpaya otur, kenarları tut; gövde 45° geride, bacaklar önde.
+- Dizlerini ve gövdeni birbirine yaklaştır.
+- Yavaşça açıl.
++ Ayaklar yere değmesin.
+! Savurma.
+
+#501 side jackknife
+n Yan Jackknife
+m ob
+- Yan yat, alttaki kol önde yerde, üstteki el başın arkasında.
+- Üst bacağını ve gövdeni aynı anda kaldırıp dirseğini bacağına yaklaştır.
+- İn.
++ Yan karnı çok iyi sıkar.
+! Öne ya da arkaya yuvarlanma.
+
+#502 sit *
+n Sit-Up (Mekik)
+m au / al
+- Sırtüstü yat, dizler bükük, ayaklar sabit; eller başın yanında ya da göğüste.
+- Gövdeni dizlerine kadar kaldır.
+- Kontrollü in.
++ Elleri göğüste çaprazlamak boynu rahatlatır.
+! Boynundan çekme; bel ağrısı varsa crunch tercih et.
+
+#503 smith hip raise
+n Smith Machine Hip Raise
+m al / au
+- Smith altına sehpa koy, sırtüstü yat; ayak tabanlarını bara daya ve bacakları uzat.
+- Kalçanı sehpadan kaldırarak barı yukarı it.
+- Yavaşça indir.
++ Alt karna ağırlık eklemenin nadir yollarından.
+! Hafif yükle başla; ayak kaymasın.
+
+#504 spell caster
+n Spell Caster
+m ob / fd gl
+- Dambılları üstten tutuşla tut, ayaklar geniş.
+- Dambılları bir kalçanın yanına çek; sonra kollar düz, gövdeni döndürerek diğer yana savur.
++ Dönüş kalçadan ve gövdeden gelir.
+! Hafif dambıl kullan.
+
+#505 spider crawl
+n Spider Crawl
+m au ob / cm fd tr
+- Şınav pozisyonunda, dirsekler bükük alçak dur.
+- Bir dizini aynı taraftaki dirseğine çekerek ileri sürün; diğer tarafla devam et.
++ Tüm gövdeyi çalıştırır.
+! Kalça yükselmesin.
+
+#506 standing cable lift
+n Cable Lift (Aşağıdan Yukarı)
+m ob / au fd
+- Alt makaraya kulp tak, yan dur; kulpu iki elle dış kalçanın yanında tut.
+- Kolları düz tutarak kulpu çaprazdan karşı omzun üstüne çek; arka ayak üstünde dön.
+- Kontrollü geri dön.
++ Woodchop'un tersidir.
+! Bel tek başına dönmesin.
+
+#507 standing rope crunch
+n Ayakta Rope Crunch
+- Üst makaraya sırtını dön, ipi omuzlarının üstünde tut.
+- Karnını sıkarak öne-aşağı kıvrıl.
+- Yavaşça doğrul.
++ Diz üstü versiyon rahatsız ediyorsa iyi alternatif.
+! Kalçadan eğilme; omurgadan kıvrıl.
+
+#508 fallout
+n TRX Fallout
+m au al / fd la lb
+l 2
+- Askı kulplarını bel altı hizasında tut, öne yaslan.
+- Kollar düz, ellerini ileri-yukarı uzatarak gövdeni yere yaklaştır.
+- Karınla geri çek.
++ Ab wheel'ın askıdaki hali.
+! Bel çökmesin.
+
+#509 suspended reverse
+n TRX Reverse Crunch
+m al au / fd
+- Ayaklarını askı kulplarına tak, şınav pozisyonu al.
+- Dizlerini göğsüne çek.
+- Geri uzat.
++ Kalçayı yukarı kaldırırsan pike olur.
+! Kalça düşmesin.
+
+#510 tuck crunch
+n Tuck Crunch
+- Sırtüstü yat, bacakları kaldır; dizler 90°, bilekler çapraz.
+- Eller göğüste ya da başın yanında, omuzlarını kaldır.
+- Yavaşça in.
++ Bacaklar havada olduğu için bel yere oturur.
+! Boynu çekme.
+
+#511 ball side bend
+n Topta Ağırlıklı Yana Eğilme
+m ob
+- Pilates topuna yan uzan, ayakları duvara daya; ağırlığı göğsünde tut.
+- Gövdeni yana, yukarı kaldır.
+- Topun üstüne esneyerek in.
++ Yan karın tam açıklıkta çalışır.
+! Öne dönme.
+
+#512 weighted crunches
+n Ağırlıklı Crunch
+- Sırtüstü yat, dizler bükük; plaka ya da sağlık topunu göğsünde tut.
+- Omuzlarını yerden kaldır.
+- Yavaşça in.
++ 15 tekrarı rahat geçiyorsan ağırlık ekle.
+! Boynu çekme.
+
+#513 weighted sit bands
+n Bantlı Sit-Up
+- Bantları decline sehpanın altına bağla, kulpları omuz hizasında tut.
+- Banta karşı sit-up yap.
+- Kontrollü in.
++ Tepede direnç en yüksektir.
+! Bantları sağlam bağla.
+
+#514 wind sprints
+n Asılı Koşu (Wind Sprint)
+m al au / fa
+- Barfiks demirine asıl.
+- Bir dizini hızla yukarı çek; indirirken diğerini çek, havada koşar gibi.
++ Alt karın ve kavrama birlikte çalışır.
+! Gövde sallanmasın.
